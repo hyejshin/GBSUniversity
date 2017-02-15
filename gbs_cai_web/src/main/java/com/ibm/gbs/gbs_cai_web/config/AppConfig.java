@@ -18,7 +18,7 @@ import org.springframework.web.servlet.view.tiles3.TilesViewResolver;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = "com.ibm.gbs.gbs_cai_web.controllers")
+@ComponentScan(basePackages = "com.ibm.gbs.gbs_cai_web")
 public class AppConfig extends WebMvcConfigurerAdapter {
     /**
      * Configure TilesConfigurer
@@ -46,7 +46,10 @@ public class AppConfig extends WebMvcConfigurerAdapter {
      
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/static/**").addResourceLocations("/static/");
+        registry.addResourceHandler("/script/**").addResourceLocations("/WEB-INF/static/js/");
+        registry.addResourceHandler("/css/**").addResourceLocations("/WEB-INF/static/css/");
+        registry.addResourceHandler("/images/**").addResourceLocations("/WEB-INF/static/images/");
+        //registry.addResourceHandler("/css/**").addResourceLocations("/WEB-INF/static/css/");
     }
  
 }

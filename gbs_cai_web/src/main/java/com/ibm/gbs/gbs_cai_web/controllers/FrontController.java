@@ -16,14 +16,14 @@ import org.springframework.stereotype.Controller;
 public class FrontController {
     
     @RequestMapping(value ={"/"}, method = RequestMethod.GET)
-    public String loginPage(ModelMap model) {
+    public String indexPage(ModelMap model) {
         /**
          * TODO : check login or not
          * if login -> index page
          * else     -> login page
          */
         model.addAttribute("msg", "Login View Should be implemented");
-        return "login";
+        return "index";
     }
  
     
