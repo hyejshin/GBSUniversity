@@ -17,7 +17,7 @@ public class FrontController {
     
     @RequestMapping(value ={"/"}, method = RequestMethod.GET)
     public String indexPage(ModelMap model) {
-        /**
+        /** 
          * TODO : check login or not
          * if login -> index page
          * else     -> login page
