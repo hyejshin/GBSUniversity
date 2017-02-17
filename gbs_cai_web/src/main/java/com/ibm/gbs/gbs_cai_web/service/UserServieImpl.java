@@ -7,16 +7,25 @@ package com.ibm.gbs.gbs_cai_web.service;
 
 import com.ibm.gbs.gbs_cai_web.vo.UserVO;
 import java.util.List;
+import org.springframework.stereotype.Service;
+import com.ibm.gbs.gbs_cai_web.mapper.UserMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  *
  * @author kr055045
  */
+@Service("userService")
 public class UserServieImpl implements UserService{
+    
+    @Autowired
+    private UserMapper userMapper;
 
     @Override
-    public List<UserVO> getAllUsers() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public UserVO getUserById(String userId) {
+        return userMapper.getUserById("test");
+       // return userMapper.getUserById("test");
+       // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     

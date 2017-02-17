@@ -6,9 +6,7 @@
  */
 package com.ibm.gbs.gbs_cai_web.config;
 
-import com.sun.scenario.effect.Filterable;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
-import org.springframework.web.filter.CharacterEncodingFilter;
  
 public class AppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
  

@@ -12,15 +12,19 @@ import java.util.Properties;
 import javax.sql.DataSource;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.io.ResourceLoader;
+import org.springframework.core.io.support.ResourcePatternUtils;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.jdbc.datasource.SimpleDriverDataSource;
 
 @Configuration
-@MapperScan("com.ibm.gbs.gbs_cai_web.properties")
+@MapperScan("com.ibm.gbs.gbs_cai_web.mapper")
 public class DataConfig {
-
+    @Autowired
+    private ResourceLoader  resourceLoader;
     private Properties prop = new Properties();   
     
     @Bean
@@ -54,7 +58,8 @@ public class DataConfig {
     public SqlSessionFactoryBean sqlSessionFactory() throws Exception {
         SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
         sessionFactory.setDataSource(dataSource());
-        sessionFactory.setTypeAliasesPackage("com.ibm.gbs.gbs_cai_web");
+        sessionFactory.setMapperLocations(ResourcePatternUtils.getResourcePatternResolver(resourceLoader).getResources("classpath:/mapper/*.xml"));
+        sessionFactory.setTypeAliasesPackage("com.ibm.gbs.gbs_cai_web.vo");
         return sessionFactory;
     }
 

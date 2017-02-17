@@ -5,18 +5,21 @@
  */
 package com.ibm.gbs.gbs_cai_web.vo;
 
+import java.io.Serializable;
+
 /**
  *
  * @author kr055045
  */
-public class UserVO {
+public class UserVO implements Serializable{
 
     private int idx;
     private String user_id;
     private String user_nm;
     private String password;
     private String type;
-
+    
+    public UserVO(){};
     public UserVO(int idx, String user_id, String user_nm, String password, String type) {
         this.idx = idx;
         this.user_id = user_id;

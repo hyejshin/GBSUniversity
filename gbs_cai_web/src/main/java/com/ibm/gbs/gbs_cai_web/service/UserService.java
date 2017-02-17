@@ -6,14 +6,12 @@
 package com.ibm.gbs.gbs_cai_web.service;
 
 import com.ibm.gbs.gbs_cai_web.vo.UserVO;
-import java.util.List;
-
 /**
  *
  * @author kr055045
  */
 public interface UserService {
     
-    public List<UserVO> getAllUsers();
+    public UserVO getUserById(String userId);
     
 }
