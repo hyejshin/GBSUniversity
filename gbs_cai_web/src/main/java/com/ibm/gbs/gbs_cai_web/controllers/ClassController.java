@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
+@RequestMapping("/class")
 public class ClassController {
 	protected final Log logger = LogFactory.getLog(getClass());
 	
@@ -23,4 +24,9 @@ public class ClassController {
 		List<Map<String, Object>> list = null;
 		return list;
     }
+    @RequestMapping(value={"/"}, method=RequestMethod.GET)
+    public String classPage(ModelMap modelMap){
+        return "single";
+    }
+    
 }
