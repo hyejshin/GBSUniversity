@@ -6,15 +6,24 @@
  */
 package com.ibm.gbs.gbs_cai_web.config;
 
+import java.util.List;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.converter.HttpMessageConverter;
+import org.springframework.http.converter.json.GsonHttpMessageConverter;
+import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.tiles3.TilesConfigurer;
 import org.springframework.web.servlet.view.tiles3.TilesViewResolver;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 @Configuration
 @EnableWebMvc
@@ -50,6 +59,42 @@ public class AppConfig extends WebMvcConfigurerAdapter {
         registry.addResourceHandler("/css/**").addResourceLocations("/WEB-INF/static/css/");
         registry.addResourceHandler("/images/**").addResourceLocations("/WEB-INF/static/images/");
         //registry.addResourceHandler("/css/**").addResourceLocations("/WEB-INF/static/css/");
+    }
+    
+    /**
+     * Configure View(.jsp) path
+     */
+    @Bean
+    public ViewResolver getViewResolver(){
+        InternalResourceViewResolver resolver = new InternalResourceViewResolver();
+        resolver.setPrefix("/WEB-INF/views/pages/");
+        resolver.setSuffix(".jsp");
+        return resolver;
+    }
+    
+    /**
+     * Configure Convert from Object to JSON 
+     * - 추가목적 : Object를 JSON으로 변환(Ajax에서 사용)
+     * - 추가이력 : 정연우(20170218)
+     */
+    @Override
+    public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
+    	GsonHttpMessageConverter msgConverter = new GsonHttpMessageConverter();
+        Gson gson = new GsonBuilder().setPrettyPrinting().create(); 
+    	msgConverter.setGson(gson);
+        converters.add(msgConverter);
+    }
+    
+
+    /**
+     * Configure GSON
+     * - 추가목적 : Object를 JSON으로 변환할 때 GSON 필요(Ajax에서 사용)
+     * - 추가이력 : 정연우(20170218) 
+     */
+    @Bean
+    public GsonHttpMessageConverter gson() {
+    	GsonHttpMessageConverter gson = new GsonHttpMessageConverter();
+    	return gson;
     }
  
 }
