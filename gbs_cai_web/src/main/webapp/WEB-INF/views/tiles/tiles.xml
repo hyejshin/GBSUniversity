@@ -27,27 +27,61 @@
             <add-attribute value="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/js/bootstrap-select.min.js" />
             <add-attribute value="/script/head.js" />
             <add-attribute value="/script/foot.js" />
-        </put-list-attribute>                     
+            </put-list-attribute>
+            
+        <put-list-attribute name="loginLayout" cascade="true">
+			<add-attribute value="http://fonts.googleapis.com/css?family=Lato:100italic,100,300italic,300,400italic,400,700italic,700,900italic,900" />
+			<add-attribute value="/assets/bootstrap/css/bootstrap.min.css" />
+			<add-attribute value="/assets/css/styles.css" />
+			<add-attribute value="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"/>
+	       	<add-attribute value="/assets/bootstrap/js/bootstrap.min.js"/>
+        </put-list-attribute>           
+        
+        <put-list-attribute name="innerLayout" cascade="true">			
+			<add-attribute value="/script/jquery.min.js"/>
+			<add-attribute value="/script/move-top.js"/>
+			<add-attribute value="/script/easing.js"/>
+			<add-attribute value="/script/qna.js"/>
+        </put-list-attribute>     
+        
+        
     </definition>  
    
    
   
     <!-- Home Page -->
     <definition name="index" extends="base-definition">  
-        <put-attribute name="title" value="Welcome" />  
+        <put-attribute name="title" value="Index" />  
         <put-attribute name="body" value="/WEB-INF/views/pages/index.jsp" />  
     </definition>  
     
-    <definition name="login" extends="base-definition">
+    <definition name="login" extends="base-definition">    	        
         <put-attribute name="title" value="Welcome" />  
-        <put-attribute name="body" value="/WEB-INF/views/pages/login.jsp" />               
+        <put-attribute name="body" value="/WEB-INF/views/pages/login.jsp" />                       
     </definition>
  
     <!-- Product Page -->
     <definition name="userHome" extends="base-definition">  
         <put-attribute name="title" value="UserHome" />  
         <put-attribute name="body" value="/WEB-INF/views/pages/user.jsp" />  
-    </definition>  
+    </definition> 
+    
+    <definition name="single" extends="base-definition">  
+        <put-attribute name="title" value="LectureDetail" />  
+        <put-attribute name="body" value="/WEB-INF/views/pages/single.jsp" />  
+    </definition> 
+    
+    <definition name="qna" extends="base-definition">  
+        <put-attribute name="title" value="LectueQna" />  
+        <put-attribute name="body" value="/WEB-INF/views/pages/qna.jsp" />  
+    </definition> 
+    
+    <definition name="history" extends="base-definition">  
+        <put-attribute name="title" value="MyLecture" />  
+        <put-attribute name="body" value="/WEB-INF/views/pages/history.jsp" />  
+    </definition> 
+    
+     
 
   
 </tiles-definitions>
