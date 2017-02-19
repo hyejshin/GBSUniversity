@@ -7,5 +7,5 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <div>
-    <h1>After User Login</h1>
+    <h3>After User Login</h3>
 </div>

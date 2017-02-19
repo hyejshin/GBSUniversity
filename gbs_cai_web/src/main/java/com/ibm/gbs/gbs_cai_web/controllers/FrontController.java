@@ -20,14 +20,16 @@ public class FrontController {
 //    private UserVO userVO;
     
     @RequestMapping(method = RequestMethod.GET)
-    public String index(ModelMap model) {
+    public String indexPage(ModelMap model) {
         /** 
          * TODO : check login or not
          * if login -> index page
          * else     -> login page
          */
         //model.addAttribute("session", "session");
-        return "redirect:" + "/login";
+        
+        
+        return "index";
         
     }
     

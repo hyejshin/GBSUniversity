@@ -24,6 +24,7 @@ import org.springframework.web.servlet.view.tiles3.TilesViewResolver;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 
 @Configuration
 @EnableWebMvc
@@ -95,6 +96,18 @@ public class AppConfig extends WebMvcConfigurerAdapter {
     public GsonHttpMessageConverter gson() {
     	GsonHttpMessageConverter gson = new GsonHttpMessageConverter();
     	return gson;
+    }
+    
+    /**
+     * addInterceptors
+     * - 추가목적 : request 시 로그인 session 및 user 확인
+     * - 추가이력 : 김주상(20170219)
+     */
+    @Override
+    public void addInterceptors(InterceptorRegistry registry){
+        registry.addInterceptor( new AuthInterceptor()).addPathPatterns("/**").excludePathPatterns("/index/**");
+        //registry.addInterceptor(new SecurityInterceptor()).addPathPatterns("/secure/*");
+
     }
  
 }

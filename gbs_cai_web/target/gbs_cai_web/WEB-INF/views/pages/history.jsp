@@ -1,40 +1,17 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
 <%@ page session="false" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <title>	CAI university</title>
-<link href="/webapp/resources/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="/webapp/resources/js/jquery.min.js"></script>
-<link href="/webapp/resources/css/style.css" rel="stylesheet" type="text/css" media="all" />	
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<script type="application/x-javascript">
-	 
-		addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); 
-			function hideURLbar(){ window.scrollTo(0,1); } 
-	
-</script>
-<!--fonts-->
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700' rel='stylesheet' type='text/css'>
-<!--//fonts-->
-<script type="text/javascript" src="/webapp/resources/js/move-top.js"></script>
-<script type="text/javascript" src="/webapp/resources/js/easing.js"></script>
-				<script type="text/javascript">
-					jQuery(document).ready(function($) {
-						$(".scroll").click(function(event){		
-							event.preventDefault();
-							$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-						});
-					});
-					</script>
+<tiles:importAttribute name="innerLayout" />
+<c:forEach var="innerLayout" items="${innerLayout}">
+    <link type="text/css" rel="stylesheet" href="<c:url value="${innerLayout}"/>" />
+</c:forEach>
 </head>
 <body>
-<%@include file="/WEB-INF/views/header.jsp" %>
 	<div class="container">		
 		<div class="banner">
 			<div class="banner-matter">
@@ -42,7 +19,7 @@
 				<p>Aliquam suscipit vel nulla quis eleifend. Maecenas vitae tristique ante. Sed sit amet vehicula libero.</p>		
 			 </div>
 			<div class="tv">
-				<img class="img-responsive" src="/webapp/resources/images/tv.png" alt="">
+				<img class="img-responsive" src="/images/tv.png" alt="">
 			</div>
 				 <div class="clearfix"> </div>
 		</div>
@@ -115,9 +92,6 @@
 				</table>
     </div>
 				<div class="clearfix"> </div>
-				<br>
-				<br>
-				<br>
-			<%@include file="/WEB-INF/views/footer.jsp"%>
+				<br><br><br>
 </body>
 </html>
