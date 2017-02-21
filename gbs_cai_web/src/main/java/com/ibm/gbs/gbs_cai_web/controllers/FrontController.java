@@ -10,8 +10,6 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.stereotype.Controller;
-import com.ibm.gbs.gbs_cai_web.vo.UserVO;
-import org.springframework.beans.factory.annotation.Autowired;
 
 @Controller
 @RequestMapping(value={"/"})
@@ -19,7 +17,7 @@ public class FrontController {
 //    @Autowired
 //    private UserVO userVO;
     
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(value={"/", "/index"}, method = RequestMethod.GET)
     public String indexPage(ModelMap model) {
         /** 
          * TODO : check login or not

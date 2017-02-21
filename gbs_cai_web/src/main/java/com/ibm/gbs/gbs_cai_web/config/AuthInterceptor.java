@@ -11,35 +11,42 @@ import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.ibm.gbs.gbs_cai_web.vo.UserVO;
+import javax.servlet.http.HttpSession;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 /**
  *
  * @author kr055045
  */
-public class AuthInterceptor implements HandlerInterceptor{
+public class AuthInterceptor extends HandlerInterceptorAdapter {
 
+    //protected Log log = LogFactory.getLog(AuthInterceptor.class);
     @Override
     public boolean preHandle(HttpServletRequest req, HttpServletResponse res, Object o) throws Exception {
-        UserVO user = new UserVO();
-        System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%PRE%%%%%%%%%%%%%%%%%%%%%");
-        if(req.getSession().getAttribute("userInfo") != null){
-            res.sendRedirect("/gbs_cai_web/index");
+        HttpSession session = req.getSession();
+        if (session.getAttribute("user") == null) {
+            res.sendRedirect("/login");
             return false;
-        }else {
-            res.sendRedirect("/gbs_cai_web/login");
-            return true;    
         }
-        
+//        System.out.println("22");
+//        req.setAttribute("isLogin", true);
+//        res.sendRedirect("/index");
+        return true;
     }
 
     @Override
-    public void postHandle(HttpServletRequest hsr, HttpServletResponse hsr1, Object o, ModelAndView mav) throws Exception {
-       
+    public void postHandle(HttpServletRequest hsr, HttpServletResponse hsr1,
+            Object o, ModelAndView mav) throws Exception {
+
     }
 
     @Override
-    public void afterCompletion(HttpServletRequest hsr, HttpServletResponse hsr1, Object o, Exception excptn) throws Exception {
-      
-    }   
-    
+    public void afterCompletion(HttpServletRequest hsr, HttpServletResponse hsr1,
+            Object o, Exception excptn) throws Exception {
+
+    }
+
 }

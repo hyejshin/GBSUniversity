@@ -36,7 +36,7 @@ public class AppConfig extends WebMvcConfigurerAdapter {
     @Bean
     public TilesConfigurer tilesConfigurer(){
         TilesConfigurer tilesConfigurer = new TilesConfigurer();
-        tilesConfigurer.setDefinitions(new String[] {"/WEB-INF/views/*/tiles.xml"});
+        tilesConfigurer.setDefinitions(new String[] {"/WEB-INF/views/**/tiles.xml"});
         tilesConfigurer.setCheckRefresh(true);
         return tilesConfigurer;
     }
@@ -103,10 +103,11 @@ public class AppConfig extends WebMvcConfigurerAdapter {
      * - 추가목적 : request 시 로그인 session 및 user 확인
      * - 추가이력 : 김주상(20170219)
      */
+    
+    
     @Override
     public void addInterceptors(InterceptorRegistry registry){
-        registry.addInterceptor( new AuthInterceptor()).addPathPatterns("/**").excludePathPatterns("/index/**");
-        //registry.addInterceptor(new SecurityInterceptor()).addPathPatterns("/secure/*");
+        registry.addInterceptor( new AuthInterceptor()).addPathPatterns("/**").excludePathPatterns("/login")  ;
 
     }
  

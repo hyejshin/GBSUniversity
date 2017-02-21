@@ -12,6 +12,7 @@ import com.ibm.gbs.gbs_cai_web.vo.UserVO;
  * @author kr055045
  */
 public interface UserMapper {
+    
     public UserVO getUserById(String userId);
     
 }

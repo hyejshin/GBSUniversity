@@ -17,9 +17,9 @@
 	
 	<section class="container">
 
-			<form method="post" action="" role="login">
+			<form name="loginForm" method="post" action="/login" >
 				<div>
-					<input type="text" name="username" placeholder="Enter your username" required class="form-control" />
+					<input type="text" name="user_id" placeholder="Enter your username" required class="form-control" />
 					<span class="glyphicon glyphicon-user"></span>
 				</div>
 				

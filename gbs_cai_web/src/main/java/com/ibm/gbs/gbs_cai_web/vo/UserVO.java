@@ -6,11 +6,13 @@
 package com.ibm.gbs.gbs_cai_web.vo;
 
 import java.io.Serializable;
+import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author kr055045
  */
+@Repository("uservo")
 public class UserVO implements Serializable{
 
     private int idx;
@@ -28,6 +30,12 @@ public class UserVO implements Serializable{
         this.type = type;
     }
 
+    public UserVO(int idx, String user_id, String user_nm, String type) {
+        this.idx = idx;
+        this.user_id = user_id;
+        this.user_nm = user_nm;
+        this.type = type;
+    }
     public int getIdx() {
         return idx;
     }
