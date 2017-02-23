@@ -42,7 +42,7 @@
 	<div class="header" id="home">
 		<div class="container">	
 			<div class="logo">
-				<h1><a href="index.jsp"><img src="/webapp/resources/images/Picture1.png" alt=""></a></h1>
+				<h1><a href="/"><img src="/webapp/resources/images/Picture1.png" alt=""></a></h1>
 			</div>
 			<div class="header-bottom">
 				<div class="top-nav">

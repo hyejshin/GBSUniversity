@@ -64,6 +64,7 @@ public class LoginController {
         try {
             if (user == null) {
                 req.setAttribute("isLogin", false);
+                modelMap.addAttribute("error_msg", "Please check your login information.");
                 res.sendRedirect("/login");
             } else {
                 req.setAttribute("isLogin", true);

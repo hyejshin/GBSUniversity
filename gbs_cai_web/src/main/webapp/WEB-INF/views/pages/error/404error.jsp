@@ -7,7 +7,6 @@
 <link href="/css/404page.css" rel="stylesheet" type="text/css" media="all" />
 </head>
 <body>
-<body>
 	<div class="main"><br><br><br>
 		<h1></h1>
 		<div class="main_grids">
@@ -25,6 +24,5 @@
 			<p> © 2017 Error Page. All Rights | Design by<a href="#"> IBM </a></p>
 		</div>
 	</div>
-</body>
 </body>
 </html>
