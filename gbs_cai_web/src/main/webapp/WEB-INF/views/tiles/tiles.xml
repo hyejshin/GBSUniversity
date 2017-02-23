@@ -80,6 +80,15 @@
         <put-attribute name="title" value="MyLecture" />  
         <put-attribute name="body" value="/WEB-INF/views/pages/history.jsp" />  
     </definition> 
+	<definition name="404Error" extends="base-definition">  
+        <put-attribute name="title" value="404Error" />  
+        <put-attribute name="body" value="/WEB-INF/views/pages/error/404error.jsp" />  
+    </definition> 
+    
+    <definition name="505Error" extends="base-definition">  
+        <put-attribute name="title" value="505Error" />  
+        <put-attribute name="body" value="/WEB-INF/views/pages/error/505error.jsp" />  
+    </definition> 
     
      
 
