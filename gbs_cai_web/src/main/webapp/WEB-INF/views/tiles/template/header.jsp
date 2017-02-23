@@ -19,7 +19,7 @@
                 <ul>
                     <li ><a href="/webapp/WEB-INF/views/index.jsp" class="scroll">Home</a></li>
                     <li><a href="/webapp/WEB-INF/views/history.jsp" >My Lecture</a></li>
-                    <li><a href="#">My Q&A</a></li>
+                    <li><a href="/board">My Q&A</a></li>
                 </ul>
                 <!--script-->
                 <script>

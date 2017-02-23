@@ -71,9 +71,9 @@
         <put-attribute name="body" value="/WEB-INF/views/pages/single.jsp" />  
     </definition> 
     
-    <definition name="qna" extends="base-definition">  
+    <definition name="board" extends="base-definition">  
         <put-attribute name="title" value="LectueQna" />  
-        <put-attribute name="body" value="/WEB-INF/views/pages/qna.jsp" />  
+        <put-attribute name="body" value="/WEB-INF/views/pages/board.jsp" />  
     </definition> 
     
     <definition name="history" extends="base-definition">  
