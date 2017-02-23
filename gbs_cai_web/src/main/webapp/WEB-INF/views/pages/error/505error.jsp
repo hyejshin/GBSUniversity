@@ -13,7 +13,7 @@
 		<div class="main_grids">
 			<div class="grid_left">
 				<div class="main_grid">
-					<h2>500</h2>
+					<h2>505</h2>
 				</div>
 				<h3>Oops!!  page not found!</h3>	
 				
