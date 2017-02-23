@@ -1,0 +1,23 @@
+/*
+-- Query: select * from class
+LIMIT 0, 1000
+	
+-- Date: 2017-02-21 02:25 
+   Writer : JYW 
+*/
+INSERT INTO `class` (`idx`,`class_id`,`title`,`booth`,`start`,`end`,`capacity`,`detail`,`atta1`,`atta2`,`atta3`,`atta4`,`atta5`,`use_yn`,`date`) VALUES (1,'ibm1','CIO Advisory','Track1','13:40','15:10',100,'CIO Advisory Test',NULL,NULL,NULL,NULL,NULL,'Y','2017-02-20 20:54:14');
+INSERT INTO `class` (`idx`,`class_id`,`title`,`booth`,`start`,`end`,`capacity`,`detail`,`atta1`,`atta2`,`atta3`,`atta4`,`atta5`,`use_yn`,`date`) VALUES (2,'ibm2','LEAN/KANBAN','Track1','15:10','16:40',100,'LEAN/KANBAN TEST',NULL,NULL,NULL,NULL,NULL,'Y','2017-02-20 20:55:03');
+INSERT INTO `class` (`idx`,`class_id`,`title`,`booth`,`start`,`end`,`capacity`,`detail`,`atta1`,`atta2`,`atta3`,`atta4`,`atta5`,`use_yn`,`date`) VALUES (3,'ibm3','Shell Programming','Track1','16:40','18:10',100,'Shell Programming TEST',NULL,NULL,NULL,NULL,NULL,'Y','2017-02-20 20:57:37');
+INSERT INTO `class` (`idx`,`class_id`,`title`,`booth`,`start`,`end`,`capacity`,`detail`,`atta1`,`atta2`,`atta3`,`atta4`,`atta5`,`use_yn`,`date`) VALUES (4,'ibm4','Samsung Muse','Track1','18:10','19:40',100,'Samsung Muse TEST',NULL,NULL,NULL,NULL,NULL,'Y','2017-02-20 20:58:10');
+INSERT INTO `class` (`idx`,`class_id`,`title`,`booth`,`start`,`end`,`capacity`,`detail`,`atta1`,`atta2`,`atta3`,`atta4`,`atta5`,`use_yn`,`date`) VALUES (5,'ibm5','Big Data Analysis','Track2','13:40','15:10',100,'Big Data Analysis',NULL,NULL,NULL,NULL,NULL,'Y','2017-02-20 20:59:07');
+INSERT INTO `class` (`idx`,`class_id`,`title`,`booth`,`start`,`end`,`capacity`,`detail`,`atta1`,`atta2`,`atta3`,`atta4`,`atta5`,`use_yn`,`date`) VALUES (6,'ibm6','Bluemix Mobile IoT','Track2','15:10','16:40',100,'Bluemix Moible IoT Test',NULL,NULL,NULL,NULL,NULL,'Y','2017-02-20 20:59:38');
+INSERT INTO `class` (`idx`,`class_id`,`title`,`booth`,`start`,`end`,`capacity`,`detail`,`atta1`,`atta2`,`atta3`,`atta4`,`atta5`,`use_yn`,`date`) VALUES (7,'ibm7','Digital Foundation','Track2','16:40','18:10',100,'Digital Foundation Test',NULL,NULL,NULL,NULL,NULL,'Y','2017-02-20 21:00:15');
+INSERT INTO `class` (`idx`,`class_id`,`title`,`booth`,`start`,`end`,`capacity`,`detail`,`atta1`,`atta2`,`atta3`,`atta4`,`atta5`,`use_yn`,`date`) VALUES (8,'ibm8','Amore Pacific POS','Track2','18:10','19:40',100,'Amore Pacific POS Test',NULL,NULL,NULL,NULL,NULL,'Y','2017-02-20 21:00:48');
+INSERT INTO `class` (`idx`,`class_id`,`title`,`booth`,`start`,`end`,`capacity`,`detail`,`atta1`,`atta2`,`atta3`,`atta4`,`atta5`,`use_yn`,`date`) VALUES (9,'ibm9','Lotte Watson','Track3','13:40','15:10',40,'Lotte Watson Test',NULL,NULL,NULL,NULL,NULL,'Y','2017-02-20 21:01:27');
+INSERT INTO `class` (`idx`,`class_id`,`title`,`booth`,`start`,`end`,`capacity`,`detail`,`atta1`,`atta2`,`atta3`,`atta4`,`atta5`,`use_yn`,`date`) VALUES (10,'ibm10','Lotte Mart','Track3','15:10','16:40',40,'Lotte Mart Test',NULL,NULL,NULL,NULL,NULL,'Y','2017-02-20 21:01:51');
+INSERT INTO `class` (`idx`,`class_id`,`title`,`booth`,`start`,`end`,`capacity`,`detail`,`atta1`,`atta2`,`atta3`,`atta4`,`atta5`,`use_yn`,`date`) VALUES (11,'ibm11','S4 HANA Tech','Track3','16:40','18:10',40,'S4 HANA Tech Test',NULL,NULL,NULL,NULL,NULL,'Y','2017-02-20 21:02:19');
+INSERT INTO `class` (`idx`,`class_id`,`title`,`booth`,`start`,`end`,`capacity`,`detail`,`atta1`,`atta2`,`atta3`,`atta4`,`atta5`,`use_yn`,`date`) VALUES (12,'ibm12','SAP Optimization','Track3','18:10','19:40',40,'SAP Optimization Test',NULL,NULL,NULL,NULL,NULL,'Y','2017-02-20 21:02:52');
+INSERT INTO `class` (`idx`,`class_id`,`title`,`booth`,`start`,`end`,`capacity`,`detail`,`atta1`,`atta2`,`atta3`,`atta4`,`atta5`,`use_yn`,`date`) VALUES (13,'ibm13','Block Chain','Track4','13:40','15:10',40,'Block Chain Test',NULL,NULL,NULL,NULL,NULL,'Y','2017-02-20 21:03:20');
+INSERT INTO `class` (`idx`,`class_id`,`title`,`booth`,`start`,`end`,`capacity`,`detail`,`atta1`,`atta2`,`atta3`,`atta4`,`atta5`,`use_yn`,`date`) VALUES (14,'ibm14','Pratical Cloud','Track4','15:10','16:40',40,'Practical Cloud Test',NULL,NULL,NULL,NULL,NULL,'Y','2017-02-20 21:03:51');
+INSERT INTO `class` (`idx`,`class_id`,`title`,`booth`,`start`,`end`,`capacity`,`detail`,`atta1`,`atta2`,`atta3`,`atta4`,`atta5`,`use_yn`,`date`) VALUES (15,'ibm15','Cognitive Solution','Track4','16:40','18:10',40,'Cognitive Solution Test',NULL,NULL,NULL,NULL,NULL,'Y','2017-02-20 21:04:21');
+INSERT INTO `class` (`idx`,`class_id`,`title`,`booth`,`start`,`end`,`capacity`,`detail`,`atta1`,`atta2`,`atta3`,`atta4`,`atta5`,`use_yn`,`date`) VALUES (16,'ibm16','Watson IOT','Track4','18:10','19:40',40,'Watson IOT Test',NULL,NULL,NULL,NULL,NULL,'Y','2017-02-20 21:04:47');
