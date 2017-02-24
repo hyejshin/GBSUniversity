@@ -5,4 +5,6 @@ import java.util.Map;
 
 public interface TestMapper {
 	public List<Map<String, Object>> getObjectById(String userId);
+	
+	public void updateFlag();
 }

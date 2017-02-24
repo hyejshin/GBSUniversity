@@ -10,51 +10,74 @@
 <title>Insert title here</title>
 </head>
 <script>
-	function select_onchange(obj)
-	{
-	
-		$.ajax({
-			type : 'post',
-			url : '/fetchClasses',
-			data : { id : obj.value }, 
-			success : function(result) {
-				$("#tbList").empty();
-				//alert(result.length);
-				 for(var i=0;i<result.length;i++) {
-					$("#tbList").append("<tr><td><a href='detail.do?idx="+result[i].idx+"'>"+result[i].idx+"</a></td>"+
-					"<td>"+result[i].id+"</td>"+"<td>"+result[i].pw+"</td>"+
-					"<td>"+result[i].name+"</td>"+"<td>"+result[i].email+
-					"</td>"+"<td>"+result[i].tel+"</td>"+"<td>"+result[i].address+"</td></tr>");
-				} 
-				
-			}
-				
-		});
+
+	 window.onload = function() {
+	 setInterval(function() {
+		 var server_time = srvTime();
+			var compare_time = new Date(server_time);
+			
+		    var hours = compare_time.getHours();
+		    var minutes = compare_time.getMinutes();
+		    
+		    if( parseInt(hours) < 10 ) {
+		    	hours = 0 + "" + hours;
+		    }
+		    if( parseInt(minutes) < 10 ) {
+		    	minutes = 0 + "" + minutes;
+		    }
+			var total = hours + ":" + minutes;
+			
+			
+	    	if( total == $('#hidden').val() ) {
+	    		document.getElementById("txt2").disabled = false;
+	    		$.ajax({
+	    			type : 'post',
+	    			url : '/test/updateFlag',
+	    			data : {  }, 
+	    			success : function(result) {	    				
+	    				
+	    			}
+	    		});  
+	    		
+	    	} else {
+	    		document.getElementById("txt2").disabled = true;
+	    	}
+	},3000);
+} 
+
+var xmlHttp;
+
+function srvTime(){
+
+	if (window.XMLHttpRequest) { 
+		xmlHttp = new XMLHttpRequest(); // IE 7.0 이상, 크롬, 파이어폭스 등
+		xmlHttp.open('HEAD',window.location.href.toString(),false);
+		xmlHttp.setRequestHeader("Content-Type", "text/html");
+		xmlHttp.send('');
+		return xmlHttp.getResponseHeader("Date");
+
+	}	else if (window.ActiveXObject) {
+		xmlHttp = new ActiveXObject('Msxml2.XMLHTTP');
+		xmlHttp.open('HEAD',window.location.href.toString(),false);
+		xmlHttp.setRequestHeader("Content-Type", "text/html");
+		xmlHttp.send('');
+		return xmlHttp.getResponseHeader("Date");
 	}
+}
+
+function click1() {
+	
+	document.getElementById("txt2").disabled = false;
+}
+
 </script>
 <body>
 <table id="tbList" border="1">
-	<select id="selectbox" name="selectbox" onChange=select_onchange(this);>
-		<option value="">선택</option>
-		<option value="google">google</option>
-		<option value="naver">naver</option>
-		<option value="daum">daum</option>
-		<option value="nate">nate</option>
-	</select>
-	
 	<tr>
-		<td>IDX</td>
-		<td>ID</td>
-		<td>PW</td>
-		<td>name</td>
-		<td>email</td>
-		<td>tel</td>
-		<td>address</td>
+		<input type="hidden" id="hidden" value="01:51"> 
+		<td><input type="text" id="txt2" disabled></td>
+		<td><input type="button" id="btn1" value="active" onclick="click1();" /></td>
 	</tr>
-		
 </table>
-	
-
-
 </body>
 </html>

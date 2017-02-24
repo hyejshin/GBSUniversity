@@ -7,4 +7,10 @@
         FROM member
         WHERE id=#{id}
     </select>
+    
+    <select id="updateFlag">
+        UPDATE test	   
+        SET flag = 'Y'
+        
+    </select>
 </mapper>

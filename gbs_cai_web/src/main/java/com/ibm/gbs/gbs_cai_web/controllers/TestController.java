@@ -38,4 +38,18 @@ public class TestController {
 		System.out.println(list.size());
 		return list;
     }
+	
+	/** 
+     * 추가목적 : 서버시간과 강의시간이 맞을 경우 출석 Flag를 'N' -> 'Y'로 Update한다.
+     *  기타      : 실제 프로젝트에서 쓰이기전 테스트 메서드입니다. 프로젝트에 영향을 주지 않습니다.
+     * 추가이력 : 2017/02/25 정연우
+     * 
+     */
+	
+	@RequestMapping(value ={"/test/updateFlag"}, method = RequestMethod.POST)
+    public void updateFlag() {
+		//System.out.println("111111111111");
+		testService.updateFlag();
+        
+    }
 }

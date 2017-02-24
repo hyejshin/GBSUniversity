@@ -21,4 +21,10 @@ public class TestServiceImpl implements TestService {
        // return userMapper.getUserById("test");
        // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    
+    @Override
+    public void updateFlag() {
+    	System.out.println("gogogogogogogogo");
+    	testMapper.updateFlag();
+    };
 }
