@@ -164,7 +164,7 @@
 		<form name="BoardWriteForm" method="post" id="BoardWriteForm">
 
 		<table class="table" summary="테이블 구성" >
-		<caption>게시판 글쓰기</caption>	
+		<caption> 질문 등록하기 </caption>	
     		<tr>
 				<td>작성자</td>
 				<td><input type=text name=name size=30></td>
