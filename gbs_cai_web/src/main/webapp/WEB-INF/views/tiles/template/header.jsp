@@ -7,6 +7,9 @@
 --%>
 <!-- HEADER -->
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%
+	HttpSession session1 = request.getSession();
+%>
 <div class="header" id="home">
     <div class="container">	
         <div class="logo">
@@ -18,7 +21,7 @@
 
                 <ul>
                     <li ><a href="/webapp/WEB-INF/views/index.jsp" class="scroll">Home</a></li>
-                    <li><a href="/webapp/WEB-INF/views/history.jsp" >My Lecture</a></li>
+                   <li><a href="/class/viewMyLec?user_id=<%=session1.getAttribute("user_id")%>" >My Lecture</a></li>
                     <li><a href="#">My Q&A</a></li>
                 </ul>
                 <!--script-->

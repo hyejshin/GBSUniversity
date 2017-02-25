@@ -10,4 +10,12 @@ public interface ClassService {
 	public List<Map<String, Object>> getClassesByCondition(HashMap<String,Object> map) throws Exception;
 	
 	public List<Map<String, Object>> getDetailByCondition(int idx) throws Exception;
+	
+	public List<Map<String, Object>> getMyLec(String user_id) throws Exception; 
+	
+	public List<Map<String, Object>> getThisLec(String class_id) throws Exception; 
+	
+	public void updateFlag(HashMap<String,Object> map) throws Exception;
+	
+	public int checkCode(HashMap<String,Object> map) throws Exception;
 }

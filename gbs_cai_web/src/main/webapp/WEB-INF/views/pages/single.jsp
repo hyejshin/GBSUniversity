@@ -1,38 +1,76 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <title>	CAI university</title>
-<link href="/webapp/resources/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="/webapp/resources/js/jquery.min.js"></script>
-<link href="/webapp/resources/css/style.css" rel="stylesheet" type="text/css" media="all" />	
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<script type="application/x-javascript">
-	 
-		addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); 
-			function hideURLbar(){ window.scrollTo(0,1); } 
-	
-</script>
-<!--fonts-->
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700' rel='stylesheet' type='text/css'>
-<!--//fonts-->
-<script type="text/javascript" src="/webapp/resources/js/move-top.js"></script>
-<script type="text/javascript" src="/webapp/resources/js/easing.js"></script>
-				<script type="text/javascript">
-					jQuery(document).ready(function($) {
-						$(".scroll").click(function(event){		
-							event.preventDefault();
-							$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-						});
-					});
-					</script>
+<tiles:importAttribute name="innerLayout" />
+<c:forEach var="innerLayout" items="${innerLayout}">
+    <link type="text/css" rel="stylesheet" href="<c:url value="${innerLayout}"/>" />
+</c:forEach>
 </head>
+<script>
+window.onload = function() {
+	 setInterval(function() {
+		 var server_time = srvTime();
+			var compare_time = new Date(server_time);
+			
+		    var hours = compare_time.getHours();
+		    var minutes = compare_time.getMinutes();
+		    
+		    if( parseInt(hours) < 10 ) {
+		    	hours = 0 + "" + hours;
+		    }
+		    if( parseInt(minutes) < 10 ) {
+		    	minutes = 0 + "" + minutes;
+		    }
+			var total = hours + ":" + minutes;
+			
+			/* 서버시간 = 종료 10분전, text창 활성화 */
+	    	if( total == $('#start').val() ) {
+	    		document.getElementById("txt2").disabled = false;
+	    		    		
+	    	} 
+	    	/* 서버시간 = 종료 시간, text창 비활성화 */
+	    	else if( total == $('#end').val()) {
+	    		document.getElementById("txt2").disabled = true;
+	    	}
+	},3000);
+} 
+
+var xmlHttp;
+
+function srvTime(){
+
+	if (window.XMLHttpRequest) { 
+		xmlHttp = new XMLHttpRequest(); // IE 7.0 이상, 크롬, 파이어폭스 등
+		xmlHttp.open('HEAD',window.location.href.toString(),false);
+		xmlHttp.setRequestHeader("Content-Type", "text/html");
+		xmlHttp.send('');
+		return xmlHttp.getResponseHeader("Date");
+
+	}	else if (window.ActiveXObject) {
+		xmlHttp = new ActiveXObject('Msxml2.XMLHTTP');
+		xmlHttp.open('HEAD',window.location.href.toString(),false);
+		xmlHttp.setRequestHeader("Content-Type", "text/html");
+		xmlHttp.send('');
+		return xmlHttp.getResponseHeader("Date");
+	}
+}
+function click1() {
+	alert("active start");
+	$.ajax({
+		type : 'post',
+		url : '/class/checkCode',
+		data : { code : $('#txt2').val(), class_id : $('#class_id').val(), user_id : $('#user_id').val() }, 
+		success : function(result) {	    				
+			alert(result[0].msg);
+		}
+	});  
+}
+</script>
 <body>
-<%@include file="/WEB-INF/views/header.jsp"%>
 				<div class="container">
 		              <div class="single-page-artical">
 								<div class="artical-content">
@@ -42,30 +80,49 @@
 							href="index.jsp" style="text-decoration: none;">강좌목록</a></span></li>
 					<li><span class="filter" data-filter=""><a
 							href="history.jsp" style="text-decoration: none;">수강내역 </a></span></li>
+							
+							<td><input type="button" id="btn1" value="active" onclick="click1();" /></td>
+							<td><input type="text" id="txt2" disabled></td>
 
 					</ul>
 					<div class="clearfix"> </div>
-								
-									<h3>Lorem Ipsum title </h3>
+					
+					<c:forEach var="list" items="${list}">
+									<%HttpSession session1 = request.getSession();%>
+	
+									<input type="hidden" id="user_id" value=<%= session1.getAttribute("user_id") %> />
+									<input type="hidden" id="start" value=${list.start} />
+									<input type="hidden" id="class_id" value=${list.class_id} />
+									
+									<h3>${list.title}<h4><span style="float:right;">Booth Name: ${list.booth}</span></h4>
+									<h4><span style="float:right; margin-right:10px;">Lecture Time: ${list.start} - ${list.end}</span></h4></h3>
+									<br><br>
 									<ul id="filters" style="float:right;">
 						
 						<li class="active" ><span class="filter" data-filter=""><a href ="single.jsp" style="text-decoration:none;">Info</a></span></li>
 						<li style="list-style: none;"><span class="filter" data-filter="card"><a href="qna.jsp" style="text-decoration:none;">Q & A</a></span></li>
 
 					</ul>
-									<img class="img-responsive" src="/webapp/resources/images/sin.jpg" title="banner1">
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+									<br><br><br>
+									<img class="img-responsive" src="/images/sin.jpg" title="banner1">
+									<p>${list.detail}</p>
 								    </div>
 								    <div class="artical-links">
 		  						 	<ul>
-		  						 		<li><small> </small><span>June 14, 2013</span></li>
+		  						 		<!-- <li><small> </small><span>June 14, 2013</span></li>
+		  						 		<li><a href="#"><small class="admin"> </small><span>Admin</span></a></li>
+		  						 		<li><a href="#"><small class="no"> </small><span>No comments</span></a></li>
+		  						 		<li><a href="#"><small class="posts"> </small><span>View Posts</span></a></li>
+		  						 		<li><a href="#"><small class="link"> </small><span>Permalink</span></a></li>-->
+		  						 		<li><small> </small><span>${list.date}</span></li>
+		  						 		<!-- list 테이블 atta 등  강의 내용 추가적으로 넣으면 바꿔야할 부분 -->
 		  						 		<li><a href="#"><small class="admin"> </small><span>Admin</span></a></li>
 		  						 		<li><a href="#"><small class="no"> </small><span>No comments</span></a></li>
 		  						 		<li><a href="#"><small class="posts"> </small><span>View Posts</span></a></li>
 		  						 		<li><a href="#"><small class="link"> </small><span>Permalink</span></a></li>
 		  						 	</ul>
 		  						 </div>
-		<%@include file="/WEB-INF/views/footer.jsp"%>
+		  						 </c:forEach>
+		  						 
 </body>
 </html>

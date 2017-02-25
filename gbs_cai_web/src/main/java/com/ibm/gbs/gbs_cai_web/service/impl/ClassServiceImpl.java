@@ -25,4 +25,20 @@ public class ClassServiceImpl implements ClassService {
 	public List<Map<String, Object>> getDetailByCondition(int idx) throws Exception {
 		return classMapper.getDetailByCondition(idx);
 	}
+	
+	public List<Map<String, Object>> getMyLec(String user_id) throws Exception {
+		return classMapper.getMyLec(user_id);
+	}
+	
+	public List<Map<String, Object>> getThisLec(String class_id) throws Exception {
+		return classMapper.getThisLec(class_id);
+	}
+	
+	public void updateFlag(HashMap<String,Object> map) throws Exception {
+		classMapper.updateFlag(map);
+	}
+	
+	public int checkCode(HashMap<String,Object> map) throws Exception {
+		return classMapper.checkCode(map);
+	}
 }
