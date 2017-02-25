@@ -1,13 +1,18 @@
 package com.ibm.gbs.gbs_cai_web.vo;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class ClassVO {
+public class ClassVO implements Serializable{
+
+	private static final long serialVersionUID = 1L;
+	
 	private int idx;
 	private int capacity;
 	
 	private String class_id;
 	private String title;
+	private String teacher;
 	private String booth;
 	private String start;
 	private String end;
@@ -20,7 +25,7 @@ public class ClassVO {
 	private String atta5;
 	private String use_yn;
 	
-	private Date date;
+	private String date;
 	
 	public int getIdx() {
 		return idx;
@@ -41,6 +46,13 @@ public class ClassVO {
 	public void setTitle(String title) {
 		this.title = title;
 	}
+	public String getTeacher() {
+		return teacher;
+	}
+	public void setTeacher(String teacher) {
+		this.teacher = teacher;
+	}
+
 	public String getBooth() {
 		return booth;
 	}
@@ -107,10 +119,10 @@ public class ClassVO {
 	public void setUse_yn(String use_yn) {
 		this.use_yn = use_yn;
 	}
-	public Date getDate() {
+	public String getDate() {
 		return date;
 	}
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 	

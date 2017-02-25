@@ -13,4 +13,25 @@
         FROM class
         WHERE idx=#{idx} 
     </select>
+    
+    
+    <!--  Admin Page 관련 -->
+    
+    <select id="getClassList" resultType="com.ibm.gbs.gbs_cai_web.vo.ClassVO">
+        SELECT *	   
+        FROM class
+    </select>
+    
+    <select id="getClassDetail" resultType="com.ibm.gbs.gbs_cai_web.vo.ClassVO">
+        SELECT *	   
+        FROM class
+        WHERE idx=#{idx}
+    </select>
+    
+    <delete id="deleteClass" parameterType="int">
+        DELETE    
+        FROM class
+        WHERE idx=#{idx}
+    </delete>
+    
 </mapper>
