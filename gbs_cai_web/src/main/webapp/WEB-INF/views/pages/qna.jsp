@@ -18,7 +18,7 @@
 		<h3>Shell Programming</h3>
 		<br>
 		<h6>
-			<span style="float: right;">Booth Name: track 1</span>
+			<span style="float: right;">Booth Name: Track 1</span>
 		</h6>
 		<h6>
 			<span style="float: right; margin-right: 10px;">Lecture Time:
