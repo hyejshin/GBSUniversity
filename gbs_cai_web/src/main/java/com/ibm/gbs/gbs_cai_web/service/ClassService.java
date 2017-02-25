@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.ui.Model;
+
 import com.ibm.gbs.gbs_cai_web.vo.ClassVO;
 
 
@@ -18,6 +20,10 @@ public interface ClassService {
 	public List<ClassVO> getClassList() throws Exception;
 	
 	public ClassVO getClassDetail(int idx) throws Exception;
+	
+	public void addClass(Model model) throws Exception;
+	
+	public void modifyClass(Model model) throws Exception;
 	
 	public void deleteClass(int idx) throws Exception;
 	

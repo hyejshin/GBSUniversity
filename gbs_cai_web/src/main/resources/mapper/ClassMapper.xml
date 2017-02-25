@@ -28,6 +28,53 @@
         WHERE idx=#{idx}
     </select>
     
+    <insert id="addClass" parameterType="com.ibm.gbs.gbs_cai_web.vo.ClassVO">
+        INSERT INTO class (
+        	class_id
+			,title
+			,teacher
+			,booth
+			,start
+			,end
+			,date
+			,capacity
+			,detail
+			,image
+			,atta1
+			,use_yn)
+        VALUES (
+        	 #{class_id}
+        	,#{title}
+        	,#{teacher}
+        	,#{booth}
+        	,#{start}
+        	,#{end}
+        	,#{date}
+        	,#{capacity}
+        	,#{detail}
+        	,#{image}
+        	,#{atta1}
+        	,'Y'        	
+        )	
+    </insert>
+    
+    <update id="modifyClass" parameterType="com.ibm.gbs.gbs_cai_web.vo.ClassVO">
+        UPDATE class SET
+        	class_id = #{class_id}
+			,title = #{title}
+			,teacher = #{teacher}
+			,booth = #{booth}
+			,start = #{start}
+			,end = #{end}
+			,date = #{date}
+			,capacity = #{capacity}
+			,detail = #{detail}
+			,image = #{image}
+			,atta1 = #{atta1}
+		WHERE
+			idx = #{idx}
+    </update>
+    
     <delete id="deleteClass" parameterType="int">
         DELETE    
         FROM class

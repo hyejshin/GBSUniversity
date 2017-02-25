@@ -15,5 +15,9 @@ public interface ClassMapper {
 	
 	public ClassVO getClassDetail(int idx);
 	
+	public void addClass(ClassVO vo);
+	
+	public void modifyClass(ClassVO vo);
+	
 	public void deleteClass(int idx);
 }

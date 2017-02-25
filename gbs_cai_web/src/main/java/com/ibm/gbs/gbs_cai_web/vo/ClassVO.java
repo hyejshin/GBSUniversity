@@ -8,16 +8,19 @@ public class ClassVO implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	private int idx;
-	private int capacity;
 	
 	private String class_id;
 	private String title;
 	private String teacher;
 	private String booth;
+	
 	private String start;
 	private String end;
+	private String date;
+	private int capacity;
 	private String detail;
 	
+	private String image;
 	private String atta1;
 	private String atta2;
 	private String atta3;
@@ -25,12 +28,43 @@ public class ClassVO implements Serializable{
 	private String atta5;
 	private String use_yn;
 	
-	private String date;
+	public ClassVO() {
+		
+	}
+	
+	public ClassVO(String class_id, String title, String teacher, String booth,
+			String start, String end, String date, int capacity, String detail, String image, String atta1){
+		this.class_id = class_id;
+		this.title = title;
+		this.teacher = teacher;
+		this.booth = booth;
+		this.start = start;
+		this.end = end;
+		this.date = date;
+		this.capacity = capacity;
+		this.detail = detail;
+		this.atta1 = atta1;
+	}
+	
+	public ClassVO(int idx, String class_id, String title, String teacher, String booth,
+			String start, String end, String date, int capacity, String detail, String image, String atta1){
+		this.idx = idx;
+		this.class_id = class_id;
+		this.title = title;
+		this.teacher = teacher;
+		this.booth = booth;
+		this.start = start;
+		this.end = end;
+		this.date = date;
+		this.capacity = capacity;
+		this.detail = detail;
+		this.atta1 = atta1;
+	}
+	
 	
 	public int getIdx() {
 		return idx;
 	}
-	
 	public void setIdx(int idx) {
 		this.idx = idx;
 	}
@@ -52,7 +86,6 @@ public class ClassVO implements Serializable{
 	public void setTeacher(String teacher) {
 		this.teacher = teacher;
 	}
-
 	public String getBooth() {
 		return booth;
 	}
@@ -71,6 +104,12 @@ public class ClassVO implements Serializable{
 	public void setEnd(String end) {
 		this.end = end;
 	}
+	public String getDate() {
+		return date;
+	}
+	public void setDate(String date) {
+		this.date = date;
+	}
 	public int getCapacity() {
 		return capacity;
 	}
@@ -85,6 +124,12 @@ public class ClassVO implements Serializable{
 	}
 	public String getAtta1() {
 		return atta1;
+	}
+	public String getImage() {
+		return image;
+	}
+	public void setImage(String image) {
+		this.image = image;
 	}
 	public void setAtta1(String atta1) {
 		this.atta1 = atta1;
@@ -118,12 +163,6 @@ public class ClassVO implements Serializable{
 	}
 	public void setUse_yn(String use_yn) {
 		this.use_yn = use_yn;
-	}
-	public String getDate() {
-		return date;
-	}
-	public void setDate(String date) {
-		this.date = date;
 	}
 	
 	@Override

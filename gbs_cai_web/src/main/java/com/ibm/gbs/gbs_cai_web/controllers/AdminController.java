@@ -29,8 +29,14 @@ public class AdminController {
 		return "admin/adminClass";
 	}
 	
+	@RequestMapping("/addClassView")
+	public String addClassView (Model model) throws Exception {
+		
+		return "admin/adminAddClass";
+	}
+	
 	@RequestMapping("/addClass")
-	public String addClass (HttpServletRequest request, Model model) {
+	public String addClass (HttpServletRequest request, Model model) throws Exception {
 		
 		model.addAttribute("request", request);
 		classService.addClass(model);
@@ -38,13 +44,23 @@ public class AdminController {
 		return "redirect:adminClass";
 	}
 	
+	@RequestMapping(value={"/modifyClassView"}, method=RequestMethod.GET)
+	public String modifyClasView(@RequestParam("idx")int idx, Model model) throws Exception {
+		
+		model.addAttribute("vo", classService.getClassDetail(idx));
+
+		return "admin/adminModifyClass";
+	}
+	
 	@RequestMapping("/modifyClass")
-	public String modifyClass(HttpServletRequest request, Model model) {
+	public String modifyClass(HttpServletRequest request, Model model) throws Exception {
 		
-		//model.addAttribute("request", request);
-		//classService.modifyClass(model);
+		int idx = Integer.parseInt(request.getParameter("idx"));
 		
-		return "redirect:detailClass";
+		model.addAttribute("request", request);
+		classService.modifyClass(model);
+		
+		return "redirect:detailClass?idx="+idx;
 	}
 	
 	@RequestMapping(value={"/detailClass"}, method=RequestMethod.GET)

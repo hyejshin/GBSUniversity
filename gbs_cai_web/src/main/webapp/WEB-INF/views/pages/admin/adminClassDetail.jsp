@@ -4,23 +4,21 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>admin Class Detail</title>
 </head>
 <body>
 
-idx: ${vo.idx} <br>
-title: ${vo.title} <br>
-class_id: ${vo.class_id} <br>
-teacher: ${vo.teacher} <br>
-booth: ${vo.booth} <br>
-start: ${vo.start} <br>
-end: ${vo.end} <br>
-date: ${vo.date} <br>
-capacity: ${vo.capacity} <br>
-detail: ${vo.detail} <br>
+<table>
+<tr><td>클래스ID: ${vo.class_id}</td><td colspan="2">수업제목: ${vo.title}</td></tr>
+<tr><td>강사: ${vo.teacher}</td><td>부스: ${vo.booth}</td><td>수용인원 ${vo.capacity}</td></tr>
+<tr><td>날짜 . .: ${vo.date}</td><td colspan="2">시간: ${vo.start}-${vo.end}</td></tr>
+<tr><td colspan="3">${vo.detail}</td></tr>
+</table>
+<br>
+image: ${vo.image} <br>
 atta1: ${vo.atta1} <br>
 
-
+<a href="/gbs_cai_web/modifyClassView?idx=${vo.idx}">수정</a> | <a href="/gbs_cai_web/adminClass">목록보기</a>
 
 
 </body>
