@@ -23,26 +23,36 @@
 
 					</ul>
 					<div class="clearfix"> </div>
-								
-									<h3>Lorem Ipsum title </h3>
+					<c:forEach var="list" items="${list}">
+					
+									<h3>${list.title}<h4><span style="float:right;">Booth Name: ${list.booth}</span></h4>
+									<h4><span style="float:right; margin-right:10px;">Lecture Time: ${list.start} - ${list.end}</span></h4></h3>
+									<br><br>
 									<ul id="filters" style="float:right;">
 						
 						<li class="active" ><span class="filter" data-filter=""><a href ="single.jsp" style="text-decoration:none;">Info</a></span></li>
 						<li style="list-style: none;"><span class="filter" data-filter="card"><a href="qna.jsp" style="text-decoration:none;">Q & A</a></span></li>
 
 					</ul>
+									<br><br><br>
 									<img class="img-responsive" src="/images/sin.jpg" title="banner1">
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+									<p>${list.detail}</p>
 								    </div>
 								    <div class="artical-links">
 		  						 	<ul>
-		  						 		<li><small> </small><span>June 14, 2013</span></li>
+		  						 		<!-- <li><small> </small><span>June 14, 2013</span></li>
+		  						 		<li><a href="#"><small class="admin"> </small><span>Admin</span></a></li>
+		  						 		<li><a href="#"><small class="no"> </small><span>No comments</span></a></li>
+		  						 		<li><a href="#"><small class="posts"> </small><span>View Posts</span></a></li>
+		  						 		<li><a href="#"><small class="link"> </small><span>Permalink</span></a></li>-->
+		  						 		<li><small> </small><span>${list.date}</span></li>
+		  						 		<!-- list 테이블 atta 등  강의 내용 추가적으로 넣으면 바꿔야할 부분 -->
 		  						 		<li><a href="#"><small class="admin"> </small><span>Admin</span></a></li>
 		  						 		<li><a href="#"><small class="no"> </small><span>No comments</span></a></li>
 		  						 		<li><a href="#"><small class="posts"> </small><span>View Posts</span></a></li>
 		  						 		<li><a href="#"><small class="link"> </small><span>Permalink</span></a></li>
 		  						 	</ul>
 		  						 </div>
+		  						 </c:forEach>
 </body>
 </html>
