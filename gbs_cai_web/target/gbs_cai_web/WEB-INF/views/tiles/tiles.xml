@@ -90,17 +90,17 @@
     </definition> 
     
     <definition name="404Error" extends="base-definition">  
-        <put-attribute name="title" value="404Error" />  
+        <put-attribute name="title" value="Not Found" />  
         <put-attribute name="body" value="/WEB-INF/views/pages/error/404error.jsp" /> 
-        <put-list-attribute name="404css" cascade="true">
+        <put-list-attribute name="notFoundPageAttributes" cascade="true">
             <add-attribute value="/css/404page.css"/>
        </put-list-attribute> 
     </definition> 
     
     <definition name="505Error" extends="base-definition">  
-        <put-attribute name="title" value="505Error" />  
+        <put-attribute name="title" value="Server Error" />  
         <put-attribute name="body" value="/WEB-INF/views/pages/error/505error.jsp" />  
-    	<put-list-attribute name="505css" cascade="true">
+    	<put-list-attribute name="serverErrorAttributes" cascade="true">
             <add-attribute value="/css/505page.css"/>
        </put-list-attribute> 
     
