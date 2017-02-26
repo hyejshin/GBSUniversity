@@ -75,4 +75,24 @@ public class ClassController {
         return mv;
     }
     
+    /*
+	 *  추가목적 : 로그인 성공 후 사용자가 접할 화면으로, 처음 선택된 시간/부스의 클래스를 보여준다  
+	 *  추가이력 : 2017/02/23 정연우
+	 * 
+	 * 	 * */
+    
+    @RequestMapping(value={"/class/findFirstView"}, method=RequestMethod.POST)
+    public @ResponseBody List<Map<String, Object>> fetchFirstView(@RequestParam("booth") String booth,@RequestParam("time") String start) throws Exception {
+    	String _booth = util.isStringNull(booth);
+		String _start = util.isStringNull(start);
+		
+		HashMap<String,Object> map = new HashMap<String,Object>();
+		map.put("booth", _booth);
+		map.put("time", _start);
+		List<Map<String, Object>> list = classService.getClassesByCondition(map);
+		return list;
+    }
+    
+    
+    
 }
