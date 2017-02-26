@@ -10,4 +10,14 @@ public interface ClassMapper {
 	public List<Map<String, Object>> getClassesByCondition(HashMap<String,Object> map);
 	
 	public List<Map<String, Object>> getDetailByCondition(int idx);
+	
+	public List<ClassVO> getClassList();
+	
+	public ClassVO getClassDetail(int idx);
+	
+	public void addClass(ClassVO vo);
+	
+	public void modifyClass(ClassVO vo);
+	
+	public void deleteClass(int idx);
 }
