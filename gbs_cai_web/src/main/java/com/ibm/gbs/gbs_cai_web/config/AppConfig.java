@@ -106,12 +106,9 @@ public class AppConfig extends WebMvcConfigurerAdapter {
      * - 추가목적 : request 시 로그인 session 및 user 확인
      * - 추가이력 : 김주상(20170219)
      */
-    
-    
     @Override
     public void addInterceptors(InterceptorRegistry registry){
         registry.addInterceptor( new AuthInterceptor()).addPathPatterns("/**").excludePathPatterns("/login")  ;
 
     }
- 
 }
