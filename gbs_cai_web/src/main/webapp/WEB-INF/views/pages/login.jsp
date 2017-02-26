@@ -2,15 +2,12 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-	<title>login</title>
+
 	<tiles:importAttribute name="loginLayout" />
 	<c:forEach var="logincssValue" items="${loginLayout}">
     	<link type="text/css" rel="stylesheet" href="<c:url value="${logincssValue}"/>" />
    </c:forEach>
-</head>
-<body>
+   
 	<section id="logo" class="logo">
 		<a href="#"><img src="/assets/images/Picture1.png" alt=""/></a>
 	</section>
@@ -37,6 +34,4 @@
 
 	</section>
 	
-
-</body>
 </html>

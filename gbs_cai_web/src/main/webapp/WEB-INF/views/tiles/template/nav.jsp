@@ -15,9 +15,9 @@
             <div class="top-nav">
                 <span class="menu"><img src="/webapp/resources/images/menu.png" alt=""> </span>
                 <ul>
-                    <li ><a href="/webapp/WEB-INF/views/index.jsp" class="scroll">Home</a></li>
-                    <li><a href="/webapp/WEB-INF/views/history.jsp" >My Lecture</a></li>
-                    <li><a href="#">My Q&A</a></li>
+                    <li ><a href="/index" class="scroll">Home</a></li>
+                    <li><a href="/history" >My Lecture</a></li>
+                    <li><a href="/board">My Q&A</a></li>
                 </ul>
                 <!--script-->
                 <script>

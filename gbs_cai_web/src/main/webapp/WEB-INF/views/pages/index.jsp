@@ -3,7 +3,6 @@
 <%@ page session="false" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <script type="text/javascript">
-
 /* 
 	추가목적 : 부스 선택시 (시간/부스)값을 가져와서 현재 페이지에 Reload없이 출력
 	추가이력 : 2017/02/20 정연우
