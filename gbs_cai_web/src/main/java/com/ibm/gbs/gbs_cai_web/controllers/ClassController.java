@@ -8,6 +8,8 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ExtendedModelMap;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -91,6 +93,74 @@ public class ClassController {
 		map.put("time", _start);
 		List<Map<String, Object>> list = classService.getClassesByCondition(map);
 		return list;
+    }
+    
+    /* 	
+   	 *  추가목적 : 현재 사용자가 신청한 클래스 목록을 가져온다. 
+   	 *  추가이력 : 2017/02/25 정연우
+   	 * 
+   	 * 	 * */
+    @RequestMapping(value={"/class/viewMyLec"}, method=RequestMethod.GET)
+    public ModelAndView viewMyLec(@RequestParam("user_id") String user_id) throws Exception{
+        String _user_id = util.isStringNull(user_id);
+        List<Map<String, Object>> myInfo = classService.getMyLec(_user_id);
+                
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("history");
+        mv.addObject("list", myInfo);
+        return mv;
+    }
+    
+    // /class/viewThisLec
+    
+    /* 	
+   	 *  추가목적 : 내 수강목록에서 선택한 강의 수강
+   	 *  추가이력 : 2017/02/25 정연우
+   	 * 
+   	 * 	 * */
+    @RequestMapping(value={"/class/viewThisLec"}, method=RequestMethod.GET)
+    public ModelAndView viewThisLec(@RequestParam("class_id") String class_id) throws Exception{
+        String _class_id = util.isStringNull(class_id);
+        List<Map<String, Object>> LecInfo = classService.getThisLec(_class_id);
+                
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("single");
+        mv.addObject("list", LecInfo);
+        return mv;
+    }
+    
+    /* 	
+   	 *  추가목적 : 사용자가 입력한 코드와 동일하면 enrollment 테이블의 attend_yn을 'N' -> 'Y'로 Update
+   	 *  추가이력 : 2017/02/26 정연우
+   	 * 
+   	 * 	 * */
+    @RequestMapping(value={"/class/checkCode"}, method=RequestMethod.POST)
+    public  HashMap<String,Object> updateFlag(@RequestParam("class_id") String class_id,@RequestParam("user_id") String user_id,
+    		@RequestParam("code") String code) throws Exception{
+    	Model model = new ExtendedModelMap();
+        String _class_id = util.isStringNull(class_id);
+        String _user_id = util.isStringNull(user_id);
+        String _code = util.isStringNull(code);
+        System.out.println("class_id : "+_class_id+" user_id : "+_user_id+" code : "+_code);
+        
+        HashMap<String,Object> map1 = new HashMap<String,Object>(); // Flag Update하기 위해 service에 넘기는 map
+        HashMap<String,Object> map2 = new HashMap<String,Object>(); // Code Check하기 위해 service에 넘기는 map
+		HashMap<String,Object> msg = new HashMap<String,Object>(); // 코드입력 성공여부에 따라 msg 전달
+        
+        map1.put("class_id", _class_id);
+		map1.put("user_id", _user_id);
+		
+        map2.put("class_id",_class_id);
+        map2.put("code", _code);
+        
+		if( classService.checkCode(map2) == 1) {
+			classService.updateFlag(map1);
+			msg.put("msg", "Code Input Success!");
+		} else {
+			msg.put("msg", "Code Input Fail!");
+		}
+        return msg;
+       
     }
     
     

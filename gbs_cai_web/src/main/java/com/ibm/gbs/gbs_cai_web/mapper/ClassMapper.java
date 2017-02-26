@@ -20,4 +20,13 @@ public interface ClassMapper {
 	public void modifyClass(ClassVO vo);
 	
 	public void deleteClass(int idx);
+	
+	/* ClassController와 연동되는 Mapper - 정연우(0224)*/
+	public List<Map<String, Object>> getMyLec(String user_id);
+	
+	public List<Map<String, Object>> getThisLec(String class_id);
+	
+	public void updateFlag(HashMap<String,Object> map);
+	
+	public int checkCode(HashMap<String,Object> map);
 }
