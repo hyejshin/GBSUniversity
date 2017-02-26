@@ -60,6 +60,7 @@ public class LoginController {
         user = loginService.checkLoginValidation(user_id, password);
         HttpSession newSession = req.getSession();
         newSession.setAttribute("user", user);
+        newSession.setAttribute("user_id", user.getUser_id());
         
         try {
             if (user == null) {

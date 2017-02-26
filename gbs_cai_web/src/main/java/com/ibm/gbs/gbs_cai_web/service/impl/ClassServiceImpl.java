@@ -89,4 +89,21 @@ public class ClassServiceImpl implements ClassService {
 	public void deleteClass(int idx) throws Exception {
 		classMapper.deleteClass(idx);
 	}
+	
+	/* ClassController와 연동되는 ServiceImpl - 정연우(0224)*/
+	public List<Map<String, Object>> getMyLec(String user_id) throws Exception {
+		return classMapper.getMyLec(user_id);
+	}
+	
+	public List<Map<String, Object>> getThisLec(String class_id) throws Exception {
+		return classMapper.getThisLec(class_id);
+	}
+	
+	public void updateFlag(HashMap<String,Object> map) throws Exception {
+		classMapper.updateFlag(map);
+	}
+	
+	public int checkCode(HashMap<String,Object> map) throws Exception {
+		return classMapper.checkCode(map);
+	}
 }

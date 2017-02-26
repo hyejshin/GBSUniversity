@@ -27,4 +27,10 @@ public interface ClassService {
 	
 	public void deleteClass(int idx) throws Exception;
 	
+	/* ClassController와 연동되는 Service - 정연우(0224)*/
+	public List<Map<String, Object>> getMyLec(String user_id) throws Exception; 
+	public List<Map<String, Object>> getThisLec(String class_id) throws Exception; 
+	public void updateFlag(HashMap<String,Object> map) throws Exception;
+	public int checkCode(HashMap<String,Object> map) throws Exception;
+	
 }

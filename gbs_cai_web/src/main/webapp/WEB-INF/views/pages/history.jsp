@@ -3,11 +3,15 @@
 <%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
 <%@ page session="false" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>	CAI university</title>
 <tiles:importAttribute name="innerLayout" />
 <c:forEach var="innerLayout" items="${innerLayout}">
     <link type="text/css" rel="stylesheet" href="<c:url value="${innerLayout}"/>" />
 </c:forEach>
-
+</head>
+<body>
 	<div class="container">		
 		<div class="banner">
 			<div class="banner-matter">
@@ -25,8 +29,8 @@
 								<div class="artical-content">
 								<ul id="filters" style="float:left;">
 						
-						<li><span class="filter" data-filter=""><a href="/index" style="text-decoration:none;">강좌목록</a></span></li>
-						<li  class="active"><span class="filter" data-filter=""><a  href ="/history" style="text-decoration:none;"> 수강내역 </a></span></li>
+						<li><span class="filter" data-filter=""><a href="index.jsp" style="text-decoration:none;">강좌목록</a></span></li>
+						<li  class="active"><span class="filter" data-filter=""><a  href ="qna.jsp" style="text-decoration:none;">수강내역 </a></span></li>
 
 					</ul>
 					<div class="clearfix"> </div>
@@ -37,55 +41,33 @@
         <table id="table" class="table table-striped table-condensed" cellspacing="0" width="100%">
 					<thead>
 						<tr>
-							<th>NO</th>
-							<th>시 간</th>
-							<th>강의명</th>
-							<th>강의실</th>
-							<th style="width: 110px;">Action</th>
+							<td>NO</td>
+							<td>class_id</td>
+							<td>booth_name</td>
+							<td>start_time</td>
+							<td>end_time</td>
+							
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td>01</td>
-							<td>9:00 - 10:10</td>
-							<td>Watson API</td>
-							<td>Room A</td>
-							<td><a class="btn btn-sm btn-info"><span class="">EDIT</span></a><span>
-									<a class="btn btn-sm btn-danger"><span class="">DEL</span></a>
-							</span></td>
-						</tr>
-						<tr>
-							<td>01</td>
-							<td>9:00 - 10:10</td>
-							<td>Watson API</td>
-							<td>Room A</td>
-							<td><a class="btn btn-sm btn-info"><span class="">EDIT</span></a><span>
-									<a class="btn btn-sm btn-danger"><span class="">DEL</span></a>
-							</span></td>
-						</tr>
-						<tr>
-							<td>02</td>
-							<td>13:00 - 14:10</td>
-							<td>Bluemix Lab</td>
-							<td>Room A</td>
-							<td><a class="btn btn-sm btn-info"><span class="">EDIT</span></a><span>
-									<a class="btn btn-sm btn-danger"><span class="">DEL</span></a>
-							</span></td>
-						</tr>
-						<tr>
-							<td>03</td>
-							<td>15:00 - 16:10</td>
-							<td>Electronics Logic</td>
-							<td>Room A</td>
-							<td><a class="btn btn-sm btn-info"><span class="">EDIT</span></a><span>
-									<a class="btn btn-sm btn-danger"><span class="">DEL</span></a>
-							</span></td>
-						</tr>
+						
+						<c:forEach var="list" items="${list}">
+							<tr>
+							<td>${list.idx}</td>
+							<td>${list.class_id}</td>
+							<td>${list.booth_name}</td>
+							<td>${list.start}</td>
+							<td>${list.end}</td>
+							<td><a href='/class/viewThisLec?class_id=${list.class_id}' >해당클래스가기</a></td>
+							</tr>
+						</c:forEach>
 
 					</tbody>
 
 
 				</table>
-    			</div>
+    </div>
 				<div class="clearfix"> </div>
 				<br><br><br>
+</body>
+</html>
