@@ -7,7 +7,9 @@
 
 <tiles:importAttribute name="505css" />
 <c:forEach var="505css" items="${505css}">
-<link type="text/css" rel="stylesheet" href="<c:url value='${505css}'/>" />
+
+<link type="text/css" rel="stylesheet" href="<c:url value="${505css}"/>" />
+
 </c:forEach>
 
 	<div class="main"><br><br><br>

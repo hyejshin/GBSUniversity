@@ -7,7 +7,11 @@
 
 <tiles:importAttribute name="404css" />
 <c:forEach var="404css" items="${404css}">
+<<<<<<< HEAD
 <link type="text/css" rel="stylesheet" href="<c:url value='${404css}'/>" />
+=======
+<link type="text/css" rel="stylesheet" href="<c:url value="${404css}"/>"/>
+>>>>>>> 4ce6b8b44587a5555f865fe55beb56f695b36873
 </c:forEach>
 
 	<div class="main"><br><br><br>

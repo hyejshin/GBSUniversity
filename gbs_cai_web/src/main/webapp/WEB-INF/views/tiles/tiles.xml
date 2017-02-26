@@ -52,9 +52,10 @@
         <put-attribute name="body" value="/WEB-INF/views/pages/login.jsp" />   
         
         <put-list-attribute name="loginLayout" cascade="true">
-            <add-attribute value="http://fonts.googleapis.com/css?family=Lato:100italic,100,300italic,300,400italic,400,700italic,700,900italic,900" />
             <add-attribute value="/assets/bootstrap/css/bootstrap.min.css" />
             <add-attribute value="/assets/css/styles.css" />
+        </put-list-attribute>
+        <put-list-attribute name="loginJS" cascade="true">
             <add-attribute value="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"/>
             <add-attribute value="/assets/bootstrap/js/bootstrap.min.js"/>
         </put-list-attribute>                               
@@ -93,7 +94,6 @@
         <put-attribute name="body" value="/WEB-INF/views/pages/error/404error.jsp" /> 
         <put-list-attribute name="404css" cascade="true">
             <add-attribute value="/css/404page.css"/>
-            <add-attribute value="media=all" />
        </put-list-attribute> 
     </definition> 
     
@@ -102,7 +102,6 @@
         <put-attribute name="body" value="/WEB-INF/views/pages/error/505error.jsp" />  
     	<put-list-attribute name="505css" cascade="true">
             <add-attribute value="/css/505page.css"/>
-            <add-attribute value="media=all" />
        </put-list-attribute> 
     
     </definition> 
