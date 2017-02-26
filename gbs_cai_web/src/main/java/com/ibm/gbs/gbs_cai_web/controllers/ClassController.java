@@ -17,10 +17,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.ibm.gbs.gbs_cai_web.common.StringUtils;
 import com.ibm.gbs.gbs_cai_web.service.ClassService;
-<<<<<<< HEAD
-//import com.ibm.gbs.gbs_cai_web.service.TestService;
-=======
->>>>>>> 337f63551e70ed3f28c14a3a8716cfd5180c9d07
 import com.ibm.gbs.gbs_cai_web.vo.ClassVO;
 
 @Controller

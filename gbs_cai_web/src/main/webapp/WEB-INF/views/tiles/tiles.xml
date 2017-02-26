@@ -27,21 +27,21 @@
             <add-attribute value="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/js/bootstrap-select.min.js" />
             <add-attribute value="/script/head.js" />
             <add-attribute value="/script/foot.js" />
-            </put-list-attribute>
+        </put-list-attribute>
             
         <put-list-attribute name="loginLayout" cascade="true">
-			<add-attribute value="http://fonts.googleapis.com/css?family=Lato:100italic,100,300italic,300,400italic,400,700italic,700,900italic,900" />
-			<add-attribute value="/assets/bootstrap/css/bootstrap.min.css" />
-			<add-attribute value="/assets/css/styles.css" />
-			<add-attribute value="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"/>
-	       	<add-attribute value="/assets/bootstrap/js/bootstrap.min.js"/>
+            <add-attribute value="http://fonts.googleapis.com/css?family=Lato:100italic,100,300italic,300,400italic,400,700italic,700,900italic,900" />
+            <add-attribute value="/assets/bootstrap/css/bootstrap.min.css" />
+            <add-attribute value="/assets/css/styles.css" />
+            <add-attribute value="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"/>
+            <add-attribute value="/assets/bootstrap/js/bootstrap.min.js"/>
         </put-list-attribute>           
         
         <put-list-attribute name="innerLayout" cascade="true">			
-			<add-attribute value="/script/jquery.min.js"/>
-			<add-attribute value="/script/move-top.js"/>
-			<add-attribute value="/script/easing.js"/>
-			<add-attribute value="/script/qna.js"/>
+            <add-attribute value="/script/jquery.min.js"/>
+            <add-attribute value="/script/move-top.js"/>
+            <add-attribute value="/script/easing.js"/>
+            <add-attribute value="/script/qna.js"/>
         </put-list-attribute>     
         
         
@@ -74,13 +74,20 @@
     <definition name="board" extends="base-definition">  
         <put-attribute name="title" value="LectueQna" />  
         <put-attribute name="body" value="/WEB-INF/views/pages/board.jsp" />  
+        <!-- js -->
+        <put-list-attribute name="boardJSList" cascade="true">
+            <add-attribute value="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"/>
+            <add-attribute value="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" />
+            <add-attribute value="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/js/bootstrap-select.min.js" />
+            <add-attribute value="/script/board.js" />
+        </put-list-attribute>
     </definition> 
     
     <definition name="history" extends="base-definition">  
         <put-attribute name="title" value="MyLecture" />  
         <put-attribute name="body" value="/WEB-INF/views/pages/history.jsp" />  
     </definition> 
-	<definition name="404Error" extends="base-definition">  
+    <definition name="404Error" extends="base-definition">  
         <put-attribute name="title" value="404Error" />  
         <put-attribute name="body" value="/WEB-INF/views/pages/error/404error.jsp" />  
     </definition> 
