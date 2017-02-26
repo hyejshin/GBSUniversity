@@ -13,9 +13,9 @@
 								<ul id="filters" style="float:left;">
 						
 							<li class="active"><span class="filter" data-filter=""><a
-							href="index.jsp" style="text-decoration: none;">강좌목록</a></span></li>
+							href="/index" style="text-decoration: none;">강좌목록</a></span></li>
 					<li><span class="filter" data-filter=""><a
-							href="history.jsp" style="text-decoration: none;">수강내역 </a></span></li>
+							href="/history" style="text-decoration: none;">수강내역 </a></span></li>
 
 					</ul>
 					<div class="clearfix"> </div>

@@ -60,9 +60,9 @@ function pick_time(obj)
             <ul id="filters" style="float: left;">
 
                 <li class="active"><span class="filters" ><a
-                            href="index.html" style="text-decoration: none; font-size:13px;">강좌목록</a></span></li>
+                            href="/index" style="text-decoration: none; font-size:13px;">강좌목록</a></span></li>
                 <li><span class="filters" ><a
-                            href="history.jsp" style="text-decoration: none; font-size:13px;">수강내역 </a></span></li>
+                            href="/history" style="text-decoration: none; font-size:13px;">수강내역 </a></span></li>
 
             </ul>
             <br><br>

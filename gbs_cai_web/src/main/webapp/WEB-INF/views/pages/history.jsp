@@ -26,7 +26,7 @@
 								<ul id="filters" style="float:left;">
 						
 						<li><span class="filter" data-filter=""><a href="/index" style="text-decoration:none;">강좌목록</a></span></li>
-						<li  class="active"><span class="filter" data-filter=""><a  href ="/board" style="text-decoration:none;"> 수강내역 </a></span></li>
+						<li  class="active"><span class="filter" data-filter=""><a  href ="/history" style="text-decoration:none;"> 수강내역 </a></span></li>
 
 					</ul>
 					<div class="clearfix"> </div>
