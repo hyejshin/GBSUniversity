@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
- *
- * @author kr055045
+ * board Controller
+ * author : Joosang Kim
  */
 @Controller
 public class BoardController {
@@ -29,6 +29,9 @@ public class BoardController {
     @RequestMapping(value="/board", method = RequestMethod.GET)
     public String showMyBoardList(ModelMap model, HttpServletRequest req, HttpServletResponse res, HttpSession session){
         user = (UserVO)session.getAttribute(("user"));
+        
+        //1.get classes user registored
+        
         
         System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% : " +session.getAttribute("user") + "DDDDDDDDDDD ;" + user.getUser_id());
         
