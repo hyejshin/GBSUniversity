@@ -114,7 +114,7 @@ function pick_time(obj)
                             onChange=pick_time(this);>
                         
                         <optgroup label="time">
-                            <option value="00:55">13:40 - 15:10</option>
+                            <option value="13:40">13:40 - 15:10</option>
                             <option value="15:10">15:10 - 16:40</option>
                             <option value="16:40">16:40 - 18:10</option>
                             <option value="18:10">18:10 - 19:40</option>
