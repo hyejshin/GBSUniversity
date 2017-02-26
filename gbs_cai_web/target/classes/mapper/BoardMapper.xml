@@ -13,6 +13,8 @@
         <result property="detail"           column ="detail" />
         <result property="step"             column="step"/>
         <result property="indent"           column="indent"/>
+        <result property="date"             column="date" />
+        <result property="hit"              column="hit" />
     </resultMap>
     
     <select id="getBoardListByClassId" resultMap = "getBoardListVOByClassId"   parameterType="int">
@@ -26,6 +28,8 @@
             , BO.type type
             , BO.step step
             , BO.indent indent  
+            , DATE_FORMAT(BO.date, '%Y%m%d') date
+            , BO.hit hit
         FROM BOARD BO JOIN CLASS CL 
         ON   BO.class_id = CL.class_id JOIN USER US 
         ON   BO.user_id  = US.user_id

@@ -2,24 +2,20 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<title>	CAI university</title>
 <tiles:importAttribute name="innerLayout" />
 <c:forEach var="innerLayout" items="${innerLayout}">
     <link type="text/css" rel="stylesheet" href="<c:url value="${innerLayout}"/>" />
 </c:forEach>
-</head>
-<body>
+
 				<div class="container">
 		              <div class="single-page-artical">
 								<div class="artical-content">
 								<ul id="filters" style="float:left;">
 						
 							<li class="active"><span class="filter" data-filter=""><a
-							href="index.jsp" style="text-decoration: none;">강좌목록</a></span></li>
+							href="/index" style="text-decoration: none;">강좌목록</a></span></li>
 					<li><span class="filter" data-filter=""><a
-							href="history.jsp" style="text-decoration: none;">수강내역 </a></span></li>
+							href="/history" style="text-decoration: none;">수강내역 </a></span></li>
 
 					</ul>
 					<div class="clearfix"> </div>
@@ -54,5 +50,3 @@
 		  						 	</ul>
 		  						 </div>
 		  						 </c:forEach>
-</body>
-</html>

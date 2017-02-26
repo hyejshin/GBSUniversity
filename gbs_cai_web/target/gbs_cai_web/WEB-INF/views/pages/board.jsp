@@ -1,3 +1,10 @@
+<!--
+ * board jsp
+ * Editor: Misu Choi
+ * Modify : Joosang Kim
+ * date: 2017-02-18  
+ * Note : add board page dynamic action
+-->
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
@@ -6,79 +13,56 @@
 
 <tiles:importAttribute name="innerLayout" />
 <tiles:importAttribute name="boardJSList" />
+<c:forEach var="innerLayout" items="${innerLayout}">
+    <link type="text/javascript"  href="<c:url value="${innerLayout}"/>" />
+</c:forEach>
 <c:forEach var="boardJSList" items="${boardJSList}">
     <script src="<c:url value="${boardJSList}" />" ></script>
 </c:forEach>
-<c:forEach var="innerLayout" items="${innerLayout}">
-    <link type="text/css" rel="stylesheet" href="<c:url value="${innerLayout}"/>" />
-</c:forEach>
 
 <div class="container">
-    <c:if test="${enrollmentList} == null" >
+    <div id="classList" >
+        <c:if test="${enrollmentList} == null" >
+            <br>
+            <h3> You have no classes </h3> 
+            <br>
+        </c:if>
+        <c:forEach var="list" items="${enrollmentList}">
+            <br>
+            <h3 class="class_title" idx="${list.idx}">${list.class_title}</h3>
+            <br>
+            <h6><span style="float : right;">Booth Name : ${list.booth_name} </span> </h6>
+            <h6><span style="float: right; margin-right: 10px;">Lecture Time:${list.start} ~ ${list.end} </span></h6>
+            <br>
+        </c:forEach>
         <br>
-        <h3> You have no classes </h3> 
-        <br>
-    </c:if>
-    <c:forEach var="list" items="${enrollmentList}">
-        <br>
-        <h3 class="class_title" idx="${list.idx}">${list.class_title}</h3>
-        <br>
-        <h6><span style="float : right;">Booth Name : ${list.booth_name} </span> </h6>
-        <h6><span style="float: right; margin-right: 10px;">Lecture Time:${list.start} ~ ${list.end} </span></h6>
-        <br>
-    </c:forEach>
-    <br>
+    </div>
+    <div id="boardList" style="display:none;">
+        <h3><b><marquee behavior="alternate" scrolldelay="100"
+                        direction="right"> Question Board</marquee></b>
+        </h3> 
+        <table class="table table-striped" style="bgcolor:'D8D8D8';">
+            <thead>
+                <tr>
+                    <th style="text-align: center;">No.</th>
+                    <th style="text-align: center;">Title</th>
+                    <th style="text-align: center;">Author</th>
+                    <th style="text-align: center;">Date</th>
+                    <th style="text-align: center;">Hit</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+            <!-- 페이징 처리 하게되면 여기에 관련 내용 추가 -->
+            <tfoot>
+                <tr>
+                    <td align="center" colspan="5">1</td>
+                </tr>
+            </tfoot>
 
-    <div id ="boradList">
+        </table>
+    </div>
 
 
-    </div>    
-
-    <h3>
-        <b><marquee behavior="alternate" scrolldelay="100"
-                    direction="right"> Question Board</marquee></b>
-    </h3>
-    <table class="table table-striped" style="bgcolor:'D8D8D8';">
-
-        <thead>
-            <tr>
-                <th style="text-align: center;">No.</th>
-                <th style="text-align: center;">Title</th>
-                <th style="text-align: center;">Author</th>
-                <th style="text-align: center;">Date</th>
-                <th style="text-align: center;">Hit</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td align="center">3</td>
-                <td><a href="Board_View.jsp">질문 글입니다 3</a></td>
-                <td align="center">정연우</td>
-                <td align="center">2015/11/23</td>
-                <td align="center">1234</td>
-            </tr>
-            <tr>
-                <td align="center">2</td>
-                <td><a href="Board_View.jsp">질문 글입니다 2</a></td>
-                <td align="center">신혜정</td>
-                <td align="center">2015/11/23</td>
-                <td align="center">123</td>
-            </tr>
-            <tr>
-                <td align="center">1</td>
-                <td><a href="Board_View.jsp">답변 글입니다 1</a></td>
-                <td align="center">최미수</td>
-                <td align="center">2015/11/23</td>
-                <td align="center">12</td>
-            </tr>
-        </tbody>
-        <!-- 페이징 처리 하게되면 여기에 관련 내용 추가 -->
-        <tfoot>
-            <tr>
-                <td align="center" colspan="5">1</td>
-            </tr>
-        </tfoot>
-    </table>
     <input type="button" class="btn btn-primary" value="list" /> <input
         type="button" class="btn btn-warining" value="write" />
 

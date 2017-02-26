@@ -24,18 +24,20 @@ public class BoardVO implements Serializable {
     private String type;
     private int step;
     private int indent;
+    private String date;
+    private int hit;
 
     //default contructor
     public BoardVO() {
-    };
+    } ;
     
     /**
      *  Author   : Joosang Kim
      *  Detail   : Contructor for getBoardListByClassId-EnrollmentService.class
      */
-    public BoardVO(int idx,        String board_id, String class_id,String tilte
-                 , String user_id, String user_nm,  String detail,  String type
-                 , int step      , int indent) {
+    public BoardVO(int idx, String board_id, String class_id, String tilte,
+             String user_id, String user_nm, String detail, String type,
+             int step, int indent, String date, int hit) {
         this.idx = idx;
         this.user_id = user_id;
         this.class_id = class_id;
@@ -46,13 +48,31 @@ public class BoardVO implements Serializable {
         this.type = type;
         this.step = step;
         this.indent = indent;
+        this.date = date;
+        this.hit = hit;
     };
     
     public String getTitle() {
         return title;
     }
 
-    //getter and setter - auto generated
+    //getter and setter - auto generated.
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public int getHit() {
+        return hit;
+    }
+
+    public void setHit(int hit) {
+        this.hit = hit;
+    }
+
     public void setTitle(String title) {
         this.title = title;
     }
@@ -127,5 +147,5 @@ public class BoardVO implements Serializable {
 
     public void setUser_nm(String user_nm) {
         this.user_nm = user_nm;
-    }  
+    }
 }

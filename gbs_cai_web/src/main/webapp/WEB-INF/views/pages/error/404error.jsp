@@ -6,8 +6,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <tiles:importAttribute name="404css" />
-<c:forEach var="404css"" items="${404css}">
-<link type="text/css" rel="stylesheet" href="<c:url value="${404css}"/>" />
+<c:forEach var="404css" items="${404css}">
+<link type="text/css" rel="stylesheet" href="<c:url value='${404css}'/>" />
 </c:forEach>
 
 	<div class="main"><br><br><br>

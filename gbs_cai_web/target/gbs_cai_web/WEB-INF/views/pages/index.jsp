@@ -3,7 +3,6 @@
 <%@ page session="false" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <script type="text/javascript">
-
 /* 
 	추가목적 : 부스 선택시 (시간/부스)값을 가져와서 현재 페이지에 Reload없이 출력
 	추가이력 : 2017/02/20 정연우
@@ -61,9 +60,9 @@ function pick_time(obj)
             <ul id="filters" style="float: left;">
 
                 <li class="active"><span class="filters" ><a
-                            href="index.html" style="text-decoration: none; font-size:13px;">강좌목록</a></span></li>
+                            href="/index" style="text-decoration: none; font-size:13px;">강좌목록</a></span></li>
                 <li><span class="filters" ><a
-                            href="history.jsp" style="text-decoration: none; font-size:13px;">수강내역 </a></span></li>
+                            href="/history" style="text-decoration: none; font-size:13px;">수강내역 </a></span></li>
 
             </ul>
             <br><br>
