@@ -6,7 +6,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <tiles:importAttribute name="505css" />
-<c:forEach var="505css"" items="${505css}">
+<c:forEach var="505css" items="${505css}">
 <link type="text/css" rel="stylesheet" href="<c:url value="${505css}"/>" />
 </c:forEach>
 
