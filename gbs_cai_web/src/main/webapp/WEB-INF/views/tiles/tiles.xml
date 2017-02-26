@@ -93,7 +93,6 @@
         <put-attribute name="body" value="/WEB-INF/views/pages/error/404error.jsp" /> 
         <put-list-attribute name="404css" cascade="true">
             <add-attribute value="/css/404page.css"/>
-            <add-attribute value="media=all" />
        </put-list-attribute> 
     </definition> 
     
@@ -102,7 +101,6 @@
         <put-attribute name="body" value="/WEB-INF/views/pages/error/505error.jsp" />  
     	<put-list-attribute name="505css" cascade="true">
             <add-attribute value="/css/505page.css"/>
-            <add-attribute value="media=all" />
        </put-list-attribute> 
     
     </definition> 
