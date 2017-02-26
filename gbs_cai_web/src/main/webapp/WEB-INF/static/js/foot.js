@@ -7,7 +7,6 @@ $(document).ready(function () {
      easingType: 'linear' 
      };
      
-
-    //$().UItoTop({easingType: 'easeOutQuart'});
+   //$().UItoTop({easingType: 'easeOutQuart'});
 
 });
