@@ -24,12 +24,20 @@ import org.springframework.web.servlet.view.tiles3.TilesViewResolver;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.socket.config.annotation.EnableWebSocket;
+import org.springframework.web.socket.config.annotation.WebSocketConfigurer;
+import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry;
 
 @Configuration
+@EnableWebSocket
 @EnableWebMvc
 @ComponentScan(basePackages = "com.ibm.gbs.gbs_cai_web")
-public class AppConfig extends WebMvcConfigurerAdapter {
+public class AppConfig extends WebMvcConfigurerAdapter implements WebSocketConfigurer{
+    
+    @Autowired 
+    private EchoHandler echoHandler;
     /**
      * Configure TilesConfigurer
      */
@@ -63,6 +71,7 @@ public class AppConfig extends WebMvcConfigurerAdapter {
         registry.addResourceHandler("/assets/bootstrap/css/**").addResourceLocations("/WEB-INF/static/assets/bootstrap/css/");
         registry.addResourceHandler("/assets/bootstrap/js/**").addResourceLocations("/WEB-INF/static/assets/bootstrap/js/");
         registry.addResourceHandler("/assets/images/**").addResourceLocations("/WEB-INF/static/assets/images/");
+        
     }
     
     /**
@@ -111,4 +120,11 @@ public class AppConfig extends WebMvcConfigurerAdapter {
         registry.addInterceptor( new AuthInterceptor()).addPathPatterns("/**").excludePathPatterns("/login")  ;
 
     }
+
+    @Override
+    public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
+        registry.addHandler(echoHandler, "/echo").withSockJS();
+    }
+    
+    
 }

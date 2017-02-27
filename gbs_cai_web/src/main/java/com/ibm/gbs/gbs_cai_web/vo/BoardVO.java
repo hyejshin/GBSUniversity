@@ -25,7 +25,6 @@ public class BoardVO implements Serializable {
     private int step;
     private int indent;
     private String date;
-    private int hit;
 
     //default contructor
     public BoardVO() {
@@ -34,10 +33,31 @@ public class BoardVO implements Serializable {
     /**
      *  Author   : Joosang Kim
      *  Detail   : Contructor for getBoardListByClassId-EnrollmentService.class
+     *             VO for lists
+     */
+    public BoardVO(int idx, String board_id, String class_id, String title,
+             String user_id, String user_nm, String type,
+             int step, String date) {
+        this.idx = idx;
+        this.user_id = user_id;
+        this.class_id = class_id;
+        this.title = title;
+        this.user_id = user_id;
+        this.user_nm = user_nm;
+        this.detail = detail;
+        this.type = type;
+        this.step = step;
+        this.date = date;
+    };
+    
+    /**
+     *  Author   : Joosang Kim
+     *  Detail   : Contructor for getBoardListByClassId-EnrollmentService.class
+     *             VO for detail
      */
     public BoardVO(int idx, String board_id, String class_id, String tilte,
              String user_id, String user_nm, String detail, String type,
-             int step, int indent, String date, int hit) {
+             int step,  String date) {
         this.idx = idx;
         this.user_id = user_id;
         this.class_id = class_id;
@@ -49,8 +69,10 @@ public class BoardVO implements Serializable {
         this.step = step;
         this.indent = indent;
         this.date = date;
-        this.hit = hit;
     };
+    
+    
+    
     
     public String getTitle() {
         return title;
@@ -63,14 +85,6 @@ public class BoardVO implements Serializable {
 
     public void setDate(String date) {
         this.date = date;
-    }
-
-    public int getHit() {
-        return hit;
-    }
-
-    public void setHit(int hit) {
-        this.hit = hit;
     }
 
     public void setTitle(String title) {

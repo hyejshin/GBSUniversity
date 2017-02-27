@@ -19,8 +19,12 @@
 <c:forEach var="boardJSList" items="${boardJSList}">
     <script src="<c:url value="${boardJSList}" />" ></script>
 </c:forEach>
+<c:url value="/echo"/>
 
 <div class="container">
+    <input type="text" id="message" /><br>
+    <input type="button" id="sendBtn" value="send"/>
+    <div id="data"></div>
     <div id="classList" >
         <c:if test="${enrollmentList} == null" >
             <br>
