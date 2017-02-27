@@ -22,6 +22,12 @@
         FROM class
     </select>
     
+    <select id="getClassID" resultType="String">
+        SELECT 
+        	LPAD((SELECT MAX(idx)+1 FROM class), 4, '0') 
+        FROM DUAL;
+    </select>
+    
     <select id="getClassDetail" resultType="com.ibm.gbs.gbs_cai_web.vo.ClassVO">
         SELECT *	   
         FROM class
@@ -41,6 +47,8 @@
 			,detail
 			,image
 			,atta1
+			,atta2
+			,atta3
 			,use_yn)
         VALUES (
         	 #{class_id}
@@ -54,14 +62,15 @@
         	,#{detail}
         	,#{image}
         	,#{atta1}
+        	,#{atta2}
+        	,#{atta3}
         	,'Y'        	
         )	
     </insert>
     
     <update id="modifyClass" parameterType="com.ibm.gbs.gbs_cai_web.vo.ClassVO">
         UPDATE class SET
-        	class_id = #{class_id}
-			,title = #{title}
+			title = #{title}
 			,teacher = #{teacher}
 			,booth = #{booth}
 			,start = #{start}
@@ -71,6 +80,8 @@
 			,detail = #{detail}
 			,image = #{image}
 			,atta1 = #{atta1}
+			,atta2 = #{atta2}
+			,atta3 = #{atta3}
 		WHERE
 			idx = #{idx}
     </update>
