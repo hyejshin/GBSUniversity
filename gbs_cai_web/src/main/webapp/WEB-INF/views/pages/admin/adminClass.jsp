@@ -23,7 +23,7 @@
 
 <table width="500" cellpadding="0" cellspacing="0" border="1">
 	<tr>
-		<td>no</td><td>title</td><td>booth</td><td>time</td><td>teacher</td><td></td>
+		<td>classID</td><td>title</td><td>booth</td><td>time</td><td>teacher</td><td></td>
 	</tr>
 	<c:forEach items="${list}" var="vo">
 	<tr>

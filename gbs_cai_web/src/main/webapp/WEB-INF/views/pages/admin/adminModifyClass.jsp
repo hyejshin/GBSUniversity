@@ -8,15 +8,13 @@
 </head>
 <body>
 
-image: ${vo.image} <br>
-atta1: ${vo.atta1} <br>
 
-<form action="/gbs_cai_web/modifyClass">
+<form method="POST" action="/gbs_cai_web/modifyClass" enctype="multipart/form-data">
 <input type="hidden" id="idx" name="idx" value="${vo.idx}">
 
 <table>
-<tr><td>ClassID: <input type="text" id="class_id" name="class_id" value="${vo.class_id}"></td>
-	<td>Title: <input type="text" id="title" name="title" value="${vo.title}"></td></tr>
+<tr>
+	<td colspan="2">Title: <input type="text" id="title" name="title" value="${vo.title}"></td></tr>
 <tr><td>Teacher: <input type="text" id="teacher" name="teacher" value="${vo.teacher}"></td>
 	<td>Booth: <input type="text" id="booth" name="booth" value="${vo.booth}"></td>
 	<td>capacity <input type="text" id="capacity" name="capacity" value="${vo.capacity}"></td></tr>
@@ -27,7 +25,14 @@ atta1: ${vo.atta1} <br>
 <textarea rows="10" cols="100" name="detail">${vo.detail}</textarea>
 <br>
 Image: <input type="file" name="image"> <br>
-File: <input type="file" name="atta1"> <br>
+File: <input type="file" name="files">
+File: <input type="file" name="files">
+File: <input type="file" name="files">
+
+<input type="hidden" name="imageName" value="${vo.image}">
+<input type="hidden" name="atta1" value="${vo.atta1}">
+<input type="hidden" name="atta2" value="${vo.atta2}">
+<input type="hidden" name="atta3" value="${vo.atta3}">
 
 <input type="submit" value="수정" class="btn-default"> <a href="/gbs_cai_web/adminClass">목록보기</a>
 

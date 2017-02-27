@@ -11,17 +11,20 @@
 </head>
 <body>
 
-<form action="/gbs_cai_web/addClass">
-<table>
-<tr><td>ClassID: <input type="text" id="class_id" name="class_id"></td><td>Title: <input type="text" id="title" name="title"></td></tr>
-<tr><td>Teacher: <input type="text" id="teacher" name="teacher"></td><td>Booth: <input type="text" id="booth" name="booth"></td><td>capacity <input type="text" id="capacity" name="capacity"></td></tr>
-<tr><td>Date . .: <input type="text" id="date" name="date"></td><td>start_time <input type="text" id="start" name="start"></td><td>end_time: <input type="text" id="end" name="end"></td></tr>
-</table>
-<textarea rows="10" cols="100" name="detail"></textarea> <br>
-Image: <input type="file" name="image"> <br>
-File: <input type="file" name="atta1"> <br>
+<form method="POST" action="/gbs_cai_web/addClass" enctype="multipart/form-data">
+	<table>
+		<tr><td colspan="3">Title: <input type="text" id="title" name="title"></td></tr>
+		<tr><td>Teacher: <input type="text" id="teacher" name="teacher"></td><td>Booth: <input type="text" id="booth" name="booth"></td><td>capacity <input type="text" id="capacity" name="capacity"></td></tr>
+		<tr><td>Date : <input type="text" id="date" name="date"></td><td>start_time <input type="text" id="start" name="start"></td><td>end_time: <input type="text" id="end" name="end"></td></tr>
+	</table>
+	<textarea rows="10" cols="100" name="detail"></textarea> <br>
 
-<input type="submit" value="Register" class="btn-default">  <a href="/gbs_cai_web/adminClass">목록보기</a>
+	Image: <input type="file" name="image"> <br>
+	File: <input type="file" name="files">
+	File: <input type="file" name="files">
+	File: <input type="file" name="files"> <br>
+	
+	<input type="submit" value="Register" class="btn-default">  <a href="/gbs_cai_web/adminClass">목록보기</a>
 </form>
 
 </body>
