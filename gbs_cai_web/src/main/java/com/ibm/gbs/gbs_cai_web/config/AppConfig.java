@@ -13,6 +13,9 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.GsonHttpMessageConverter;
+import org.springframework.web.multipart.MultipartResolver;
+import org.springframework.web.multipart.commons.CommonsMultipartResolver;
+import org.springframework.web.multipart.support.StandardServletMultipartResolver;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
@@ -24,7 +27,6 @@ import org.springframework.web.servlet.view.tiles3.TilesViewResolver;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 
 @Configuration
 @EnableWebMvc
@@ -98,6 +100,21 @@ public class AppConfig extends WebMvcConfigurerAdapter {
     	return gson;
     }
     
+    
+    /**
+     * MultipartResolver
+     * - 추가목적 : 파일 업로드 및 다운로드 Multipart Resolver 
+     * - 추가이력 : 신혜정(20170226) 
+     */
+	@Bean(name = "multipartResolver")
+    public CommonsMultipartResolver multipartResolver() {
+        CommonsMultipartResolver commonsMultipartResolver = new CommonsMultipartResolver();
+        commonsMultipartResolver.setMaxUploadSizePerFile(1000000000); //bytes
+        return commonsMultipartResolver;
+    }
+    
+	
+	
     /**
      * addInterceptors
      * - 추가목적 : request 시 로그인 session 및 user 확인
@@ -105,10 +122,10 @@ public class AppConfig extends WebMvcConfigurerAdapter {
      */
     
     
-    @Override
-    public void addInterceptors(InterceptorRegistry registry){
-        registry.addInterceptor( new AuthInterceptor()).addPathPatterns("/**").excludePathPatterns("/login")  ;
-
-    }
+//    @Override
+//    public void addInterceptors(InterceptorRegistry registry){
+//        registry.addInterceptor( new AuthInterceptor()).addPathPatterns("/**").excludePathPatterns("/login")  ;
+//
+//    }
  
 }

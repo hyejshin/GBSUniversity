@@ -9,7 +9,7 @@ package com.ibm.gbs.gbs_cai_web.config;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
  
 public class AppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
- 
+	
     @Override
     protected Class<?>[] getRootConfigClasses() {
         return new Class[] { AppConfig.class , DataConfig.class};
@@ -25,4 +25,5 @@ public class AppInitializer extends AbstractAnnotationConfigDispatcherServletIni
         return new String[] { "/" };
     }
  
+    
 }
