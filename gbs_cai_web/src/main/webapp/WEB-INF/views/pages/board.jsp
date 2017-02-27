@@ -63,14 +63,14 @@
     </div>
 
 
-    <input type="button" class="btn btn-primary" value="list" /> <input
-        type="button" class="btn btn-warining" value="write" />
+    <input type="button" class="btn btn-primary" id="showList" value="list" /> 
+    <input type="button" class="btn btn-warining" id="showWrite" value="write" />
 
     <div class="clearfix"></div>
 
     <!-- 질문 클릭 시 해당 질문과 함께 답변 등록란 띄워주기: Ajax 처리하여 한 화면에서 가능하게  -->
     <!-- 질문 상세 보기 -->
-    <div id="detail" type="hidden">
+    <div id="detail" style="display:none;">
         <form name="BoardViewForm" method="post">
             <table class="table-striped table" summary="전체 테이블 구성">
                 <tr>

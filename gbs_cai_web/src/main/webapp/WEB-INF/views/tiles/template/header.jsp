@@ -13,7 +13,7 @@
 <div class="header" id="home">
     <div class="container">	
         <div class="logo">
-            <h1><a href="index.jsp"><img src="<c:url value="/images/Picture1.png" />" alt=""></a></h1>     
+            <h1><a href="/index"><img src="<c:url value="/images/Picture1.png" />" alt=""></a></h1>     
         </div>
         <div class="header-bottom">
             <div class="top-nav">
@@ -22,7 +22,7 @@
                 <ul>
                     <li ><a href="/webapp/WEB-INF/views/index.jsp" class="scroll">Home</a></li>
                    <li><a href="/class/viewMyLec?user_id=<%=session1.getAttribute("user_id")%>" >My Lecture</a></li>
-                    <li><a href="#">My Q&A</a></li>
+                    <li><a href="/board">My Q&A</a></li>
                 </ul>
                 <!--script-->
                 <script>

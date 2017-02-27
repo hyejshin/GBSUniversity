@@ -81,4 +81,29 @@
         WHERE idx=#{idx}
     </delete>
     
+    <!-- /* ClassController와 연동되는 Sql - 정연우(0224)*/ -->
+    <select id="getMyLec" resultType="hashmap" parameterType="String">
+        SELECT *	   
+        FROM enrollment
+        WHERE user_id=#{user_id} 
+    </select>
+    
+    <select id="getThisLec" resultType="hashmap" parameterType="String">
+        SELECT *	   
+        FROM class
+        WHERE class_id=#{class_id} 
+    </select>
+    
+    <select id="checkCode" resultType="int" parameterType="hashmap">
+    	SELECT count(1)
+    	FROM class
+    	WHERE class_id=#{class_id} and attend_code=#{code}
+    </select>
+    
+    <update id="updateFlag" parameterType="hashmap">
+    	UPDATE enrollment
+    	SET attend_yn = 'Y'
+    	WHERE user_id=#{user_id} and class_id=#{class_id}
+    </update>
+    
 </mapper>

@@ -42,7 +42,7 @@
 	<div class="header" id="home">
 		<div class="container">	
 			<div class="logo">
-				<h1><a href="/"><img src="/webapp/resources/images/Picture1.png" alt=""></a></h1>
+				<h1><a href="/index"><img src="/webapp/resources/images/Picture1.png" alt=""></a></h1>
 			</div>
 			<div class="header-bottom">
 				<div class="top-nav">
@@ -51,7 +51,7 @@
 					<ul>
 						<li ><a href="/webapp/WEB-INF/views/index.jsp" class="scroll">Home</a></li>
 						<li><a href="/webapp/WEB-INF/views/history.jsp" >My Lecture</a></li>
-						<li><a href="#">My Q&A</a></li>
+						<li><a href="/board">My Q&A</a></li>
 					</ul>
 					<!--script-->
 				<script>

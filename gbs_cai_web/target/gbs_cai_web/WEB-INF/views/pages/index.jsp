@@ -1,9 +1,43 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
 <%@ page session="false" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <script type="text/javascript">
+
+window.onload = function() {
+	
+	$.ajax({
+		type : 'post',
+		url : '/class/findFirstView',
+		data : { booth : $('#booth').val(), time : $('#start_time').val() },
+		success : function(result) {
+			$("#tbList").empty();
+			
+			 for(var i=0;i<result.length;i++) {
+				$("#tbList").append("<p ><a href='detail.do?idx="+result[i].idx+"'>"+ "<input type='hidden'/>"+result[i].idx+"</a>"+
+						"<h2>"+result[i].title+"</h2>"+
+				result[i].booth+"<br>"+"<h4>시간:" + result[i].start+"~"+
+				result[i].end+"<br>"+"INFO:"+ result[i].detail+"</h4></p>");
+				$("div #tbList").append("<a href='/class/viewDetail?idx="+result[i].idx+"' class='read'>"+ "Read</a>");
+			}
+		}
+	});
+}
+
+function logout()
+{
+	$.ajax({
+		type : 'post',
+		url : '/logout',
+		data : {},
+		success : function(result) {
+			alert("Logout!");
+		}
+	});
+}
+
+
+
 /* 
 	추가목적 : 부스 선택시 (시간/부스)값을 가져와서 현재 페이지에 Reload없이 출력
 	추가이력 : 2017/02/20 정연우
@@ -55,15 +89,19 @@ function pick_time(obj)
 	});  
 }
 </script>
+<%
+	HttpSession session = request.getSession();
+%>
+
 <div class="container">
     <div class="works" id="portfolio">
         <div class=" port-top">
             <ul id="filters" style="float: left;">
 
                 <li class="active"><span class="filters" ><a
-                            href="/index" style="text-decoration: none; font-size:13px;">강좌목록</a></span></li>
+                            href="index.html" style="text-decoration: none; font-size:13px;">강좌목록</a></span></li>
                 <li><span class="filters" ><a
-                            href="/history" style="text-decoration: none; font-size:13px;">수강내역 </a></span></li>
+                            href="history.jsp" style="text-decoration: none; font-size:13px;">수강내역 </a></span></li>
 
             </ul>
             <br><br>
@@ -120,7 +158,8 @@ function pick_time(obj)
                         </div>
                     </div>
                 	<div class="clearfix"></div>
-                         
+                    <input type="button" value="Logout" id="logout" onclick="logout()">
+                                                           
             	</div>
         	</div>
    	 </div>
