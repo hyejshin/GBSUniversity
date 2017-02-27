@@ -4,7 +4,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.ui.Model;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.ibm.gbs.gbs_cai_web.vo.ClassVO;
 
@@ -26,5 +29,9 @@ public interface ClassService {
 	public void modifyClass(Model model) throws Exception;
 	
 	public void deleteClass(int idx) throws Exception;
+	
+	public void downloadFile(String fileName, HttpServletResponse response) throws Exception;
+	
+	public void uploadImageAndFiles(MultipartFile image, MultipartFile[] files, ClassVO vo);
 	
 }
