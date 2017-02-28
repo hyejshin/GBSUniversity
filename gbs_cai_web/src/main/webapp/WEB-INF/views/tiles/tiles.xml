@@ -47,10 +47,24 @@
             <add-attribute value="/css/bootstrap.min.css" />
             <add-attribute value="/css/login.css" />
         </put-list-attribute>   
-        
         <put-list-attribute name="loginJS" cascade="true">
             <add-attribute value="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"/>
             <add-attribute value="/bootstrap/js/bootstrap.min.js"/>
+        </put-list-attribute>    
+    </definition>
+    
+    <!-- admin Layout Definition -->
+    <definition name="admin-definition" template="/WEB-INF/views/tiles/layouts/adminLayout.jsp">
+    	<put-attribute name="title" value="" />  
+        <put-attribute name="head"  value="/WEB-INF/views/tiles/template/adminHead.jsp" /> 
+        <put-attribute name="body" value="" />   
+        
+        <put-list-attribute name="Admincss" cascade="true">
+        	<add-attribute value="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+        </put-list-attribute>   
+        <put-list-attribute name="Adminjs" cascade="true">
+            <add-attribute value="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"/>
+            <add-attribute value="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"/>
         </put-list-attribute>    
     </definition>
     
