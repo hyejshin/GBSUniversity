@@ -17,7 +17,7 @@
         <!-- css -->
         <put-list-attribute name="cssList" cascade="true">
             <add-attribute value="/css/bootstrap.css" />
-             
+            <add-attribute value="/css/style.css" />
             <add-attribute value="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/css/bootstrap-select.min.css" />
         </put-list-attribute>   
         <!-- js -->
@@ -35,11 +35,30 @@
             <add-attribute value="/script/easing.js"/>
             <add-attribute value="/script/common.js"/>
         </put-list-attribute>     
-        
-        <put-list-attribute name="Basic" cascade="true">
-          <add-attribute value="/WEB-INF/static/css/style.css" />
-        </put-list-attribute>
     </definition>  
+    
+    <definition name="login-definition" template="/WEB-INF/views/tiles/layouts/loginLayout.jsp">
+    	<put-attribute name="title" value="" />  
+        <put-attribute name="head"  value="/WEB-INF/views/tiles/template/loginHead.jsp" /> 
+        <put-attribute name="body" value="" />   
+        
+        <put-list-attribute name="loginLayout" cascade="true">
+        	<add-attribute value="http://fonts.googleapis.com/css?family=Lato:100italic,100,300italic,300,400italic,400,700italic,700,900italic,900"/>
+            <add-attribute value="/css/bootstrap.min.css" />
+            <add-attribute value="/css/login.css" />
+        </put-list-attribute>   
+        
+        <put-list-attribute name="loginJS" cascade="true">
+            <add-attribute value="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"/>
+            <add-attribute value="/bootstrap/js/bootstrap.min.js"/>
+        </put-list-attribute>    
+    </definition>
+    
+    <definition name="empty-definition" template="/WEB-INF/views/tiles/layouts/empty.jsp">
+    	<put-attribute name="title" value="" />  
+        <put-attribute name="body" value="" />     
+          
+    </definition>
    
    
   
@@ -49,18 +68,10 @@
         <put-attribute name="body" value="/WEB-INF/views/pages/index.jsp" />  
     </definition>  
     
-    <definition name="login" extends="base-definition">    	        
+    <definition name="login" extends="login-definition">    	        
         <put-attribute name="title" value="Welcome" />  
         <put-attribute name="body" value="/WEB-INF/views/pages/login.jsp" />   
-        
-        <put-list-attribute name="loginLayout" cascade="true">
-            <add-attribute value="/bootstrap/css/bootstrap.min.css" />
-            <add-attribute value="/css/login.css" />
-        </put-list-attribute>
-        <put-list-attribute name="loginJS" cascade="true">
-            <add-attribute value="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"/>
-            <add-attribute value="/bootstrap/js/bootstrap.min.js"/>
-        </put-list-attribute>                               
+                               
     </definition>
  
     <!-- Product Page -->

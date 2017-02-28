@@ -67,10 +67,9 @@ public class AppConfig extends WebMvcConfigurerAdapter implements WebSocketConfi
         registry.addResourceHandler("/script/**").addResourceLocations("/WEB-INF/static/js/");
         registry.addResourceHandler("/css/**").addResourceLocations("/WEB-INF/static/css/");
         registry.addResourceHandler("/images/**").addResourceLocations("/WEB-INF/static/images/");
-        /bootstrap/
-        registry.addResourceHandler("/bootstrap/**").addResourceLocations("/WEB-INF/static/bootstrap/");
         registry.addResourceHandler("/bootstrap/css/**").addResourceLocations("/WEB-INF/static/bootstrap/css/");
         registry.addResourceHandler("/bootstrap/js/**").addResourceLocations("/WEB-INF/static/bootstrap/js/");
+        registry.addResourceHandler("/bootstrap/fonts/**").addResourceLocations("/WEB-INF/static/bootstrap/fonts/");
         registry.addResourceHandler("/assets/images/**").addResourceLocations("/WEB-INF/static/assets/images/");
         
     }

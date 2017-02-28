@@ -7,10 +7,7 @@
 <c:forEach var="innerLayout" items="${innerLayout}">
     <link type="text/css" rel="stylesheet" href="<c:url value="${innerLayout}"/>" />
 </c:forEach>
-<tiles:importAttribute name="Basic" />
-<c:forEach var="Basic" items="${Basic}">
-    <link type="text/css" rel="stylesheet" href="<c:url value="${Basic}"/>" />
-</c:forEach>		
+	
 <script type="text/javascript">
 window.onload = function() {
 	 setInterval(function() {

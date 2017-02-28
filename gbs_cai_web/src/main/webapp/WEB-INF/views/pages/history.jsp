@@ -8,11 +8,6 @@
     <link type="text/css" rel="stylesheet" href="<c:url value="${innerLayout}"/>" />
 </c:forEach>
 
-<tiles:importAttribute name="Basic" />
-<c:forEach var="Basic" items="${Basic}">
-    <link type="text/css" rel="stylesheet" href="<c:url value="${Basic}"/>" />
-</c:forEach>	
-
 <div class="container">		
 		<div class="banner">
 			<div class="banner-matter">

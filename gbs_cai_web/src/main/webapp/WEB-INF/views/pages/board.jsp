@@ -13,7 +13,6 @@
 
 <tiles:importAttribute name="innerLayout" />
 <tiles:importAttribute name="boardJSList" />
-<tiles:importAttribute name="Basic" />
 <tiles:importAttribute name="boardcss" />
 
 <c:forEach var="innerLayout" items="${innerLayout}">
@@ -21,10 +20,7 @@
 </c:forEach>
 <c:forEach var="boardJSList" items="${boardJSList}">
     <script src="<c:url value="${boardJSList}" />" ></script>
-</c:forEach>
-<c:forEach var="Basic" items="${Basic}">
-    <link type="text/css" rel="stylesheet" href="<c:url value="${Basic}"/>" />
-</c:forEach>		
+</c:forEach>	
 <c:forEach var="boardcss" items="${boardcss}">
     <link type="text/javascript"  href="<c:url value="${boardcss}"/>" />
 </c:forEach>
