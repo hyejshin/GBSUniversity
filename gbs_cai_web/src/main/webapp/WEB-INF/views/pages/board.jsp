@@ -107,9 +107,8 @@
                         </li>
                     </ul>
                 </div>
-                
-            </div>
-            <div class="panel-footer" style="height:150px;">
+                </div>
+                <div class="panel-footer" style="height:150px;">
                     <div class="input">
                         <textarea rows="3" class="form-control input-sm" id="btn-input" type="text" placeholder="Write!"></textarea>
                         <span class="input" style="float:right; padding-top:10px;">
@@ -121,6 +120,7 @@
         </div>
     </div>
 </div>
+                
 
 
 
