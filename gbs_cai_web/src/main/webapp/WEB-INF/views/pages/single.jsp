@@ -3,14 +3,15 @@
 <%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<head>
-<title>	CAI university</title>
 <tiles:importAttribute name="innerLayout" />
 <c:forEach var="innerLayout" items="${innerLayout}">
     <link type="text/css" rel="stylesheet" href="<c:url value="${innerLayout}"/>" />
 </c:forEach>
-</head>
-<script>
+<tiles:importAttribute name="Basic" />
+<c:forEach var="Basic" items="${Basic}">
+    <link type="text/css" rel="stylesheet" href="<c:url value="${Basic}"/>" />
+</c:forEach>		
+<script type="text/javascript">
 window.onload = function() {
 	 setInterval(function() {
 		 var server_time = srvTime();
@@ -70,7 +71,6 @@ function click1() {
 	});  
 }
 </script>
-<body>
 				<div class="container">
 		              <div class="single-page-artical">
 								<div class="artical-content">
@@ -124,5 +124,3 @@ function click1() {
 		  						 </div>
 		  						 </c:forEach>
 		  						 
-</body>
-</html>
