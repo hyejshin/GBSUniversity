@@ -9,19 +9,28 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <title>admin Class</title>
+
+<style>
+	body {
+		padding: 10px;
+	}
+</style>
+
 </head>
 <body>
 
+<!-- 
 <select id="date" name="date">
 	<option value="all">전체</option>
 	<option value="2017-03-10">2017-03-10(금)</option>
 	<option value="2017-03-11">2017-03-10(토)</option>
 </select>
 <input type="submit" value="검색" class="btn btn-info"/>
+ -->
+ 
+<button class="btn btn-info" onClick="location.href='/gbs_cai_web/addClassView';">수업등록</button>
 
-<button class="btn-success" onClick="location.href='/gbs_cai_web/addClassView';">수업등록</button>
-
-<table width="500" cellpadding="0" cellspacing="0" border="1">
+<table width="500" cellpadding="0" cellspacing="0" border="1" style="margin-top:20px">
 	<tr>
 		<td>classID</td><td>title</td><td>booth</td><td>time</td><td>teacher</td><td></td>
 	</tr>
