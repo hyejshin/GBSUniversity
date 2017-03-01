@@ -11,7 +11,12 @@ public interface ClassMapper {
 	
 	public List<Map<String, Object>> getDetailByCondition(int idx);
 	
+	
+	/* Admin Class 관련 */
+	
 	public List<ClassVO> getClassList();
+	
+	public String getClassID();
 	
 	public ClassVO getClassDetail(int idx);
 	

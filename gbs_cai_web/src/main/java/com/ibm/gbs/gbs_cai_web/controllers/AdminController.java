@@ -1,6 +1,7 @@
 package com.ibm.gbs.gbs_cai_web.controllers;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -10,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.ibm.gbs.gbs_cai_web.service.ClassService;
 
@@ -17,13 +19,20 @@ import com.ibm.gbs.gbs_cai_web.service.ClassService;
 @Controller
 public class AdminController {
 	protected final Log logger = LogFactory.getLog(getClass());
-
+	
 	@Autowired
     private ClassService classService;
 	
+	@RequestMapping("/download")
+    public void downloadFile(@RequestParam("fileName") String fileName, @RequestParam("path") String path, 
+    										HttpServletResponse response) throws Exception {
+
+		classService.downloadFile(fileName, path, response);
+	}
+	
 	@RequestMapping("/adminClass")
 	public String adminClass(Model model) throws Exception {
-		
+        
 		model.addAttribute("list", classService.getClassList());
 		
 		return "admin/adminClass";
@@ -36,8 +45,11 @@ public class AdminController {
 	}
 	
 	@RequestMapping("/addClass")
-	public String addClass (HttpServletRequest request, Model model) throws Exception {
-		
+	public String addClass(@RequestParam("image") MultipartFile image, @RequestParam("files") MultipartFile[] files, 
+												HttpServletRequest request, Model model) throws Exception {		
+        
+		model.addAttribute("image", image);
+		model.addAttribute("files", files);
 		model.addAttribute("request", request);
 		classService.addClass(model);
 		
@@ -53,10 +65,13 @@ public class AdminController {
 	}
 	
 	@RequestMapping("/modifyClass")
-	public String modifyClass(HttpServletRequest request, Model model) throws Exception {
+	public String modifyClass(@RequestParam("image") MultipartFile image, @RequestParam("files") MultipartFile[] files, 
+													HttpServletRequest request, Model model) throws Exception {
 		
 		int idx = Integer.parseInt(request.getParameter("idx"));
 		
+		model.addAttribute("image", image);
+		model.addAttribute("files", files);
 		model.addAttribute("request", request);
 		classService.modifyClass(model);
 		

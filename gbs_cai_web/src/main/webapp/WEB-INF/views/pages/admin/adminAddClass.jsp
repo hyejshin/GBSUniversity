@@ -19,6 +19,7 @@
     </head>
 <body>
 
+
  <div class="navbar navbar-fixed-top">
             <div class="navbar-inner">
                 <div class="container-fluid">
@@ -66,7 +67,7 @@
                             </div>
                             <div class="block-content collapse in">
                                 <div class="span12">
-                                    <form class="form-horizontal" action="/gbs_cai_web/addClass">
+                                    <form class="form-horizontal" action="/addClass">
                                       <fieldset>
                                         <legend>Form Components</legend>
                                         <div class="control-group">
@@ -143,7 +144,9 @@
                                         <div class="control-group">
                                           <label class="control-label" for="fileInput">File</label>
                                           <div class="controls">
-                                            <input class="input-file uniform_on" id="fileInput" name="atta1" type="file">
+                                            <input class="input-file uniform_on" id="fileInput" name="files" type="file">
+                                            <input class="input-file uniform_on" id="fileInput" name=files" type="file">
+                                            <input class="input-file uniform_on" id="fileInput" name="files" type="file">
                                           </div>
                                         </div>
                                         
@@ -201,6 +204,24 @@
         });
         </script>
         
+
+<!-- classAdmin -->
+<form method="POST" action="/addClass" enctype="multipart/form-data">
+	<table>
+		<tr><td colspan="3">Title: <input type="text" id="title" name="title"></td></tr>
+		<tr><td>Teacher: <input type="text" id="teacher" name="teacher"></td><td>Booth: <input type="text" id="booth" name="booth"></td><td>capacity <input type="text" id="capacity" name="capacity"></td></tr>
+		<tr><td>Date : <input type="text" id="date" name="date"></td><td>start_time <input type="text" id="start" name="start"></td><td>end_time: <input type="text" id="end" name="end"></td></tr>
+	</table>
+	Image: <input type="file" name="image">
+	<textarea rows="10" cols="100" name="detail"></textarea> <br>
+
+	File: <input type="file" name="files">
+	File: <input type="file" name="files">
+	File: <input type="file" name="files"> <br>
+	
+	<input type="submit" value="Register" class="btn-default">  <a href="/adminClass">목록보기</a>
+</form>
+
 
 </body>
 </html>
