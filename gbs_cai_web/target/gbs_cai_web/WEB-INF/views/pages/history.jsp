@@ -3,16 +3,12 @@
 <%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
 <%@ page session="false" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<title>	CAI university</title>
 <tiles:importAttribute name="innerLayout" />
 <c:forEach var="innerLayout" items="${innerLayout}">
     <link type="text/css" rel="stylesheet" href="<c:url value="${innerLayout}"/>" />
 </c:forEach>
-</head>
-<body>
-	<div class="container">		
+
+<div class="container">		
 		<div class="banner">
 			<div class="banner-matter">
 				<h2>Creative Ideas Live Here</h2>

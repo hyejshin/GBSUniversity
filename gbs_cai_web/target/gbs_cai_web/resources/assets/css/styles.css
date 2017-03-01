@@ -8,7 +8,7 @@
 }
 body {
 	/*background: #EDEDED;*/
-	background: url(../images/1.jpg) repeat;
+	background: url(/images/login.jpg) repeat;
 }
 
 #logo {
