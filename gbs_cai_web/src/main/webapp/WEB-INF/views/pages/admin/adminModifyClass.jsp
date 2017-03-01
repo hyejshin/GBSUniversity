@@ -8,9 +8,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:set var="PATH" value="C:/temp/"/>
 
-<form method="POST" action="/gbs_cai_web/modifyClass" enctype="multipart/form-data">
+<form method="POST" action="/modifyClass" enctype="multipart/form-data">
 <input type="hidden" id="idx" name="idx" value="${vo.idx}">
 
 <table>
@@ -23,7 +22,7 @@
 	<td>start_time <input type="text" id="start" name="start" value="${vo.start}"></td>
 	<td>end_time: <input type="text" id="end" name="end" value="${vo.end}"></td></tr>
 	<tr><td colspan="3"><input type="file" name="image"></td></tr>
-<tr><td colspan="3"><img src="${PATH}${vo.image}" height="300"></td></tr>
+<tr><td colspan="3"><img src="${vo.uploadPath}${vo.image}" height="300"></td></tr>
 <tr><td colspan="3"><input type="file" name="files"> ${vo.atta1} <br>
 					<input type="file" name="files"> ${vo.atta2} <br>
 					<input type="file" name="files"> ${vo.atta3} <br>
@@ -37,7 +36,7 @@
 <input type="hidden" name="atta2" value="${vo.atta2}">
 <input type="hidden" name="atta3" value="${vo.atta3}">
 
-<input type="submit" value="수정" class="btn-default"> <a href="/gbs_cai_web/adminClass">목록보기</a>
+<input type="submit" value="수정" class="btn-default"> <a href="/adminClass">목록보기</a>
 
 </form>
 

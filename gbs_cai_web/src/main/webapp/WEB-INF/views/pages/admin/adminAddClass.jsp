@@ -11,7 +11,7 @@
 </head>
 <body>
 
-<form method="POST" action="/gbs_cai_web/addClass" enctype="multipart/form-data">
+<form method="POST" action="/addClass" enctype="multipart/form-data">
 	<table>
 		<tr><td colspan="3">Title: <input type="text" id="title" name="title"></td></tr>
 		<tr><td>Teacher: <input type="text" id="teacher" name="teacher"></td><td>Booth: <input type="text" id="booth" name="booth"></td><td>capacity <input type="text" id="capacity" name="capacity"></td></tr>
@@ -24,7 +24,7 @@
 	File: <input type="file" name="files">
 	File: <input type="file" name="files"> <br>
 	
-	<input type="submit" value="Register" class="btn-default">  <a href="/gbs_cai_web/adminClass">목록보기</a>
+	<input type="submit" value="Register" class="btn-default">  <a href="/adminClass">목록보기</a>
 </form>
 
 </body>
