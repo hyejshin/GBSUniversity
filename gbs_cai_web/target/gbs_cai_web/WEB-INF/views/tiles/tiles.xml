@@ -108,6 +108,7 @@
             <add-attribute value="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" />
             <add-attribute value="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/js/bootstrap-select.min.js" />
             <add-attribute value="/script/sockjs.min.js"/>
+            <add-attribute value="/script/stomp.min.js"/>
             <add-attribute value="/script/board.js" />
             <!-- <add-attribute value="/script/jquery-1.10.2.min.js"/>-->
         </put-list-attribute>
