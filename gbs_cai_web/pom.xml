@@ -51,8 +51,6 @@
             <version>${springframework.version}</version>
         </dependency>
 
-
-        
         <!-- Apache Tiles -->
         <dependency>
             <groupId>org.apache.tiles</groupId>

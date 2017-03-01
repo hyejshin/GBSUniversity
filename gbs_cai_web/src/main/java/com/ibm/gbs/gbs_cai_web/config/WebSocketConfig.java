@@ -5,11 +5,8 @@
  */
 package com.ibm.gbs.gbs_cai_web.config;
 
-import com.ibm.gbs.gbs_cai_web.vo.UserVO;
-import java.util.List;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.messaging.handler.invocation.HandlerMethodArgumentResolver;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;
 import org.springframework.web.socket.config.annotation.AbstractWebSocketMessageBrokerConfigurer;
 import org.springframework.web.socket.config.annotation.EnableWebSocketMessageBroker;

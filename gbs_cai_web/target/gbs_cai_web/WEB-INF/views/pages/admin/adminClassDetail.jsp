@@ -109,6 +109,26 @@
                     </div>
                 </div>
             </div>
+          
+          
+          <table border="1" cellspacing="0">
+<tr><td width="200">클래스ID: ${vo.class_id}</td><td colspan="2" width="400">수업제목: ${vo.title}</td></tr>
+<tr><td>강사: ${vo.teacher}</td><td width="300">부스: ${vo.booth}</td><td>수용인원 ${vo.capacity}</td></tr>
+<tr><td>날짜: ${vo.date}</td><td colspan="2">시간: ${vo.start}-${vo.end}</td></tr>
+<tr><td colspan="3"><img src="${vo.uploadPath}${vo.image}" width="300"></td></tr>
+<tr><td colspan="3">${vo.detail}</td></tr>
+<tr><td colspan="3">
+	<a href="/download?fileName=${vo.atta1}&path=${vo.uploadPath}">${vo.atta1}</a> <br>
+	<a href="/download?fileName=${vo.atta2}&path=${vo.uploadPath}">${vo.atta2}</a> <br>
+	<a href="/download?fileName=${vo.atta3}&path=${vo.uploadPath}">${vo.atta3}</a> <br>
+	</td></tr>
+</table>
+<br>
+
+<a href="/modifyClassView?idx=${vo.idx}">수정</a> | <a href="/adminClass">목록보기</a>
+          
+          
+          
             <hr>
             <footer>
                 <p>&copy; Developed By IBM GBS 2017</p>
@@ -116,7 +136,6 @@
             
         </div>
         <!--/.fluid-container-->
-
         <script src="/vendors/jquery-1.9.1.js"></script>
         <script src="/bootstrap/js/bootstrap.min.js"></script>
         <script src="/vendors/datatables/js/jquery.dataTables.min.js"></script>

@@ -28,7 +28,6 @@ import org.springframework.web.servlet.view.tiles3.TilesViewResolver;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.socket.config.annotation.EnableWebSocket;
 import org.springframework.web.socket.config.annotation.WebSocketConfigurer;
@@ -38,10 +37,8 @@ import org.springframework.web.socket.config.annotation.WebSocketConfigurer;
 @EnableWebSocket
 @EnableWebMvc
 @ComponentScan(basePackages = "com.ibm.gbs.gbs_cai_web")
-public class AppConfig extends WebMvcConfigurerAdapter implements WebSocketConfigurer{
-    
-    @Autowired 
-    private EchoHandler echoHandler;
+public class AppConfig extends WebMvcConfigurerAdapter {
+
     /**
      * Configure TilesConfigurer
      */
@@ -122,7 +119,7 @@ public class AppConfig extends WebMvcConfigurerAdapter implements WebSocketConfi
      * - 추가목적 : 파일 업로드 및 다운로드 Multipart Resolver 
      * - 추가이력 : 신혜정(20170226) 
      */
-	@Bean(name = "multipartResolver")
+    @Bean(name = "multipartResolver")
     public CommonsMultipartResolver multipartResolver() {
         CommonsMultipartResolver resolver = new CommonsMultipartResolver();
         resolver.setMaxUploadSizePerFile(100000000); //bytes 대략 100MB 
@@ -130,8 +127,6 @@ public class AppConfig extends WebMvcConfigurerAdapter implements WebSocketConfi
         return resolver;
     }
     
-	
-	
     /**
      * addInterceptors
      * - 추가목적 : request 시 로그인 session 및 user 확인
@@ -141,11 +136,6 @@ public class AppConfig extends WebMvcConfigurerAdapter implements WebSocketConfi
     public void addInterceptors(InterceptorRegistry registry){
         registry.addInterceptor( new AuthInterceptor()).addPathPatterns("/**").excludePathPatterns("/login")  ;
 
-    }
-
-    @Override
-    public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
-        registry.addHandler(echoHandler, "/echo").withSockJS();
     }
 
 }

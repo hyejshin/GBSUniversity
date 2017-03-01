@@ -4,13 +4,13 @@
     <cache />
     <select id="getClassesByCondition" resultType="hashmap" parameterType="hashmap">
         SELECT *	   
-        FROM class
+        FROM CLASS
         WHERE booth=#{booth} and start=#{time} 
     </select>
     
     <select id="getDetailByCondition" resultType="hashmap" parameterType="int">
         SELECT *	   
-        FROM class
+        FROM CLASS
         WHERE idx=#{idx} 
     </select>
     
@@ -19,17 +19,22 @@
     
     <select id="getClassList" resultType="com.ibm.gbs.gbs_cai_web.vo.ClassVO">
         SELECT *	   
-        FROM class
+        FROM CLASS
+    </select>
+    
+    <select id="getClassID" resultType="String">
+        SELECT LPAD((SELECT IFNULL(MAX(idx)+1, 1) FROM CLASS), 4, '0') 
+        FROM DUAL;
     </select>
     
     <select id="getClassDetail" resultType="com.ibm.gbs.gbs_cai_web.vo.ClassVO">
         SELECT *	   
-        FROM class
+        FROM CLASS
         WHERE idx=#{idx}
     </select>
     
     <insert id="addClass" parameterType="com.ibm.gbs.gbs_cai_web.vo.ClassVO">
-        INSERT INTO class (
+        INSERT INTO CLASS (
         	class_id
 			,title
 			,teacher
@@ -41,7 +46,9 @@
 			,detail
 			,image
 			,atta1
-			,use_yn)
+			,atta2
+			,atta3
+			,uploadPath)
         VALUES (
         	 #{class_id}
         	,#{title}
@@ -54,14 +61,15 @@
         	,#{detail}
         	,#{image}
         	,#{atta1}
-        	,'Y'        	
+        	,#{atta2}
+        	,#{atta3}
+        	,#{uploadPath}     	
         )	
     </insert>
     
     <update id="modifyClass" parameterType="com.ibm.gbs.gbs_cai_web.vo.ClassVO">
-        UPDATE class SET
-        	class_id = #{class_id}
-			,title = #{title}
+        UPDATE CLASS SET
+			title = #{title}
 			,teacher = #{teacher}
 			,booth = #{booth}
 			,start = #{start}
@@ -71,13 +79,15 @@
 			,detail = #{detail}
 			,image = #{image}
 			,atta1 = #{atta1}
+			,atta2 = #{atta2}
+			,atta3 = #{atta3}
 		WHERE
 			idx = #{idx}
     </update>
     
     <delete id="deleteClass" parameterType="int">
         DELETE    
-        FROM class
+        FROM CLASS
         WHERE idx=#{idx}
     </delete>
     
