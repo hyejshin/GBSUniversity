@@ -23,6 +23,7 @@ public class ClassVO implements Serializable{
 	private String atta1;
 	private String atta2;
 	private String atta3;
+	private String uploadPath;
 	
 	private String use_yn;
 	
@@ -181,6 +182,14 @@ public class ClassVO implements Serializable{
 
 	public void setAtta3(String atta3) {
 		this.atta3 = atta3;
+	}
+
+	public String getUploadPath() {
+		return uploadPath;
+	}
+
+	public void setUploadPath(String uploadPath) {
+		this.uploadPath = uploadPath;
 	}
 
 	public String getUse_yn() {

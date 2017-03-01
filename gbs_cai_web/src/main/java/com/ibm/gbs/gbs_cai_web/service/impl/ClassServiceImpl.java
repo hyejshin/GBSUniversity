@@ -1,9 +1,7 @@
 package com.ibm.gbs.gbs_cai_web.service.impl;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.URLEncoder;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -12,32 +10,32 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.log4j.BasicConfigurator;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
-import org.springframework.util.FileCopyUtils;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.ibm.gbs.gbs_cai_web.mapper.ClassMapper;
 import com.ibm.gbs.gbs_cai_web.service.ClassService;
 import com.ibm.gbs.gbs_cai_web.vo.ClassVO;
 
+
 @Service("classService")
 public class ClassServiceImpl implements ClassService {
+	private final Logger logger = Logger.getLogger(ClassServiceImpl.class);
 	
-	private static String UPLOADED_FOLDER = "C://temp//";
 	
 	@Autowired
 	private ClassMapper classMapper;
 	
 	public List<Map<String, Object>> getClassesByCondition(HashMap<String,Object> map) throws Exception {
-		
+
 		return classMapper.getClassesByCondition(map);
 	}
 	
@@ -51,6 +49,14 @@ public class ClassServiceImpl implements ClassService {
 	 */
 	
 	public List<ClassVO> getClassList() throws Exception {
+		//BasicConfigurator.configure();
+		
+//		logger.info("info log4j");
+//		logger.debug("debuge log4j");
+//		logger.error("error log4j");
+		
+		System.out.println();
+		
 		return classMapper.getClassList();
 	}
 	
@@ -59,13 +65,10 @@ public class ClassServiceImpl implements ClassService {
 	}
 	
 	public void addClass(Model model) throws Exception {
+		//BasicConfigurator.configure();
 		
 		Map<String, Object> map = model.asMap();
 		HttpServletRequest request = (HttpServletRequest) map.get("request");
-		
-//		ServletContext context = request.getServletContext();
-//      String appPath = context.getRealPath("");
-//      System.out.println("appPath = " + appPath);
 				
 		String class_id = "C"+classMapper.getClassID();
 		String title = request.getParameter("title");
@@ -79,6 +82,12 @@ public class ClassServiceImpl implements ClassService {
 		String detail = request.getParameter("detail");
 		
 		ClassVO vo = new ClassVO(class_id, title, teacher, booth, start, end, date, capacity, detail);
+		
+		System.out.println(request.getServletContext().getContextPath());
+		String uploadPath = request.getServletContext().getRealPath("/WEB-INF/uploads/");
+		//String uploadPath = "C://temp/";
+		vo.setUploadPath(uploadPath);
+		System.out.println(uploadPath);
 		
 		MultipartFile image = (MultipartFile) map.get("image");
 		MultipartFile[] files = (MultipartFile[]) map.get("files");
@@ -122,9 +131,9 @@ public class ClassServiceImpl implements ClassService {
 		classMapper.deleteClass(idx);
 	}
 	
-	public void downloadFile(String fileName, HttpServletResponse response) {
+	public void downloadFile(String fileName, String path, HttpServletResponse response) {
 		try{
-			byte fileByte[] = FileUtils.readFileToByteArray(new File(UPLOADED_FOLDER + fileName));
+			byte fileByte[] = FileUtils.readFileToByteArray(new File(path + fileName));
 		     
 		    response.setContentType("application/octet-stream");
 		    response.setContentLength(fileByte.length);
@@ -147,7 +156,7 @@ public class ClassServiceImpl implements ClassService {
 	        	String imageName = image.getOriginalFilename();
 	        	vo.setImage(imageName);
 	        	
-	            Path path = Paths.get(UPLOADED_FOLDER + imageName);
+	            Path path = Paths.get(vo.getUploadPath() + imageName);
 	            Files.write(path, bytes);
             } catch (IOException e) {
                 e.printStackTrace();
@@ -161,7 +170,7 @@ public class ClassServiceImpl implements ClassService {
 	        	String fileName = files[0].getOriginalFilename();
 	        	vo.setAtta1(fileName);
 	        	
-	            Path path = Paths.get(UPLOADED_FOLDER + fileName);
+	            Path path = Paths.get(vo.getUploadPath() + fileName);
 	            Files.write(path, bytes);
             } catch (IOException e) {
                 e.printStackTrace();
@@ -175,7 +184,7 @@ public class ClassServiceImpl implements ClassService {
 	        	String fileName = files[1].getOriginalFilename();
 	        	vo.setAtta2(fileName);
 	        	
-	            Path path = Paths.get(UPLOADED_FOLDER + fileName);
+	            Path path = Paths.get(vo.getUploadPath() + fileName);
 	            Files.write(path, bytes);
             } catch (IOException e) {
                 e.printStackTrace();
@@ -189,7 +198,7 @@ public class ClassServiceImpl implements ClassService {
 	        	String fileName = files[2].getOriginalFilename();
 	        	vo.setAtta3(fileName);
 	        	
-	            Path path = Paths.get(UPLOADED_FOLDER + fileName);
+	            Path path = Paths.get(vo.getUploadPath() + fileName);
 	            Files.write(path, bytes);
             } catch (IOException e) {
                 e.printStackTrace();

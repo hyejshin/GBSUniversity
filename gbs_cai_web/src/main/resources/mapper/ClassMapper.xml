@@ -4,13 +4,13 @@
     <cache />
     <select id="getClassesByCondition" resultType="hashmap" parameterType="hashmap">
         SELECT *	   
-        FROM class
+        FROM CLASS
         WHERE booth=#{booth} and start=#{time} 
     </select>
     
     <select id="getDetailByCondition" resultType="hashmap" parameterType="int">
         SELECT *	   
-        FROM class
+        FROM CLASS
         WHERE idx=#{idx} 
     </select>
     
@@ -19,23 +19,22 @@
     
     <select id="getClassList" resultType="com.ibm.gbs.gbs_cai_web.vo.ClassVO">
         SELECT *	   
-        FROM class
+        FROM CLASS
     </select>
     
     <select id="getClassID" resultType="String">
-        SELECT 
-        	LPAD((SELECT MAX(idx)+1 FROM class), 4, '0') 
+        SELECT LPAD((SELECT IFNULL(MAX(idx)+1, 1) FROM CLASS), 4, '0') 
         FROM DUAL;
     </select>
     
     <select id="getClassDetail" resultType="com.ibm.gbs.gbs_cai_web.vo.ClassVO">
         SELECT *	   
-        FROM class
+        FROM CLASS
         WHERE idx=#{idx}
     </select>
     
     <insert id="addClass" parameterType="com.ibm.gbs.gbs_cai_web.vo.ClassVO">
-        INSERT INTO class (
+        INSERT INTO CLASS (
         	class_id
 			,title
 			,teacher
@@ -49,7 +48,7 @@
 			,atta1
 			,atta2
 			,atta3
-			,use_yn)
+			,uploadPath)
         VALUES (
         	 #{class_id}
         	,#{title}
@@ -64,12 +63,12 @@
         	,#{atta1}
         	,#{atta2}
         	,#{atta3}
-        	,'Y'        	
+        	,#{uploadPath}     	
         )	
     </insert>
     
     <update id="modifyClass" parameterType="com.ibm.gbs.gbs_cai_web.vo.ClassVO">
-        UPDATE class SET
+        UPDATE CLASS SET
 			title = #{title}
 			,teacher = #{teacher}
 			,booth = #{booth}
@@ -88,7 +87,7 @@
     
     <delete id="deleteClass" parameterType="int">
         DELETE    
-        FROM class
+        FROM CLASS
         WHERE idx=#{idx}
     </delete>
     

@@ -30,7 +30,7 @@ public interface ClassService {
 	
 	public void deleteClass(int idx) throws Exception;
 	
-	public void downloadFile(String fileName, HttpServletResponse response) throws Exception;
+	public void downloadFile(String fileName, String path, HttpServletResponse response) throws Exception;
 	
 	public void uploadImageAndFiles(MultipartFile image, MultipartFile[] files, ClassVO vo);
 	

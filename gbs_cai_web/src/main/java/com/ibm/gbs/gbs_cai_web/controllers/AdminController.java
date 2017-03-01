@@ -24,9 +24,10 @@ public class AdminController {
     private ClassService classService;
 	
 	@RequestMapping("/download")
-    public void downloadFile(@RequestParam("fileName") String fileName, HttpServletResponse response) throws Exception {
+    public void downloadFile(@RequestParam("fileName") String fileName, @RequestParam("path") String path, 
+    										HttpServletResponse response) throws Exception {
 
-		classService.downloadFile(fileName, response);
+		classService.downloadFile(fileName, path, response);
 	}
 	
 	@RequestMapping("/adminClass")
