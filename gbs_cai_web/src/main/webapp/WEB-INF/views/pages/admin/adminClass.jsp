@@ -66,7 +66,7 @@
 					</select>
 					<input type="submit" value="Search" class="btn btn-info"/>
 
-					<button class="btn-success" onClick="location.href='/gbs_cai_web/addClassView';">수업등록</button>
+					<button class="btn-success" onClick="location.href='/addClassView';">수업등록</button>
                 <!--/span-->
                 <div class="span12" id="content">                    
                     <div class="row-fluid">
@@ -92,9 +92,9 @@
 						                <c:forEach items="${list}" var="vo">
 	
 		<tr>
-			<td>${vo.class_id}</td><td><a href="/gbs_cai_web/detailClass?idx=${vo.idx}" >${vo.title}</a></td>
+			<td>${vo.class_id}</td><td><a href="/detailClass?idx=${vo.idx}" >${vo.title}</a></td>
 			<td>${vo.booth}</td><td>${vo.start}-${vo.end}</td><td>${vo.teacher}</td>
-			<td><a href="/gbs_cai_web/modifyClassView?idx=${vo.idx}" class="btn btn-warning">Edit</a> | <a href="/gbs_cai_web/deleteClass?idx=${vo.idx}" class="btn btn-danger">Delete</a></td>
+			<td><a href="/modifyClassView?idx=${vo.idx}" class="btn btn-warning">Edit</a> | <a href="/deleteClass?idx=${vo.idx}" class="btn btn-danger">Delete</a></td>
 		</tr>
 
                         
@@ -121,18 +121,6 @@
  -->
 
 <button class="btn btn-info" onClick="location.href='/addClassView';">수업등록</button>
-
-<table width="500" cellpadding="0" cellspacing="0" border="1" style="margin-top:20px">
-	<tr>
-		<td>classID</td><td>title</td><td>booth</td><td>time</td><td>teacher</td><td></td>
-	</tr>
-	<c:forEach items="${list}" var="vo">
-	<tr>
-		<td>${vo.class_id}</td><td><a href="/detailClass?idx=${vo.idx}" >${vo.title}</a></td>
-			<td>${vo.booth}</td><td>${vo.start}-${vo.end}</td><td>${vo.teacher}</td>
-			<td><a href="/modifyClassView?idx=${vo.idx}">수정</a> | <a href="/deleteClass?idx=${vo.idx}">삭제</a></td>
-	</tr>
-    
     
             <hr>
             <footer>
