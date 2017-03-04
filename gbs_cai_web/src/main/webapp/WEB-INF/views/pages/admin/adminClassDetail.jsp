@@ -88,8 +88,9 @@
 			<td>${vo.speaker}</td>
 			<td>${vo.room}</td>
 			<td>${vo.capacity}</td>
-		</tr></tbody>
-                                    </table>
+		</tr>
+		<tr><td colspan="3"><img src="images/speaker/${vo.speaker_img}" width="100"></td></tr>
+		</tbody></table>
 		<div class="card">
 			
 			<p>${vo.detail}</p><br><br>
