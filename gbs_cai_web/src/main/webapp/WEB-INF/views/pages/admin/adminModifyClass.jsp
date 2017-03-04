@@ -67,7 +67,7 @@
                             </div>
                             <div class="block-content collapse in">
                                 <div class="span12">
-                                    <form class="form-horizontal" method="POST" action="/modifyClass" enctype="multipart/form-data">
+                                    <form class="form-horizontal" method="POST" action="/modifyClass">
                                       <input type="hidden" id="idx" name="idx" value="${vo.idx}">
                                       <fieldset>
                                         <legend>Form Components</legend>

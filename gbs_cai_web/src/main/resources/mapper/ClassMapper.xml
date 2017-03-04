@@ -7,7 +7,14 @@
     
     <select id="getClassList" resultType="com.ibm.gbs.gbs_cai_web.vo.ClassVO">
         SELECT *	   
-        FROM CLASS
+        FROM CLASS ORDER BY class_id
+    </select>
+    
+    <select id="getClassListBySession" parameterType="String" resultType="com.ibm.gbs.gbs_cai_web.vo.ClassVO">
+        SELECT *	   
+        FROM CLASS 
+        WHERE session = #{session}
+        ORDER BY class_id
     </select>
     
     <select id="getClassDetail" resultType="com.ibm.gbs.gbs_cai_web.vo.ClassVO">

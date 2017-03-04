@@ -59,14 +59,15 @@
         </div>
         <div class="container-fluid">
             <div class="row-fluid">
-                   <select class="selectpicker" id="session" name="session">
+            	<form class="form-horizontal" method="POST" action="/classList">
+                   <select id="session" name="session" name="session">
                    		<option value="all">전체</option>
-	                    <option value="1">session1</option>
-						<option value="2">session2</option>
-						<option value="3">session3</option>
+	                    <option value="Session1 (1:15 - 2:30)">session1</option>
+						<option value="Session2 (2:45 - 4:00)">session2</option>
+						<option value="Session3 (4:15 - 5:30)">session3</option>
 					</select>
 					<input type="submit" value="Search" class="btn btn-info"/>
-					
+				</form>
                 <!--/span-->
                 <div class="span12" id="content">                    
                     <div class="row-fluid">

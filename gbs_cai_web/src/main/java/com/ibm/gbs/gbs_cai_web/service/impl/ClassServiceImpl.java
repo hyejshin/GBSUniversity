@@ -51,6 +51,11 @@ public class ClassServiceImpl implements ClassService {
         return classMapper.getClassList();
     }
 
+    // 해당 세션 클래스 목록
+    public List<ClassVO> getClassListBySession(String session) throws Exception {
+        return classMapper.getClassListBySession(session);
+    }
+    
     // 클래스 상세
     public ClassVO getClassDetail(int idx) throws Exception {
         return classMapper.getClassDetail(idx);

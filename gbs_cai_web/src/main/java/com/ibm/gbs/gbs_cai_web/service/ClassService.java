@@ -24,6 +24,8 @@ public interface ClassService {
 	
 	public List<ClassVO> getClassList() throws Exception;
 	
+	public List<ClassVO> getClassListBySession(String session) throws Exception;
+	
 	public ClassVO getClassDetail(int idx) throws Exception;
 	
 	public void addClass(ClassVO vo) throws Exception;

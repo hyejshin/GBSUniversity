@@ -37,6 +37,18 @@ public class AdminController {
 		return "admin/adminClass";
 	}
 	
+	@RequestMapping("/classList")
+	public String classList(@RequestParam("session") String session, Model model) throws Exception {
+        
+		if(session.equals("all")) {
+			model.addAttribute("list", classService.getClassList());
+		} else {
+			model.addAttribute("list", classService.getClassListBySession(session));
+		}
+
+		return "admin/adminClass";
+	}
+	
 	@RequestMapping("/addClassView")
 	public String addClassView (Model model) throws Exception {
 		

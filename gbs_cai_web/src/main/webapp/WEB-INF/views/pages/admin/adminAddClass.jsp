@@ -70,7 +70,7 @@
                                       <fieldset>
                                       
                                         <legend>Form Components</legend>
-                                <form class="form-horizontal" method="POST" action="/addClass" enctype="multipart/form-data">
+                                <form class="form-horizontal" method="POST" action="/addClass">
                      
                      					<div class="control-group">
                                           <label class="control-label" for="booth">Class ID</label>
