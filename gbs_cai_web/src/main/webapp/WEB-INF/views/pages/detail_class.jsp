@@ -122,11 +122,11 @@ function click1() {
 
 			<thead>
 				<tr>
-					<th style="text-align: center;">번 호</th>
-					<th style="text-align: center;">제 목</th>
-					<th style="text-align: center;">작성자</th>
-					<th style="text-align: center;">작성일</th>
-					<th style="text-align: center;">조 회</th>
+					<th style="text-align: center;">NO</th>
+					<th style="text-align: center;">TITLE</th>
+					<th style="text-align: center;">WRITER</th>
+					<th style="text-align: center;">DATE</th>
+					<th style="text-align: center;">HIT</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -180,13 +180,13 @@ function click1() {
 					<td>
 						<table class="table" summary="목록 테이블 구성">
 							<tr>
-								<td align=center bgcolor=#dddddd>작성자</td>
+								<td align=center bgcolor=#dddddd>WRITER</td>
 								<td bgcolor=#ffffe8>정연우</td>
-								<td align=center bgcolor=#dddddd>작성일</td>
-								<td bgcolor=#ffffe8>2015/11/23</td>
+								<td align=center bgcolor=#dddddd>DATE</td>
+								<td bgcolor=#ffffe8>2017/03/11</td>
 							</tr>
 							<tr>
-								<td align=center bgcolor=#dddddd>제 목</td>
+								<td align=center bgcolor=#dddddd>TITLE</td>
 								<td bgcolor=#ffffe8 colspan=3>게시판 글입니다</td>
 							</tr>
 							<tr>
@@ -199,7 +199,7 @@ function click1() {
 				</tr>
 				<section class="box">
 				<tr>
-					<td bgcolor=#dcdcdc height=25 align=center>답변달기</td>
+					<td bgcolor=#dcdcdc height=25 align=center>REPLY</td>
 				</tr>
 				<br>
 				<form name="BoardReplyForm" class="form-control" method="post">
@@ -207,15 +207,15 @@ function click1() {
 						<td>
 							<table class="table" align=center>
 								<tr>
-									<td align="center">작성자</td>
+									<td align="center">WRITER</td>
 									<td><input type=text name=name size=30></td>
 								</tr>
 								<tr>
-									<td align="center">제 목</td>
+									<td align="center">TITLE</td>
 									<td><input type=text size=30 name=title value="RE : 게시판 글입니다."></td>
 								</tr>
 								<tr>
-									<td align="center">내 용</td>
+									<td align="center">CONTENT</td>
 									<td>
 										<textarea name=content cols="30" rows="8"> 가나다라마바사
 										</textarea>
@@ -252,19 +252,16 @@ function click1() {
 		<table class="table" summary="테이블 구성" >
 		<caption>게시판 글쓰기</caption>	
     		<tr>
-				<td>작성자</td>
+				<td>WRITER</td>
 				<td><input type=text name=name size=30></td>
 			</tr>
-			<tr>
-	 			<td>E-Mail</td>
-	 			<td><input type=text name=email size=30></td>
-    		</tr>
+			
     		<tr>
-     			<td>제 목</td>
+     			<td>TITLE</td>
      			<td><input type=text name=title size=30></td>
     		</tr>
     		<tr>
-     			<td>내 용</td>
+     			<td>CONTENT</td>
      			<td><textarea name=content cols="30" rows="8"></textarea></td>
     		</tr>
     		<tr>
