@@ -77,86 +77,60 @@
                                             <input type="text" class="span6" id="class_id" name="class_id"  value="${vo.class_id}" data-provide="typeahead">
                                             <p class="help-block"></p>
                                           </div>
-                                          
                                         </div>
-                                        <div class="control-group">
+                                
+                                		<div class="control-group">
                                           <label class="control-label" for="title">Title</label>
                                           <div class="controls">
-                                            <input type="text" class="span6" id="title" name="title"  value="${vo.title}"data-provide="typeahead" >
-                                            <p class="help-block"></p>
+                                            <input type="text" class="span6" id="title" name="title" value="${vo.title}" data-provide="typeahead" >
+                                            <p class="help-block">강의명을 등록해주세요.</p>
                                           </div>
                                           </div>
                                           <div class="control-group">
-                                          <label class="control-label" for="teacher">Teacher</label>
+                                          <label class="control-label" for="teacher">Speaker</label>
                                           <div class="controls">
-                                            <input type="text" class="span6" id="teacher" name="teacher"  value="${vo.teacher}" data-provide="typeahead">
+                                            <input type="text" class="span6" id="speaker" name="speaker" value="${vo.speaker}" data-provide="typeahead">                                             <p class="help-block">강사명을 등록해주세요</p>
+                                          </div>
+                                          </div>
+     
+                                        <div class="control-group">
+                                          <label class="control-label" for="room">Room</label>
+                                          <div class="controls">
+                                            <input type="text" class="span6" id="room" name="room" value="${vo.room}" data-provide="typeahead" >
                                             <p class="help-block"></p>
                                           </div>
-                                          </div>
-                                          
-                                        <div class="control-group">
-                                          <label class="control-label" for="date">Date</label>
-                                          <div class="controls">
-                                            <input type="text" class="input-xlarge datepicker" id="date" name="date" value="${vo.date}">
-                                            <p class="help-block"> </p>
-                                          </div> 
                                         </div>
+                                        
                                         <div class="control-group">
-                                          <label class="control-label" for="start">Start Time</label>
+                                          <label class="control-label" for="session">Session</label>
                                           <div class="controls">
-                                            <input type="text" class="span4" id="start" name="start"  value="${vo.start}"data-provide="typeahead" >
-                                            <p class="help-block"></p>
-                                          </div>
-                                          <label class="control-label" for="end">End Time</label>
-                                          <div class="controls">
-                                            <input type="text" class="span4" id="end" name="end"  value="${vo.end}" data-provide="typeahead" >                                            <p class="help-block"></p>
-                                             <p class="help-block"> </p>
-                                          </div>
-                                          </div>
-                                        <div class="control-group">
-                                          <!-- <label class="control-label" for="select01">Select Booth</label>
-                                          <div class="controls">
-                                            <select id="select01" class="chzn-select">
-                                              <option>Track 1</option>
-                                              <option>Track 2</option>
-                                              <option>Track 3</option>
-                                              <option>Track 4</option>
+                                            <select id="session" name="session" class="chzn-select" >
+                                              <option value="${vo.session}">${vo.session}</option>
+                                              <option value="Session1 (1:15 - 2:30)">Session1: 1:15 - 2:30</option>
+                                              <option value="Session1 (2:45 - 4:00)">Session2: 2:45 - 4:00</option>
+                                              <option value="Session1 (4:15 - 5:30)">Session3: 4:15 - 5:30</option>
                                             </select>
-                                          </div>-->
-                                          <label class="control-label" for="booth">Booth Name</label>
-                                          <div class="controls">
-                                            <input type="text" class="span6" id="booth" name="booth" value="${vo.booth}" data-provide="typeahead" >
-                                            <p class="help-block"></p>
                                           </div>
                                         </div>
+                                        
                                         <div class="control-group">
                                           <label class="control-label" for="capacity">Capacity</label>
                                           <div class="controls">
-                                            <input type="text" class="span6" id="capacity" name="capacity" value="${vo.booth}" data-provide="typeahead" >
+                                            <input type="text" class="span6" id="capacity" name="capacity" value="${vo.capacity}" data-provide="typeahead" >
                                             <p class="help-block"> </p>
                                           </div>
-                                          </div>
                                         </div>
-                                        <div class="container">
-                                         <img src="${vo.uploadPath}${vo.image}" height="200"> <br>
-                                         Attached File:  ${vo.atta1} <br>
-                                         
-                                         <input type="hidden" name="imageName" value="${vo.image}">
-										<input type="hidden" name="atta1" value="${vo.atta1}">
-										<input type="hidden" name="atta2" value="${vo.atta2}">
-										<input type="hidden" name="atta3" value="${vo.atta3}">
 
-                                         </div>
                                         <div class="control-group">
-                                          <label class="control-label" for="fileInput">Image File</label>
+                                          <label class="control-label" for="imageFile">Image File</label>
                                           <div class="controls">
-                                            <input class="input-file uniform_on" id="fileInput" name="image" type="file">
+                                            <input type="text" class="span6" id="speaker_img" name="speaker_img" value="${vo.speaker_img}" data-provide="typeahead" >
                                           </div>
                                         </div>
                                         <div class="control-group">
-                                          <label class="control-label" for="fileInput">File</label>
+                                          <label class="control-label" for="attendCode">Attend Code</label>
                                           <div class="controls">
-                                            <input class="input-file uniform_on" id="fileInput" name="atta1" type="file">
+                                            <input type="text" class="span6" id="attend_code" name="attend_code" value="${vo.attend_code}" data-provide="typeahead" >
                                           </div>
                                         </div>
                                         
@@ -165,7 +139,8 @@
                                           <div class="controls">
                                             <textarea class="input-xlarge textarea" placeholder="Enter text:)" name="detail" rows="10" style="width:90%; height:80%;">${vo.detail}</textarea>
                                           </div>
-                                        </div>
+                                        </div>                     
+
                                         <div class="form-actions">
                                           <input type="submit" class="btn btn-default" value="수정"/><!-- Save</button>-->
                                           <input type="reset" class="btn" value="Cancel"/>

@@ -80,11 +80,11 @@
   									<table class="table">
 						              <thead>
 						                <tr>
-						                  <th>No</th>
-						                  <th>제 목</th>
-						                  <th>부 스</th>
-						                  <th>시 간</th>
-						                  <th>강사명</th>
+						                  <th>ClassID</th>
+						                  <th>Title</th>
+						                  <th>Room</th>
+						                  <th>Session</th>
+						                  <th>Speaker</th>
 						                  <th></th>
 						                </tr>
 						              </thead>
@@ -93,7 +93,7 @@
 	
 		<tr>
 			<td>${vo.class_id}</td><td><a href="/detailClass?idx=${vo.idx}" >${vo.title}</a></td>
-			<td>${vo.booth}</td><td>${vo.start}-${vo.end}</td><td>${vo.teacher}</td>
+			<td>${vo.room}</td><td>${vo.session}</td><td>${vo.speaker}</td>
 			<td><a href="/modifyClassView?idx=${vo.idx}" class="btn btn-warning">Edit</a> | <a href="/deleteClass?idx=${vo.idx}" class="btn btn-danger">Delete</a></td>
 		</tr>
 
