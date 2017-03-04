@@ -14,6 +14,7 @@ public class EnrollmentVO implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    private int idx;
     private String user_id;
     private String morning_room;
     private String session1;
@@ -26,6 +27,14 @@ public class EnrollmentVO implements Serializable {
     public EnrollmentVO() {
     	
     }
+
+	public int getIdx() {
+		return idx;
+	}
+
+	public void setIdx(int idx) {
+		this.idx = idx;
+	}
 
 	public String getUser_id() {
 		return user_id;
