@@ -1,6 +1,5 @@
 package com.ibm.gbs.gbs_cai_web.controllers;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.logging.Log;
@@ -11,9 +10,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.multipart.MultipartFile;
 
 import com.ibm.gbs.gbs_cai_web.service.ClassService;
+import com.ibm.gbs.gbs_cai_web.vo.ClassVO;
 
 
 @Controller
@@ -45,13 +44,9 @@ public class AdminController {
 	}
 	
 	@RequestMapping("/addClass")
-	public String addClass(@RequestParam("image") MultipartFile image, @RequestParam("files") MultipartFile[] files, 
-												HttpServletRequest request, Model model) throws Exception {		
-        
-		model.addAttribute("image", image);
-		model.addAttribute("files", files);
-		model.addAttribute("request", request);
-		classService.addClass(model);
+	public String addClass(ClassVO vo) throws Exception {		
+
+		classService.addClass(vo);
 		
 		return "redirect:adminClass";
 	}
@@ -65,15 +60,10 @@ public class AdminController {
 	}
 	
 	@RequestMapping("/modifyClass")
-	public String modifyClass(@RequestParam("image") MultipartFile image, @RequestParam("files") MultipartFile[] files, 
-													HttpServletRequest request, Model model) throws Exception {
-		
-		int idx = Integer.parseInt(request.getParameter("idx"));
-		
-		model.addAttribute("image", image);
-		model.addAttribute("files", files);
-		model.addAttribute("request", request);
-		classService.modifyClass(model);
+	public String modifyClass(ClassVO vo, Model model) throws Exception {
+
+		int idx = vo.getIdx();
+		classService.modifyClass(vo);
 		
 		return "redirect:detailClass?idx="+idx;
 	}

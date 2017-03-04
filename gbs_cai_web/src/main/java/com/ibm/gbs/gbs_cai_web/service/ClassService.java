@@ -18,28 +18,31 @@ public interface ClassService {
 	public List<Map<String, Object>> getDetailByCondition(int idx) throws Exception;
 	
 	
-	/* Class Admin 관련 */
+	/*
+	 * class Admin 관련 - 신혜정
+     */
 	
 	public List<ClassVO> getClassList() throws Exception;
 	
 	public ClassVO getClassDetail(int idx) throws Exception;
 	
-	public void addClass(Model model) throws Exception;
+	public void addClass(ClassVO vo) throws Exception;
 	
-	public void modifyClass(Model model) throws Exception;
+	public void modifyClass(ClassVO vo) throws Exception;
 	
 	public void deleteClass(int idx) throws Exception;
 	
-  public void downloadFile(String fileName, String path, HttpServletResponse response) throws Exception;
+	public void downloadFile(String fileName, String path, HttpServletResponse response) throws Exception;
 	
-	public void uploadImageAndFiles(MultipartFile image, MultipartFile[] files, ClassVO vo);
+	//public void uploadImageAndFiles(MultipartFile image, MultipartFile[] files, ClassVO vo);
   
   
 
 	/* ClassController와 연동되는 Service - 정연우(0224)*/
 	public List<Map<String, Object>> getMyLec(String user_id) throws Exception; 
+
 	public List<Map<String, Object>> getThisLec(String class_id) throws Exception; 
-	public void updateFlag(HashMap<String,Object> map) throws Exception;
+
 	public int checkCode(HashMap<String,Object> map) throws Exception;
 
 
