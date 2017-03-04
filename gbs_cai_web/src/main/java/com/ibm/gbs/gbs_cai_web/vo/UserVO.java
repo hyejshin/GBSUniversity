@@ -15,31 +15,25 @@ import org.springframework.stereotype.Repository;
 @Repository("uservo")
 public class UserVO implements Serializable{
 
-    private int idx;
     private String user_id;
     private String user_nm;
     private String password;
     private String type;
     
     public UserVO(){};
-    public UserVO(int idx, String user_id, String user_nm, String password, String type) {
-        this.idx = idx;
+    public UserVO(String user_id, String user_nm, String password, String type) {
         this.user_id = user_id;
         this.user_nm = user_nm;
         this.password = password;
         this.type = type;
     }
 
-    public UserVO(int idx, String user_id, String user_nm, String type) {
-        this.idx = idx;
+    public UserVO(String user_id, String user_nm, String type) {
         this.user_id = user_id;
         this.user_nm = user_nm;
         this.type = type;
     }
-    public int getIdx() {
-        return idx;
-    }
-
+    
     public String getPassword() {
         return password;
     }

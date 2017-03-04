@@ -67,17 +67,11 @@
                             </div>
                             <div class="block-content collapse in">
                                 <div class="span12">
-                                    <form class="form-horizontal" action="/addClass">
                                       <fieldset>
+                                      
                                         <legend>Form Components</legend>
-                                        <div class="control-group">
-                                          <label class="control-label" for="class-_id">Class ID</label>
-                                          <div class="controls">
-                                            <input type="text" class="span6" id="class_id" name="class_id"  data-provide="typeahead">
-                                            <p class="help-block"></p>
-                                          </div>
-                                          
-                                        </div>
+                                <form class="form-horizontal" method="POST" action="/addClass" enctype="multipart/form-data">
+                     
                                         <div class="control-group">
                                           <label class="control-label" for="title">Title</label>
                                           <div class="controls">
@@ -127,14 +121,15 @@
                                             <p class="help-block"></p>
                                           </div>
                                         </div>
+                                        
                                         <div class="control-group">
                                           <label class="control-label" for="capacity">Capacity</label>
                                           <div class="controls">
                                             <input type="text" class="span6" id="capacity"  data-provide="typeahead" >
                                             <p class="help-block"> </p>
                                           </div>
-                                          </div>
                                         </div>
+
                                         <div class="control-group">
                                           <label class="control-label" for="fileInput">Image File</label>
                                           <div class="controls">
@@ -159,27 +154,24 @@
                                         <div class="form-actions">
                                           <input type="submit" class="btn btn-primary" value="Save"/><!-- Save</button>-->
                                           <input type="reset" class="btn" value="Cancel"/>
-                                           <a href="/gbs_cai_web/adminClass" class="btn btn-success">목록보기</a>
+                                           <a href="/adminClass" class="btn btn-success">목록보기</a>
                                         </div>
+                                        </form>
                                       </fieldset>
-                                    </form>
+                                    
 
                                 </div>
                             </div>
                         </div>
                         <!-- /block -->
                     </div>
-              </div>
-            </div>
+
             <hr>
             <footer>
                 <p>&copy; Developed By IBM GBS 2017</p>
             </footer>
-        </div>
+
         <!--/.fluid-container-->
-        <link href="/vendors/datepicker.css" rel="stylesheet" media="all">
-        <link href="/vendors/uniform.default.css" rel="stylesheet" media="all">
-        <link href="/vendors/chosen.min.css" rel="stylesheet" media="all">
 
         <script src="/vendors/jquery-1.9.1.js"></script>
         <script src="/bootstrap/js/bootstrap.min.js"></script>
@@ -204,23 +196,6 @@
         });
         </script>
         
-
-<!-- classAdmin -->
-<form method="POST" action="/addClass" enctype="multipart/form-data">
-	<table>
-		<tr><td colspan="3">Title: <input type="text" id="title" name="title"></td></tr>
-		<tr><td>Teacher: <input type="text" id="teacher" name="teacher"></td><td>Booth: <input type="text" id="booth" name="booth"></td><td>capacity <input type="text" id="capacity" name="capacity"></td></tr>
-		<tr><td>Date : <input type="text" id="date" name="date"></td><td>start_time <input type="text" id="start" name="start"></td><td>end_time: <input type="text" id="end" name="end"></td></tr>
-	</table>
-	Image: <input type="file" name="image">
-	<textarea rows="10" cols="100" name="detail"></textarea> <br>
-
-	File: <input type="file" name="files">
-	File: <input type="file" name="files">
-	File: <input type="file" name="files"> <br>
-	
-	<input type="submit" value="Register" class="btn-default">  <a href="/adminClass">목록보기</a>
-</form>
 
 
 </body>

@@ -59,14 +59,14 @@
         </div>
         <div class="container-fluid">
             <div class="row-fluid">
-                   <select class="selectpicker" id="date" name="date">
+                   <select class="selectpicker" id="session" name="session">
                    		<option value="all">전체</option>
-	                    <option value="2017-03-10">2017-03-10(금)</option>
-						<option value="2017-03-11">2017-03-10(토)</option>
+	                    <option value="1">session1</option>
+						<option value="2">session2</option>
+						<option value="3">session3</option>
 					</select>
 					<input type="submit" value="Search" class="btn btn-info"/>
-
-					<button class="btn-success" onClick="location.href='/gbs_cai_web/addClassView';">수업등록</button>
+					
                 <!--/span-->
                 <div class="span12" id="content">                    
                     <div class="row-fluid">
@@ -92,9 +92,9 @@
 						                <c:forEach items="${list}" var="vo">
 	
 		<tr>
-			<td>${vo.class_id}</td><td><a href="/gbs_cai_web/detailClass?idx=${vo.idx}" >${vo.title}</a></td>
+			<td>${vo.class_id}</td><td><a href="/detailClass?idx=${vo.idx}" >${vo.title}</a></td>
 			<td>${vo.booth}</td><td>${vo.start}-${vo.end}</td><td>${vo.teacher}</td>
-			<td><a href="/gbs_cai_web/modifyClassView?idx=${vo.idx}" class="btn btn-warning">Edit</a> | <a href="/gbs_cai_web/deleteClass?idx=${vo.idx}" class="btn btn-danger">Delete</a></td>
+			<td><a href="/modifyClassView?idx=${vo.idx}" class="btn btn-warning">Edit</a> | <a href="/deleteClass?idx=${vo.idx}" class="btn btn-danger">Delete</a></td>
 		</tr>
 
                         
@@ -111,16 +111,8 @@
                 </div>
             </div>
           
-          <!-- 
-<select id="date" name="date">
-	<option value="all">전체</option>
-	<option value="2017-03-10">2017-03-10(금)</option>
-	<option value="2017-03-11">2017-03-10(토)</option>
-</select>
-<input type="submit" value="검색" class="btn btn-info"/>
- -->
-
 <button class="btn btn-info" onClick="location.href='/addClassView';">수업등록</button>
+
 
 <table width="500" cellpadding="0" cellspacing="0" border="1" style="margin-top:20px">
 	<tr>
@@ -133,26 +125,13 @@
 			<td><a href="/modifyClassView?idx=${vo.idx}">수정</a> | <a href="/deleteClass?idx=${vo.idx}">삭제</a></td>
 	</tr>
     
+
     
             <hr>
             <footer>
                 <p>&copy; Developed By IBM GBS 2017</p>
             </footer>
-        </div>
-        <!--/.fluid-container-->
 
-        <script src="/vendors/jquery-1.9.1.js"></script>
-        <script src="/bootstrap/js/bootstrap.min.js"></script>
-        <script src="/vendors/datatables/js/jquery.dataTables.min.js"></script>
-
-
-        <script src="/script/scripts.js"></script>
-        <script src="/script/DT_bootstrap.js"></script>
-        <script>
-        $(function() {
-            
-        });
-        </script>
     </body>
 
 </html>

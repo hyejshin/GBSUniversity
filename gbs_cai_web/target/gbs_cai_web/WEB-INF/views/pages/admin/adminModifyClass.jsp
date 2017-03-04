@@ -67,7 +67,7 @@
                             </div>
                             <div class="block-content collapse in">
                                 <div class="span12">
-                                    <form class="form-horizontal" action="/gbs_cai_web/modifyClass">
+                                    <form class="form-horizontal" method="POST" action="/modifyClass" enctype="multipart/form-data">
                                       <input type="hidden" id="idx" name="idx" value="${vo.idx}">
                                       <fieldset>
                                         <legend>Form Components</legend>
@@ -132,14 +132,20 @@
                                         <div class="control-group">
                                           <label class="control-label" for="capacity">Capacity</label>
                                           <div class="controls">
-                                            <input type="text" class="span6" id="capacity"  data-provide="typeahead" >
+                                            <input type="text" class="span6" id="capacity" name="capacity" value="${vo.booth}" data-provide="typeahead" >
                                             <p class="help-block"> </p>
                                           </div>
                                           </div>
                                         </div>
                                         <div class="container">
-                                         image:  ${vo.image} <br>
+                                         <img src="${vo.uploadPath}${vo.image}" height="200"> <br>
                                          Attached File:  ${vo.atta1} <br>
+                                         
+                                         <input type="hidden" name="imageName" value="${vo.image}">
+										<input type="hidden" name="atta1" value="${vo.atta1}">
+										<input type="hidden" name="atta2" value="${vo.atta2}">
+										<input type="hidden" name="atta3" value="${vo.atta3}">
+
                                          </div>
                                         <div class="control-group">
                                           <label class="control-label" for="fileInput">Image File</label>
@@ -163,9 +169,10 @@
                                         <div class="form-actions">
                                           <input type="submit" class="btn btn-default" value="수정"/><!-- Save</button>-->
                                           <input type="reset" class="btn" value="Cancel"/>
-                                           <a href="/gbs_cai_web/adminClass" class="btn btn-success">목록</a>
+                                           <a href="/adminClass" class="btn btn-success">목록</a>
                                         </div>
                                       </fieldset>
+                                      
                                     </form>
 
                                 </div>
@@ -181,11 +188,6 @@
             </footer>
         </div>
         <!--/.fluid-container-->
-        <link href="/vendors/datepicker.css" rel="stylesheet" media="all">
-        <link href="/vendors/uniform.default.css" rel="stylesheet" media="all">
-        <link href="/vendors/chosen.min.css" rel="stylesheet" media="all">
-
-        <link href="/vendors/wysiwyg/bootstrap-wysihtml5.css" rel="stylesheet" media="all">
 
         <script src="/vendors/jquery-1.9.1.js"></script>
         <script src="/bootstrap/js/bootstrap.min.js"></script>
@@ -209,40 +211,6 @@
             //$('.textarea').wysihtml5();
         });
         </script>
-        
-
-
-
-<form method="POST" action="/modifyClass" enctype="multipart/form-data">
-<input type="hidden" id="idx" name="idx" value="${vo.idx}">
-
-<table>
-<tr>
-	<td colspan="2">Title: <input type="text" id="title" name="title" value="${vo.title}"></td></tr>
-<tr><td>Teacher: <input type="text" id="teacher" name="teacher" value="${vo.teacher}"></td>
-	<td>Booth: <input type="text" id="booth" name="booth" value="${vo.booth}"></td>
-	<td>capacity <input type="text" id="capacity" name="capacity" value="${vo.capacity}"></td></tr>
-<tr><td>Date: <input type="text" id="date" name="date" value="${vo.date}"></td>
-	<td>start_time <input type="text" id="start" name="start" value="${vo.start}"></td>
-	<td>end_time: <input type="text" id="end" name="end" value="${vo.end}"></td></tr>
-	<tr><td colspan="3"><input type="file" name="image"></td></tr>
-<tr><td colspan="3"><img src="${vo.uploadPath}${vo.image}" height="300"></td></tr>
-<tr><td colspan="3"><input type="file" name="files"> ${vo.atta1} <br>
-					<input type="file" name="files"> ${vo.atta2} <br>
-					<input type="file" name="files"> ${vo.atta3} <br>
-</td></tr>
-</table>
-<textarea rows="5" cols="100" name="detail">${vo.detail}</textarea>
-<br>
-
-<input type="hidden" name="imageName" value="${vo.image}">
-<input type="hidden" name="atta1" value="${vo.atta1}">
-<input type="hidden" name="atta2" value="${vo.atta2}">
-<input type="hidden" name="atta3" value="${vo.atta3}">
-
-<input type="submit" value="수정" class="btn-default"> <a href="/adminClass">목록보기</a>
-
-</form>
 
 
 </body>

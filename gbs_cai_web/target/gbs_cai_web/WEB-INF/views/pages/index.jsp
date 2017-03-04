@@ -2,169 +2,140 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="false" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<tiles:importAttribute name="Basic" />
-<c:forEach var="Basic" items="${Basic}">
-    <link type="text/css" rel="stylesheet" href="<c:url value="${Basic}"/>" />
-</c:forEach>	
-<script type="text/javascript">
-
-window.onload = function() {
-	
-	$.ajax({
-		type : 'post',
-		url : '/class/findFirstView',
-		data : { booth : $('#booth').val(), time : $('#start_time').val() },
-		success : function(result) {
-			$("#tbList").empty();
-			
-			 for(var i=0;i<result.length;i++) {
-				$("#tbList").append("<p ><a href='detail.do?idx="+result[i].idx+"'>"+ "<input type='hidden'/>"+result[i].idx+"</a>"+
-						"<h2>"+result[i].title+"</h2>"+
-				result[i].booth+"<br>"+"<h4>시간:" + result[i].start+"~"+
-				result[i].end+"<br>"+"INFO:"+ result[i].detail+"</h4></p>");
-				$("div #tbList").append("<a href='/class/viewDetail?idx="+result[i].idx+"' class='read'>"+ "Read</a>");
-			}
-		}
-	});
-}
-
-function logout()
-{
-	$.ajax({
-		type : 'post',
-		url : '/logout',
-		data : {},
-		success : function(result) {
-			alert("Logout!");
-		}
-	});
-}
-
-
-
-/* 
-	추가목적 : 부스 선택시 (시간/부스)값을 가져와서 현재 페이지에 Reload없이 출력
-	추가이력 : 2017/02/20 정연우
-*/
-function pick_booth(obj) 
-{	   
-	   $.ajax({
-		type : 'post',
-		url : '/class/findByBoothTime',
-		data : { booth : obj.value, time : $('#start_time').val()  }, 
-		success : function(result) {
-			$("#tbList").empty();
-			
-			 for(var i=0;i<result.length;i++) {
-				$("#tbList").append("<p ><a href='detail.do?idx="+result[i].idx+"'>"+ "<input type='hidden'/>"+result[i].idx+"</a>"+
-						"<h2>"+result[i].title+"</h2>"+
-				result[i].booth+"<br>"+"<h4>시간:" + result[i].start+"~"+
-				result[i].end+"<br>"+"INFO:"+ result[i].detail+"</h4></p>");
-				$("div #tbList").append("<a href='/class/viewDetail?idx="+result[i].idx+"' class='read'>"+ "Read</a>");
-			} 
-		} 
-	});  
-}
-
-/* 
-	추가목적 : 시간 선택시 (시간/부스)값을 가져와서 현재 페이지에 Reload없이 출력
-	추가이력 : 2017/02/20 정연우
-*/
-	
-function pick_time(obj)
-{
-	var value_radio = $("input[type=radio][name=booth]:checked").val()
-		
- 	$.ajax({
-		type : 'post',
-		url : '/class/findByBoothTime',
-		data : { booth : value_radio, time : obj.value  }, 
-		success : function(result) {
-			$("#tbList").empty();
-			
-			 for(var i=0;i<result.length;i++) {
-				$("#tbList").append("<p ><a href='detail.do?idx="+result[i].idx+"'>"+ "<input type='hidden'/>"+result[i].idx+"</a>"+
-						"<h2>"+result[i].title+"</h2>"+
-				result[i].booth+"<br>"+"<h4>시간:" + result[i].start+"~"+
-				result[i].end+"<br>"+"INFO:"+ result[i].detail+"</h4></p>");
-				$("div #tbList").append("<a href='/class/viewDetail?idx="+result[i].idx+"' class='read'>"+ "Read</a>");
-			}
-		}
-	});  
-}
-</script>
-<%
-	HttpSession session = request.getSession();
-%>
-
 <div class="container">
-    <div class="works" id="portfolio">
-        <div class=" port-top">
-            <ul id="filters" style="float: left;">
+   <table class="table table-condensed table-striped" style="table-layout: fixed; word-break:break-all">
+<thead>
+  <tr >
+    <th style="width:15%; text-align:center;">Start</th>
+    <th style="width:15%; text-align:center;" >End</th>
+    <th colspan="2" style="text-align:center;">Session</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr style="text-align:center;">
+    <td>8:30</td>
+    <td>9:00</td>
+    <td colspan="2">Registeration & Teatime
+    </td>
+  </tr>
+  <tr style="text-align:center;">
+    <td>9:00</td>
+    <td >9:30</td>
+    <td colspan="2">Opening <br>SU / KheeHong
+    </td>
+  </tr>
+  <tr style="text-align:center;">
+    <td>9:30</td>
+    <td >9:45</td>
+    <td colspan="2">Move to Breakout rooms</td>
+  </tr>
+  <tr style="text-align:center;">
+    <td>9:45</td>
+    <td >10:45</td>
+    <td >Cloud Application Service</td>
+    <td>Watson Case</td>
+  </tr>
+  <tr style="text-align:center;">
+    <td>10:45</td>
+    <td >11:00</td>
+    <td colspan="2">Break</td>
+  </tr>
+  <tr style="text-align:center;">
+    <td>11:00</td>
+    <td>12:00</td>
+    <td >Watson Case</td>
+    <td >Cloud Application Service</td>
+  </tr>
+  <tr style="text-align:center;">
+    <td >12:00</td>
+    <td>13:15</td>
+    <td colspan="2"><a href="">Lunch</a></td>
+  </tr>
+  </tbody>
+</table>
+<br><br>
+<div class="tg-wrap">
+<table class="table table-bordered table-condensed" style="table-layout: fixed; word-break:break-all">
+  <tr>
+    <th colspan="8" style="text-align:center;">Break-Out Session</th>
+    
+  </tr>
+  <tr>
+    <td  colspan="2" style="text-align:center;" >Room</td>
+    <td>7F, On-demand</td>
+    <td>6F, Demo Zone</td>
+    <td>6F, Conference room</td>
+    <td>7F, 7M05</td>
+    <td>6F, IBM Studio 6M06</td>
+    <td>6F, 6M02</td>
+  </tr>
+  <tr>
+    <td>13:15</td>
+    <td >14:30</td>
+    <td colspan="6" rowspan="3" style="text-align:center; vertical-align:middle;" ><a href="/detail_session">
+                    Break-Out Session Click here <br>(-&gt; detail)</a></td>
+  </tr>
+  <tr>
+    <td>14:45</td>
+    <td>16:00</td>
+  </tr>
+  
+  <tr>
+    <td>16:15</td>
+    <td>17:30</td>
+  </tr>
+  <tr>
+    
+  </tr>
+  <tr>
+    <td>17:30</td>
+    <td>18:00</td>
+    <td colspan="6" style="text-align:center;" >Move to Plenary Session</td>
+  </tr>
+  
+</table>
+</div>
+<br><br>
+<div class="tg-wrap">
+<table class="table table-bordered table-condensed" style="table-layout: fixed; word-break:break-all">
+  <tr>
+    <th colspan="6" style="text-align:center;" >Plenary Seesion @ Conrad Hotel</th>
+  </tr>
+  <tr>
+    <td style="width:15%; text-align:center;">Start</td>
+    <td style="width:15%; text-align:center;">End</td>
+    <td colspan="4" >Topic</td>
+  </tr>
+  <tr>
+    <td>18:00</td>
+    <td>18:10</td>
+    <td colspan="4">Opening</td>
 
-                <li class="active"><span class="filters" ><a
-                            href="index.html" style="text-decoration: none; font-size:13px;">강좌목록</a></span></li>
-                <li><span class="filters" ><a
-                            href="history.jsp" style="text-decoration: none; font-size:13px;">수강내역 </a></span></li>
+  </tr>
+  <tr>
+    <td>18:10</td>
+    <td>18:30</td>
+    <td colspan="4">Keynote Speach -CAI University</td>
 
-            </ul>
-            <br><br>
-            <!-- Search box Start -->
+  </tr>
+  <tr>
+    <td>18:30</td>
+    <td>20:00</td>
+    <td colspan="4">Dinner &amp; Networking</td>
 
+  </tr>
+  <tr>
+    <td>20:00</td>
+    <td>21:15</td>
+    <td colspan="4">Have Fun &amp; Lucky Draw</td>
 
-            <form class="input-group col-md-6">
-                <div class="input-group-btn">
-                    <select class="selectpicker" id="start_time" name="start_time"
-                            onChange=pick_time(this);>
-                        
-                        <optgroup label="time">
-                            <option value="13:40">13:40 - 15:10</option>
-                            <option value="15:10">15:10 - 16:40</option>
-                            <option value="16:40">16:40 - 18:10</option>
-                            <option value="18:10">18:10 - 19:40</option>
-                        </optgroup>
-                    </select>
-                </div>
-                
-            </form>
-            <!-- end of search 시간으로 검색 -->
+  </tr>
+  <tr>
+    <td>21:15</td>
+    <td>21:30</td>
+    <td colspan="4">Closing</td>
 
-            <h3 class="port">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3>
-			<div class="a">
-            <!-- <ul id="filters" style="float: right" onchange=change(this);>
-                <li id='Track1' class="active"><span class="filter">Track1</span></li>
-                <li id='Track2'><span class="filter" > Track2 </span></li>
-                <li id='Track3'><span class="filter" > Track3</span></li>
-                <li id='Track4'><span class="filter" > Track4</span></li>
-                
-            </ul> -->
-            <ui id="filters" style="float: right">
-            	 <input type="radio" id="booth" name="booth" value="Track1" checked="true" onchange="pick_booth(this);">Track1</input> 
-           		 <input type="radio" id="booth" name="booth" value="Track2" onchange="pick_booth(this);">Track2</input>
-         	  	 <input type="radio" id="booth" name="booth" value="Track3" onchange="pick_booth(this);">Track3</input>
-          	 	 <input type="radio" id="booth" name="booth" value="Track4" onchange="pick_booth(this);">Track4</input>
-           	 </ui>
-            </div>
-            <div class="clearfix"></div>
-        </div>
-        <div id="portfoliolist">
-        	<div id="container">
-        	
-            <div class="container">
-                <div class="blog">
-                    <div class="top-blog">
-                        <div class="col-md-6 blog-top">
-                            <a href="single.jsp"><img class="img-responsive" src="<c:url value="/images/b1.jpg" />" alt=" "></a>
-                            <p id="tbList" style="text-align:left;">
-        		
-							</p>
-                            
-                        </div>
-                    </div>
-                	<div class="clearfix"></div>
-                    <input type="button" value="Logout" id="logout" onclick="logout()">
-                                                           
-            	</div>
-        	</div>
-   	 </div>
+  </tr>
+</table></div>
+    
 </div>

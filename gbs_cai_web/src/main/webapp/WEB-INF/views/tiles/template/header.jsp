@@ -33,5 +33,19 @@
             <div class="clearfix"> </div>
         </div>
         <div class="clearfix"> </div>
+	    <ul class="nav pull-right">
+                            <li class="dropdown">
+                                <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-user"></i>Hello ID:)<i class="caret"></i>
+
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="divider"></li>
+                                    <li>
+                                        <a tabindex="-1" href="/login.jsp">Logout</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                                <br><br>
     </div>
 </div>
