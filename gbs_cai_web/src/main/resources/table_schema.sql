@@ -17,6 +17,7 @@ CREATE TABLE CLASS (
 
 #ENROLLMENT TABLE
 CREATE TABLE ENROLLMENT (
+	idx 		 INT(10) NOT NULL auto_increment,
 	user_id		 VARCHAR(100) NOT NULL,
     morning_room VARCHAR(100),	
 	session1	 VARCHAR(100),
@@ -25,7 +26,8 @@ CREATE TABLE ENROLLMENT (
 	room1		 VARCHAR(100),
     room2		 VARCHAR(100),
     room3		 VARCHAR(100),
-	PRIMARY KEY(user_id)
+    PRIMARY KEY(idx),
+	UNIQUE KEY(user_id)
 );
 
 

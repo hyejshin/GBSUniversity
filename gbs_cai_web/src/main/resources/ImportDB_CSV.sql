@@ -6,3 +6,7 @@ load data local infile 'C://ProgramData//MySQL//MySQL Server 5.7//Uploads//enrol
 CALL UPDATE_ROOM1('Track1','Track2','Track3','Track4','Track5','Track6',@RESULT);
 CALL UPDATE_ROOM2('Track1','Track2','Track3','Track4','Track5','Track6',@RESULT);
 CALL UPDATE_ROOM3('Track1','Track2','Track3','Track4','Track5','Track6',@RESULT);
+
+CALL UPDATE_ROOM1('7F, On-demand','6F, Demo Zone','6F, Conference room  6M01','7F, 7M05','6F, IBM Sudio 6M06','6F, 6M02',@RESULT);
+CALL UPDATE_ROOM2('7F, On-demand','6F, Demo Zone','6F, Conference room  6M01','7F, 7M05','6F, IBM Sudio 6M06','6F, 6M02',@RESULT);
+CALL UPDATE_ROOM3('7F, On-demand','6F, Demo Zone','6F, Conference room  6M01','7F, 7M05','6F, IBM Sudio 6M06','6F, 6M02',@RESULT);
