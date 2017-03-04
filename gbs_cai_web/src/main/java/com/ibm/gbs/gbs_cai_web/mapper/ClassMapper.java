@@ -16,6 +16,8 @@ public interface ClassMapper {
 	
 	public List<ClassVO> getClassList();
 	
+	public List<ClassVO> getClassListBySession(String session);
+	
 	public String getClassID();
 	
 	public ClassVO getClassDetail(int idx);

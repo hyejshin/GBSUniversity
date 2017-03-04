@@ -72,33 +72,28 @@
   									<table class="table table-striped">
 						              <tbody>
 						              <tr>
-			<th>클래스ID</th><th>수업제목</th><th>일정</th>
+			<th>Class ID</th><th>Title</th><th>Session</th>
 			</tr>
 			<tr>
 			<td>${vo.class_id}</td>
 			<td>${vo.title}</td>
-			<td>${vo.date} <span style="font-weight:400;"> ${vo.start} - ${vo.end}</span></td>
+			<td>${vo.session}</td>
 		</tr>
 		<tr>
-		<th>강사</th>
-		<th>부스</th>
-		<th>수용인원</th>
+		<th>Speaker</th>
+		<th>Room</th>
+		<th>Capacity</th>
 		</tr>
 		<tr>
-			<td>${vo.teacher}</td>
-			<td>${vo.booth}</td>
+			<td>${vo.speaker}</td>
+			<td>${vo.room}</td>
 			<td>${vo.capacity}</td>
-		</tr></tbody>
-                                    </table>
+		</tr>
+		<tr><td colspan="3"><img src="images/speaker/${vo.speaker_img}" width="100"></td></tr>
+		</tbody></table>
 		<div class="card">
 			
-			<img src="${vo.uploadPath}${vo.image}" width="200"><br>
-			
 			<p>${vo.detail}</p><br><br>
-			
-			<a href="/download?fileName=${vo.atta1}&path=${vo.uploadPath}">${vo.atta1}</a> <br>
-			<a href="/download?fileName=${vo.atta2}&path=${vo.uploadPath}">${vo.atta2}</a> <br>
-			<a href="/download?fileName=${vo.atta3}&path=${vo.uploadPath}">${vo.atta3}</a> <br>
 
 			<div class="container" align="center">
 			<a href="/modifyClassView?idx=${vo.idx}" class="btn btn-warning">수정</a>

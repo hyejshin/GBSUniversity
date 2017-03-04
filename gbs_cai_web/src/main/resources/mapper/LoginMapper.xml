@@ -10,7 +10,7 @@
     </resultMap>
     
     <select id="LoginByUserInfo" resultMap = "loginUserVo" parameterType="map">
-        SELECT idx, user_id, user_nm,type	   
+        SELECT user_id, user_nm,type	   
         FROM USER
         WHERE user_id=#{user_id} 
         AND   password = #{password}

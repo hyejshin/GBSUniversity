@@ -59,14 +59,15 @@
         </div>
         <div class="container-fluid">
             <div class="row-fluid">
-                   <select class="selectpicker" id="session" name="session">
+            	<form class="form-horizontal" method="POST" action="/classList">
+                   <select id="session" name="session" name="session">
                    		<option value="all">전체</option>
-	                    <option value="1">session1</option>
-						<option value="2">session2</option>
-						<option value="3">session3</option>
+	                    <option value="Session1 (1:15 - 2:30)">session1</option>
+						<option value="Session2 (2:45 - 4:00)">session2</option>
+						<option value="Session3 (4:15 - 5:30)">session3</option>
 					</select>
 					<input type="submit" value="Search" class="btn btn-info"/>
-					
+				</form>
                 <!--/span-->
                 <div class="span12" id="content">                    
                     <div class="row-fluid">
@@ -80,11 +81,11 @@
   									<table class="table">
 						              <thead>
 						                <tr>
-						                  <th>No</th>
-						                  <th>제 목</th>
-						                  <th>부 스</th>
-						                  <th>시 간</th>
-						                  <th>강사명</th>
+						                  <th>ClassID</th>
+						                  <th>Title</th>
+						                  <th>Room</th>
+						                  <th>Session</th>
+						                  <th>Speaker</th>
 						                  <th></th>
 						                </tr>
 						              </thead>
@@ -93,7 +94,7 @@
 	
 		<tr>
 			<td>${vo.class_id}</td><td><a href="/detailClass?idx=${vo.idx}" >${vo.title}</a></td>
-			<td>${vo.booth}</td><td>${vo.start}-${vo.end}</td><td>${vo.teacher}</td>
+			<td>${vo.room}</td><td>${vo.session}</td><td>${vo.speaker}</td>
 			<td><a href="/modifyClassView?idx=${vo.idx}" class="btn btn-warning">Edit</a> | <a href="/deleteClass?idx=${vo.idx}" class="btn btn-danger">Delete</a></td>
 		</tr>
 

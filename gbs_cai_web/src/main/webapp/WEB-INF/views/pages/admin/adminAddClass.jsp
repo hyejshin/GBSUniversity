@@ -70,8 +70,16 @@
                                       <fieldset>
                                       
                                         <legend>Form Components</legend>
-                                <form class="form-horizontal" method="POST" action="/addClass" enctype="multipart/form-data">
+                                <form class="form-horizontal" method="POST" action="/addClass">
                      
+                     					<div class="control-group">
+                                          <label class="control-label" for="booth">Class ID</label>
+                                          <div class="controls">
+                                            <input type="text" class="span6" id="class_id" name="class_id"  data-provide="typeahead" >
+                                            <p class="help-block"></p>
+                                          </div>
+                                        </div>
+                                        
                                         <div class="control-group">
                                           <label class="control-label" for="title">Title</label>
                                           <div class="controls">
@@ -80,68 +88,49 @@
                                           </div>
                                           </div>
                                           <div class="control-group">
-                                          <label class="control-label" for="teacher">Teacher</label>
+                                          <label class="control-label" for="teacher">Speaker</label>
                                           <div class="controls">
-                                            <input type="text" class="span6" id="teacher" name="teacher"  data-provide="typeahead">                                             <p class="help-block">강사명을 등록해주세요</p>
+                                            <input type="text" class="span6" id="speaker" name="speaker"  data-provide="typeahead">                                             <p class="help-block">강사명을 등록해주세요</p>
                                           </div>
                                           </div>
-                                          
+     
                                         <div class="control-group">
-                                          <label class="control-label" for="date">Date</label>
+                                          <label class="control-label" for="room">Room</label>
                                           <div class="controls">
-                                            <input type="text" class="input-xlarge datepicker" id="date" name="date" value="03/10/2017">
-                                            <p class="help-block"> </p>
-                                          </div> 
-                                        </div>
-                                        <div class="control-group">
-                                          <label class="control-label" for="start">Start Time</label>
-                                          <div class="controls">
-                                            <input type="text" class="span4" id="start" name="start"  data-provide="typeahead" >
-                                            <p class="help-block"> 강의가 시작되는 시간을 등록해주세요.</p>
-                                          </div>
-                                          <label class="control-label" for="end">End Time</label>
-                                          <div class="controls">
-                                            <input type="text" class="span4" id="end" name="end"  data-provide="typeahead" >                                            <p class="help-block"></p>
-                                             <p class="help-block"> 강의가 끝나는 시간을 등록해주세요.</p>
-                                          </div>
-                                          </div>
-                                        <div class="control-group">
-                                          <!-- <label class="control-label" for="select01">Select Booth</label>
-                                          <div class="controls">
-                                            <select id="select01" class="chzn-select">
-                                              <option>Track 1</option>
-                                              <option>Track 2</option>
-                                              <option>Track 3</option>
-                                              <option>Track 4</option>
-                                            </select>
-                                          </div>-->
-                                          <label class="control-label" for="booth">Booth Name</label>
-                                          <div class="controls">
-                                            <input type="text" class="span6" id="booth" name="booth"  data-provide="typeahead" >
+                                            <input type="text" class="span6" id="room" name="room"  data-provide="typeahead" >
                                             <p class="help-block"></p>
+                                          </div>
+                                        </div>
+                                        
+                                        <div class="control-group">
+                                          <label class="control-label" for="session">Session</label>
+                                          <div class="controls">
+                                            <select id="session" name="session" class="chzn-select">
+                                              <option value="Session1 (1:15 - 2:30)">Session1: 1:15 - 2:30</option>
+                                              <option value="Session1 (2:45 - 4:00)">Session2: 2:45 - 4:00</option>
+                                              <option value="Session1 (4:15 - 5:30)">Session3: 4:15 - 5:30</option>
+                                            </select>
                                           </div>
                                         </div>
                                         
                                         <div class="control-group">
                                           <label class="control-label" for="capacity">Capacity</label>
                                           <div class="controls">
-                                            <input type="text" class="span6" id="capacity"  data-provide="typeahead" >
+                                            <input type="text" class="span6" id="capacity" name="capacity" data-provide="typeahead" >
                                             <p class="help-block"> </p>
                                           </div>
                                         </div>
 
                                         <div class="control-group">
-                                          <label class="control-label" for="fileInput">Image File</label>
+                                          <label class="control-label" for="imageFile">Image File</label>
                                           <div class="controls">
-                                            <input class="input-file uniform_on" id="fileInput" name="image" type="file">
+                                            <input type="text" class="span6" id="speaker_img" name="speaker_img" data-provide="typeahead" >
                                           </div>
                                         </div>
                                         <div class="control-group">
-                                          <label class="control-label" for="fileInput">File</label>
+                                          <label class="control-label" for="attendCode">Attend Code</label>
                                           <div class="controls">
-                                            <input class="input-file uniform_on" id="fileInput" name="files" type="file">
-                                            <input class="input-file uniform_on" id="fileInput" name=files" type="file">
-                                            <input class="input-file uniform_on" id="fileInput" name="files" type="file">
+                                            <input type="text" class="span6" id="attend_code" name="attend_code" data-provide="typeahead" >
                                           </div>
                                         </div>
                                         

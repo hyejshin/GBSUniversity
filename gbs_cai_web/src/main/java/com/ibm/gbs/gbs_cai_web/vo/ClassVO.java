@@ -7,204 +7,108 @@ public class ClassVO implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	private int idx;
-	
 	private String class_id;
 	private String title;
-	private String teacher;
-	private String booth;
-	
-	private String start;
-	private String end;
-	private String date;
+	private String room;
+	private String speaker;
+	private String session;
 	private int capacity;
 	private String detail;
-	
-	private String image;
-	private String atta1;
-	private String atta2;
-	private String atta3;
-	private String uploadPath;
-	
-	private String use_yn;
+	private String speaker_img;
+	private String attend_code;
 	
 	public ClassVO() {
 		
 	}
 	
-	public ClassVO(String class_id, String title, String teacher, String booth,
-			String start, String end, String date, int capacity, String detail){
-		this.class_id = class_id;
-		this.title = title;
-		this.teacher = teacher;
-		this.booth = booth;
-		this.start = start;
-		this.end = end;
-		this.date = date;
-		this.capacity = capacity;
-		this.detail = detail;
-	}
-	
-	public ClassVO(int idx, String class_id, String title, String teacher, String booth,
-			String start, String end, String date, int capacity, String detail){
-		this.idx = idx;
-		this.class_id = class_id;
-		this.title = title;
-		this.teacher = teacher;
-		this.booth = booth;
-		this.start = start;
-		this.end = end;
-		this.date = date;
-		this.capacity = capacity;
-		this.detail = detail;
-	}
-	
-	public ClassVO(int idx, String title, String teacher, String booth,
-			String start, String end, String date, int capacity, String detail){
-		this.idx = idx;
-		this.title = title;
-		this.teacher = teacher;
-		this.booth = booth;
-		this.start = start;
-		this.end = end;
-		this.date = date;
-		this.capacity = capacity;
-		this.detail = detail;
-	}
-	
-	
 	public int getIdx() {
 		return idx;
 	}
-	
+
 	public void setIdx(int idx) {
 		this.idx = idx;
 	}
-	
+
 	public String getClass_id() {
 		return class_id;
 	}
-	
+
 	public void setClass_id(String class_id) {
 		this.class_id = class_id;
 	}
-	
+
 	public String getTitle() {
 		return title;
 	}
-	
+
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	
-	public String getTeacher() {
-		return teacher;
+
+	public String getRoom() {
+		return room;
 	}
-	
-	public void setTeacher(String teacher) {
-		this.teacher = teacher;
+
+	public void setRoom(String room) {
+		this.room = room;
 	}
-	
-	public String getBooth() {
-		return booth;
+
+	public String getSpeaker() {
+		return speaker;
 	}
-	
-	public void setBooth(String booth) {
-		this.booth = booth;
+
+	public void setSpeaker(String speaker) {
+		this.speaker = speaker;
 	}
-	
-	public String getStart() {
-		return start;
+
+	public String getSession() {
+		return session;
 	}
-	
-	public void setStart(String start) {
-		this.start = start;
+
+	public void setSession(String session) {
+		this.session = session;
 	}
-	
-	public String getEnd() {
-		return end;
-	}
-	
-	public void setEnd(String end) {
-		this.end = end;
-	}
-	
-	public String getDate() {
-		return date;
-	}
-	
-	public void setDate(String date) {
-		this.date = date;
-	}
-	
+
 	public int getCapacity() {
 		return capacity;
 	}
-	
+
 	public void setCapacity(int capacity) {
 		this.capacity = capacity;
 	}
-	
+
 	public String getDetail() {
 		return detail;
 	}
-	
+
 	public void setDetail(String detail) {
 		this.detail = detail;
 	}
 
-	public String getImage() {
-		return image;
+	public String getSpeaker_img() {
+		return speaker_img;
 	}
 
-	public void setImage(String image) {
-		this.image = image;
+	public void setSpeaker_img(String speaker_img) {
+		this.speaker_img = speaker_img;
 	}
 
-	public String getAtta1() {
-		return atta1;
+	public String getAttend_code() {
+		return attend_code;
 	}
 
-	public void setAtta1(String atta1) {
-		this.atta1 = atta1;
-	}
-
-	public String getAtta2() {
-		return atta2;
-	}
-
-	public void setAtta2(String atta2) {
-		this.atta2 = atta2;
-	}
-
-	public String getAtta3() {
-		return atta3;
-	}
-
-	public void setAtta3(String atta3) {
-		this.atta3 = atta3;
-	}
-
-	public String getUploadPath() {
-		return uploadPath;
-	}
-
-	public void setUploadPath(String uploadPath) {
-		this.uploadPath = uploadPath;
-	}
-
-	public String getUse_yn() {
-		return use_yn;
+	public void setAttend_code(String attend_code) {
+		this.attend_code = attend_code;
 	}
 	
-	public void setUse_yn(String use_yn) {
-		this.use_yn = use_yn;
-	}
 	
-	@Override
-	public String toString() {
-		return "ClassVO [idx=" + idx + ", class_id=" + class_id + ", title=" + title + ", booth=" + booth + ", start="
-				+ start + ", end=" + end + ", capacity=" + capacity + ", detail=" + detail + ", atta1=" + atta1
-				+ ", atta2=" + atta2 + ", atta3=" + atta3 + ", use_yn="
-				+ use_yn + ", date=" + date + "]";
-	}
+	
+	
+//	@Override
+//	public String toString() {
+//		return "ClassVO [idx=" + idx + ", class_id=" + class_id + ", title=" + title + ", booth=" + booth + ", start="
+//				+ start + ", end=" + end + ", capacity=" + capacity + ", detail=" + detail + ", atta1=" + atta1
+//				+ ", atta2=" + atta2 + ", atta3=" + atta3 + ", use_yn="
+//				+ use_yn + ", date=" + date + "]";
+//	}
 }
