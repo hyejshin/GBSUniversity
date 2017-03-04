@@ -28,81 +28,111 @@
 <c:url value="/echo"/>
 
 <div class="container" style="list-style: none;">
-    <div class="row">
-        <div class="col-md-5">
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <span class="glyphicon glyphicon-comment"></span> Q&A board Chat
-                    <div class="btn-group pull-right">
-                        <button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown">
-                            <span class="glyphicon glyphicon-chevron-down"></span>
-                        </button>
-                        <ul class="dropdown-menu slidedown">
-                            <li><a href=""><span class="glyphicon glyphicon-refresh">
-                            </span>Refresh</a></li>
+    <div id="classListDiv">
+        <h3>Lecture Data</h3>
+        <br />
+        <br />
+        <table id="table" class="table table-striped table-condensed" cellspacing="0" width="100%">
+            <thead>
+                <tr>
+                    <td>NO</td>
+                    <td>class_id</td>
+                    <td>booth_name</td>
+                    <td>start_time</td>
+                    <td>end_time</td>
+
+                </tr>
+            </thead>
+            <tbody>
+
+                <c:forEach var="list" items="${enrollmentList}">
+                    <tr>
+                        <td>${list.idx}</td>
+                        <td class='classId'>${list.class_id}</td>
+                        <td>${list.booth_name}</td>
+                        <td>${list.start}</td>
+                        <td>${list.end}</td>
+                    </tr>
+                </c:forEach>
+
+            </tbody>
+
+
+        </table>
+    </div>
+
+    <div id="chatDiv">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <span class="glyphicon glyphicon-comment"></span> Q&A board Chat
+                        <div class="btn-group pull-right">
+                            <button id = "goBack" class="btn btn-default btn-xs glyphicon glyphicon-arrow-left" type="button" data-toggle="dropdown">
+                                <span class=""></span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <ul class="chat">
+                            <li class="left clearfix"><span class="chat-img pull-left">
+                                    <img class="img-circle" alt="User Avatar" src="http://placehold.it/50/55C1E7/fff&amp;text=U">
+                                </span>
+                                <div class="chat-body clearfix">
+                                    <div class="header">
+                                        <strong class="primary-font">Jack Sparrow</strong> <small class="pull-right text-muted">
+                                            <span class="glyphicon glyphicon-time"></span>12 mins ago</small>
+                                    </div>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
+                                        dolor, quis ullamcorper ligula sodales.
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="right clearfix"><span class="chat-img pull-right">
+                                    <img class="img-circle" alt="User Avatar" src="http://placehold.it/50/FA6F57/fff&amp;text=ME">
+                                </span>
+                                <div class="chat-body clearfix">
+                                    <div class="header">
+                                        <small class=" text-muted"><span class="glyphicon glyphicon-time"></span>13 mins ago</small>
+                                        <strong class="pull-right primary-font">Bhaumik Patel</strong>
+                                    </div>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
+                                        dolor, quis ullamcorper ligula sodales.
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="left clearfix"><span class="chat-img pull-left">
+                                    <img class="img-circle" alt="User Avatar" src="http://placehold.it/50/55C1E7/fff&amp;text=U">
+                                </span>
+                                <div class="chat-body clearfix">
+                                    <div class="header">
+                                        <strong class="primary-font">Jack Sparrow</strong> <small class="pull-right text-muted">
+                                            <span class="glyphicon glyphicon-time"></span>14 mins ago</small>
+                                    </div>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
+                                        dolor, quis ullamcorper ligula sodales.
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="right clearfix"><span class="chat-img pull-right">
+                                    <img class="img-circle" alt="User Avatar" src="http://placehold.it/50/FA6F57/fff&amp;text=ME">
+                                </span>
+                                <div class="chat-body clearfix">
+                                    <div class="header">
+                                        <small class=" text-muted"><span class="glyphicon glyphicon-time"></span>15 mins ago</small>
+                                        <strong class="pull-right primary-font">Bhaumik Patel</strong>
+                                    </div>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
+                                        dolor, quis ullamcorper ligula sodales.
+                                    </p>
+                                </div>
+                            </li>
                         </ul>
                     </div>
-                </div>
-                <div class="panel-body">
-                    <ul class="chat">
-                        <li class="left clearfix"><span class="chat-img pull-left">
-                            <img class="img-circle" alt="User Avatar" src="http://placehold.it/50/55C1E7/fff&amp;text=U">
-                        </span>
-                            <div class="chat-body clearfix">
-                                <div class="header">
-                                    <strong class="primary-font">Jack Sparrow</strong> <small class="pull-right text-muted">
-                                        <span class="glyphicon glyphicon-time"></span>12 mins ago</small>
-                                </div>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
-                                    dolor, quis ullamcorper ligula sodales.
-                                </p>
-                            </div>
-                        </li>
-                        <li class="right clearfix"><span class="chat-img pull-right">
-                            <img class="img-circle" alt="User Avatar" src="http://placehold.it/50/FA6F57/fff&amp;text=ME">
-                        </span>
-                            <div class="chat-body clearfix">
-                                <div class="header">
-                                    <small class=" text-muted"><span class="glyphicon glyphicon-time"></span>13 mins ago</small>
-                                    <strong class="pull-right primary-font">Bhaumik Patel</strong>
-                                </div>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
-                                    dolor, quis ullamcorper ligula sodales.
-                                </p>
-                            </div>
-                        </li>
-                        <li class="left clearfix"><span class="chat-img pull-left">
-                            <img class="img-circle" alt="User Avatar" src="http://placehold.it/50/55C1E7/fff&amp;text=U">
-                        </span>
-                            <div class="chat-body clearfix">
-                                <div class="header">
-                                    <strong class="primary-font">Jack Sparrow</strong> <small class="pull-right text-muted">
-                                        <span class="glyphicon glyphicon-time"></span>14 mins ago</small>
-                                </div>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
-                                    dolor, quis ullamcorper ligula sodales.
-                                </p>
-                            </div>
-                        </li>
-                        <li class="right clearfix"><span class="chat-img pull-right">
-                            <img class="img-circle" alt="User Avatar" src="http://placehold.it/50/FA6F57/fff&amp;text=ME">
-                        </span>
-                            <div class="chat-body clearfix">
-                                <div class="header">
-                                    <small class=" text-muted"><span class="glyphicon glyphicon-time"></span>15 mins ago</small>
-                                    <strong class="pull-right primary-font">Bhaumik Patel</strong>
-                                </div>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
-                                    dolor, quis ullamcorper ligula sodales.
-                                </p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
                 </div>
                 <div class="panel-footer" style="height:150px;">
                     <div class="input">
@@ -113,6 +143,7 @@
                         </span>
                     </div>
                 </div>
+            </div>
         </div>
     </div>
 </div>

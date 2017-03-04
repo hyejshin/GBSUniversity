@@ -5,6 +5,7 @@
  */
 package com.ibm.gbs.gbs_cai_web.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;
@@ -20,10 +21,10 @@ import org.springframework.web.socket.config.annotation.StompEndpointRegistry;
 @EnableWebSocketMessageBroker
 @ComponentScan(basePackages = "com.ibm.gbs.gbs_cai_web")
 public class WebSocketConfig extends AbstractWebSocketMessageBrokerConfigurer {
-
+    
     @Override
     public void configureMessageBroker(MessageBrokerRegistry config) {
-        config.enableSimpleBroker("/topic");
+        config.enableSimpleBroker("/topic/message");
         config.setApplicationDestinationPrefixes("/app");
         
     }

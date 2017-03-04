@@ -47,7 +47,7 @@
 					</thead>
 					<tbody>
 						
-						<c:forEach var="list" items="${list}">
+                                            <c:forEach  var="list" items="${list}">
 							<tr>
 							<td>${list.idx}</td>
 							<td>${list.class_id}</td>

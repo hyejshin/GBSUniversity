@@ -5,6 +5,7 @@ com\ibm\gbs\gbs_cai_web\vo\BoardVO.class
 com\ibm\gbs\gbs_cai_web\service\impl\EnrollmentServiceImpl.class
 com\ibm\gbs\gbs_cai_web\service\impl\BoardServiceImpl.class
 com\ibm\gbs\gbs_cai_web\mapper\ClassMapper.class
+com\ibm\gbs\gbs_cai_web\service\impl\ClassServiceImpl.class
 com\ibm\gbs\gbs_cai_web\config\AuthInterceptor.class
 com\ibm\gbs\gbs_cai_web\controllers\ClassController.class
 com\ibm\gbs\gbs_cai_web\controllers\FrontController.class
@@ -18,6 +19,7 @@ com\ibm\gbs\gbs_cai_web\controllers\GlobalExceptionHandler.class
 com\ibm\gbs\gbs_cai_web\service\EnrollmentService.class
 com\ibm\gbs\gbs_cai_web\service\impl\LoginServiceImpl.class
 com\ibm\gbs\gbs_cai_web\mapper\EnrollmentMapper.class
+com\ibm\gbs\gbs_cai_web\config\AppConfig.class
 com\ibm\gbs\gbs_cai_web\controllers\ChatController.class
 com\ibm\gbs\gbs_cai_web\config\WebSocketConfig.class
 com\ibm\gbs\gbs_cai_web\vo\Message.class
@@ -27,6 +29,5 @@ com\ibm\gbs\gbs_cai_web\vo\ClassVO.class
 com\ibm\gbs\gbs_cai_web\vo\OutputMessage.class
 com\ibm\gbs\gbs_cai_web\common\StringUtils.class
 com\ibm\gbs\gbs_cai_web\config\AppInitializer.class
-com\ibm\gbs\gbs_cai_web\config\EchoHandler.class
 com\ibm\gbs\gbs_cai_web\vo\UserVO.class
 com\ibm\gbs\gbs_cai_web\mapper\UserMapper.class

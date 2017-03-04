@@ -126,7 +126,7 @@
 	<tr>
 		<td>classID</td><td>title</td><td>booth</td><td>time</td><td>teacher</td><td></td>
 	</tr>
-	<c:forEach items="${list}" var="vo">
+
 	<tr>
 		<td>${vo.class_id}</td><td><a href="/detailClass?idx=${vo.idx}" >${vo.title}</a></td>
 			<td>${vo.booth}</td><td>${vo.start}-${vo.end}</td><td>${vo.teacher}</td>
