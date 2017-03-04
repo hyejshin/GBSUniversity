@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.ibm.gbs.gbs_cai_web.service.ClassService;
+import com.ibm.gbs.gbs_cai_web.service.EnrollmentService;
 import com.ibm.gbs.gbs_cai_web.vo.ClassVO;
 
 
@@ -21,6 +22,7 @@ public class AdminController {
 	
 	@Autowired
     private ClassService classService;
+
 	
 	@RequestMapping("/download")
     public void downloadFile(@RequestParam("fileName") String fileName, @RequestParam("path") String path, 

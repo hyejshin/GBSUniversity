@@ -5,9 +5,9 @@
  */
 package com.ibm.gbs.gbs_cai_web.mapper;
 
-import com.ibm.gbs.gbs_cai_web.vo.EnrollmentVO;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
+
+import com.ibm.gbs.gbs_cai_web.vo.EnrollmentVO;
 
 
 /**
@@ -16,6 +16,6 @@ import org.apache.ibatis.annotations.Param;
  */
 public interface EnrollmentMapper {
     
-    public List<EnrollmentVO> getEnrollmentByUserid(@Param("user_id") String user_id);
+    public EnrollmentVO getEnrollmentByUserId(@Param("user_id") String user_id);
     
 }

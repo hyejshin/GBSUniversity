@@ -96,21 +96,6 @@ public class ClassController {
 		return list;
     }
     
-    /* 	
-   	 *  추가목적 : 현재 사용자가 신청한 클래스 목록을 가져온다. 
-   	 *  추가이력 : 2017/02/25 정연우
-   	 * 
-   	 * 	 * */
-    @RequestMapping(value={"/class/viewMyLec"}, method=RequestMethod.GET)
-    public ModelAndView viewMyLec(@RequestParam("user_id") String user_id) throws Exception{
-        String _user_id = util.isStringNull(user_id);
-        List<Map<String, Object>> myInfo = classService.getMyLec(_user_id);
-                
-        ModelAndView mv = new ModelAndView();
-        mv.setViewName("history");
-        mv.addObject("list", myInfo);
-        return mv;
-    }
     
     // /class/viewThisLec
     
@@ -165,6 +150,20 @@ public class ClassController {
        
     }
     
-    
+    /* 	
+   	 *  추가목적 : 현재 사용자가 신청한 클래스 목록을 가져온다. 
+   	 *  추가이력 : 2017/02/25 정연우
+   	 * 
+   	 * 	 * */
+    @RequestMapping(value={"/class/viewMyLec"}, method=RequestMethod.GET)
+    public ModelAndView viewMyLec(@RequestParam("user_id") String user_id) throws Exception{
+        String _user_id = util.isStringNull(user_id);
+        //List<Map<String, Object>> myInfo = classService.getMyLec(_user_id);
+                
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("history");
+        //mv.addObject("list", myInfo);
+        return mv;
+    }
     
 }

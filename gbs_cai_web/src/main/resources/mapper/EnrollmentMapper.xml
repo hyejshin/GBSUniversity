@@ -3,7 +3,7 @@
 <mapper namespace="com.ibm.gbs.gbs_cai_web.mapper.EnrollmentMapper">
     <cache />
     
-    <select id="getEnrollmentByUserId" resultMap="com.ibm.gbs.gbs_cai_web.vo.EnrollmentVO"  parameterType="String">
+    <select id="getEnrollmentByUserId" resultType="com.ibm.gbs.gbs_cai_web.vo.EnrollmentVO"  parameterType="String">
         SELECT user_id, morning_room, session1, session2, session3, room1, room2, room3 
         FROM ENROLLMENT
         WHERE user_id=#{user_id} 

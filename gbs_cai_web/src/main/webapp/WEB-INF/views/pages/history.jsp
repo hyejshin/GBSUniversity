@@ -37,27 +37,36 @@
         <table id="table" class="table table-striped table-condensed" cellspacing="0" width="100%">
 					<thead>
 						<tr>
-							<td>NO</td>
-							<td>class_id</td>
-							<td>booth_name</td>
-							<td>start_time</td>
-							<td>end_time</td>
+							<td>Session</td>
+							<td>Title</td>
+							<td>Room</td>
+							<td>Enter</td>
 							
 						</tr>
 					</thead>
-					<tbody>
-						
-						<c:forEach var="list" items="${list}">
-							<tr>
-							<td>${list.idx}</td>
-							<td>${list.class_id}</td>
-							<td>${list.booth_name}</td>
-							<td>${list.start}</td>
-							<td>${list.end}</td>
-							<td><a href='/class/viewThisLec?class_id=${list.class_id}' >해당클래스가기</a></td>
-							</tr>
-						</c:forEach>
+					<tbody>	
 
+						<tr>
+							<td>Session1 (1:15 - 2:30)</td>
+							<td>${vo.session1}</td>
+							<td>${vo.room1}</td>
+							<td><a href='/class/viewThisLec?class_id=${vo.session1}' >해당클래스가기</a></td>
+						</tr>
+						
+						<tr>
+							<td>Session2 (2:45 - 4:00)</td>
+							<td>${vo.session2}</td>
+							<td>${vo.room2}</td>
+							<td><a href='/class/viewThisLec?class_id=${vo.session2}' >해당클래스가기</a></td>
+						</tr>
+						
+						<tr>
+							<td>Session3 (4:15 - 5:30)</td>
+							<td>${vo.session3}</td>
+							<td>${vo.room3}</td>
+							<td><a href='/class/viewThisLec?class_id=${vo.session3}' >해당클래스가기</a></td>
+						</tr>
+						
 					</tbody>
 
 
