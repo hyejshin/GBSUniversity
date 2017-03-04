@@ -1,5 +1,5 @@
 CREATE TABLE CLASS (
-   class_id		VARCHAR(255) not null,
+   class_id		VARCHAR(255) NOT NULL,
    title		VARCHAR(255) NOT NULL,
    room			VARCHAR(255) NOT NULL,
    speaker		VARCHAR(255) NOT NULL,
@@ -15,8 +15,8 @@ CREATE TABLE CLASS (
 
 #ENROLLMENT TABLE
 CREATE TABLE ENROLLMENT (
-	idx 		INT(11) not null auto_increment,
-	user_id		 VARCHAR(255) not null,
+	idx 		INT(11) NOT NULL auto_increment,
+	user_id		 VARCHAR(255) NOT NULL,
     morning_room VARCHAR(255),	
 	session1	VARCHAR(255),
     session2	VARCHAR(255),
@@ -31,17 +31,16 @@ CREATE TABLE ENROLLMENT (
 #USER TABLE
 #type[Learner, Speaker]
 CREATE TABLE USER (
-	user_id		VARCHAR(255) not null  	,
+	user_id		VARCHAR(255) NOT NULL	,
 	user_nm		VARCHAR(255) NOT NULL  	,	
 	password	VARCHAR(255) NOT NULL	,
 	type		VARCHAR(2)	 DEFAULT 'Learner',
 	PRIMARY KEY(user_id)
 );
 
-INSERT INTO USER (user_id, user_nm, password) VALUES ('hyejshin', '신혜정', '055194');
-#ATTEND TABLE
+
 CREATE TABLE ATTEND (
-	user_id		VARCHAR(255) not null  	,
+	user_id		VARCHAR(255) NOT NULL  	,
 	class_id	VARCHAR(255) NOT NULL  	,	
 	attend_cod	VARCHAR(255) NOT NULL	,
     PRIMARY KEY(user_id, class_id)
@@ -50,7 +49,7 @@ CREATE TABLE ATTEND (
 
 #BOARD TABLE
 CREATE TABLE BOARD (
-	idx 			INT(11) not null auto_increment,
+	idx 			INT(11) NOT NULL auto_increment,
 	board_id		VARCHAR(255) not null  	,
 	class_id		VARCHAR(255) NOT NULL  	,	
 	user_id			VARCHAR(255) NOT NULL	,
