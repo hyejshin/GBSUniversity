@@ -8,7 +8,7 @@
 jQuery(document).ready(function ($) {
     $("#boardDiv").css("display", "none");
     
-    //Ajax to server
+    //Ajax to server -> get board list
     $("#showQnA").click(function(){
         var class_id = $("#class_id").val();
         $.ajax({
@@ -26,6 +26,26 @@ jQuery(document).ready(function ($) {
         $(window).scrollTop(0);
     });
     
+    //Ajax to server -> post question
+    $("#submit").click(function(){
+        alert($("#BoardWriteForm").serialize());
+        $.ajax({
+            type:"POST",       
+            dataType:"json",
+            url:"/board/postQuestion",
+            data:$("#BoardWriteForm").serialize(),
+            success:saveReqResponse,
+            error:ajaxErr
+        });
+        
+        $(".container").css("display", "none");
+        $("#boardDiv").css("display", "block");
+        
+        $(window).scrollTop(0);
+        
+    })
+    
+    
     $('body').on('click', '.showContent',function(){
         var cssVal = $(this).next().css("display");
 
@@ -40,7 +60,6 @@ jQuery(document).ready(function ($) {
     $("#showList").click(function(){
         $("#boardDiv").css("display", "none");
         $(".container").css("display", "block");
-
     });
 });
 
@@ -48,6 +67,8 @@ jQuery(document).ready(function ($) {
 var boardReqResponse = function(data){
     var htmlStr = "";
     var cnt = 1;
+    var board_id = "";
+    board_id = data[0].board_id;
     for (var i in data) {
         htmlStr += "<tr class='showContent'>";
             htmlStr += "<td align=center>"+cnt+"</td>";
@@ -63,7 +84,7 @@ var boardReqResponse = function(data){
     if(cnt == 1){
         htmlStr = "<tr><td>No contents posted yet.</td></tr>";
     }
-    
+    $("input[name=board_id]").attr("value", board_id);
     $("#board-body").html(htmlStr);
 
 }

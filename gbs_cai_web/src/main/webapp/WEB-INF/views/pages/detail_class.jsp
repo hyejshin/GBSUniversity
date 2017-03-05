@@ -14,10 +14,6 @@
 <div class="container">		 
 
     <%HttpSession sess = request.getSession();%>
-
-    <input type="hidden" id="user_id" value=<%= sess.getAttribute("user_id")%> />
-    <!-- <input type="hidden" id="start" value=${list.start} />-->
-    <input type="hidden" id="class_id" value=${vo.class_id} />
     <div id="detail">
         <div class="work">
             <div class="details">		 
@@ -74,28 +70,32 @@
     <div id="writenew">
         <table summary="Ask Question">
             <section class="box">
-                <form name="BoardWriteForm" method="post" id="BoardWriteForm">
+                <form name="BoardWriteForm" id="BoardWriteForm">
                     <table class="table" summary="테이블 구성" >
                         <caption>Ask Question</caption>	
                         <tr>
                             <td>Writer</td>
-                            <td><input type=text name=name size=30 value="<%=sess.getAttribute("user_nm")%>" readonly></td>
+                            <td><input type="text" name="user_nm" size=30 value="<%=sess.getAttribute("user_nm")%>" readonly></td>
                         </tr>
                         <tr>
                             <td>Question</td>
-                            <td><textarea name=content cols="30" rows="8" style="overflow-y:scroll; resize:none; "></textarea></td>
+                            <td><textarea name="detail" cols="30" rows="8" style="overflow-y:scroll; resize:none; "></textarea></td>
                         </tr>
                         <tr>
                             <td colspan=2><hr size=1></td>
                         </tr>
                         <tr>
                             <td colspan="2"><div align="center">
-                                    <input type="submit" value="Write" class="btn btn-info">&nbsp;&nbsp;
+                                    <input type="submit" id="submit" value="Write" class="btn btn-info">&nbsp;&nbsp;
                                     <input type="button" value="Cancel" class="btn btn-danger" >
+
                                 </div>
                             </td>
                         </tr> 
                     </table>
+                    <input type="hidden" name="user_id"  value=<%= sess.getAttribute("user_id")%> />
+                    <input type="hidden" id="class_id" name="class_id" value=${vo.class_id} />
+                    <input type="hidden" name="board_id" value="" />
                 </form> 
             </section>
         </table>
