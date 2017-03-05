@@ -81,7 +81,7 @@ function click1() {
 			 <div class="details">		 
 				 <div class="col-md-7 posts">
 					 <h3 style="font-weight:600; font-style: italic;">${vo.title}</h3>
-					 <p><h5>Speaker: ${vo.speacker}</h5></p>
+					 <p><h5>Speaker: ${vo.speaker}</h5></p>
 					 <p><h7>Date : Saturday, 11 March 2017</h7></p>
 					 <p><h7>Time : ${vo.session}<span>Room: ${vo.room}</span></h7></p><br>
 				 </div>	
