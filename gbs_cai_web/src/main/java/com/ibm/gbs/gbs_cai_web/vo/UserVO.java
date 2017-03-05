@@ -8,13 +8,11 @@ package com.ibm.gbs.gbs_cai_web.vo;
 import java.io.Serializable;
 import org.springframework.stereotype.Repository;
 
-/**
- *
- * @author kr055045
- */
+
 @Repository("uservo")
 public class UserVO implements Serializable{
 
+	private int idx;
     private String user_id;
     private String user_nm;
     private String password;
@@ -34,35 +32,44 @@ public class UserVO implements Serializable{
         this.type = type;
     }
     
-    public String getPassword() {
-        return password;
-    }
+	public int getIdx() {
+		return idx;
+	}
+	
+	public void setIdx(int idx) {
+		this.idx = idx;
+	}
+	
+	public String getUser_id() {
+		return user_id;
+	}
+	
+	public void setUser_id(String user_id) {
+		this.user_id = user_id;
+	}
+	
+	public String getUser_nm() {
+		return user_nm;
+	}
+	
+	public void setUser_nm(String user_nm) {
+		this.user_nm = user_nm;
+	}
+	
+	public String getPassword() {
+		return password;
+	}
+	
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
+	public String getType() {
+		return type;
+	}
+	
+	public void setType(String type) {
+		this.type = type;
+	}
 
-    public String getType() {
-        return type;
-    }
-
-    public String getUser_id() {
-        return user_id;
-    }
-
-    public String getUser_nm() {
-        return user_nm;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public void setUser_id(String user_id) {
-        this.user_id = user_id;
-    }
-
-    public void setUser_nm(String user_nm) {
-        this.user_nm = user_nm;
-    }
 }

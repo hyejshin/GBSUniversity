@@ -34,16 +34,19 @@ CREATE TABLE ENROLLMENT (
 #USER TABLE
 #type[Learner, Speaker]
 CREATE TABLE USER (
+	idx 		INT(10) NOT NULL auto_increment,
 	user_id		VARCHAR(100) NOT NULL,
 	user_nm		VARCHAR(100) NOT NULL,	
 	password	VARCHAR(100) NOT NULL,
 	type		VARCHAR(100) DEFAULT 'Learner',
-	PRIMARY KEY(user_id)
+	PRIMARY KEY(idx),
+    UNIQUE KEY(user_id)
 );
 
 
 #ATTEND TABLE
 CREATE TABLE ATTEND (
+	idx 		INT(10) NOT NULL auto_increment,
 	user_id		VARCHAR(100) NOT NULL,
 	class_id	VARCHAR(100) NOT NULL,	
 	attend_cod	VARCHAR(100) NOT NULL,
