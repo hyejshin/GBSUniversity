@@ -76,5 +76,16 @@ public class LoginController {
             res.setHeader("status", "500");
         }
     }
+    
+    /**
+     * User Logout Author : HyeJung
+     */
+    @RequestMapping("/logout")
+    public String logOut(ModelMap modelMap, HttpSession session){
+    	
+    	session.invalidate();
+        
+        return "login";
+    }
 
 }

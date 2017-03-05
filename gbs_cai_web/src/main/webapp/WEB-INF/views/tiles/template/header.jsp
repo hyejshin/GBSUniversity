@@ -22,7 +22,7 @@
 
                 <ul>
                     <li><a href="/index">Home</a></li>
-                    <li><a href="/myLecture?user_id=<%=user_id%>" >My Lecture</a></li>
+                    <li><a href="/myLecture?user_id=<%=user_id%>">My Lecture</a></li>
                     <li><a href="/board">My Q&A</a></li>
                 </ul>
                 <!--script-->
@@ -42,7 +42,7 @@
                                 <ul class="dropdown-menu">
                                     <li class="divider"></li>
                                     <li>
-                                        <a tabindex="-1" href="/login.jsp">Logout</a>
+                                        <a tabindex="-1" href="/logout">Logout</a>
                                     </li>
                                 </ul>
                             </li>
