@@ -34,6 +34,55 @@
         <h3>Lecture Data</h3>
         <br />
         <br />
+        Morning Session
+        <table id="table" class="table table-striped table-condensed" cellspacing="0" width="100%">
+					<thead>
+						<tr>
+							<td>Session</td>
+							<td>Title</td>
+							<td>Room</td>
+							<td></td>
+							
+						</tr>
+					</thead>
+					<tbody>	
+
+					<c:if test="${vo.morning_room eq '7F, On-demand room'}">
+						<tr>
+							<td>Session1 (9:45 - 10:45)</td>
+							<td>Cloud Application Services</td>
+							<td>7F, On-demand room(7M17,7M18,7M19)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>Session2 (11:00 - 12:00)</td>
+							<td>Watson Case</td>
+							<td>7F, On-demand room(7M17,7M18,7M19)</td>
+							<td></td>
+						</tr>
+					</c:if>
+
+					<c:if test="${vo.morning_room eq '6F, Demo Room'}">
+						<tr>
+							<td>Session1 (9:45 - 10:45)</td>
+							<td>Cloud Application Services</td>
+							<td>7F, On-demand room(7M17,7M18,7M19)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>Session2 (11:00 - 12:00)</td>
+							<td>Watson Case</td>
+							<td>7F, On-demand room(7M17,7M18,7M19)</td>
+							<td></td>
+						</tr>
+					</c:if>
+						
+					</tbody>
+
+
+				</table>
+				
+        Break-Out Session
         <table id="table" class="table table-striped table-condensed" cellspacing="0" width="100%">
 					<thead>
 						<tr>
