@@ -58,17 +58,19 @@ public class LoginController {
  
         session.invalidate();
         user = loginService.checkLoginValidation(user_id, password);
-        HttpSession newSession = req.getSession();
-        newSession.setAttribute("user", user);
-        newSession.setAttribute("user_id", user.getUser_id());
+
         
         try {
-            if (user == null) {
-                req.setAttribute("isLogin", false);
+        	if(user == null) {
+            	req.setAttribute("isLogin", false);
                 modelMap.addAttribute("error_msg", "Please check your login information.");
                 res.sendRedirect("/login");
             } else {
-                req.setAttribute("isLogin", true);
+            	HttpSession newSession = req.getSession();
+    	        newSession.setAttribute("user", user);
+    	        newSession.setAttribute("user_id", user.getUser_id());
+    	        
+    	        req.setAttribute("isLogin", true);
                 res.sendRedirect("/index");
             }
         } catch (Exception e) {
