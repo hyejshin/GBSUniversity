@@ -41,10 +41,22 @@ public class ClassServiceImpl implements ClassService {
     public List<Map<String, Object>> getDetailByCondition(int idx) throws Exception {
         return classMapper.getDetailByCondition(idx);
     }
+    
+    /*
+	 * class 관련 - 신혜정
+     */
+    
+    
 
     /*
 	 * class Admin 관련 - 신혜정
      */
+    
+    // 클래스 상세 class_id로 조회
+    public ClassVO getClassDetailById(String class_id) throws Exception {
+        return classMapper.getClassDetailById(class_id);
+    }
+    
     
     // 클래스 목록
     public List<ClassVO> getClassList() throws Exception {

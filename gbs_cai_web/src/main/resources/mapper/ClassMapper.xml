@@ -69,6 +69,14 @@
         WHERE idx=#{idx}
     </delete>
     
+    <!-- 클래스 상세 -->
+    <select id="getClassDetailById" parameterType="String" resultType="com.ibm.gbs.gbs_cai_web.vo.ClassVO">
+        SELECT *	   
+        FROM CLASS
+        WHERE class_id=#{class_id}
+    </select>
+    
+    
     <!-- /* ClassController와 연동되는 Sql - 정연우(0224)*/ -->
     <select id="getMyLec" resultType="hashmap" parameterType="String">
         SELECT *	   

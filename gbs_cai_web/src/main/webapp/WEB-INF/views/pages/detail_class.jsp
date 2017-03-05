@@ -2,10 +2,12 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+ 
 <tiles:importAttribute name="showDetailAttributes" />
 <c:forEach var="showDetailAttributes" items="${showDetailAttributes}">
     <link type="text/css" rel="stylesheet" href='<c:url value="${showDetailAttributes}"/>'/>
 </c:forEach>
+
 	
 <!-- <script type="text/javascript">
 window.onload = function() {
@@ -68,7 +70,7 @@ function click1() {
 }
 </script>-->
 		<div class="container">		 
-						<c:forEach var="list" items="${list}">
+
 				<%HttpSession session1 = request.getSession();%>
 	
 									<input type="hidden" id="user_id" value=<%= session1.getAttribute("user_id") %> />
@@ -78,10 +80,10 @@ function click1() {
 	       <div class="work">
 			 <div class="details">		 
 				 <div class="col-md-7 posts">
-					 <h3 style="font-weight:600; font-style: italic;">${list.title} Class Title </h3>
-					 <p><h5>Speaker: ${list.speacker}</h5></p>
+					 <h3 style="font-weight:600; font-style: italic;">${vo.title}</h3>
+					 <p><h5>Speaker: ${vo.speacker}</h5></p>
 					 <p><h7>Date : Saturday, 11 March 2017</h7></p>
-					 <p><h7>Time : ${list.session}<span>Room: ${list.room}</span></h7></p><br>
+					 <p><h7>Time : ${vo.session}<span>Room: ${vo.room}</span></h7></p><br>
 				 </div>	
 				 <div class="col-md-3 date" style="padding:0px;">
 					 <p style="padding: 8px 0px;">WHAT</p>
@@ -91,7 +93,7 @@ function click1() {
 			 <div class="details">			 
 				 <div class="col-md-7 posts">
 					 <h4>ABOUT THIS SESSION</h4>
-					 <p>${list.detail}</p>
+					 <p>${vo.detail}</p>
 					 <!-- detail 나오면 아래 태그는 지울것 -->
 					 <p> 예: Fusce in vulputate sapien. Phasellus tincidunt at dolor id consectetur. Integer vitae rhoncus eros. Integer ac nunc dictum, 
 			 lacinia tortor ac, pulvinar lectus. Nunc gravida non est nec semper. Suspendisse imperdiet velit in pretium laoreet.
@@ -108,12 +110,12 @@ function click1() {
 				 
 				 <div class="col-md-7 posts">
 					 <h4>ABOUT THE SPEACKER</h4>
-					 <div class="img-responsive" style="float:left;"><img src="" alt="img"/>${list.speacker-img}</div>
-					 <p>${list.speacker}</p></div>	
+					 <div class="img-responsive" style="float:left;"><img src="" alt="img"/>${vo.speaker_img}</div>
+					 <p>${vo.speaker}</p></div>	
      			 <div class="clearfix"></div>
 			 </div>
 		 </div>
-		 	</c:forEach>
+
 		 <h3>Question Board</h3>
 		 <div class="info">
 			 
