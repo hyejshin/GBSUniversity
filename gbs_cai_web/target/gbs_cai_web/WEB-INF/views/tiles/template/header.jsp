@@ -9,6 +9,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%
 	HttpSession session1 = request.getSession();
+	String user_id = (String)session1.getAttribute("user_id");
 %>
 <div class="header" id="home">
     <div class="container">	
@@ -21,7 +22,7 @@
 
                 <ul>
                     <li><a href="/index">Home</a></li>
-                    <li><a href="/myLecture?user_id=<%=session1.getAttribute("user_id")%>" >My Lecture</a></li>
+                    <li><a href="/myLecture?user_id=<%=user_id%>" >My Lecture</a></li>
                     <li><a href="/board">My Q&A</a></li>
                 </ul>
                 <!--script-->
@@ -35,7 +36,7 @@
         <div class="clearfix"> </div>
 	    <ul class="nav pull-right">
                             <li class="dropdown">
-                                <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-user"></i>Hello ID:)<i class="caret"></i>
+                                <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-user"></i>Hello <%=user_id%>:)<i class="caret"></i>
 
                                 </a>
                                 <ul class="dropdown-menu">
