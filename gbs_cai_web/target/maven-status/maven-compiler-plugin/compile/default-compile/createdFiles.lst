@@ -2,7 +2,6 @@ com\ibm\gbs\gbs_cai_web\mapper\TestMapper.class
 com\ibm\gbs\gbs_cai_web\service\LoginService.class
 com\ibm\gbs\gbs_cai_web\service\ClassService.class
 com\ibm\gbs\gbs_cai_web\vo\BoardVO.class
-com\ibm\gbs\gbs_cai_web\service\impl\EnrollmentServiceImpl.class
 com\ibm\gbs\gbs_cai_web\service\impl\BoardServiceImpl.class
 com\ibm\gbs\gbs_cai_web\mapper\ClassMapper.class
 com\ibm\gbs\gbs_cai_web\service\impl\ClassServiceImpl.class
@@ -12,11 +11,9 @@ com\ibm\gbs\gbs_cai_web\controllers\FrontController.class
 com\ibm\gbs\gbs_cai_web\mapper\BoardMapper.class
 com\ibm\gbs\gbs_cai_web\service\BoardService.class
 com\ibm\gbs\gbs_cai_web\controllers\LoginController.class
-com\ibm\gbs\gbs_cai_web\controllers\BoardController.class
 com\ibm\gbs\gbs_cai_web\vo\EnrollmentVO.class
 com\ibm\gbs\gbs_cai_web\config\DataConfig.class
 com\ibm\gbs\gbs_cai_web\controllers\GlobalExceptionHandler.class
-com\ibm\gbs\gbs_cai_web\service\EnrollmentService.class
 com\ibm\gbs\gbs_cai_web\service\impl\LoginServiceImpl.class
 com\ibm\gbs\gbs_cai_web\mapper\EnrollmentMapper.class
 com\ibm\gbs\gbs_cai_web\config\AppConfig.class
@@ -24,7 +21,6 @@ com\ibm\gbs\gbs_cai_web\controllers\ChatController.class
 com\ibm\gbs\gbs_cai_web\config\WebSocketConfig.class
 com\ibm\gbs\gbs_cai_web\vo\Message.class
 com\ibm\gbs\gbs_cai_web\mapper\LoginMapper.class
-com\ibm\gbs\gbs_cai_web\controllers\AdminController.class
 com\ibm\gbs\gbs_cai_web\vo\ClassVO.class
 com\ibm\gbs\gbs_cai_web\vo\OutputMessage.class
 com\ibm\gbs\gbs_cai_web\common\StringUtils.class

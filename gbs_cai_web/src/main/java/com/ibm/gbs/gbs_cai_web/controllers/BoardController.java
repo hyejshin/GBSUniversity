@@ -50,7 +50,7 @@ public class BoardController {
         user = (UserVO) session.getAttribute(("user"));
 
         //1.get classes user enrolement
-        enrollmentList = enrollmentService.getEnrollmentByUserid(user.getUser_id());
+        //enrollmentList = enrollmentService.getEnrollmentByUserId(user.getUser_id());
 
         mv.setViewName("board");
         mv.addObject("enrollmentList", enrollmentList);

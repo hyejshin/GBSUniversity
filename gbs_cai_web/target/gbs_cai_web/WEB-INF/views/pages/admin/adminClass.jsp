@@ -114,19 +114,6 @@
           
 <button class="btn btn-info" onClick="location.href='/addClassView';">수업등록</button>
 
-
-<table width="500" cellpadding="0" cellspacing="0" border="1" style="margin-top:20px">
-	<tr>
-		<td>classID</td><td>title</td><td>booth</td><td>time</td><td>teacher</td><td></td>
-	</tr>
-
-	<tr>
-		<td>${vo.class_id}</td><td><a href="/detailClass?idx=${vo.idx}" >${vo.title}</a></td>
-			<td>${vo.booth}</td><td>${vo.start}-${vo.end}</td><td>${vo.teacher}</td>
-			<td><a href="/modifyClassView?idx=${vo.idx}">수정</a> | <a href="/deleteClass?idx=${vo.idx}">삭제</a></td>
-	</tr>
-    
-
     
             <hr>
             <footer>

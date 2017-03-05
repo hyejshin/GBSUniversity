@@ -44,21 +44,7 @@
 							
 						</tr>
 					</thead>
-
-					<tbody>
-						
-                                            <c:forEach  var="list" items="${list}">
-							<tr>
-							<td>${list.idx}</td>
-							<td>${list.class_id}</td>
-							<td>${list.booth_name}</td>
-							<td>${list.start}</td>
-							<td>${list.end}</td>
-							<td><a href='/class/viewThisLec?class_id=${list.class_id}' >해당클래스가기</a></td>
-							</tr>
-						</c:forEach>
 					<tbody>	
-
 
 						<tr>
 							<td>Session1 (1:15 - 2:30)</td>

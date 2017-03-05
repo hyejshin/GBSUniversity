@@ -81,10 +81,10 @@
         <put-attribute name="title" value="Index" />
         <put-attribute name="body" value="/WEB-INF/views/pages/index.jsp" />  
      
-    </definition>  
+    </definition>
     <definition name="index" extends="base-definition">  
         <put-attribute name="title" value="Detailsession" />
-        <put-attribute name="body" value="/WEB-INF/views/pages/detail_sessison.jsp" />  
+        <put-attribute name="body" value="/WEB-INF/views/pages/detail_session.jsp" />  
     </definition>     
  
     <definition name="login" extends="login-definition">    	        
