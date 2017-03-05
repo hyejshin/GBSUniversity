@@ -12,7 +12,7 @@ public interface ClassMapper {
 	public ClassVO getDetailByCondition(String class_id);
 	
 	
-	/* Admin Class 관련 */
+	/* Admin Class 관련 - 혜정 */
 	
 	public List<ClassVO> getClassList();
 	
@@ -27,6 +27,16 @@ public interface ClassMapper {
 	public void modifyClass(ClassVO vo);
 	
 	public void deleteClass(int idx);
+	
+	/* 클래스 상세 - 혜정 */
+	
+	public ClassVO getClassDetailById(String class_id);
+	
+	public ClassVO getClassDetailByTitleRoom(String title, String room);
+	
+	
+	
+	
 	
 	/* ClassController와 연동되는 Mapper - 정연우(0224)*/
 	public List<Map<String, Object>> getMyLec(String user_id);

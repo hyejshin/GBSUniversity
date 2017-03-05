@@ -34,6 +34,22 @@ public class ClassServiceImpl implements ClassService {
     public ClassVO getDetailByCondition(String class_id) throws Exception {
         return classMapper.getDetailByCondition(class_id);
     }
+    
+    /*
+	 * class 관련 - 신혜정
+     */
+    
+    // 클래스 상세 class_id로 조회
+    public ClassVO getClassDetailById(String class_id) throws Exception {
+        return classMapper.getClassDetailById(class_id);
+    }
+    
+    // 클래스 상세 title & room 으로 조회
+    public ClassVO getClassDetailByTitleRoom(String title, String room) throws Exception {
+    	return classMapper.getClassDetailByTitleRoom(title, room);
+    }
+    
+    
 
     /*
 	 * class Admin 관련 - 신혜정

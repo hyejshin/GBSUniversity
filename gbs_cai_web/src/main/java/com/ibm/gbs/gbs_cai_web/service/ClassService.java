@@ -34,7 +34,14 @@ public interface ClassService {
 	
 	//public void uploadImageAndFiles(MultipartFile image, MultipartFile[] files, ClassVO vo);
   
-  
+	// 클래스 상세
+	public ClassVO getClassDetailById(String class_id) throws Exception;
+	
+	//MyLecture에서 상세보기
+	public ClassVO getClassDetailByTitleRoom(String title, String room) throws Exception;
+	
+	
+	
 
 	/* ClassController와 연동되는 Service - 정연우(0224)*/
 	public List<Map<String, Object>> getMyLec(String user_id) throws Exception; 

@@ -29,6 +29,29 @@ public class ClassController {
 	
 	@Autowired
     private ClassService classService;
+	
+	/*
+	 *  추가목적 : 클래스 상세보기 
+	 *  추가이력 : 2017/03/05 신혜정
+	 */
+	@RequestMapping("/class/detail")
+	public String classDetail(@RequestParam("class_id") String class_id, Model model) throws Exception {
+        
+		model.addAttribute("vo", classService.getClassDetailById(class_id));
+
+		return "detail_class";
+	}
+	
+	@RequestMapping("/class/detailLec")
+	public String classDetail(@RequestParam("title") String title, 
+				@RequestParam("room") String room, Model model) throws Exception {
+        
+		model.addAttribute("vo", classService.getClassDetailByTitleRoom(title, room));
+		
+		return "detail_class";
+	}
+	
+	
 	/*
 	 *  추가목적 : 시간과 부스 둘 중에 하나라도 선택시 index.jsp에서 시간/부스를 Key 값으로 DB에서 select 후 JSON으로 뷰에 넘겨준다. 
 	 *  추가이력 : 2017/02/20 정연우
@@ -61,11 +84,13 @@ public class ClassController {
 	 *    기타    : 현재 클래스의 정보를 list에 담는거까지만 구현하였습니다. 뷰에 foreach로 뿌려주기만 하면 됩니다.  
 	 *  추가이력 : 2017/02/23 정연우
 	 *  수정이력 : 2017/03/04 최미수   
+                      2017/03/05 김주상
 	 * 	 * */
     
     @RequestMapping(value={"/class/viewDetail"}, method=RequestMethod.GET)
     public ModelAndView viewDetail(@RequestParam("idx") String class_id) throws Exception{
         ClassVO classInfo = classService.getDetailByCondition(class_id);
+
     	ModelAndView mv = new ModelAndView();
     	mv.setViewName("detail_class");
         mv.addObject("vo", classInfo);
