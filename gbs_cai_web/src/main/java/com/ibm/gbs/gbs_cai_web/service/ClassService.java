@@ -41,6 +41,9 @@ public interface ClassService {
 	// 클래스 상세
 	public ClassVO getClassDetailById(String class_id) throws Exception;
 	
+	//MyLecture에서 상세보기
+	public ClassVO getClassDetailByTitleRoom(String title, String room) throws Exception;
+	
 	
 	
 

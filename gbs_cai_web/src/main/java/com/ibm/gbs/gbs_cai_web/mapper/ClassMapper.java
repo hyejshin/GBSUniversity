@@ -32,6 +32,8 @@ public interface ClassMapper {
 	
 	public ClassVO getClassDetailById(String class_id);
 	
+	public ClassVO getClassDetailByTitleRoom(String title, String room);
+	
 	
 	
 	

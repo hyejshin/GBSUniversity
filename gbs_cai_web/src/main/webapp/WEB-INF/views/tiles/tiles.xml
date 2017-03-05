@@ -80,13 +80,8 @@
     <definition name="index" extends="base-definition">  
         <put-attribute name="title" value="Index" />
         <put-attribute name="body" value="/WEB-INF/views/pages/index.jsp" />  
-     
     </definition>  
-    <definition name="detail_session" extends="base-definition">  
-        <put-attribute name="title" value="Detailsession" />
-        <put-attribute name="body" value="/WEB-INF/views/pages/detail_session.jsp" />  
-    </definition>     
- 
+
     <definition name="login" extends="login-definition">    	        
         <put-attribute name="title" value="Welcome" />  
         <put-attribute name="body" value="/WEB-INF/views/pages/login.jsp" />   
@@ -99,13 +94,20 @@
         <put-attribute name="body" value="/WEB-INF/views/pages/user.jsp" />  
     </definition> 
     
+    <definition name="detail_session" extends="base-definition">  
+        <put-attribute name="title" value="Detailsession" />
+        <put-attribute name="body" value="/WEB-INF/views/pages/detail_session.jsp" />  
+    </definition>  
+    
     <definition name="detail_class" extends="base-definition">  
         <put-attribute name="title" value="LectureDetail" />  
-        <put-attribute name="body" value="/WEB-INF/views/pages/detail_class.jsp" />   
+        <put-attribute name="body" value="/WEB-INF/views/pages/detail_class.jsp" />
+        <!-- 
     	<put-list-attribute name="showDetailAttributes" cascade="true">
             <add-attribute value="/css/detail.css"/>
-            <!-- <add-attribute value="/css/bootstrap2.css"/>-->
-       </put-list-attribute>  
+            <add-attribute value="/css/bootstrap2.css"/>
+       </put-list-attribute>
+        -->
     </definition> 
     
     <definition name="board" extends="base-definition">  

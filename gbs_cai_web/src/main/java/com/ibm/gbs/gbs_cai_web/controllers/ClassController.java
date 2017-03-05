@@ -38,7 +38,16 @@ public class ClassController {
 	public String classDetail(@RequestParam("class_id") String class_id, Model model) throws Exception {
         
 		model.addAttribute("vo", classService.getClassDetailById(class_id));
-		System.out.println("class detail");
+
+		return "detail_class";
+	}
+	
+	@RequestMapping("/class/detailLec")
+	public String classDetail(@RequestParam("title") String title, 
+				@RequestParam("room") String room, Model model) throws Exception {
+        
+		model.addAttribute("vo", classService.getClassDetailByTitleRoom(title, room));
+		
 		return "detail_class";
 	}
 	
