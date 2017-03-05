@@ -106,9 +106,9 @@
                                           <label class="control-label" for="session">Session</label>
                                           <div class="controls">
                                             <select id="session" name="session" class="chzn-select">
-                                              <option value="Session1 (1:15 - 2:30)">Session1: 1:15 - 2:30</option>
-                                              <option value="Session1 (2:45 - 4:00)">Session2: 2:45 - 4:00</option>
-                                              <option value="Session1 (4:15 - 5:30)">Session3: 4:15 - 5:30</option>
+                                              <option value="Session1 (1:15 - 2:30)">Session1 (1:15 - 2:30)</option>
+                                              <option value="Session2 (2:45 - 4:00)">Session2 (2:45 - 4:00)</option>
+                                              <option value="Session3 (4:15 - 5:30)">Session3 (4:15 - 5:30)</option>
                                             </select>
                                           </div>
                                         </div>

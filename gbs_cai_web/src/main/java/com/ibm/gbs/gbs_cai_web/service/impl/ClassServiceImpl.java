@@ -123,5 +123,11 @@ public class ClassServiceImpl implements ClassService {
         return classMapper.checkCode(map);
     }
 
+	@Override
+	public void updateFlag(HashMap<String, Object> map1) {
+		// TODO Auto-generated method stub
+		
+	}
+
 
 }

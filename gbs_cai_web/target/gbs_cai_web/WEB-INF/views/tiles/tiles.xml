@@ -99,9 +99,13 @@
         <put-attribute name="body" value="/WEB-INF/views/pages/user.jsp" />  
     </definition> 
     
-    <definition name="single" extends="base-definition">  
+    <definition name="detail_class" extends="base-definition">  
         <put-attribute name="title" value="LectureDetail" />  
-        <put-attribute name="body" value="/WEB-INF/views/pages/single.jsp" />  
+        <put-attribute name="body" value="/WEB-INF/views/pages/detail_class.jsp" />   
+    	<put-list-attribute name="showDetailAttributes" cascade="true">
+            <add-attribute value="/css/detail.css"/>
+            <!-- <add-attribute value="/css/bootstrap2.css"/>-->
+       </put-list-attribute>  
     </definition> 
     
     <definition name="board" extends="base-definition">  

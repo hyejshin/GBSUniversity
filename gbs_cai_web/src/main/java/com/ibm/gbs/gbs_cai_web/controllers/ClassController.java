@@ -60,7 +60,7 @@ public class ClassController {
 	 *  추가목적 : 시간/부스 선택시 나오면 클래스에서  Read를 눌렀을 때 상세조회가 가능하다. 
 	 *    기타    : 현재 클래스의 정보를 list에 담는거까지만 구현하였습니다. 뷰에 foreach로 뿌려주기만 하면 됩니다.  
 	 *  추가이력 : 2017/02/23 정연우
-	 * 
+	 *  수정이력 : 2017/03/04 최미수   
 	 * 	 * */
     
     @RequestMapping(value={"/class/viewDetail"}, method=RequestMethod.GET)
@@ -71,7 +71,8 @@ public class ClassController {
         System.out.println(detailInfo.size());
         
     	ModelAndView mv = new ModelAndView();
-    	mv.setViewName("single");
+    	mv.setViewName("detail_class");
+    	//mv.setViewName("single");
         mv.addObject("list", detailInfo);
         
         return mv;
@@ -95,21 +96,6 @@ public class ClassController {
 		return list;
     }
     
-    /* 	
-   	 *  추가목적 : 현재 사용자가 신청한 클래스 목록을 가져온다. 
-   	 *  추가이력 : 2017/02/25 정연우
-   	 * 
-   	 * 	 * */
-    @RequestMapping(value={"/class/viewMyLec"}, method=RequestMethod.GET)
-    public ModelAndView viewMyLec(@RequestParam("user_id") String user_id) throws Exception{
-        String _user_id = util.isStringNull(user_id);
-        List<Map<String, Object>> myInfo = classService.getMyLec(_user_id);
-                
-        ModelAndView mv = new ModelAndView();
-        mv.setViewName("history");
-        mv.addObject("list", myInfo);
-        return mv;
-    }
     
     // /class/viewThisLec
     
@@ -118,13 +104,14 @@ public class ClassController {
    	 *  추가이력 : 2017/02/25 정연우
    	 * 
    	 * 	 * */
+    //이 기능 꼭 필수적으로 안해도 된다고 하셔서 함수 없애도 됨
     @RequestMapping(value={"/class/viewThisLec"}, method=RequestMethod.GET)
     public ModelAndView viewThisLec(@RequestParam("class_id") String class_id) throws Exception{
         String _class_id = util.isStringNull(class_id);
         List<Map<String, Object>> LecInfo = classService.getThisLec(_class_id);
                 
         ModelAndView mv = new ModelAndView();
-        mv.setViewName("single");
+        mv.setViewName("detail_class");
         mv.addObject("list", LecInfo);
         return mv;
     }
@@ -163,6 +150,20 @@ public class ClassController {
        
     }
     
-    
+    /* 	
+   	 *  추가목적 : 현재 사용자가 신청한 클래스 목록을 가져온다. 
+   	 *  추가이력 : 2017/02/25 정연우
+   	 * 
+   	 * 	 * */
+    @RequestMapping(value={"/class/viewMyLec"}, method=RequestMethod.GET)
+    public ModelAndView viewMyLec(@RequestParam("user_id") String user_id) throws Exception{
+        String _user_id = util.isStringNull(user_id);
+        //List<Map<String, Object>> myInfo = classService.getMyLec(_user_id);
+                
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("history");
+        //mv.addObject("list", myInfo);
+        return mv;
+    }
     
 }

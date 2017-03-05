@@ -14,12 +14,13 @@ import org.springframework.util.ObjectUtils;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.servlet.DispatcherServlet;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
+import com.ibm.gbs.gbs_cai_web.config.*;
  
 public class AppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
  
     @Override
     protected Class<?>[] getRootConfigClasses() {
-        return new Class[] { AppConfig.class , DataConfig.class , WebSocketConfig.class};
+        return new Class[] { AppConfig.class , DataConfig.class };//WebSocketConfig.class};
     }
   
     @Override

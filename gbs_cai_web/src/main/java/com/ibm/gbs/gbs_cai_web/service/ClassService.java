@@ -47,6 +47,8 @@ public interface ClassService {
 
 	public int checkCode(HashMap<String,Object> map) throws Exception;
 
+	public void updateFlag(HashMap<String, Object> map1);
+
 
 	
 }
