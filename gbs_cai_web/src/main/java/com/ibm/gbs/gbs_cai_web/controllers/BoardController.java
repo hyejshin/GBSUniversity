@@ -62,11 +62,10 @@ public class BoardController {
      * get board list about class idx 
      */
     @RequestMapping(value="/board/getBoardListByClassId", method=RequestMethod.GET)
-    public @ResponseBody List<BoardVO>getBoardListByClassId(@RequestParam("class_idx")String idx){        
+    public @ResponseBody List<BoardVO>getBoardListByClassId(@RequestParam("class_id") String class_id){        
         List<BoardVO> boardList = new ArrayList<BoardVO>();
         boardList = null;
-        System.out.println(idx);
-        boardList = boardService.getBoardListByClassId(new Integer(idx));
+        boardList = boardService.getBoardListByClassId(class_id);
           
         return boardList;
     }

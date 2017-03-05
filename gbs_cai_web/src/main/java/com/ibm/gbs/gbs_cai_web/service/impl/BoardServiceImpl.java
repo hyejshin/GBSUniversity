@@ -20,8 +20,8 @@ public class BoardServiceImpl implements BoardService{
     BoardMapper boardMapper;
     
     @Override
-    public List<BoardVO> getBoardListByClassId(int idx) {
-       return boardMapper.getBoardListByClassId(idx);
+    public List<BoardVO> getBoardListByClassId(String class_id) {
+       return boardMapper.getBoardListByClassId(class_id);
     }
     
 }

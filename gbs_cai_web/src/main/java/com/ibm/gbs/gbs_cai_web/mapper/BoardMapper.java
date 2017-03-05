@@ -14,6 +14,6 @@ import org.apache.ibatis.annotations.Param;
  * @author kr055045
  */
 public interface BoardMapper {
-    public List<BoardVO> getBoardListByClassId(@Param("idx") int idx);
+    public List<BoardVO> getBoardListByClassId(@Param("class_id") String class_id);
     
 }
