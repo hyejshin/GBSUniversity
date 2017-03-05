@@ -2,29 +2,19 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ibm.gbs.gbs_cai_web.mapper.ClassMapper">
     <cache />
-    <select id="getClassesByCondition" resultType="hashmap" parameterType="hashmap">
-        SELECT *	   
-        FROM CLASS
-        WHERE booth=#{booth} and start=#{time} 
-    </select>
-    
-    <select id="getDetailByCondition" resultType="hashmap" parameterType="int">
-        SELECT *	   
-        FROM CLASS
-        WHERE idx=#{idx} 
-    </select>
-    
     
     <!--  Admin Page 관련 -->
     
     <select id="getClassList" resultType="com.ibm.gbs.gbs_cai_web.vo.ClassVO">
         SELECT *	   
-        FROM CLASS
+        FROM CLASS ORDER BY class_id
     </select>
     
-    <select id="getClassID" resultType="String">
-        SELECT LPAD((SELECT IFNULL(MAX(idx)+1, 1) FROM CLASS), 4, '0') 
-        FROM DUAL;
+    <select id="getClassListBySession" parameterType="String" resultType="com.ibm.gbs.gbs_cai_web.vo.ClassVO">
+        SELECT *	   
+        FROM CLASS 
+        WHERE session = #{session}
+        ORDER BY class_id
     </select>
     
     <select id="getClassDetail" resultType="com.ibm.gbs.gbs_cai_web.vo.ClassVO">
@@ -37,50 +27,38 @@
         INSERT INTO CLASS (
         	class_id
 			,title
-			,teacher
-			,booth
-			,start
-			,end
-			,date
+			,room
+			,speaker
+			,session
 			,capacity
 			,detail
-			,image
-			,atta1
-			,atta2
-			,atta3
-			,uploadPath)
+			,speaker_img
+			,attend_code
+		)
         VALUES (
         	 #{class_id}
         	,#{title}
-        	,#{teacher}
-        	,#{booth}
-        	,#{start}
-        	,#{end}
-        	,#{date}
+        	,#{room}
+        	,#{speaker}
+        	,#{session}
         	,#{capacity}
         	,#{detail}
-        	,#{image}
-        	,#{atta1}
-        	,#{atta2}
-        	,#{atta3}
-        	,#{uploadPath}     	
+        	,#{speaker_img}
+        	,#{attend_code}   	
         )	
     </insert>
     
     <update id="modifyClass" parameterType="com.ibm.gbs.gbs_cai_web.vo.ClassVO">
         UPDATE CLASS SET
-			title = #{title}
-			,teacher = #{teacher}
-			,booth = #{booth}
-			,start = #{start}
-			,end = #{end}
-			,date = #{date}
-			,capacity = #{capacity}
-			,detail = #{detail}
-			,image = #{image}
-			,atta1 = #{atta1}
-			,atta2 = #{atta2}
-			,atta3 = #{atta3}
+			class_id	 = #{class_id}
+			,title		 = #{title}
+			,room		 = #{room}
+			,speaker	 = #{speaker}
+			,session	 = #{session}
+			,capacity	 = #{capacity}
+			,detail		 = #{detail}
+			,speaker_img = #{speaker_img}
+			,attend_code = #{attend_code}
 		WHERE
 			idx = #{idx}
     </update>
@@ -94,26 +72,20 @@
     <!-- /* ClassController와 연동되는 Sql - 정연우(0224)*/ -->
     <select id="getMyLec" resultType="hashmap" parameterType="String">
         SELECT *	   
-        FROM enrollment
+        FROM ENROLLMENT
         WHERE user_id=#{user_id} 
     </select>
     
     <select id="getThisLec" resultType="hashmap" parameterType="String">
         SELECT *	   
-        FROM class
+        FROM CLASS
         WHERE class_id=#{class_id} 
     </select>
     
     <select id="checkCode" resultType="int" parameterType="hashmap">
     	SELECT count(1)
-    	FROM class
+    	FROM CLASS
     	WHERE class_id=#{class_id} and attend_code=#{code}
     </select>
-    
-    <update id="updateFlag" parameterType="hashmap">
-    	UPDATE enrollment
-    	SET attend_yn = 'Y'
-    	WHERE user_id=#{user_id} and class_id=#{class_id}
-    </update>
     
 </mapper>
