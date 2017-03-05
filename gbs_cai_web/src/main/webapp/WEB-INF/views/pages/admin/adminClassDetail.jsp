@@ -2,11 +2,18 @@
 <!DOCTYPE html>
 <html>    
     <head>
-        <title>Admin</title>
+        <title>AdminClassDetail</title>
     </head>
     
     <body>
-        
+    <%
+	HttpSession session1 = request.getSession();
+	String user_id = (String)session1.getAttribute("user_id");
+	
+	if(!user_id.equals("admin")) {%>
+		<c:redirect url="/logout"/>
+	<%}%>
+	
         <div class="container-fluid">
             <div class="row-fluid">
                 <!--/span-->

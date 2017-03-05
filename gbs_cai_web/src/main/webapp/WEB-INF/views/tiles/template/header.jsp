@@ -24,6 +24,9 @@
                     <li><a href="/index">Home</a></li>
                     <li><a href="/myLecture?user_id=<%=user_id%>">My Lecture</a></li>
                     <li><a href="/board">My Q&A</a></li>
+                    <%if(user_id.equals("admin")) {%>
+						<li><a href="/adminClass">Admin Page</a></li>
+					<%}%>
                 </ul>
                 <!--script-->
                 <script>

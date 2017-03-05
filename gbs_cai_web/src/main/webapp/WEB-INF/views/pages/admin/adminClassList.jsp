@@ -7,7 +7,18 @@
         <title>adminClass</title>
     </head>
     
-    <body>
+    <body>  	
+    <%
+	HttpSession session1 = request.getSession();
+	String user_id = (String)session1.getAttribute("user_id");
+	
+	if(!user_id.equals("admin")) {%>
+		<c:redirect url="/logout"/>
+	<%}%>
+
+  <button class="btn btn-default" onClick="location.href='/index';">Home</button>
+  <button class="btn btn-default" onClick="location.href='/logout';">Logout</button>
+  <br><br>
   
         <div class="container-fluid">
             <div class="row-fluid">

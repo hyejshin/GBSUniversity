@@ -7,6 +7,14 @@
         <title>클래스 등록</title>
 </head>
 <body>
+		<%
+		HttpSession session1 = request.getSession();
+		String user_id = (String)session1.getAttribute("user_id");
+		
+		if(!user_id.equals("admin")) {%>
+			<c:redirect url="/logout"/>
+		<%}%>
+	
         <div class="row-fluid">
                         <!-- block -->
                         <div class="block">

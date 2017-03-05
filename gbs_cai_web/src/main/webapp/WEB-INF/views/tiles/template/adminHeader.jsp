@@ -1,3 +1,4 @@
+
 <div class="navbar navbar-fixed-top">
             <div class="navbar-inner">
                 <div class="container-fluid">
@@ -26,7 +27,6 @@
                             </li>
                             <li class="dropdown">
                                 <a href="#" data-toggle="dropdown" class="dropdown-toggle">Register<b class="caret"></b>
-
                                 </a>                                
                             </li>
                         </ul>
