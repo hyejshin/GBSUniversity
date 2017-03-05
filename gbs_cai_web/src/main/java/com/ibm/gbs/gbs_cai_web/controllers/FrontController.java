@@ -31,4 +31,10 @@ public class FrontController {
         
     }
     
+    @RequestMapping("/detail_session")
+    public String detailSessionPage(ModelMap model) {
+    	
+    	return "detail_session";
+    }
+    
 }

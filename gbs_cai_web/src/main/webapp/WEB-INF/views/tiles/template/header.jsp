@@ -20,8 +20,8 @@
                 <span class="menu"><img src="<c:url value="/images/menu.png" />" alt=""> </span>
 
                 <ul>
-                    <li ><a href="/webapp/WEB-INF/views/index.jsp" class="scroll">Home</a></li>
-                   <li><a href="/class/viewMyLec?user_id=<%=session1.getAttribute("user_id")%>" >My Lecture</a></li>
+                    <li><a href="/index" class="scroll">Home</a></li>
+                    <li><a href="/myLecture?user_id=<%=session1.getAttribute("user_id")%>" >My Lecture</a></li>
                     <li><a href="/board">My Q&A</a></li>
                 </ul>
                 <!--script-->
