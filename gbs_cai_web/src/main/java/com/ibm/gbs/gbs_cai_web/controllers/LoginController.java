@@ -6,9 +6,12 @@
  */
 package com.ibm.gbs.gbs_cai_web.controllers;
 
+import com.ibm.gbs.gbs_cai_web.service.ClassService;
 import com.ibm.gbs.gbs_cai_web.service.LoginService;
+import com.ibm.gbs.gbs_cai_web.vo.ClassVO;
 import com.ibm.gbs.gbs_cai_web.vo.UserVO;
 import java.io.IOException;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.http.HttpServletRequest;
@@ -61,11 +64,11 @@ public class LoginController {
         HttpSession newSession = req.getSession();
         newSession.setAttribute("user", user);
         newSession.setAttribute("user_id", user.getUser_id());
-        
         try {
             if (user == null) {
                 req.setAttribute("isLogin", false);
                 modelMap.addAttribute("error_msg", "Please check your login information.");
+                System.out.println("dd");
                 res.sendRedirect("/login");
             } else {
                 req.setAttribute("isLogin", true);

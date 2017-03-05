@@ -3,23 +3,16 @@ package com.ibm.gbs.gbs_cai_web.service.impl;
 import java.io.File;
 import java.io.IOException;
 import java.net.URLEncoder;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.io.FileUtils;
-import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.ui.Model;
-import org.springframework.web.multipart.MultipartFile;
 
 import com.ibm.gbs.gbs_cai_web.mapper.ClassMapper;
 import com.ibm.gbs.gbs_cai_web.service.ClassService;
@@ -38,8 +31,8 @@ public class ClassServiceImpl implements ClassService {
         return classMapper.getClassesByCondition(map);
     }
 
-    public List<Map<String, Object>> getDetailByCondition(int idx) throws Exception {
-        return classMapper.getDetailByCondition(idx);
+    public ClassVO getDetailByCondition(String class_id) throws Exception {
+        return classMapper.getDetailByCondition(class_id);
     }
 
     /*
@@ -128,6 +121,12 @@ public class ClassServiceImpl implements ClassService {
 		// TODO Auto-generated method stub
 		
 	}
+
+    @Override
+    public List<ClassVO> getAllClass() throws Exception {
+        return classMapper.getAllClass();
+        
+    }
 
 
 }

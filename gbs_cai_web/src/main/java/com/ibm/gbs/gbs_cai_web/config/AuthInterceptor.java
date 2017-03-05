@@ -27,6 +27,7 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
     @Override
     public boolean preHandle(HttpServletRequest req, HttpServletResponse res, Object o) throws Exception {
         HttpSession session = req.getSession();
+        System.out.println("111");
         if (session.getAttribute("user") == null) {
             res.sendRedirect("/login");
             return false;

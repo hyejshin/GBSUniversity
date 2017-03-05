@@ -6,7 +6,6 @@
 package com.ibm.gbs.gbs_cai_web.controllers;
 
 import java.io.IOException;
-import org.apache.ibatis.javassist.NotFoundException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.ModelAndView;
@@ -31,7 +30,8 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler( NoHandlerFoundException.class)
     public String notFound(Exception exception) {
-        System.out.println("----Caught KeywordNotFoundException----");
+        System.out.println("----Caught 111KeywordNotFoundException----");
+        System.out.println(exception.printStackTrace());
         return "404Error";
     }
     
@@ -43,14 +43,14 @@ public class GlobalExceptionHandler {
     @ExceptionHandler( NoSuchRequestHandlingMethodException.class)
     public String noHandler(Exception exception) {
         
-        System.out.println("----Caught KeywordNotFoundException----");
+        System.out.println("----Caught 222KeywordNotFoundException----");
         return "404Error";
     }
     
     @ExceptionHandler( Exception.class)
     public String hadleException(Exception exception) {
-        
-        System.out.println("----Caught KeywordNotFoundException----");
+        System.out.println(exception.printStackTrace());
+        System.out.println("----Caught 333KeywordNotFoundException----");
         return "404Error";
     }
 

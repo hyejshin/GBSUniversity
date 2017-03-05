@@ -104,7 +104,6 @@
         <put-attribute name="body" value="/WEB-INF/views/pages/detail_class.jsp" />   
     	<put-list-attribute name="showDetailAttributes" cascade="true">
             <add-attribute value="/css/detail.css"/>
-            <!-- <add-attribute value="/css/bootstrap2.css"/>-->
        </put-list-attribute>  
     </definition> 
     

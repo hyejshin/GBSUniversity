@@ -45,7 +45,7 @@ public class DataConfig {
         dataSource.setUsername(prop.getProperty("USER"));
         dataSource.setUrl(prop.getProperty("URL"));
         dataSource.setPassword(prop.getProperty("PASSWORD"));
-
+        System.out.println(dataSource.getPassword() + "|| " + dataSource.getUsername()+"||"+dataSource.getUrl());
         return dataSource;
     }
 

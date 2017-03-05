@@ -64,16 +64,11 @@ public class ClassController {
 	 * 	 * */
     
     @RequestMapping(value={"/class/viewDetail"}, method=RequestMethod.GET)
-    public ModelAndView viewDetail(@RequestParam("idx")int idx) throws Exception{
-        int _idx = util.isZero(idx);
-        List<Map<String, Object>> detailInfo = classService.getDetailByCondition(_idx);
-        
-        System.out.println(detailInfo.size());
-        
+    public ModelAndView viewDetail(@RequestParam("idx") String class_id) throws Exception{
+        ClassVO classInfo = classService.getDetailByCondition(class_id);
     	ModelAndView mv = new ModelAndView();
     	mv.setViewName("detail_class");
-    	//mv.setViewName("single");
-        mv.addObject("list", detailInfo);
+        mv.addObject("vo", classInfo);
         
         return mv;
     }
