@@ -38,12 +38,12 @@
     </definition>  
     
     <definition name="login-definition" template="/WEB-INF/views/tiles/layouts/loginLayout.jsp">
-    	<put-attribute name="title" value="" />  
+        <put-attribute name="title" value="" />  
         <put-attribute name="head"  value="/WEB-INF/views/tiles/template/loginHead.jsp" /> 
         <put-attribute name="body" value="" />   
         
         <put-list-attribute name="loginLayout" cascade="true">
-        	<add-attribute value="http://fonts.googleapis.com/css?family=Lato:100italic,100,300italic,300,400italic,400,700italic,700,900italic,900"/>
+            <add-attribute value="http://fonts.googleapis.com/css?family=Lato:100italic,100,300italic,300,400italic,400,700italic,700,900italic,900"/>
             <add-attribute value="/css/bootstrap.min.css" />
             <add-attribute value="/css/login.css" />
         </put-list-attribute>   
@@ -55,12 +55,12 @@
     
     <!-- admin Layout Definition -->
     <definition name="admin-definition" template="/WEB-INF/views/tiles/layouts/adminLayout.jsp">
-    	<put-attribute name="title" value="" />  
+        <put-attribute name="title" value="" />  
         <put-attribute name="head"  value="/WEB-INF/views/tiles/template/adminHead.jsp" /> 
         <put-attribute name="body" value="" />   
         
         <put-list-attribute name="Admincss" cascade="true">
-        	<add-attribute value="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+            <add-attribute value="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
         </put-list-attribute>   
         <put-list-attribute name="Adminjs" cascade="true">
             <add-attribute value="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"/>
@@ -69,7 +69,7 @@
     </definition>
     
     <definition name="empty-definition" template="/WEB-INF/views/tiles/layouts/empty.jsp">
-    	<put-attribute name="title" value="" />  
+        <put-attribute name="title" value="" />  
         <put-attribute name="body" value="" />     
           
     </definition>
@@ -78,53 +78,45 @@
   
     <!-- Home Page -->
     <definition name="index" extends="base-definition">  
-        <put-attribute name="title" value="Index" />
-        <put-attribute name="body" value="/WEB-INF/views/pages/index.jsp" />  
-<<<<<<< HEAD
-     
-    </definition>
-    <definition name="index" extends="base-definition">  
         <put-attribute name="title" value="Detailsession" />
         <put-attribute name="body" value="/WEB-INF/views/pages/detail_session.jsp" />  
     </definition>     
- 
-=======
-    </definition>  
-
->>>>>>> 816427b0c72ce8afb363915bd60c3f73ae46adff
+    <!-- login page -->
     <definition name="login" extends="login-definition">    	        
         <put-attribute name="title" value="Welcome" />  
-        <put-attribute name="body" value="/WEB-INF/views/pages/login.jsp" />   
-                               
+        <put-attribute name="body" value="/WEB-INF/views/pages/login.jsp" />                                  
     </definition>
  
-    <!-- Product Page -->
+    <!-- user page -->
     <definition name="userHome" extends="base-definition">  
         <put-attribute name="title" value="UserHome" />  
         <put-attribute name="body" value="/WEB-INF/views/pages/user.jsp" />  
     </definition> 
     
+    <!-- session timetable -->
     <definition name="detail_session" extends="base-definition">  
         <put-attribute name="title" value="Detailsession" />
         <put-attribute name="body" value="/WEB-INF/views/pages/detail_session.jsp" />  
     </definition>  
     
+    <!-- class detail-->
     <definition name="detail_class" extends="base-definition">  
         <put-attribute name="title" value="LectureDetail" />  
         <put-attribute name="body" value="/WEB-INF/views/pages/detail_class.jsp" />
-    	<put-list-attribute name="showDetailAttributes" cascade="true">
+        <put-list-attribute name="showDetailAttributes" cascade="true">
             <add-attribute value="/css/detail.css"/>
-<<<<<<< HEAD
-       </put-list-attribute>  
-=======
-       </put-list-attribute>
->>>>>>> 816427b0c72ce8afb363915bd60c3f73ae46adff
+        </put-list-attribute> 
+        <put-list-attribute name="showDetailJsAttributes" cascade="true">
+            <add-attribute value="/script/detail_class.js"/>
+        </put-list-attribute> 
     </definition> 
     
-    <definition name="board" extends="base-definition">  
+        
+    
+<!--    <definition name="board" extends="base-definition">  
         <put-attribute name="title" value="LectueQna" />  
         <put-attribute name="body" value="/WEB-INF/views/pages/board.jsp" />  
-        <!-- js -->
+         js 
         <put-list-attribute name="boardJSList" cascade="true">
             <add-attribute value="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"/>
             <add-attribute value="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" />
@@ -132,14 +124,14 @@
             <add-attribute value="/script/sockjs.min.js"/>
             <add-attribute value="/script/stomp.min.js"/>
             <add-attribute value="/script/board.js" />
-            <!-- <add-attribute value="/script/jquery-1.10.2.min.js"/>-->
+             <add-attribute value="/script/jquery-1.10.2.min.js"/>
         </put-list-attribute>
         
-         <put-list-attribute name="boardcss" cascade="true">
+        <put-list-attribute name="boardcss" cascade="true">
             <add-attribute value="/css/board.css" />
         </put-list-attribute>
         
-    </definition> 
+    </definition> -->
     
     <definition name="history" extends="base-definition">  
         <put-attribute name="title" value="MyLecture" />  
@@ -151,19 +143,16 @@
         <put-attribute name="body" value="/WEB-INF/views/pages/error/404error.jsp" /> 
         <put-list-attribute name="notFoundPageAttributes" cascade="true">
             <add-attribute value="/css/404page.css"/>
-       </put-list-attribute> 
+        </put-list-attribute> 
     </definition> 
     
     <definition name="505Error" extends="base-definition">  
         <put-attribute name="title" value="Server Error" />  
         <put-attribute name="body" value="/WEB-INF/views/pages/error/505error.jsp" />  
-    	<put-list-attribute name="serverErrorAttributes" cascade="true">
+        <put-list-attribute name="serverErrorAttributes" cascade="true">
             <add-attribute value="/css/505page.css"/>
-       </put-list-attribute> 
+        </put-list-attribute> 
     
     </definition> 
-    
-     
-
-  
+   
 </tiles-definitions>

@@ -9,9 +9,6 @@
         <tiles:insertAttribute name="head" />
     </head>
     <body>
-        
-        
-            <tiles:insertAttribute name="body" />
- 
+        <tiles:insertAttribute name="body" />
     </body>
 </html>

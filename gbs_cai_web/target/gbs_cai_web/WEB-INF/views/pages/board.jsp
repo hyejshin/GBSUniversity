@@ -1,118 +1,151 @@
-<!--
- * board jsp
- * Editor: Misu Choi
- * Modify : Joosang Kim
- * date: 2017-02-18  
- * Note : add board page dynamic action
--->
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
-<%@ page session="false" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<div class="boardDiv">
+<h3>Question Board</h3>
+    <div class="info">
+        <table class="table table-striped" bgcolor="D8D8D8">
+            <thead>
+                <tr>
+                    <th style="text-align: center;">NO</th>
+                    <th style="text-align: center;">TITLE</th>
+                    <th style="text-align: center;">WRITER</th>
+                    <th style="text-align: center;">DATE</th>
+                    <th style="text-align: center;">HIT</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td align="center">3</td>
+                    <td><a href="Board_View.jsp">?? ???? 3</a></td>
+                    <td align="center">???</td>
+                    <td align="center">2015/11/23</td>
+                    <td align="center">1234</td>
+                </tr>
+                <tr>
+                    <td align="center">2</td>
+                    <td><a href="Board_View.jsp">?? ???? 2</a></td>
+                    <td align="center">???</td>
+                    <td align="center">2015/11/23</td>
+                    <td align="center">123</td>
+                </tr>
+                <tr>
+                    <td align="center">1</td>
+                    <td><a href="Board_View.jsp">?? ???? 1</a></td>
+                    <td align="center">???</td>
+                    <td align="center">2015/11/23</td>
+                    <td align="center">12</td>
+                </tr>
+            </tbody>
+            <!-- ??? ?? ???? ??? ?? ?? ?? -->
+            <tfoot>
+                <tr>
+                    <td align="center" colspan="5">1</td>
+                </tr>
+            </tfoot>
+        </table>
+        <input type="button" class="btn btn-primary" value="list" /> <input
+            type="button" class="btn btn-warining" value="write" />
 
-<tiles:importAttribute name="innerLayout" />
-<tiles:importAttribute name="boardJSList" />
-<tiles:importAttribute name="boardcss" />
+        <div class="clearfix"></div>
 
-<c:forEach var="innerLayout" items="${innerLayout}">
-    <link type="text/javascript"  href="<c:url value="${innerLayout}"/>" />
-</c:forEach>
-<c:forEach var="boardJSList" items="${boardJSList}">
-    <script src="<c:url value="${boardJSList}"/>" ></script>
-</c:forEach>	
-<c:forEach var="boardcss" items="${boardcss}">
-    <link type="text/javascript"  href="<c:url value="${boardcss}"/>" />
-</c:forEach>
+        <!-- ?? ?? ? ?? ??? ?? ?? ??? ????: Ajax ???? ? ???? ????  -->
+        <!-- ?? ?? ?? -->
+        <div id="detail" type="hidden">
+            <form name="BoardViewForm" method="post">
+                <table class="table-striped table" summary="?? ??? ??">
+                    <tr>
+                        <td><div align="center">
+                                <h3>
+                                    <b>Questions</b>
+                                </h3>
+                            </div></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table class="table" summary="?? ??? ??">
+                                <tr>
+                                    <td align=center bgcolor=#dddddd>WRITER</td>
+                                    <td bgcolor=#ffffe8>???</td>
+                                    <td align=center bgcolor=#dddddd>DATE</td>
+                                    <td bgcolor=#ffffe8>2017/03/11</td>
+                                </tr>
+                                <tr>
+                                    <td align=center bgcolor=#dddddd>TITLE</td>
+                                    <td bgcolor=#ffffe8 colspan=3>??? ????</td>
+                                </tr>
+                                <tr>
+                                    <td><br>???????<br></td>
+                                </tr>
+                            </table>
+                            <div class="container">		 
 
-<c:url value="/echo"/>
 
-<div class="container" style="list-style: none;">
-    <div class="row">
-        <div class="col-md-5">
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <span class="glyphicon glyphicon-comment"></span> Q&A board Chat
-                    <div class="btn-group pull-right">
-                        <button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown">
-                            <span class="glyphicon glyphicon-chevron-down"></span>
-                        </button>
-                        <ul class="dropdown-menu slidedown">
-                            <li><a href=""><span class="glyphicon glyphicon-refresh">
-                            </span>Refresh</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="panel-body">
-                    <ul class="chat">
-                        <li class="left clearfix"><span class="chat-img pull-left">
-                            <img class="img-circle" alt="User Avatar" src="http://placehold.it/50/55C1E7/fff&amp;text=U">
-                        </span>
-                            <div class="chat-body clearfix">
-                                <div class="header">
-                                    <strong class="primary-font">Jack Sparrow</strong> <small class="pull-right text-muted">
-                                        <span class="glyphicon glyphicon-time"></span>12 mins ago</small>
+                                <input type="hidden" id="user_id" value=<%= sess.getAttribute("user_id")%> />
+                                <input type="hidden" id="start" value=${list.start} />
+                                <input type="hidden" id="class_id" value=${list.class_id} />
+
+
+
+                                <h3>Question Board</h3>
+                                <div class="info">
+
+
+                                    <table class="table table-striped" bgcolor="D8D8D8">
+
+
+                                        <div class="clearfix"></div>
+                                        </td>
+                                        </tr>
+                                        <section class="box">
+                                            <tr>
+                                                <td bgcolor=#dcdcdc height=25 align=center>REPLY</td>
+                                            </tr>
+                                            <br>
+                                            <form name="BoardReplyForm" class="form-control" method="post">
+                                                <tr>
+                                                    <td>
+                                                        <table class="table" align=center>
+                                                            <tr>
+                                                                <td align="center">WRITER</td>
+                                                                <td><input type=text name=name size=30></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td align="center">TITLE</td>
+                                                                <td><input type=text size=30 name=title value="RE : ??? ????."></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td align="center">CONTENT</td>
+                                                                <td>
+                                                                    <textarea name=content cols="30" rows="8"> ???????
+                                                                    </textarea>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan=2><hr size=1></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td align=center colspan=2>
+                                                                    <hr size=1>
+                                                                    <div align="center">
+                                                                        <input type="submit" value="register" class="btn btn-info"
+                                                                               style="float: right:"> &nbsp; <input type="button"
+                                                                               style="float: left:" class="btn btn-danger" value="cancel">
+                                                                        </td>
+                                                                    </div>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                        </section>
+                                        </form>
+                                    </table>
+                                    </form>
                                 </div>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
-                                    dolor, quis ullamcorper ligula sodales.
-                                </p>
-                            </div>
-                        </li>
-                        <li class="right clearfix"><span class="chat-img pull-right">
-                            <img class="img-circle" alt="User Avatar" src="http://placehold.it/50/FA6F57/fff&amp;text=ME">
-                        </span>
-                            <div class="chat-body clearfix">
-                                <div class="header">
-                                    <small class=" text-muted"><span class="glyphicon glyphicon-time"></span>13 mins ago</small>
-                                    <strong class="pull-right primary-font">Bhaumik Patel</strong>
-                                </div>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
-                                    dolor, quis ullamcorper ligula sodales.
-                                </p>
-                            </div>
-                        </li>
-                        <li class="left clearfix"><span class="chat-img pull-left">
-                            <img class="img-circle" alt="User Avatar" src="http://placehold.it/50/55C1E7/fff&amp;text=U">
-                        </span>
-                            <div class="chat-body clearfix">
-                                <div class="header">
-                                    <strong class="primary-font">Jack Sparrow</strong> <small class="pull-right text-muted">
-                                        <span class="glyphicon glyphicon-time"></span>14 mins ago</small>
-                                </div>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
-                                    dolor, quis ullamcorper ligula sodales.
-                                </p>
-                            </div>
-                        </li>
-                        <li class="right clearfix"><span class="chat-img pull-right">
-                            <img class="img-circle" alt="User Avatar" src="http://placehold.it/50/FA6F57/fff&amp;text=ME">
-                        </span>
-                            <div class="chat-body clearfix">
-                                <div class="header">
-                                    <small class=" text-muted"><span class="glyphicon glyphicon-time"></span>15 mins ago</small>
-                                    <strong class="pull-right primary-font">Bhaumik Patel</strong>
-                                </div>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
-                                    dolor, quis ullamcorper ligula sodales.
-                                </p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                </div>
-                <div class="panel-footer" style="height:150px;">
-                    <div class="input">
-                        <textarea rows="3" class="form-control input-sm" id="btn-input" type="text" placeholder="Write!"></textarea>
-                        <span class="input" style="float:right; padding-top:10px;">
-                            <button class="btn btn-warning btn-sm" id="btn-chat">
-                                Register</button>
-                        </span>
-                    </div>
-                </div>
+                                <div class="clearfix"></div>
+                                <!-- div id ? writenew ? ??? ?? ???? ???: list ??-> write ?? ?? -> ? ?? ajax ? ????? -->
+
+                                </form> 
+                                </section>
+                </table>
+
         </div>
     </div>
-</div>
+    </div>
