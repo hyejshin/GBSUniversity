@@ -99,21 +99,21 @@
 							<td>Session1 (1:15 - 2:30)</td>
 							<td>${vo.session1}</td>
 							<td>${vo.room1}</td>
-							<td><a href='/class/detailLec?title=${vo.title}&room=${vo.room}'>해당클래스가기</a></td>
+							<td><a href='/class/detailLec?title=${vo.session1}&room=${vo.room1}'>해당클래스가기</a></td>
 						</tr>
 						
 						<tr>
 							<td>Session2 (2:45 - 4:00)</td>
 							<td>${vo.session2}</td>
 							<td>${vo.room2}</td>
-							<td><a href='/class/detailLec?title=${vo.title}&room=${vo.room}'>해당클래스가기</a></td>
+							<td><a href='/class/detailLec?title=${vo.session2}&room=${vo.room2}'>해당클래스가기</a></td>
 						</tr>
 						
 						<tr>
 							<td>Session3 (4:15 - 5:30)</td>
 							<td>${vo.session3}</td>
 							<td>${vo.room3}</td>
-							<td><a href='/class/detailLec?title=${vo.title}&room=${vo.room}'>해당클래스가기</a></td>
+							<td><a href='/class/detailLec?title=${vo.session3}&room=${vo.room3}'>해당클래스가기</a></td>
 						</tr>
 						
 					</tbody>

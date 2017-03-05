@@ -52,7 +52,7 @@
     <td >12:00</td>
     <td>13:15</td>
     <td colspan="2"><a href="#" class="btn btn-sm btn-default" data-toggle="modal" 
-   data-target="#basicModal" >Enjoy Lunch > click Here :)</a>Lunch</a></td>
+   data-target="#basicModal" >Enjoy Lunch > click Here :)Lunch</a></td>
   </tr>
   </tbody>
 </table>
