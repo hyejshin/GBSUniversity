@@ -36,7 +36,7 @@ public class AdminController {
         
 		model.addAttribute("list", classService.getClassList());
 		
-		return "admin/adminClass";
+		return "adminClassList";
 	}
 	
 	@RequestMapping("/classList")
@@ -48,18 +48,18 @@ public class AdminController {
 			model.addAttribute("list", classService.getClassListBySession(session));
 		}
 
-		return "admin/adminClass";
+		return "adminClassList";
 	}
 	
 	@RequestMapping("/addClassView")
 	public String addClassView (Model model) throws Exception {
 		
-		return "admin/adminAddClass";
+		return "adminAddClass";
 	}
 	
 	@RequestMapping("/addClass")
 	public String addClass(ClassVO vo) throws Exception {		
-
+		System.out.println("addClass");
 		classService.addClass(vo);
 		
 		return "redirect:adminClass";
@@ -70,7 +70,7 @@ public class AdminController {
 		
 		model.addAttribute("vo", classService.getClassDetail(idx));
 
-		return "admin/adminModifyClass";
+		return "adminModifyClass";
 	}
 	
 	@RequestMapping("/modifyClass")
@@ -87,7 +87,7 @@ public class AdminController {
 		
 		model.addAttribute("vo", classService.getClassDetail(idx));
 
-		return "admin/adminClassDetail";
+		return "adminClassDetail";
 	}
 	
 	@RequestMapping(value={"/deleteClass"}, method=RequestMethod.GET)
