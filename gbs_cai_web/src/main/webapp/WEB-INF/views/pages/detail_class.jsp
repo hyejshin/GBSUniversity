@@ -112,7 +112,7 @@ function click1() {
         <div class="details">
             <div class="col-md-7 posts">
                 <h4>ABOUT THE SPEACKER</h4>
-                <div class="img-responsive" style="float:left;"><img src="" alt="img"/>${vo.speaker_img}</div>
+                <div class="img-responsive" style="float:left;"><img src="/images/speaker/${vo.speaker_img}" alt="img"/></div>
                 <p>${vo.speaker}</p></div>	
             <div class="clearfix"></div>
         </div>
