@@ -42,7 +42,7 @@ public interface ClassService {
 	public ClassVO getClassDetailById(String class_id) throws Exception;
 	
 	//MyLecture에서 상세보기
-	public ClassVO getClassDetailByTitleRoom(String title, String room) throws Exception;
+	public ClassVO getClassDetailByTitleSession(String title, String session) throws Exception;
 	
 	
 	

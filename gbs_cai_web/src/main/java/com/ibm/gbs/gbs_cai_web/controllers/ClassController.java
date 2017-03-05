@@ -44,9 +44,9 @@ public class ClassController {
 	
 	@RequestMapping("/class/detailLec")
 	public String classDetail(@RequestParam("title") String title, 
-				@RequestParam("room") String room, Model model) throws Exception {
+				@RequestParam("session") String session, Model model) throws Exception {
         
-		model.addAttribute("vo", classService.getClassDetailByTitleRoom(title, room));
+		model.addAttribute("vo", classService.getClassDetailByTitleSession(title, session));
 		
 		return "detail_class";
 	}

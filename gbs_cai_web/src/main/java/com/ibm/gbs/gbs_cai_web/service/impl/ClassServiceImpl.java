@@ -52,8 +52,8 @@ public class ClassServiceImpl implements ClassService {
     }
     
     // 클래스 상세 title & room 으로 조회
-    public ClassVO getClassDetailByTitleRoom(String title, String room) throws Exception {
-    	return classMapper.getClassDetailByTitleRoom(title, room);
+    public ClassVO getClassDetailByTitleSession(String title, String session) throws Exception {
+    	return classMapper.getClassDetailByTitleSession(title, session);
     }
     
     
