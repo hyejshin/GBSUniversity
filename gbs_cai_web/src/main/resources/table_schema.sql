@@ -49,7 +49,7 @@ CREATE TABLE ATTEND (
 	idx 		INT(10) NOT NULL auto_increment,
 	user_id		VARCHAR(100) NOT NULL,
 	class_id	VARCHAR(100) NOT NULL,	
-	attend_cod	VARCHAR(100) NOT NULL,
+	attend_code	VARCHAR(100) NOT NULL,
     PRIMARY KEY(idx),
     UNIQUE KEY(user_id, class_id)
 );

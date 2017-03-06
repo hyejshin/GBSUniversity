@@ -5,7 +5,7 @@
 }
 .content h3{
 	color:#333;
-	font-size:1.6em;
+	font-size:1.7em;
 	font-weight:600;
 	  font-style: italic;
 }
@@ -18,9 +18,10 @@
 .details{
 	margin-top:2.5em;
 }
+
 .date p{
 	color: #fff;
-  font-size: 1em;
+  font-size: 1.5em;
   font-weight: 600;
   background: #61BCFA;
   padding: 8px 0px;
@@ -32,7 +33,7 @@
 }
 .posts h4,.college h4{
 	color:#333;
-	font-size:1.2em;
+	font-size:1.3em;
 	margin-bottom:3px;
 	font-weight:600;
 }
@@ -83,7 +84,7 @@
 	float:left;
 	width:35%;
 	color:#333;
-	font-size:1.1em;
+	font-size:1.3em;
 	font-weight:500;
 	display:inline-block;
 }
@@ -187,10 +188,11 @@ ul.media_sec li img{
   font-size: 1em;
 }
 .posts p, .college h5,.info p {
-  font-size: 0.9em;
+  font-size: 1.2em;
+  color: black;
 }
 .city p {
-  font-size: 0.85em;
+  font-size: 1.2em;
 }
 ul.list2 li {
   font-size: 0.9em;
@@ -261,7 +263,7 @@ ul.list2 li {
 @media (max-width:640px){
 
 .content h3 {
-  font-size: 1.4em;
+  font-size: 1.3em;
 }
 .posts, .college {
   margin-right: 0em;

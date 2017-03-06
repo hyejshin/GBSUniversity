@@ -80,10 +80,10 @@ function click1() {
 	       <div class="work">
 			 <div class="details">		 
 				 <div class="col-md-7 posts">
-					 <h3 style="font-weight:600; font-style: italic;">${vo.title}</h3>
-					 <p><h5>Speaker: ${vo.speaker}</h5></p>
-					 <p><h7>Date : Saturday, 11 March 2017</h7></p>
-					 <p><h7>Time : ${vo.session}<span>Room: ${vo.room}</span></h7></p><br>
+					 <h3 style="font-weight:600;">${vo.title}</h3>
+					 <p>Speaker: ${vo.speaker}</p>
+					 <p>Date : Saturday, 11 March 2017</p>
+					 <p>Time : ${vo.session}<span>Room: ${vo.room}</span></p><br>
 				 </div>	
 				 <div class="col-md-3 date" style="padding:0px;">
 					 <p style="padding: 8px 0px;">WHAT</p>
