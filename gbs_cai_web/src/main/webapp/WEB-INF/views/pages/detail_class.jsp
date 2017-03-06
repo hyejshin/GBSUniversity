@@ -80,7 +80,7 @@
                         <caption>Ask Question</caption>	
                         <tr>
                             <td>Writer</td>
-                            <td><input type="text" name="user_nm" size=30 value="<%=sess.getAttribute("user_nm")%>" readonly></td>
+                            <td><input type="text" name="user_nm" size=30 value="<%=session1.getAttribute("user_nm")%>" readonly></td>
                         </tr>
                         <tr>
                             <td>Question</td>
@@ -98,7 +98,7 @@
                             </td>
                         </tr> 
                     </table>
-                    <input type="hidden" name="user_id"  value=<%= sess.getAttribute("user_id")%> />
+                    <input type="hidden" name="user_id"  value=<%=session1.getAttribute("user_id")%> />
                     <input type="hidden" id="class_id" name="class_id" value=${vo.class_id} />
                     <input type="hidden" name="board_id" value="" />
                 </form> 

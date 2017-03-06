@@ -103,7 +103,7 @@
     <!-- Home Page -->
     <definition name="index" extends="base-definition">  
         <put-attribute name="title" value="Detailsession" />
-        <put-attribute name="body" value="/WEB-INF/views/pages/detail_session.jsp" />  
+        <put-attribute name="body" value="/WEB-INF/views/pages/index.jsp" />  
     </definition>     
     <!-- login page -->
     <definition name="login" extends="login-definition">    	        
