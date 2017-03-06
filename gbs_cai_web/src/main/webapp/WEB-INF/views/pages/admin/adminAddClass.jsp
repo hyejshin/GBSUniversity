@@ -13,6 +13,7 @@
 	if(!user_id.equals("admin")) {%>
 		<c:redirect url="/logout"/>
 	<%}%>
+
         <div class="row-fluid">
                         <!-- block -->
                         <div class="block">
@@ -24,12 +25,13 @@
                                       <fieldset>
                                       
                                         <legend>Form Components</legend>
-                                	<form class="form-horizontal" method="POST" action="/addClass">
+                                	<form class="form-horizontal" name="myForm" method="POST" action="/addClass">
                      
                      					<div class="control-group">
                                           <label class="control-label" for="booth">Class ID</label>
                                           <div class="controls">
-                                            <input type="text" class="span6" id="class_id" name="class_id"  data-provide="typeahead" >
+                                            <input type="text" class="span6" id="class_id" name="class_id"  data-provide="typeahead"
+                                            	placeholder="Enter the Class ID" required="required">
                                             <p class="help-block"></p>
                                           </div>
                                         </div>
@@ -37,21 +39,25 @@
                                         <div class="control-group">
                                           <label class="control-label" for="title">Title</label>
                                           <div class="controls">
-                                            <input type="text" class="span6" id="title" name="title"  data-provide="typeahead" >
+                                            <input type="text" class="span6" id="title" name="title"  data-provide="typeahead"
+                                            	placeholder="Enter the Class Title" required="required">
                                             <p class="help-block">강의명을 등록해주세요.</p>
                                           </div>
                                           </div>
                                           <div class="control-group">
                                           <label class="control-label" for="teacher">Speaker</label>
                                           <div class="controls">
-                                            <input type="text" class="span6" id="speaker" name="speaker"  data-provide="typeahead">                                             <p class="help-block">강사명을 등록해주세요</p>
+                                            <input type="text" class="span6" id="speaker" name="speaker"  data-provide="typeahead"
+                                            	placeholder="Enter the Speaker" required="required">
+											<p class="help-block">강사명을 등록해주세요</p>
                                           </div>
                                           </div>
      
                                         <div class="control-group">
                                           <label class="control-label" for="room">Room</label>
                                           <div class="controls">
-                                            <input type="text" class="span6" id="room" name="room"  data-provide="typeahead" >
+                                            <input type="text" class="span6" id="room" name="room"  data-provide="typeahead"
+                                            	placeholder="Enter the Classroom" required="required">
                                             <p class="help-block"></p>
                                           </div>
                                         </div>
@@ -70,7 +76,8 @@
                                         <div class="control-group">
                                           <label class="control-label" for="capacity">Capacity</label>
                                           <div class="controls">
-                                            <input type="text" class="span6" id="capacity" name="capacity" data-provide="typeahead" >
+                                            <input type="text" class="span6" id="capacity" name="capacity" data-provide="typeahead"
+                                            	placeholder="Enter the Capacity" value='0'>
                                             <p class="help-block"> </p>
                                           </div>
                                         </div>
@@ -78,13 +85,15 @@
                                         <div class="control-group">
                                           <label class="control-label" for="imageFile">Image File</label>
                                           <div class="controls">
-                                            <input type="text" class="span6" id="speaker_img" name="speaker_img" data-provide="typeahead" >
+                                            <input type="text" class="span6" id="speaker_img" name="speaker_img" data-provide="typeahead"
+                                            	placeholder="Enter the Image Name">
                                           </div>
                                         </div>
                                         <div class="control-group">
                                           <label class="control-label" for="attendCode">Attend Code</label>
                                           <div class="controls">
-                                            <input type="text" class="span6" id="attend_code" name="attend_code" data-provide="typeahead" >
+                                            <input type="text" class="span6" id="attend_code" name="attend_code" data-provide="typeahead"
+                                            	placeholder="Enter the Attend Code">
                                           </div>
                                         </div>
                                         
@@ -95,7 +104,7 @@
                                           </div>
                                         </div>
                                         <div class="form-actions">
-                                          <input type="submit" class="btn btn-primary" value="Save"/><!-- Save</button>-->
+                                          <input type="submit" class="btn btn-primary" value="Save"/>
                                           <input type="reset" class="btn" value="Cancel"/>
                                            <a href="/adminClass" class="btn btn-success">목록보기</a>
                                         </div>

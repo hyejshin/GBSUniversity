@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.ibm.gbs.gbs_cai_web.common.StringUtils;
 import com.ibm.gbs.gbs_cai_web.service.ClassService;
 import com.ibm.gbs.gbs_cai_web.service.EnrollmentService;
 import com.ibm.gbs.gbs_cai_web.vo.ClassVO;
@@ -19,6 +20,7 @@ import com.ibm.gbs.gbs_cai_web.vo.ClassVO;
 @Controller
 public class AdminController {
 	protected final Log logger = LogFactory.getLog(getClass());
+	StringUtils util = new StringUtils();
 	
 	@Autowired
     private ClassService classService;
@@ -58,8 +60,8 @@ public class AdminController {
 	}
 	
 	@RequestMapping("/addClass")
-	public String addClass(ClassVO vo) throws Exception {		
-		System.out.println("addClass");
+	public String addClass(ClassVO vo) throws Exception {
+		
 		classService.addClass(vo);
 		
 		return "redirect:adminClass";

@@ -4,7 +4,7 @@
 
 <html>    
     <head>
-        <title>adminClass</title>
+        <title>adminClassList</title>
     </head>
     
     <body>  	

@@ -4,7 +4,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-        <title>클래스 등록</title>
+        <title>클래스 수정</title>
 </head>
 <body>
 		<%
@@ -23,14 +23,15 @@
                             </div>
                             <div class="block-content collapse in">
                                 <div class="span12">
-                                    <form class="form-horizontal" method="POST" action="/modifyClass">
+                                    <form class="form-horizontal" method="POST" name="myForm" action="/modifyClass">
                                       <input type="hidden" id="idx" name="idx" value="${vo.idx}">
                                       <fieldset>
                                         <legend>Form Components</legend>
                                         <div class="control-group">
                                           <label class="control-label" for="class-_id">Class ID</label>
                                           <div class="controls">
-                                            <input type="text" class="span6" id="class_id" name="class_id"  value="${vo.class_id}" data-provide="typeahead">
+                                            <input type="text" class="span6" id="class_id" name="class_id"  value="${vo.class_id}" 
+                                            	data-provide="typeahead"  required="required">
                                             <p class="help-block"></p>
                                           </div>
                                         </div>
@@ -38,21 +39,25 @@
                                 		<div class="control-group">
                                           <label class="control-label" for="title">Title</label>
                                           <div class="controls">
-                                            <input type="text" class="span6" id="title" name="title" value="${vo.title}" data-provide="typeahead" >
+                                            <input type="text" class="span6" id="title" name="title" value="${vo.title}" 
+                                            	data-provide="typeahead" required="required">
                                             <p class="help-block">강의명을 등록해주세요.</p>
                                           </div>
                                           </div>
                                           <div class="control-group">
                                           <label class="control-label" for="teacher">Speaker</label>
                                           <div class="controls">
-                                            <input type="text" class="span6" id="speaker" name="speaker" value="${vo.speaker}" data-provide="typeahead">                                             <p class="help-block">강사명을 등록해주세요</p>
+                                            <input type="text" class="span6" id="speaker" name="speaker" value="${vo.speaker}" 
+                                            	data-provide="typeahead" required="required">
+											<p class="help-block">강사명을 등록해주세요</p>
                                           </div>
                                           </div>
      
                                         <div class="control-group">
                                           <label class="control-label" for="room">Room</label>
                                           <div class="controls">
-                                            <input type="text" class="span6" id="room" name="room" value="${vo.room}" data-provide="typeahead" >
+                                            <input type="text" class="span6" id="room" name="room" value="${vo.room}" 
+                                            	data-provide="typeahead" required="required">
                                             <p class="help-block"></p>
                                           </div>
                                         </div>
@@ -72,7 +77,8 @@
                                         <div class="control-group">
                                           <label class="control-label" for="capacity">Capacity</label>
                                           <div class="controls">
-                                            <input type="text" class="span6" id="capacity" name="capacity" value="${vo.capacity}" data-provide="typeahead" >
+                                            <input type="text" class="span6" id="capacity" name="capacity" value="${vo.capacity}" 
+                                            	data-provide="typeahead" required="required">
                                             <p class="help-block"> </p>
                                           </div>
                                         </div>

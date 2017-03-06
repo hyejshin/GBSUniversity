@@ -5,7 +5,7 @@ CREATE TABLE CLASS (
    room			VARCHAR(100) NOT NULL,
    speaker		VARCHAR(100) NOT NULL,
    session		VARCHAR(100)  NOT NULL,
-   capacity		INT(3),
+   capacity		INT(3) DEFAULT 0,
    detail		MEDIUMTEXT,
    speaker_img	VARCHAR(100),
    attend_code  VARCHAR(100),
