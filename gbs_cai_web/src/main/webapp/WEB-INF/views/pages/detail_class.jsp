@@ -8,74 +8,13 @@
     <link type="text/css" rel="stylesheet" href='<c:url value="${showDetailAttributes}"/>'/>
 </c:forEach>
 
-	
-<!-- <script type="text/javascript">
-window.onload = function() {
-	 setInterval(function() {
-		 var server_time = srvTime();
-			var compare_time = new Date(server_time);
-			
-		    var hours = compare_time.getHours();
-		    var minutes = compare_time.getMinutes();
-		    
-		    if( parseInt(hours) < 10 ) {
-		    	hours = 0 + "" + hours;
-		    }
-		    if( parseInt(minutes) < 10 ) {
-		    	minutes = 0 + "" + minutes;
-		    }
-			var total = hours + ":" + minutes;
-			
-			/* 서버시간 = 종료 10분전, text창 활성화 */
-	    	if( total == $('#start').val() ) {
-	    		document.getElementById("txt2").disabled = false;
-	    		    		
-	    	} 
-	    	/* 서버시간 = 종료 시간, text창 비활성화 */
-	    	else if( total == $('#end').val()) {
-	    		document.getElementById("txt2").disabled = true;
-	    	}
-	},3000);
-} 
-
-var xmlHttp;
-
-function srvTime(){
-
-	if (window.XMLHttpRequest) { 
-		xmlHttp = new XMLHttpRequest(); // IE 7.0 이상, 크롬, 파이어폭스 등
-		xmlHttp.open('HEAD',window.location.href.toString(),false);
-		xmlHttp.setRequestHeader("Content-Type", "text/html");
-		xmlHttp.send('');
-		return xmlHttp.getResponseHeader("Date");
-
-	}	else if (window.ActiveXObject) {
-		xmlHttp = new ActiveXObject('Msxml2.XMLHTTP');
-		xmlHttp.open('HEAD',window.location.href.toString(),false);
-		xmlHttp.setRequestHeader("Content-Type", "text/html");
-		xmlHttp.send('');
-		return xmlHttp.getResponseHeader("Date");
-	}
-}
-function click1() {
-	alert("active start");
-	$.ajax({
-		type : 'post',
-		url : '/class/checkCode',
-		data : { code : $('#txt2').val(), class_id : $('#class_id').val(), user_id : $('#user_id').val() }, 
-		success : function(result) {	    				
-			alert(result[0].msg);
-		}
-	});  
-}
-</script>-->
 		<div class="container">		 
 
 				<%HttpSession session1 = request.getSession();%>
 	
-									<input type="hidden" id="user_id" value=<%= session1.getAttribute("user_id") %> />
-									<input type="hidden" id="start" value=${list.start} />
-									<input type="hidden" id="class_id" value=${list.class_id} />
+			<input type="hidden" id="user_id" value=<%= session1.getAttribute("user_id") %> />
+			<input type="hidden" id="start" value=${list.start} />
+			<input type="hidden" id="class_id" value=${list.class_id} />
 
 	       <div class="work">
 			 <div class="details">		 
@@ -83,7 +22,7 @@ function click1() {
 					 <h3 style="font-weight:600;">${vo.title}</h3>
 					 <p>Speaker: ${vo.speaker}</p>
 					 <p>Date : Saturday, 11 March 2017</p>
-					 <p>Time : ${vo.session}<span>Room: ${vo.room}</span></p><br>
+					 <p>Time : ${vo.session} <span>Room: ${vo.room}</span></p><br>
 				 </div>	
 				 <div class="col-md-3 date" style="padding:0px;">
 					 <p style="padding: 8px 0px;">WHAT</p>
