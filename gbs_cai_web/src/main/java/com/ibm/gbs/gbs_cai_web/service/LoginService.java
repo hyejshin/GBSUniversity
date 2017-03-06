@@ -1,6 +1,7 @@
 /**
  * File         : LoginService.java
  * author       : Joosang Kim
+ * editor		: HyeJung Shin
  * version      : 0.0.1
  * description  : login service for this web app
  */
@@ -15,6 +16,7 @@ public interface LoginService {
      * check user validation using userid & password
      * return - true : uservo(null)
      */
-    public UserVO checkLoginValidation( String user_id,String password);
+    public UserVO checkLoginValidation(String user_id, String password);
     
+    public UserVO checkUserValidation(String user_id);
 }

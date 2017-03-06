@@ -16,7 +16,9 @@ import org.springframework.stereotype.Service;
 /**
  *
  * @author kr055045
+ * @editor HyeJung Shin
  */
+
 @Service("loginService")
 public class LoginServiceImpl implements LoginService {
 
@@ -29,6 +31,12 @@ public class LoginServiceImpl implements LoginService {
     @Override
     public UserVO checkLoginValidation(String user_id, String password) {
         uservo =  loginMapper.LoginByUserInfo( user_id, password);
+       
+       return uservo;
+    }
+    
+    public UserVO checkUserValidation(String user_id) {
+        uservo =  loginMapper.LoginByUserId(user_id);
        
        return uservo;
     }

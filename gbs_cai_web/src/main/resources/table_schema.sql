@@ -36,8 +36,7 @@ CREATE TABLE ENROLLMENT (
 CREATE TABLE USER (
 	idx 		INT(10) NOT NULL auto_increment,
 	user_id		VARCHAR(100) NOT NULL,
-	user_nm		VARCHAR(100) NOT NULL,	
-	password	VARCHAR(100) NOT NULL,
+	user_nm		VARCHAR(100) NOT NULL,
 	type		VARCHAR(100) DEFAULT 'Learner',
 	PRIMARY KEY(idx),
     UNIQUE KEY(user_id)

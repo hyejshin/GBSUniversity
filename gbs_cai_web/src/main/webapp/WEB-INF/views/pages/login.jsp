@@ -8,22 +8,27 @@
 	    </section>	
 	    <section class="container" style="padding-top: 20px;">
 
+			${error_msg}
 			<form name="loginForm" method="post" action="/login" >
 				<div>
-					<input type="text" name="user_id" placeholder="Enter your username" required class="form-control" />
+					<input type="text" name="user_id" placeholder="XXXX@kr.ibm.com" required class="form-control" />
 					<!-- <span class="glyphicon glyphicon-user"></span>-->
-				</div>
+				</div> <br>
 				
+				<!-- 
 				<div style="padding-top: 20px; padding-bottom:20px;">
 					<input type="password" name="password" placeholder="Enter password" required class="form-control" />
-					<!-- <span class="glyphicon glyphicon-lock"></span>-->
+					<span class="glyphicon glyphicon-lock"></span>
 				</div>
-			
+				 -->
+				 
 				<button type="submit" name="go" class="btn btn-block btn-primary" >Login Now</button>
 				
+				<!-- 
 				<div class="form-group less-space">
 					<input type="checkbox" name="remember" value="1" /> Remember me on this device
 				</div>
+				 -->
 			</form>
 
 	</section>

@@ -55,11 +55,11 @@ public class LoginController {
 
         UserVO user = new UserVO();
         String user_id = req.getParameter("user_id").toString();
-        String password = req.getParameter("password").toString();
+        //String password = req.getParameter("password").toString();
  
         session.invalidate();
-        user = loginService.checkLoginValidation(user_id, password);
-
+        //user = loginService.checkLoginValidation(user_id, password);
+        user = loginService.checkUserValidation(user_id);
         
         try {
         	if(user == null) {
