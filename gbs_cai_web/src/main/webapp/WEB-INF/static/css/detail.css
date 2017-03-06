@@ -188,7 +188,7 @@ ul.media_sec li img{
   font-size: 1em;
 }
 .posts p, .college h5,.info p {
-  font-size: 1.2em;
+  font-size: 1.0em;
   color: black;
 }
 .city p {
@@ -275,8 +275,9 @@ ul.list2 li {
 .city p {
   font-size: 0.75em;
 }
-.posts p, .college h5, .info p {
-  font-size: 0.85em;
+.posts p, .college h5,.info p {
+  font-size: 1.0em;
+  color: black;
 }
 .date p {
   font-size: 0.9em;
@@ -386,8 +387,9 @@ ul.media_sec li:nth-child(3){
 .posts h4, .college h4 {
   font-size:1em;
 }
-.posts p, .college h5, .info p {
-  font-size: 0.8em;
+.posts p, .college h5,.info p {
+  font-size: 1.0em;
+  color: black;
 }
 .date {
   width: 36%;
