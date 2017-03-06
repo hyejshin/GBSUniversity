@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ibm.gbs.gbs_cai_web.mapper.AttendMapper">
+<cache />
+
+<select id="getClassTitle" resultType="String" parameterType="hashmap">
+    	SELECT title
+    	FROM CLASS
+    	WHERE class_id=#{classcode} and attend_code=#{attendcode}
+</select>
+    
+<select id="dupCheck" resultType="int" parameterType="hashmap">
+    	SELECT count(1)
+    	FROM ATTEND
+    	WHERE user_id=#{user_id} and class_id=#{classcode}
+</select>
+
+<insert id="executeCheck" parameterType="hashmap">
+		INSERT INTO ATTEND (user_id, class_id, attend_code)
+		VALUES(#{user_id},#{classcode},#{attendcode})
+</insert>
+
+</mapper>
