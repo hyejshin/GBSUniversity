@@ -37,7 +37,7 @@ public class BoardVO implements Serializable {
      */
     public BoardVO(int idx, String board_id, String class_id, String title,
              String user_id, String user_nm, String type,
-             int step, String date) {
+             int step) {
         this.idx = idx;
         this.user_id = user_id;
         this.class_id = class_id;
@@ -47,7 +47,6 @@ public class BoardVO implements Serializable {
         this.detail = detail;
         this.type = type;
         this.step = step;
-        this.date = date;
     };
     
     /**

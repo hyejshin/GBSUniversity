@@ -2,10 +2,13 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
- 
 <tiles:importAttribute name="showDetailAttributes" />
+<tiles:importAttribute name="showDetailJsAttributes" />
 <c:forEach var="showDetailAttributes" items="${showDetailAttributes}">
-    <link type="text/css" rel="stylesheet" href='<c:url value="${showDetailAttributes}"/>'/>
+    <link type="text/css" rel="stylesheet" href='<c:url value="${showDetailAttributes}"/>' media="all"/>
+</c:forEach>
+<c:forEach var="showDetailJsAttributes" items="${showDetailJsAttributes}">
+    <script src='<c:url value="${showDetailJsAttributes}"/>'></script>
 </c:forEach>
 
 		<div class="container">		 
@@ -49,175 +52,60 @@
 			 </div>
 		 </div>
 
-		 <h3>Question Board</h3>
-		 <div class="info">
-			 
-		
-		<table class="table table-striped" bgcolor="D8D8D8">
 
-			<thead>
-				<tr>
-					<th style="text-align: center;">NO</th>
-					<th style="text-align: center;">TITLE</th>
-					<th style="text-align: center;">WRITER</th>
-					<th style="text-align: center;">DATE</th>
-					<th style="text-align: center;">HIT</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td align="center">3</td>
-					<td><a href="Board_View.jsp">질문 글입니다 3</a></td>
-					<td align="center">정연우</td>
-					<td align="center">2015/11/23</td>
-					<td align="center">1234</td>
-				</tr>
-				<tr>
-					<td align="center">2</td>
-					<td><a href="Board_View.jsp">질문 글입니다 2</a></td>
-					<td align="center">신혜정</td>
-					<td align="center">2015/11/23</td>
-					<td align="center">123</td>
-				</tr>
-				<tr>
-					<td align="center">1</td>
-					<td><a href="Board_View.jsp">답변 글입니다 1</a></td>
-					<td align="center">최미수</td>
-					<td align="center">2015/11/23</td>
-					<td align="center">12</td>
-				</tr>
-			</tbody>
-			<!-- 페이징 처리 하게되면 여기에 관련 내용 추가 -->
-			<tfoot>
-				<tr>
-					<td align="center" colspan="5">1</td>
-				</tr>
-			</tfoot>
-		</table>
-		<input type="button" class="btn btn-primary" value="list" /> <input
-			type="button" class="btn btn-warining" value="write" />
+<div id="boardDiv">
+    <h3>Question Board</h3>
+    <div class="info">
+        <table class="table table-striped" id="class-board" style="background-color: D8D8D8;">
+            <thead>
+                <tr>
+                    <th style="text-align: center;">NO</th>
+                    <th style="text-align: center;">TITLE</th>
+                    <th style="text-align: center;">WRITER</th>
+                </tr>
+            </thead>
+            <tbody id="board-body"></tbody>
+            <tfoot>
+                <tr>
+                    <td align="center" colspan="5">1</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    <div id="writenew">
+        <table summary="Ask Question">
+            <section class="box">
+                <form name="BoardWriteForm" id="BoardWriteForm">
+                    <table class="table" summary="테이블 구성" >
+                        <caption>Ask Question</caption>	
+                        <tr>
+                            <td>Writer</td>
+                            <td><input type="text" name="user_nm" size=30 value="<%=sess.getAttribute("user_nm")%>" readonly></td>
+                        </tr>
+                        <tr>
+                            <td>Question</td>
+                            <td><textarea name="detail" cols="30" rows="8" style="overflow-y:scroll; resize:none; "></textarea></td>
+                        </tr>
+                        <tr>
+                            <td colspan=2><hr size=1></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><div align="center">
+                                    <input type="submit" id="submit" value="Write" class="btn btn-info">&nbsp;&nbsp;
+                                    <input type="button" value="Cancel" class="btn btn-danger" >
 
-		<div class="clearfix"></div>
+                                </div>
+                            </td>
+                        </tr> 
+                    </table>
+                    <input type="hidden" name="user_id"  value=<%= sess.getAttribute("user_id")%> />
+                    <input type="hidden" id="class_id" name="class_id" value=${vo.class_id} />
+                    <input type="hidden" name="board_id" value="" />
+                </form> 
+            </section>
+        </table>
 
-		<!-- 질문 클릭 시 해당 질문과 함께 답변 등록란 띄워주기: Ajax 처리하여 한 화면에서 가능하게  -->
-		<!-- 질문 상세 보기 -->
-		<div id="detail" type="hidden">
-		<form name="BoardViewForm" method="post">
-			<table class="table-striped table" summary="전체 테이블 구성">
-				<tr>
-					<td><div align="center">
-							<h3>
-								<b>Questions</b>
-							</h3>
-						</div></td>
-				</tr>
-				<tr>
-					<td>
-						<table class="table" summary="목록 테이블 구성">
-							<tr>
-								<td align=center bgcolor=#dddddd>WRITER</td>
-								<td bgcolor=#ffffe8>정연우</td>
-								<td align=center bgcolor=#dddddd>DATE</td>
-								<td bgcolor=#ffffe8>2017/03/11</td>
-							</tr>
-							<tr>
-								<td align=center bgcolor=#dddddd>TITLE</td>
-								<td bgcolor=#ffffe8 colspan=3>게시판 글입니다</td>
-							</tr>
-							<tr>
-								<td><br>가나다라마바사<br></td>
-							</tr>
-						</table>
-
-						<div class="clearfix"></div>
-					</td>
-				</tr>
-				<section class="box">
-				<tr>
-					<td bgcolor=#dcdcdc height=25 align=center>REPLY</td>
-				</tr>
-				<br>
-				<form name="BoardReplyForm" class="form-control" method="post">
-					<tr>
-						<td>
-							<table class="table" align=center>
-								<tr>
-									<td align="center">WRITER</td>
-									<td><input type=text name=name size=30></td>
-								</tr>
-								<tr>
-									<td align="center">TITLE</td>
-									<td><input type=text size=30 name=title value="RE : 게시판 글입니다."></td>
-								</tr>
-								<tr>
-									<td align="center">CONTENT</td>
-									<td>
-										<textarea name=content cols="30" rows="8"> 가나다라마바사
-										</textarea>
-									</td>
-								</tr>
-								<tr>
-     			<td colspan=2><hr size=1></td>
-    		</tr>
-								<tr>
-									<td align=center colspan=2>
-										<hr size=1>
-										<div align="center">
-											<input type="submit" value="register" class="btn btn-info"
-												style="float: right:"> &nbsp; <input type="button"
-												style="float: left:" class="btn btn-danger" value="cancel">
-									</td>
-									</div>
-								</tr>
-							</table>
-						</td>
-					</tr>
-					</section>
-				</form>
-			</table>
-		</form>
-		</div>
-		<div class="clearfix"></div>
-		<!-- div id 가 writenew 는 새로운 질문 등록하는 페이지: list 화면-> write 버튼 클릭 -> 이 화면 ajax 로 처리해야함 -->
-		<div id="writenew">
-		<table summary="글쓰기 전체 테이블">
-		<section class="box">
-		<form name="BoardWriteForm" method="post" id="BoardWriteForm">
-
-		<table class="table" summary="테이블 구성" >
-		<caption>게시판 글쓰기</caption>	
-    		<tr>
-				<td>WRITER</td>
-				<td><input type=text name=name size=30></td>
-			</tr>
-			
-    		<tr>
-     			<td>TITLE</td>
-     			<td><input type=text name=title size=30></td>
-    		</tr>
-    		<tr>
-     			<td>CONTENT</td>
-     			<td><textarea name=content cols="30" rows="8"></textarea></td>
-    		</tr>
-    		<tr>
-     			<td colspan=2><hr size=1></td>
-    		</tr>
-    		<tr>
-     			<td colspan="2"><div align="center">
-     			<input type="submit" value="Write" class="btn btn-info">&nbsp;&nbsp;
-         		<input type="button" value="Cancel" class="btn btn-danger" >
-         		</div>
-     			</td>
-    		</tr> 
-		</table>
-	</form> 
-	</section>
-	</table>
-		
-		</div>
-	</div>
-	</div>
-	
-
-
-		  						 
+    </div>
+</div>
+<input type="button" id="showQnA" class="btn btn-info" value="Show Q&A" />
+<input type="button" id="showList" class="btn btn-info" value="Show List" />

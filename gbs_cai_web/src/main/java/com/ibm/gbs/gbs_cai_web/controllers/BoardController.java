@@ -18,6 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -50,7 +51,7 @@ public class BoardController {
         user = (UserVO) session.getAttribute(("user"));
 
         //1.get classes user enrolement
-        enrollmentList = enrollmentService.getEnrollmentByUserid(user.getUser_id());
+        //enrollmentList = enrollmentService.getEnrollmentByUserId(user.getUser_id());
 
         mv.setViewName("board");
         mv.addObject("enrollmentList", enrollmentList);
@@ -62,13 +63,27 @@ public class BoardController {
      * get board list about class idx 
      */
     @RequestMapping(value="/board/getBoardListByClassId", method=RequestMethod.GET)
-    public @ResponseBody List<BoardVO>getBoardListByClassId(@RequestParam("class_idx")String idx){        
+    public @ResponseBody List<BoardVO>getBoardListByClassId(@RequestParam("class_id") String class_id){        
         List<BoardVO> boardList = new ArrayList<BoardVO>();
-        boardList = null;
-        System.out.println(idx);
-        boardList = boardService.getBoardListByClassId(new Integer(idx));
+        boardList = boardService.getBoardListByClassId(class_id);
           
         return boardList;
+    }
+    
+    /**
+     * add question
+     */
+    @RequestMapping(value="/board/postQuestion", method=RequestMethod.GET)
+    public @ResponseBody List<BoardVO>postQuestion(@RequestParam("detail") String detail,
+                                                   @RequestParam("board_id") String board_id,
+                                                   @RequestParam("class_id") String class_id, 
+                                                   HttpSession session){        
+        //UserVO
+//        List<BoardVO> boardList = new ArrayList<BoardVO>();
+//        boardList = null;
+//        boardList = boardService.getBoardListByClassId(class_id);
+          
+        return null;
     }
 
 }

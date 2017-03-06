@@ -1,6 +1,7 @@
 /**
  * File         : LoginController.java
  * author       : Joosang Kim
+ * editor       : HyeJung Shin
  * version      : 0.0.1
  * description  : login controller for this web app
  */

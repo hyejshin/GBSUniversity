@@ -18,7 +18,7 @@ public interface BoardService {
      * author : Joosang Kim
      * param : String(class_idx)
      */
-    public List<BoardVO> getBoardListByClassId(int class_idx);
+    public List<BoardVO> getBoardListByClassId(String class_id);
     
     
 }

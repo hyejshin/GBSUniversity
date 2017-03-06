@@ -90,7 +90,6 @@
 							<td>Title</td>
 							<td>Room</td>
 							<td>Enter</td>
-							
 						</tr>
 					</thead>
 					<tbody>	

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ibm.gbs.gbs_cai_web.mapper.EnrollmentMapper">
+    <cache />
+    
+    <select id="getEnrollmentByUserId" resultType="com.ibm.gbs.gbs_cai_web.vo.EnrollmentVO"  parameterType="String">
+        SELECT user_id, morning_room, session1, session2, session3, room1, room2, room3 
+        FROM ENROLLMENT
+        WHERE user_id=#{user_id} 
+    </select>
+    
+    <!--
+    <resultMap id="enrollmentVoByUserid" type="com.ibm.gbs.gbs_cai_web.vo.EnrollmentVO">
+        <result property="idx"          column ="idx" />        
+        <result property="user_id"      column ="user_id" />
+        <result property="class_id"     column ="class_id" />
+        <result property="class_title"  column = "title" />
+        <result property="booth_name"   column = "booth_name" />
+        <result property="start"        column = "start" />
+        <result property="end"          column ="end" />
+    </resultMap>
+        
+    <select id="getEnrollmentByUserid" resultMap = "enrollmentVoByUserid"   parameterType="String">
+        SELECT EN.idx, EN.user_id, EN.class_id, CL.title,  EN.booth_name, EN.start, EN.end   
+        FROM ENROLLMENT EN JOIN CLASS CL
+        ON   EN.class_id = CL.class_id
+        WHERE EN.user_id=#{user_id} 
+    </select>
+    -->
+    
+</mapper>

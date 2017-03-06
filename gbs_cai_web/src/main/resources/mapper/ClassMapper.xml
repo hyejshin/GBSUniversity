@@ -2,6 +2,30 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ibm.gbs.gbs_cai_web.mapper.ClassMapper">
     <cache />
+    <resultMap id="getAllClass" type="com.ibm.gbs.gbs_cai_web.vo.ClassVO">
+        <result property="class_id"              column ="class_id" />        
+        <result property="title"         column ="title" />
+        <result property="room"         column ="room" />
+        <result property="speaker"            column = "speaker" />
+        <result property="session"          column = "session" />
+        <result property="capacity"          column = "capacity" />
+        <result property="detail"             column ="detail" />
+        <result property="speaker_img"           column ="speaker_img" />
+    </resultMap>
+    <resultMap id="getClassDetailById" type="com.ibm.gbs.gbs_cai_web.vo.ClassVO">
+        <result property="class_id"              column ="class_id" />        
+        <result property="title"         column ="title" />
+        <result property="room"         column ="room" />
+        <result property="speaker"            column = "speaker" />
+        <result property="session"          column = "session" />
+        <result property="capacity"          column = "capacity" />
+        <result property="detail"             column ="detail" />
+        <result property="speaker_img"           column ="speaker_img" />
+        <result property="attend_code"          column="attend_code"/>
+        <result property="start"                column = "start"/>
+        <result property="end"                  column ="end"/>
+    </resultMap>
+    
     
     <!--  Admin Page 관련 -->
     
@@ -25,42 +49,42 @@
     
     <insert id="addClass" parameterType="com.ibm.gbs.gbs_cai_web.vo.ClassVO">
         INSERT INTO CLASS (
-        	class_id
-			,title
-			,room
-			,speaker
-			,session
-			,capacity
-			,detail
-			,speaker_img
-			,attend_code
-		)
+        class_id
+        ,title
+        ,room
+        ,speaker
+        ,session
+        ,capacity
+        ,detail
+        ,speaker_img
+        ,attend_code
+        )
         VALUES (
-        	 #{class_id}
-        	,#{title}
-        	,#{room}
-        	,#{speaker}
-        	,#{session}
-        	,#{capacity}
-        	,#{detail}
-        	,#{speaker_img}
-        	,#{attend_code}   	
+        #{class_id}
+        ,#{title}
+        ,#{room}
+        ,#{speaker}
+        ,#{session}
+        ,#{capacity}
+        ,#{detail}
+        ,#{speaker_img}
+        ,#{attend_code}   	
         )	
     </insert>
     
     <update id="modifyClass" parameterType="com.ibm.gbs.gbs_cai_web.vo.ClassVO">
         UPDATE CLASS SET
-			class_id	 = #{class_id}
-			,title		 = #{title}
-			,room		 = #{room}
-			,speaker	 = #{speaker}
-			,session	 = #{session}
-			,capacity	 = #{capacity}
-			,detail		 = #{detail}
-			,speaker_img = #{speaker_img}
-			,attend_code = #{attend_code}
-		WHERE
-			idx = #{idx}
+        class_id	 = #{class_id}
+        ,title		 = #{title}
+        ,room		 = #{room}
+        ,speaker	 = #{speaker}
+        ,session	 = #{session}
+        ,capacity	 = #{capacity}
+        ,detail		 = #{detail}
+        ,speaker_img = #{speaker_img}
+        ,attend_code = #{attend_code}
+        WHERE
+        idx = #{idx}
     </update>
     
     <delete id="deleteClass" parameterType="int">
@@ -101,9 +125,22 @@
     </select>
     
     <select id="checkCode" resultType="int" parameterType="hashmap">
-    	SELECT count(1)
-    	FROM CLASS
-    	WHERE class_id=#{class_id} and attend_code=#{code}
+        SELECT count(1)
+        FROM CLASS
+        WHERE class_id=#{class_id} and attend_code=#{code}
+    </select>
+    
+    <!-- index page - get all class -->
+    <select id="getAllClass" resultMap="getAllClass" >
+        SELECT class_id, title, room, speaker, session, capacity, detail, speaker_img
+        FROM CLASS
+        ORDER BY room asc, session asc
+    </select>
+    
+    <select id="getDetailByCondition" resultMap="getClassDetailById" parameterType="String">
+        SELECT class_id, title, room, speaker, session, capacity, detail, speaker_img, attend_code,start, end
+        FROM CLASS
+        WHERE  class_id = #{class_id}
     </select>
     
 </mapper>

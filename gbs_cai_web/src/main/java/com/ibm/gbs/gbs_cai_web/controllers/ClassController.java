@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ExtendedModelMap;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -82,23 +81,19 @@ public class ClassController {
     /*
 	 *  추가목적 : 시간/부스 선택시 나오면 클래스에서  Read를 눌렀을 때 상세조회가 가능하다. 
 	 *    기타    : 현재 클래스의 정보를 list에 담는거까지만 구현하였습니다. 뷰에 foreach로 뿌려주기만 하면 됩니다.  
+         *    수정    : 1. 질문글 목록 가져오기
 	 *  추가이력 : 2017/02/23 정연우
 	 *  수정이력 : 2017/03/04 최미수   
+                      2017/03/05 김주상
 	 * 	 * */
     
     @RequestMapping(value={"/class/viewDetail"}, method=RequestMethod.GET)
-    public ModelAndView viewDetail(@RequestParam("idx")int idx) throws Exception{
-        int _idx = util.isZero(idx);
-        
-        System.out.println(idx);
-        List<Map<String, Object>> detailInfo = classService.getDetailByCondition(_idx);
-        
-        System.out.println(detailInfo.size());
-        
+    public ModelAndView viewDetail(@RequestParam("idx") String class_id) throws Exception{
+        ClassVO classInfo = classService.getDetailByCondition(class_id);
+
     	ModelAndView mv = new ModelAndView();
     	mv.setViewName("detail_class");
-    	//mv.setViewName("single");
-        mv.addObject("list", detailInfo);
+        mv.addObject("vo", classInfo);
         
         return mv;
     }

@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import com.ibm.gbs.gbs_cai_web.mapper.EnrollmentMapper;
 import com.ibm.gbs.gbs_cai_web.service.EnrollmentService;
 import com.ibm.gbs.gbs_cai_web.vo.EnrollmentVO;
+import java.util.List;
 
 @Service("enrollmentService")
 public class EnrollmentServiceImpl implements EnrollmentService{
@@ -22,5 +23,11 @@ public class EnrollmentServiceImpl implements EnrollmentService{
     public EnrollmentVO getEnrollmentByUserId(String user_id) {
         return enrollmentMapper.getEnrollmentByUserId(user_id);
     }
+
+//    @Override
+//    public List<EnrollmentVO> getEnrollmentByUserid(String user_id) {
+//        return enrollmentMapper.getEnrollmentByUserId(user_id);
+//    }
     
+  
 }

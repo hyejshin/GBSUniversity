@@ -8,9 +8,12 @@ package com.ibm.gbs.gbs_cai_web.controllers;
 import com.ibm.gbs.gbs_cai_web.vo.Message;
 import com.ibm.gbs.gbs_cai_web.vo.OutputMessage;
 import java.util.Date;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.messaging.handler.annotation.DestinationVariable;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Controller;
+import org.springframework.messaging.simp.SimpMessagingTemplate;
 
 /**
  *
@@ -18,12 +21,20 @@ import org.springframework.stereotype.Controller;
  */
 @Controller
 public class ChatController {
-  @MessageMapping("/chat")
-  @SendTo("/topic/message")
-  public OutputMessage sendMessage(Message message) {
-      System.out.println(message);
-      System.out.println(message.getMessage() + ", " +message.getUser_nm());
-    return new OutputMessage(message, new Date());
-  }
+    private SimpMessagingTemplate template;
     
+    @Autowired
+    public ChatController(SimpMessagingTemplate template) {
+    this.template = template;
+  }
+    @MessageMapping("/chat/{class_id}")
+   // @SendTo("/topic/message/{class_id}") //<- substript path
+    public void sendMessage(@DestinationVariable String class_id, Message message) {
+        OutputMessage outMsg =  new OutputMessage(message, new Date());
+        System.out.println(class_id);
+        this.template.convertAndSend("/topic/message/"+class_id, outMsg);
+        //return new OutputMessage(message, new Date());
+        
+    }
+
 }

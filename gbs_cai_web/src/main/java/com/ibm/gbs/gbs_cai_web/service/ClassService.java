@@ -5,17 +5,13 @@ import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletResponse;
-
-import org.springframework.ui.Model;
-import org.springframework.web.multipart.MultipartFile;
-
 import com.ibm.gbs.gbs_cai_web.vo.ClassVO;
 
 
 public interface ClassService {
 	public List<Map<String, Object>> getClassesByCondition(HashMap<String,Object> map) throws Exception;
 	
-	public List<Map<String, Object>> getDetailByCondition(int idx) throws Exception;
+	public ClassVO getDetailByCondition(String class_id) throws Exception;
 	
 	
 	/*
@@ -55,6 +51,9 @@ public interface ClassService {
 	public int checkCode(HashMap<String,Object> map) throws Exception;
 
 	public void updateFlag(HashMap<String, Object> map1);
+        
+        /* index page - get all class list - Joosang Kim */
+        public List<ClassVO> getAllClass() throws Exception;
 
 
 	

@@ -9,7 +9,7 @@ import com.ibm.gbs.gbs_cai_web.vo.ClassVO;
 public interface ClassMapper {
 	public List<Map<String, Object>> getClassesByCondition(HashMap<String,Object> map);
 	
-	public List<Map<String, Object>> getDetailByCondition(int idx);
+	public ClassVO getDetailByCondition(String class_id);
 	
 	
 	/* Admin Class 관련 - 혜정 */
@@ -46,4 +46,7 @@ public interface ClassMapper {
 	public void updateFlag(HashMap<String,Object> map);
 	
 	public int checkCode(HashMap<String,Object> map);
+        
+        /* index page - get all class*/
+        public List<ClassVO> getAllClass();
 }

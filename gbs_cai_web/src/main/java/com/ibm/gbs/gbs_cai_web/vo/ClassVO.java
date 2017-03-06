@@ -16,10 +16,36 @@ public class ClassVO implements Serializable{
 	private String detail;
 	private String speaker_img;
 	private String attend_code;
+        private String start;
+        private String end;
 	
-	public ClassVO() {
-		
-	}
+	public ClassVO() {}
+        public ClassVO(String class_id, String title, String room, String speaker, String session, int capacity, String detail, String speaker_img){
+            this.class_id = class_id;
+            this.title    = title;
+            this.room     = room;
+            this.speaker  = speaker;
+            this.session  = session;
+            this.capacity = capacity;
+            this.detail   = detail;
+            this.speaker_img = speaker_img;
+            
+        };
+        public ClassVO(String class_id, String title, String room, String speaker, String session, int capacity
+                    , String detail, String speaker_img, String attend_code, String start, String end){
+            this.class_id = class_id;
+            this.title    = title;
+            this.room     = room;
+            this.speaker  = speaker;
+            this.session  = session;
+            this.capacity = capacity;
+            this.detail   = detail;
+            this.speaker_img = speaker_img;
+            this.attend_code = attend_code;
+            this.start = start;
+            this.end =end;
+            
+        };
 	
 	public int getIdx() {
 		return idx;
@@ -111,4 +137,20 @@ public class ClassVO implements Serializable{
 //				+ ", atta2=" + atta2 + ", atta3=" + atta3 + ", use_yn="
 //				+ use_yn + ", date=" + date + "]";
 //	}
+
+    public String getStart() {
+        return start;
+    }
+
+    public void setStart(String start) {
+        this.start = start;
+    }
+
+    public String getEnd() {
+        return end;
+    }
+
+    public void setEnd(String end) {
+        this.end = end;
+    }
 }

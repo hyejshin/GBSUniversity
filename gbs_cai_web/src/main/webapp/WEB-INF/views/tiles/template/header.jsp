@@ -2,7 +2,8 @@
     Document   : header
     Created on : 20170212
     Author     : Joosang Kim
-    Editor     : 20170214 - Misu Choi 
+    Editor     : 20170214 - Misu Choi
+    Editor     : 20170305 - HyeJung Shin
     Description: Header
 --%>
 <!-- HEADER -->
@@ -25,8 +26,9 @@
                     <li><a href="/myLecture?user_id=<%=user_id%>">My Lecture</a></li>
                     <li><a href="/attend">Attend</a></li>
                     <%if(user_id.equals("admin")) {%>
-						<li><a href="/adminClass">Admin Page</a></li>
-					<%}%>
+                      <li><a href="/adminClass">Admin Page</a></li>
+                    <%}%>
+
                 </ul>
                 <!--script-->
                 <script>
