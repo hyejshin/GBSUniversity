@@ -54,18 +54,21 @@
     </definition>
     
     <!-- admin Layout Definition -->
-    <definition name="admin-definition" template="/WEB-INF/views/tiles/layouts/adminLayout.jsp">
-        <put-attribute name="title" value="" />  
-        <put-attribute name="head"  value="/WEB-INF/views/tiles/template/adminHead.jsp" /> 
-        <put-attribute name="body" value="" />   
-        
+    <definition name="admin-definition" template="/WEB-INF/views/tiles/layouts/defaultLayout.jsp">
+    	  <put-attribute name="title" value="" />  
+        <put-attribute name="head"  value="/WEB-INF/views/tiles/template/adminHead.jsp" />
+        <put-attribute name="header" value="/WEB-INF/views/tiles/template/adminHeader.jsp" />
+        <put-attribute name="body" value="" />
+        <put-attribute name="footer" value="/WEB-INF/views/tiles/template/adminFooter.jsp" />
+        <!-- 
         <put-list-attribute name="Admincss" cascade="true">
             <add-attribute value="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
         </put-list-attribute>   
         <put-list-attribute name="Adminjs" cascade="true">
             <add-attribute value="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"/>
             <add-attribute value="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"/>
-        </put-list-attribute>    
+        </put-list-attribute>   
+         --> 
     </definition>
     
     <definition name="empty-definition" template="/WEB-INF/views/tiles/layouts/empty.jsp">
@@ -74,7 +77,28 @@
           
     </definition>
    
-   
+    <!-- Admin Page -->
+    <definition name="adminClassList" extends="admin-definition">  
+        <put-attribute name="title" value="AdminClass" />
+        <put-attribute name="body" value="/WEB-INF/views/pages/admin/adminClassList.jsp" />  
+    </definition>
+    
+    <definition name="adminAddClass" extends="admin-definition">  
+        <put-attribute name="title" value="AdminClass" />
+        <put-attribute name="body" value="/WEB-INF/views/pages/admin/adminAddClass.jsp" />  
+    </definition> 
+    
+    <definition name="adminClassDetail" extends="admin-definition">  
+        <put-attribute name="title" value="AdminClass" />
+        <put-attribute name="body" value="/WEB-INF/views/pages/admin/adminClassDetail.jsp" />  
+    </definition> 
+    
+    <definition name="adminModifyClass" extends="admin-definition">  
+        <put-attribute name="title" value="AdminClass" />
+        <put-attribute name="body" value="/WEB-INF/views/pages/admin/adminModifyClass.jsp" />  
+    </definition> 
+    
+
   
     <!-- Home Page -->
     <definition name="index" extends="base-definition">  
@@ -84,7 +108,7 @@
     <!-- login page -->
     <definition name="login" extends="login-definition">    	        
         <put-attribute name="title" value="Welcome" />  
-        <put-attribute name="body" value="/WEB-INF/views/pages/login.jsp" />                                  
+        <put-attribute name="body" value="/WEB-INF/views/pages/login.jsp" />                             
     </definition>
  
     <!-- user page -->
@@ -95,7 +119,7 @@
     
     <!-- session timetable -->
     <definition name="detail_session" extends="base-definition">  
-        <put-attribute name="title" value="Detailsession" />
+        <put-attribute name="title" value="DetailSession" />
         <put-attribute name="body" value="/WEB-INF/views/pages/detail_session.jsp" />  
     </definition>  
     
@@ -136,7 +160,12 @@
     <definition name="history" extends="base-definition">  
         <put-attribute name="title" value="MyLecture" />  
         <put-attribute name="body" value="/WEB-INF/views/pages/history.jsp" />  
-    </definition> 
+    </definition>
+    
+    <definition name="attendCheck" extends="base-definition">  
+        <put-attribute name="title" value="attendCheck" />
+        <put-attribute name="body" value="/WEB-INF/views/pages/attend.jsp" />  
+	</definition> 
     
     <definition name="404Error" extends="base-definition">  
         <put-attribute name="title" value="Not Found" />  

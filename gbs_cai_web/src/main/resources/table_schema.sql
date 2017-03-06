@@ -5,13 +5,13 @@ CREATE TABLE CLASS (
    room			VARCHAR(100) NOT NULL,
    speaker		VARCHAR(100) NOT NULL,
    session		VARCHAR(100)  NOT NULL,
-   capacity		INT(3),
+   capacity		INT(3) DEFAULT 0,
    detail		MEDIUMTEXT,
    speaker_img	VARCHAR(100),
    attend_code  VARCHAR(100),
    PRIMARY KEY(idx),
    UNIQUE KEY(class_id),
-   UNIQUE KEY(title, room)
+   UNIQUE KEY(title, session)
 );
 
 
@@ -49,8 +49,9 @@ CREATE TABLE ATTEND (
 	idx 		INT(10) NOT NULL auto_increment,
 	user_id		VARCHAR(100) NOT NULL,
 	class_id	VARCHAR(100) NOT NULL,	
-	attend_cod	VARCHAR(100) NOT NULL,
-    PRIMARY KEY(user_id, class_id)
+	attend_code	VARCHAR(100) NOT NULL,
+    PRIMARY KEY(idx),
+    UNIQUE KEY(user_id, class_id)
 );
 
 
@@ -64,5 +65,5 @@ CREATE TABLE BOARD (
 	type			VARCHAR(10)   NOT NULL,
 	step			INT(3) 		 DEFAULT 0,
 	indent			INT(3)		 DEFAULT 0,
-	PRIMARY KEY(IDX)
+	PRIMARY KEY(idx)
 );

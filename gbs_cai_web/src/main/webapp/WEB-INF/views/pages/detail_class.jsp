@@ -11,43 +11,48 @@
     <script src='<c:url value="${showDetailJsAttributes}"/>'></script>
 </c:forEach>
 
-<div class="container">		 
+		<div class="container">		 
 
-    <%HttpSession sess = request.getSession();%>
-    <div id="detail">
-        <div class="work">
-            <div class="details">		 
-                <div class="col-md-7 posts">
-                    <h3 style="font-weight:600; font-style: italic;">${vo.title}</h3>
-                    <p><h5>Speaker: ${vo.speaker}</h5></p>
-                    <p><h7>Date : Saturday, 11 March 2017</h7></p>
-                    <p><h7>Time : ${vo.session}<span>Room: ${vo.room}</span></h7></p><br>
-                </div>	
-                <div class="col-md-3 date" style="padding:0px;">
-                    <p style="padding: 8px 0px;">WHAT</p>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-            <div class="details">			 
-                <div class="col-md-7 posts">
-                    <h4>ABOUT THIS SESSION</h4>
-                    <p>${vo.detail}</p>
-                </div>	
-                <div class="col-md-3 date" style="padding:0px;">
-                    <p style="padding: 8px 0px;">WHO</p>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-            <div class="details">
-                <div class="col-md-7 posts">
-                    <h4>ABOUT THE SPEACKER</h4>
-                    <div class="img-responsive" style="float:left;"><img src="" alt="img"/>${vo.speaker_img}</div>
-                    <p>${vo.speaker}</p></div>	
-                <div class="clearfix"></div>
-            </div>
-        </div>
-    </div>
-</div>
+				<%HttpSession session1 = request.getSession();%>
+	
+			<input type="hidden" id="user_id" value=<%= session1.getAttribute("user_id") %> />
+			<input type="hidden" id="start" value=${list.start} />
+			<input type="hidden" id="class_id" value=${list.class_id} />
+
+	       <div class="work">
+			 <div class="details">		 
+				 <div class="col-md-7 posts">
+					 <h3 style="font-weight:600;">${vo.title}</h3>
+					 <p>Speaker: ${vo.speaker}</p>
+					 <p>Date : Saturday, 11 March 2017</p>
+					 <p>Time : ${vo.session} <span>Room: ${vo.room}</span></p><br>
+				 </div>	
+				 <div class="col-md-3 date" style="padding:0px;">
+					 <p style="padding: 8px 0px;">WHAT</p>
+				 </div>
+				 <div class="clearfix"></div>
+			 </div>
+			 <div class="details">			 
+				 <div class="col-md-7 posts">
+					 <h4>ABOUT THIS SESSION</h4>
+					 <p>${vo.detail}</p>	
+				 </div>	
+				 <div class="col-md-3 date" style="padding:0px;">
+					 <p style="padding: 8px 0px;">WHO</p>
+				 </div>
+				 <div class="clearfix"></div>
+			 </div>
+			 <div class="details">
+				 
+				 <div class="col-md-7 posts">
+					 <h4>ABOUT THE SPEAKER</h4>
+					 <div class="img-responsive" style="float:left;"><img src="/images/speaker/${vo.speaker_img}" alt="img"/></div>
+					 <p>${vo.speaker}</p></div>	
+     			 <div class="clearfix"></div>
+			 </div>
+		 </div>
+
+
 <div id="boardDiv">
     <h3>Question Board</h3>
     <div class="info">

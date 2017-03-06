@@ -4,61 +4,16 @@
 <html>
 <head>
         <title>클래스 등록</title>
-        <!-- Bootstrap -->
-        <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-        <link href="/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="all">
-        <link href="/css/admin.css" rel="stylesheet" media="all">
-        <link href="/css/DT_bootstrap.css" rel="stylesheet" media="all">
-         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="vendors/flot/excanvas.min.js"></script><![endif]-->
-        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-        <!--[if lt IE 9]>
-            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-        <script src="/vendors/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-    </head>
+</head>
 <body>
+	<%
+	HttpSession session1 = request.getSession();
+	String user_id = (String)session1.getAttribute("user_id");
+	
+	if(!user_id.equals("admin")) {%>
+		<c:redirect url="/logout"/>
+	<%}%>
 
-
- <div class="navbar navbar-fixed-top">
-            <div class="navbar-inner">
-                <div class="container-fluid">
-                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span>
-                     <span class="icon-bar"></span>
-                     <span class="icon-bar"></span>
-                    </a>
-                    <a class="brand" href="#">Admin</a>
-                    <div class="nav-collapse collapse">
-                        <ul class="nav pull-right">
-                            <li class="dropdown">
-                                <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-user"></i> Vincent Gabriel <i class="caret"></i>
-
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li class="divider"></li>
-                                    <li>
-                                        <a tabindex="-1" href="/login.jsp">Logout</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <ul class="nav">
-                            <li >
-                                <a href="#">CAI ClassBoard</a>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" data-toggle="dropdown" class="dropdown-toggle active">Register<b class="caret"></b>
-
-                                </a>
-                                
-                            </li>
-                            
-                        </ul>
-                    </div>
-                    <!--/.nav-collapse -->
-                </div>
-            </div>
-        </div>
         <div class="row-fluid">
                         <!-- block -->
                         <div class="block">
@@ -70,12 +25,13 @@
                                       <fieldset>
                                       
                                         <legend>Form Components</legend>
-                                <form class="form-horizontal" method="POST" action="/addClass">
+                                	<form class="form-horizontal" name="myForm" method="POST" action="/addClass">
                      
                      					<div class="control-group">
                                           <label class="control-label" for="booth">Class ID</label>
                                           <div class="controls">
-                                            <input type="text" class="span6" id="class_id" name="class_id"  data-provide="typeahead" >
+                                            <input type="text" class="span6" id="class_id" name="class_id"  data-provide="typeahead"
+                                            	placeholder="Enter the Class ID" required="required">
                                             <p class="help-block"></p>
                                           </div>
                                         </div>
@@ -83,21 +39,25 @@
                                         <div class="control-group">
                                           <label class="control-label" for="title">Title</label>
                                           <div class="controls">
-                                            <input type="text" class="span6" id="title" name="title"  data-provide="typeahead" >
+                                            <input type="text" class="span6" id="title" name="title"  data-provide="typeahead"
+                                            	placeholder="Enter the Class Title" required="required">
                                             <p class="help-block">강의명을 등록해주세요.</p>
                                           </div>
                                           </div>
                                           <div class="control-group">
                                           <label class="control-label" for="teacher">Speaker</label>
                                           <div class="controls">
-                                            <input type="text" class="span6" id="speaker" name="speaker"  data-provide="typeahead">                                             <p class="help-block">강사명을 등록해주세요</p>
+                                            <input type="text" class="span6" id="speaker" name="speaker"  data-provide="typeahead"
+                                            	placeholder="Enter the Speaker" required="required">
+											<p class="help-block">강사명을 등록해주세요</p>
                                           </div>
                                           </div>
      
                                         <div class="control-group">
                                           <label class="control-label" for="room">Room</label>
                                           <div class="controls">
-                                            <input type="text" class="span6" id="room" name="room"  data-provide="typeahead" >
+                                            <input type="text" class="span6" id="room" name="room"  data-provide="typeahead"
+                                            	placeholder="Enter the Classroom" required="required">
                                             <p class="help-block"></p>
                                           </div>
                                         </div>
@@ -116,7 +76,8 @@
                                         <div class="control-group">
                                           <label class="control-label" for="capacity">Capacity</label>
                                           <div class="controls">
-                                            <input type="text" class="span6" id="capacity" name="capacity" data-provide="typeahead" >
+                                            <input type="text" class="span6" id="capacity" name="capacity" data-provide="typeahead"
+                                            	placeholder="Enter the Capacity" value='0'>
                                             <p class="help-block"> </p>
                                           </div>
                                         </div>
@@ -124,13 +85,15 @@
                                         <div class="control-group">
                                           <label class="control-label" for="imageFile">Image File</label>
                                           <div class="controls">
-                                            <input type="text" class="span6" id="speaker_img" name="speaker_img" data-provide="typeahead" >
+                                            <input type="text" class="span6" id="speaker_img" name="speaker_img" data-provide="typeahead"
+                                            	placeholder="Enter the Image Name">
                                           </div>
                                         </div>
                                         <div class="control-group">
                                           <label class="control-label" for="attendCode">Attend Code</label>
                                           <div class="controls">
-                                            <input type="text" class="span6" id="attend_code" name="attend_code" data-provide="typeahead" >
+                                            <input type="text" class="span6" id="attend_code" name="attend_code" data-provide="typeahead"
+                                            	placeholder="Enter the Attend Code">
                                           </div>
                                         </div>
                                         
@@ -141,7 +104,7 @@
                                           </div>
                                         </div>
                                         <div class="form-actions">
-                                          <input type="submit" class="btn btn-primary" value="Save"/><!-- Save</button>-->
+                                          <input type="submit" class="btn btn-primary" value="Save"/>
                                           <input type="reset" class="btn" value="Cancel"/>
                                            <a href="/adminClass" class="btn btn-success">목록보기</a>
                                         </div>
@@ -154,22 +117,7 @@
                         </div>
                         <!-- /block -->
                     </div>
-
-            <hr>
-            <footer>
-                <p>&copy; Developed By IBM GBS 2017</p>
-            </footer>
-
-        <!--/.fluid-container-->
-
-        <script src="/vendors/jquery-1.9.1.js"></script>
-        <script src="/bootstrap/js/bootstrap.min.js"></script>
-        <script src="/vendors/jquery.uniform.min.js"></script>
-        <script src="/vendors/chosen.jquery.min.js"></script>
-        <script src="/vendors/bootstrap-datepicker.js"></script>
-	<script src="/script/form-validation.js"></script>
         
-	<script src="/script/scripts.js"></script>
         <script>
 
 	jQuery(document).ready(function() {   

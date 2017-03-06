@@ -100,11 +100,11 @@
         WHERE class_id=#{class_id}
     </select>
     
-    <select id="getClassDetailByTitleRoom" parameterType="String" resultType="com.ibm.gbs.gbs_cai_web.vo.ClassVO">
+    <select id="getClassDetailByTitleSession" parameterType="String" resultType="com.ibm.gbs.gbs_cai_web.vo.ClassVO">
         SELECT *	   
         FROM CLASS
-        WHERE title=#{param1}
-        AND   room =#{param2}
+        WHERE title = #{param1}
+        AND session = #{param2}
     </select>
     
     
