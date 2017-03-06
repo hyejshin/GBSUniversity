@@ -25,7 +25,7 @@
                     <li><a href="/index">Home</a></li>
                     <li><a href="/myLecture?user_id=<%=user_id%>">My Lecture</a></li>
                     <li><a href="/attend">Attend</a></li>
-                    <%if(user_id.equals("admin")) {%>
+                    <%if(user_id.equals("ibmk0reagbs!")) {%>
                       <li><a href="/adminClass">Admin Page</a></li>
                     <%}%>
 

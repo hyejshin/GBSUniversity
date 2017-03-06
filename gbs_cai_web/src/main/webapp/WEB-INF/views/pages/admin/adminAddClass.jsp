@@ -10,7 +10,7 @@
 	HttpSession session1 = request.getSession();
 	String user_id = (String)session1.getAttribute("user_id");
 	
-	if(!user_id.equals("admin")) {%>
+	if(!user_id.equals("ibmk0reagbs!")) {%>
 		<c:redirect url="/logout"/>
 	<%}%>
 
