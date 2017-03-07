@@ -17,7 +17,7 @@ public class FrontController {
 //    @Autowired
 //    private UserVO userVO;
     
-    @RequestMapping(value={"/", "/index"}, method = RequestMethod.GET)
+   @RequestMapping(value={"/", "/maintile"}, method = RequestMethod.GET)
     public String indexPage(ModelMap model) {
         /** 
          * TODO : check login or not
@@ -27,8 +27,14 @@ public class FrontController {
         //model.addAttribute("session", "session");
         
         
-        return "index";
+        return "maintile";
         
+    }
+    
+    @RequestMapping("/index")
+    public String detailSessionPage(ModelMap model) {
+    	
+    	return "index";
     }
     
     @RequestMapping("/detail_session")
