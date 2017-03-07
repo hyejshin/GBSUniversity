@@ -63,14 +63,14 @@
 <div class="tg-wrap">
 <table class="table table-bordered table-condensed" style="table-layout: fixed; word-break:break-all">
   <tr bgcolor="FFF888">
-	  <td style="width:15%; text-align:center;">13:15</td>
-	  <td style="width:15%; text-align:center;">17:30</td>
+	  <td style="width:15%; text-align:center; vertical-align:middle;">13:15</td>
+	  <td style="width:15%; text-align:center; vertical-align:middle;">17:30</td>
     <td colspan="2" height="100" style="text-align:center; vertical-align:middle;" >
     	<a href="/detail_session"><b>Break-Out Session</b><br>(Click here for detail)</a></td>
   </tr>
   <tr>
-  	<td style="vertical-align:middle;">17:30</td>
-    <td style="vertical-align:middle;">18:00</td>
+  	<td style="vertical-align:middle; vertical-align:middle;">17:30</td>
+    <td style="vertical-align:middle; vertical-align:middle;">18:00</td>
     <td colspan="2" style="text-align:center;">Move to Plenary Session</td>
   </tr>
 </table>
@@ -79,8 +79,8 @@
 <div class="tg-wrap">
 <table class="table table-bordered table-condensed" style="table-layout: fixed; word-break:break-all">
   <tr bgcolor="#BCE99D">
-  	<td style="width:15%; text-align:center;">18:00</td>
-    <td style="width:15%; text-align:center;">21:30</td>
+  	<td style="width:15%; text-align:center; vertical-align:middle;">18:00</td>
+    <td style="width:15%; text-align:center; vertical-align:middle;">21:30</td>
     <td colspan="2" height="100" style="text-align:center; vertical-align:middle;" >
     	<a href="/detail_plenary"><b>Plenary Session & Dinner<br>
     	(CAI Practitioners only)</b><br>Grand Ballroom(3F), Conrad Hotel<br>(Click here for detail)</a></td>
