@@ -26,8 +26,8 @@
             , BO.type type
             , BO.step step
             , BO.indent indent  
-        FROM BOARD BO JOIN CLASS CL 
-        ON   BO.class_id = CL.class_id JOIN user US 
+        FROM compose.BOARD BO JOIN compose.CLASS CL 
+        ON   BO.class_id = CL.class_id JOIN compose.USER US 
         ON   BO.user_id  = US.user_id
         WHERE CL.class_id=#{class_id} 
     </select>
@@ -46,6 +46,23 @@
         , #{user_id}
         , #{detail}
         , #{type}
+        )	
+    </insert>
+    
+    <insert id= "insertComment" parameterType="com.ibm.gbs.gbs_cai_web.vo.CommentVO">
+        INSERT INTO COMMENT (
+        class_id
+        , board_id
+        , ref_idx
+        , detail
+        , user_id
+        )
+        VALUES (
+        #{board_id}
+        , #{class_id}
+        , #{ref_idx}
+        , #{detail}
+        , #{user_id}
         )	
     </insert>
 </mapper>

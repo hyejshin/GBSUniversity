@@ -70,6 +70,7 @@ public class LoginController {
             	HttpSession newSession = req.getSession();
     	        newSession.setAttribute("user", user);
     	        newSession.setAttribute("user_id", user.getUser_id());
+                newSession.setAttribute("user_nm", user.getUser_nm());
     	        
     	        req.setAttribute("isLogin", true);
                 res.sendRedirect("/index");

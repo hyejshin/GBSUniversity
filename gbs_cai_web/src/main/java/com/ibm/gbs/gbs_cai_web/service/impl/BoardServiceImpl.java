@@ -10,6 +10,7 @@ package com.ibm.gbs.gbs_cai_web.service.impl;
 import com.ibm.gbs.gbs_cai_web.mapper.BoardMapper;
 import com.ibm.gbs.gbs_cai_web.service.BoardService;
 import com.ibm.gbs.gbs_cai_web.vo.BoardVO;
+import com.ibm.gbs.gbs_cai_web.vo.CommentVO;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,6 +28,11 @@ public class BoardServiceImpl implements BoardService{
     @Override
     public int insertNewBoardConetent(BoardVO boardvo) {
         return boardMapper.insertNewBoardConetent(boardvo);
+    }
+
+    @Override
+    public int insertComment(CommentVO commentvo) {
+        return boardMapper.insertComment(commentvo);
     }
     
 }

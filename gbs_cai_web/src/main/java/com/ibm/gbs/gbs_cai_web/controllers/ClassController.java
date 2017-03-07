@@ -35,9 +35,15 @@ public class ClassController {
 	 */
 	@RequestMapping("/class/detail")
 	public String classDetail(@RequestParam("class_id") String class_id, Model model) throws Exception {
-        
+                
+                String board_id = "";
+                String tempId = classService.getClassDetailById(class_id).getClass_id();
+                
+                board_id = tempId.replace("C", "B");
+                
 		model.addAttribute("vo", classService.getClassDetailById(class_id));
-
+                model.addAttribute("board_id", board_id);
+              
 		return "detail_class";
 	}
 	

@@ -7,6 +7,7 @@
 package com.ibm.gbs.gbs_cai_web.service;
 
 import com.ibm.gbs.gbs_cai_web.vo.BoardVO;
+import com.ibm.gbs.gbs_cai_web.vo.CommentVO;
 import java.util.List;
 
 /**
@@ -25,5 +26,12 @@ public interface BoardService {
      * param : BoardVO boardvo
      */
     public int insertNewBoardConetent(BoardVO boardvo);
+    
+    /**
+     * insert comment 
+     * author : Joosang Kim
+     * param : CommentVO commentvo
+     */
+    public int insertComment(CommentVO commentvo);
     
 }

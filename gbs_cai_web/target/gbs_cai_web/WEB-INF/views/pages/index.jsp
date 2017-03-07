@@ -7,139 +7,78 @@
 
    <table class="table table-condensed table-striped" style="table-layout: fixed; word-break:break-all">
 <thead>
-  <tr >
+  <tr bgcolor="#04B486">
     <th style="width:15%; text-align:center;">Start</th>
-    <th style="width:15%; text-align:center;" >End</th>
+    <th style="width:15%; text-align:center;">End</th>
     <th colspan="2" style="text-align:center;">Session</th>
   </tr>
   </thead>
   <tbody>
-  <tr style="text-align:center;">
+  <tr style="text-align:center;" bgcolor="#80C8BF">
     <td>8:30</td>
     <td>9:00</td>
-    <td colspan="2">Registeration & Teatime
+    <td colspan="2">Registeration & Teatime<br>7F, on-demand
     </td>
   </tr>
-  <tr style="text-align:center;">
+  <tr style="text-align:center;" bgcolor="#80C8BF">
     <td>9:00</td>
     <td >9:30</td>
-    <td colspan="2">Opening <br>SU / KheeHong
+    <td colspan="2">Opening <br>SU / KheeHong<br>7F, on-demand
     </td>
   </tr>
-  <tr style="text-align:center;">
-    <td>9:30</td>
-    <td >9:45</td>
+  <tr style="text-align:center;" bgcolor="#B7DCD7">
+    <td rowspan="2">9:30</td>
+    <td rowspan="2">9:45</td>
     <td colspan="2">Move to Breakout rooms</td>
   </tr>
   <tr style="text-align:center;">
+    <td>7F, on-demand</td>
+    <td>6F, Demo Zone</td>
+  </tr>
+  <tr style="text-align:center;" bgcolor="#80C8BF">
     <td>9:45</td>
-    <td >10:45</td>
-    <td >Cloud Application Service</td>
-    <td>Watson Case</td>
+    <td>10:45</td>
+    <td><b>Cloud<br>Application<br>Service</b></td>
+    <td style="vertical-align:middle;"><b>Watson Case</b></td>
   </tr>
   <tr style="text-align:center;">
     <td>10:45</td>
-    <td >11:00</td>
+    <td>11:00</td>
     <td colspan="2">Break</td>
   </tr>
-  <tr style="text-align:center;">
+  <tr style="text-align:center;" bgcolor="#80C8BF">
     <td>11:00</td>
     <td>12:00</td>
-    <td >Watson Case</td>
-    <td >Cloud Application Service</td>
+    <td style="vertical-align:middle;"><b>Watson Case</b></td>
+    <td bgcolor="#80C8BF"><b>Cloud<br>Application<br>Service</b></td>
   </tr>
   <tr style="text-align:center;">
     <td >12:00</td>
     <td>13:15</td>
-    <td colspan="2"><a href="#" class="btn btn-sm btn-default" data-toggle="modal" 
-   data-target="#basicModal" >Enjoy Lunch > click Here :)Lunch</a></td>
+    <td colspan="2">Lunch</td>
   </tr>
   </tbody>
 </table>
-<br><br>
+
 <div class="tg-wrap">
 <table class="table table-bordered table-condensed" style="table-layout: fixed; word-break:break-all">
-  <tr>
-    <th colspan="8" style="text-align:center;">Break-Out Session</th>
-    
+  <tr bgcolor="FFF888">
+    <td colspan="6" height="100" style="text-align:center; vertical-align:middle;" >
+    	<a href="/detail_session"><b>Break-Out Session</b><br>(Click here for detail)</a></td>
   </tr>
-  <tr>
-    <td  colspan="2" style="text-align:center;" >Room</td>
-    <td>7F, On-demand</td>
-    <td>6F, Demo Zone</td>
-    <td>6F, Conference room</td>
-    <td>7F, 7M05</td>
-    <td>6F, IBM Studio 6M06</td>
-    <td>6F, 6M02</td>
-  </tr>
-  <tr>
-    <td>13:15</td>
-    <td >14:30</td>
-    <td colspan="6" rowspan="3" style="text-align:center; vertical-align:middle;" ><a href="/detail_session">
-                    Break-Out Session Click here <br>(-&gt; detail)</a></td>
-  </tr>
-  <tr>
-    <td>14:45</td>
-    <td>16:00</td>
-  </tr>
-  
-  <tr>
-    <td>16:15</td>
-    <td>17:30</td>
-  </tr>
-  <tr>
-    
-  </tr>
-  <tr>
-    <td>17:30</td>
-    <td>18:00</td>
-    <td colspan="6" style="text-align:center;" >Move to Plenary Session</td>
-  </tr>
-  
 </table>
 </div>
-<br><br>
+
 <div class="tg-wrap">
 <table class="table table-bordered table-condensed" style="table-layout: fixed; word-break:break-all">
-  <tr>
-    <th colspan="6" style="text-align:center;" >Plenary Seesion @ Conrad Hotel</th>
-  </tr>
-  <tr>
-    <td style="width:15%; text-align:center;">Start</td>
-    <td style="width:15%; text-align:center;">End</td>
-    <td colspan="4" >Topic</td>
-  </tr>
-  <tr>
-    <td>18:00</td>
-    <td>18:10</td>
-    <td colspan="4">Opening</td>
-
-  </tr>
-  <tr>
-    <td>18:10</td>
-    <td>18:30</td>
-    <td colspan="4">Keynote Speach -CAI University</td>
-
-  </tr>
-  <tr>
-    <td>18:30</td>
-    <td>20:00</td>
-    <td colspan="4">Dinner &amp; Networking</td>
-
-  </tr>
-  <tr>
-    <td>20:00</td>
-    <td>21:15</td>
-    <td colspan="4">Have Fun &amp; Lucky Draw</td>
-
-  </tr>
-  <tr>
-    <td>21:15</td>
-    <td>21:30</td>
-    <td colspan="4">Closing</td>
-
+  <tr bgcolor="#BCE99D">
+    <td colspan="6" height="100" style="text-align:center; vertical-align:middle;" >
+    	<a href="/detail_plenary"><b>Plenary Session & Dinner<br>
+    	(CAI Practitioners only)</b><br>Grand Ballroom(3F), Conrad Hotel<br>(Click here for detail)</a></td>
   </tr>
 </table></div>
+
+
 
 <!-- 점심 메뉴 언어 선택 모달 -->
 <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">

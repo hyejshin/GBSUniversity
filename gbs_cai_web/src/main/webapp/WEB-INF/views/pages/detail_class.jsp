@@ -18,7 +18,6 @@
 
     <input type="hidden" id="user_id" value=<%= session1.getAttribute("user_id")%> />
     <input type="hidden" id="start" value=${list.start} />
-    <input type="hidden" id="class_id" value=${list.class_id} />
 
     <div class="work">
         <div class="details">		 
@@ -53,8 +52,6 @@
         </div>
     </div>
 
-
-    <<<<<<< HEAD
     <%
         HttpSession sess = request.getSession();
         UserVO user = (UserVO) sess.getAttribute("user");
@@ -93,8 +90,7 @@
         </div>
     </div>
 </div>
-=======
->>>>>>> 77b34f55d5e1ef00db930c4a29b4846134704e8f
+
 <div id="boardDiv">
     <h3>Question Board</h3>
     <div class="info">
@@ -114,10 +110,10 @@
             </tfoot>
         </table>
     </div>
-    <div id="writenew">
+    <div id="writenew" >
         <table summary="Ask Question">
             <section class="box">
-                <form name="BoardWriteForm" id="BoardWriteForm">
+                <form name="BoardWriteForm" id="BoardWriteForm" action="/board/postQuestion" method="POST">
                     <table class="table" summary="테이블 구성" >
                         <caption>Ask Question</caption>	
                         <tr>
@@ -141,8 +137,8 @@
                         </tr> 
                     </table>
                     <input type="hidden" name="user_id"  value=<%=session1.getAttribute("user_id")%> />
-                    <input type="hidden" id="class_id" name="class_id" value=${vo.class_id} />
-                    <input type="hidden" name="board_id" value="" />
+                    <input type="hidden" name="class_id" id="class_id" value=${vo.class_id} />
+                    <input type="hidden" name="board_id" id="board_id" value=${board_id} />
                     <%
                         String type = user.getType();
                     %>
@@ -153,6 +149,6 @@
         </table>
 
     </div>
+    <input type="button" id="showQnA" class="btn btn-info" value="Show Q&A" />
+    <input type="button" id="showList" class="btn btn-info" value="Show Class Detail" />
 </div>
-<input type="button" id="showQnA" class="btn btn-info" value="Show Q&A" />
-<input type="button" id="showList" class="btn btn-info" value="Show List" />

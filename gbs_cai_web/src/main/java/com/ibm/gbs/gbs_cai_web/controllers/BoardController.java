@@ -9,6 +9,7 @@ package com.ibm.gbs.gbs_cai_web.controllers;
 import com.ibm.gbs.gbs_cai_web.service.BoardService;
 import com.ibm.gbs.gbs_cai_web.service.EnrollmentService;
 import com.ibm.gbs.gbs_cai_web.vo.BoardVO;
+import com.ibm.gbs.gbs_cai_web.vo.CommentVO;
 import com.ibm.gbs.gbs_cai_web.vo.EnrollmentVO;
 import com.ibm.gbs.gbs_cai_web.vo.UserVO;
 import java.util.ArrayList;
@@ -38,6 +39,8 @@ public class BoardController {
     @Autowired
     EnrollmentVO enrollment;
     @Autowired
+    CommentVO commentvo;
+    @Autowired
     EnrollmentService enrollmentService;
     @Autowired
     BoardService boardService;
@@ -62,7 +65,7 @@ public class BoardController {
      * get board list about class idx 
      */
     @RequestMapping(value="/board/getBoardListByClassId", method=RequestMethod.GET)
-    public @ResponseBody List<BoardVO>getBoardListByClassId(@RequestParam("class_id") String class_id){        
+    public @ResponseBody List<BoardVO>getBoardListByClassId(@RequestParam("class_id") String class_id){      
         List<BoardVO> boardList = new ArrayList<BoardVO>();
         boardList = boardService.getBoardListByClassId(class_id);
           
@@ -73,27 +76,50 @@ public class BoardController {
      * add question
      */
     @RequestMapping(value="/board/postQuestion", method=RequestMethod.POST)
-    public @ResponseBody List<BoardVO>postQuestion(@RequestParam("detail") String detail,
+    public void postQuestion(@RequestParam("detail") String detail,
                                                    @RequestParam("board_id") String board_id,
                                                    @RequestParam("class_id") String class_id, 
                                                    @RequestParam("type")    String type, 
+                                                   HttpServletResponse res,
                                                    HttpSession session) throws Exception{       
         int ret = 0;
-        
-        List<BoardVO> boardList = new ArrayList<BoardVO>();
+
         user = (UserVO)session.getAttribute("user");
         String user_id = user.getUser_id();
+        type= String.valueOf(type.charAt(0));
         
         boardvo = new BoardVO(board_id, class_id, user_id, detail, type);
         ret = boardService.insertNewBoardConetent(boardvo);
         
         if(ret<0){
-            System.out.println("$%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"+ret);
             throw new Exception();
         }
-        boardList = boardService.getBoardListByClassId(class_id);
-        System.out.println(boardList.size());
-        return boardList;
+        res.sendRedirect("/class/detail?class_id="+class_id);
+    }
+    
+    /**
+     * add comment
+     */
+    @RequestMapping(value="/board/postAnswer", method=RequestMethod.POST)
+    public @ResponseBody List<BoardVO>postAnswer(@RequestParam("answerDetail") String answerDetail,
+                                                   @RequestParam("board_id") String board_id,
+                                                   @RequestParam("class_id") String class_id, 
+                                                   @RequestParam("idx")    String idx, 
+                                                   HttpSession session) throws Exception{       
+        int ret = 0;
+
+        user = (UserVO)session.getAttribute("user");
+        String user_id = user.getUser_id();
+        
+        commentvo = new CommentVO(class_id, board_id, Integer.valueOf(idx), answerDetail, user_id);
+        
+        
+        ret = boardService.insertComment(commentvo);
+        
+        if(ret<0){
+            throw new Exception();
+        }
+        return boardService.getBoardListByClassId(class_id);
     }
 
 }
