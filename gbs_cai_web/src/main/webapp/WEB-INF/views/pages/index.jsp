@@ -38,7 +38,7 @@
   <tr style="text-align:center;" bgcolor="#80C8BF">
     <td style="vertical-align:middle;">9:45</td>
     <td style="vertical-align:middle;">10:45</td>
-    <td><b>Cloud<br>Application<br>Service</b></td>
+    <td style="border-right: 1px solid #B9BEBD;"><b>Cloud<br>Application<br>Service</b></td>
     <td style="vertical-align:middle;"><b>Watson Case</b></td>
   </tr>
   <tr style="text-align:center;">
@@ -49,7 +49,7 @@
   <tr style="text-align:center;" bgcolor="#80C8BF">
     <td style="vertical-align:middle;">11:00</td>
     <td style="vertical-align:middle;">12:00</td>
-    <td style="vertical-align:middle;"><b>Watson Case</b></td>
+    <td style="vertical-align:middle; border-right: 1px solid #B9BEBD;"><b>Watson Case</b></td>
     <td bgcolor="#80C8BF"><b>Cloud<br>Application<br>Service</b></td>
   </tr>
   <tr style="text-align:center;">
