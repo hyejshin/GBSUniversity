@@ -2,7 +2,11 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="false" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <div class="container">
+	각 세션을 클릭시 상세 및 Q&A를 확인 할 수 있습니다.<br>
+	Click on the each session, detail and Q&A are available.
+
     <table class="table table-bordered" style="table-layout: fixed; word-break:break-all">
         <thead>
             <tr bgcolor="FFF888">
