@@ -23,5 +23,10 @@ public class BoardServiceImpl implements BoardService{
     public List<BoardVO> getBoardListByClassId(String class_id) {
        return boardMapper.getBoardListByClassId(class_id);
     }
+
+    @Override
+    public int insertNewBoardConetent(BoardVO boardvo) {
+        return boardMapper.insertNewBoardConetent(boardvo);
+    }
     
 }

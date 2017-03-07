@@ -18,7 +18,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -73,17 +72,28 @@ public class BoardController {
     /**
      * add question
      */
-    @RequestMapping(value="/board/postQuestion", method=RequestMethod.GET)
+    @RequestMapping(value="/board/postQuestion", method=RequestMethod.POST)
     public @ResponseBody List<BoardVO>postQuestion(@RequestParam("detail") String detail,
                                                    @RequestParam("board_id") String board_id,
                                                    @RequestParam("class_id") String class_id, 
-                                                   HttpSession session){        
-        //UserVO
-//        List<BoardVO> boardList = new ArrayList<BoardVO>();
-//        boardList = null;
-//        boardList = boardService.getBoardListByClassId(class_id);
-          
-        return null;
+                                                   @RequestParam("type")    String type, 
+                                                   HttpSession session) throws Exception{       
+        int ret = 0;
+        
+        List<BoardVO> boardList = new ArrayList<BoardVO>();
+        user = (UserVO)session.getAttribute("user");
+        String user_id = user.getUser_id();
+        
+        boardvo = new BoardVO(board_id, class_id, user_id, detail, type);
+        ret = boardService.insertNewBoardConetent(boardvo);
+        
+        if(ret<0){
+            System.out.println("$%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"+ret);
+            throw new Exception();
+        }
+        boardList = boardService.getBoardListByClassId(class_id);
+        System.out.println(boardList.size());
+        return boardList;
     }
 
 }

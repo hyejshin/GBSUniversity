@@ -50,6 +50,19 @@ public class BoardVO implements Serializable {
     };
     
     /**
+     * Author   : Joosang Kim
+     *  Detail   : Contructor for insertNewBoardContent-BoardService.class
+     *             VO for detail
+     */
+    public BoardVO(String board_id, String class_id, String user_id, String detail, String type){
+        this.board_id = board_id;
+        this.class_id = class_id;
+        this.user_id = user_id;
+        this.detail = detail;
+        this.type = type;
+    };
+    
+    /**
      *  Author   : Joosang Kim
      *  Detail   : Contructor for getBoardListByClassId-EnrollmentService.class
      *             VO for detail

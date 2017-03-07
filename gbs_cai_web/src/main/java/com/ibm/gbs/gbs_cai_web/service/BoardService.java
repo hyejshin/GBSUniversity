@@ -19,6 +19,11 @@ public interface BoardService {
      * param : String(class_idx)
      */
     public List<BoardVO> getBoardListByClassId(String class_id);
-    
+    /**
+     * insert new board contents
+     * author : Joosang Kim
+     * param : BoardVO boardvo
+     */
+    public int insertNewBoardConetent(BoardVO boardvo);
     
 }

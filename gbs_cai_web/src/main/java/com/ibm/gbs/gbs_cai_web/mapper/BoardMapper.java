@@ -15,5 +15,6 @@ import org.apache.ibatis.annotations.Param;
  */
 public interface BoardMapper {
     public List<BoardVO> getBoardListByClassId(@Param("class_id") String class_id);
+    public int insertNewBoardConetent(BoardVO boardvo);
     
 }

@@ -31,4 +31,21 @@
         ON   BO.user_id  = US.user_id
         WHERE CL.class_id=#{class_id} 
     </select>
+    
+    <insert id="insertNewBoardConetent" parameterType="com.ibm.gbs.gbs_cai_web.vo.BoardVO">
+        INSERT INTO BOARD (
+        board_id
+        , class_id
+        , user_id
+        , detail
+        , type
+        )
+        VALUES (
+        #{board_id}
+        , #{class_id}
+        , #{user_id}
+        , #{detail}
+        , #{type}
+        )	
+    </insert>
 </mapper>

@@ -1,3 +1,4 @@
+<%@page import="com.ibm.gbs.gbs_cai_web.vo.UserVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
@@ -13,7 +14,10 @@
 
 <div class="container">		 
 
-    <%HttpSession sess = request.getSession();%>
+    <%
+        HttpSession sess = request.getSession();
+        UserVO user = (UserVO)sess.getAttribute("user");
+    %>
     <div id="detail">
         <div class="work">
             <div class="details">		 
@@ -56,7 +60,7 @@
                 <tr>
                     <th style="text-align: center;">NO</th>
                     <th style="text-align: center;">TITLE</th>
-                    <th style="text-align: center;">WRITER</th>
+                    <th colspan="2" style="text-align: center;">WRITER</th>
                 </tr>
             </thead>
             <tbody id="board-body"></tbody>
@@ -93,9 +97,14 @@
                             </td>
                         </tr> 
                     </table>
-                    <input type="hidden" name="user_id"  value=<%= sess.getAttribute("user_id")%> />
+                    <input type="hidden" id="user_id" name="user_id"  value="<%= sess.getAttribute("user_id")%>" />
                     <input type="hidden" id="class_id" name="class_id" value=${vo.class_id} />
                     <input type="hidden" name="board_id" value="" />
+                    <%
+                        String type = user.getType();
+                    %>
+                    <input type="hidden" id="type" name="type" value="<%=type%>"/>
+                    
                 </form> 
             </section>
         </table>
