@@ -70,7 +70,7 @@
 <table class="table table-bordered table-condensed" style="table-layout: fixed; word-break:break-all">
   <tr bgcolor="#BCE99D">
     <td colspan="6" height="100" style="text-align:center; vertical-align:middle;" >
-    	<a href="/detail_Plenary">Plenary Seesion @ Conrad Hotel<br>Click here (-&gt; detail)</a></td>
+    	<a href="/detail_plenary">Plenary Seesion @ Conrad Hotel<br>Click here (-&gt; detail)</a></td>
   </tr>
 </table></div>
 
