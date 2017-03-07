@@ -78,7 +78,7 @@
                             <div class="container">		 
 
 
-                                <input type="hidden" id="user_id" value=<%= sess.getAttribute("user_id")%> />
+                                <input type="hidden" id="user_id" value=<%= request.getSession().getAttribute("user_id")%> />
                                 <input type="hidden" id="start" value=${list.start} />
                                 <input type="hidden" id="class_id" value=${list.class_id} />
 

@@ -1,33 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ibm.gbs.gbs_cai_web.mapper.ClassMapper">
-    <cache />
-    <resultMap id="getAllClass" type="com.ibm.gbs.gbs_cai_web.vo.ClassVO">
-        <result property="class_id"              column ="class_id" />        
-        <result property="title"         column ="title" />
-        <result property="room"         column ="room" />
-        <result property="speaker"            column = "speaker" />
-        <result property="session"          column = "session" />
-        <result property="capacity"          column = "capacity" />
-        <result property="detail"             column ="detail" />
-        <result property="speaker_img"           column ="speaker_img" />
-    </resultMap>
-    <resultMap id="getClassDetailById" type="com.ibm.gbs.gbs_cai_web.vo.ClassVO">
-        <result property="class_id"              column ="class_id" />        
-        <result property="title"         column ="title" />
-        <result property="room"         column ="room" />
-        <result property="speaker"            column = "speaker" />
-        <result property="session"          column = "session" />
-        <result property="capacity"          column = "capacity" />
-        <result property="detail"             column ="detail" />
-        <result property="speaker_img"           column ="speaker_img" />
-        <result property="attend_code"          column="attend_code"/>
-        <result property="start"                column = "start"/>
-        <result property="end"                  column ="end"/>
-    </resultMap>
+<cache />
+       
     
-    
-    <!--  Admin Page 관련 -->
+    <!--  Admin Page 관련 (혜정) -->
     
     <select id="getClassList" resultType="com.ibm.gbs.gbs_cai_web.vo.ClassVO">
         SELECT *	   
@@ -49,40 +26,40 @@
     
     <insert id="addClass" parameterType="com.ibm.gbs.gbs_cai_web.vo.ClassVO">
         INSERT INTO CLASS (
-        class_id
-        ,title
-        ,room
-        ,speaker
-        ,session
-        ,capacity
-        ,detail
-        ,speaker_img
-        ,attend_code
+	        class_id
+	        ,title
+	        ,room
+	        ,speaker
+	        ,session
+	        ,capacity
+	        ,detail
+	        ,speaker_img
+	        ,attend_code
         )
         VALUES (
-        #{class_id}
-        ,#{title}
-        ,#{room}
-        ,#{speaker}
-        ,#{session}
-        ,#{capacity}
-        ,#{detail}
-        ,#{speaker_img}
-        ,#{attend_code}   	
+	        #{class_id}
+	        ,#{title}
+	        ,#{room}
+	        ,#{speaker}
+	        ,#{session}
+	        ,#{capacity}
+	        ,#{detail}
+	        ,#{speaker_img}
+	        ,#{attend_code}   	
         )	
     </insert>
     
     <update id="modifyClass" parameterType="com.ibm.gbs.gbs_cai_web.vo.ClassVO">
         UPDATE CLASS SET
-        class_id	 = #{class_id}
-        ,title		 = #{title}
-        ,room		 = #{room}
-        ,speaker	 = #{speaker}
-        ,session	 = #{session}
-        ,capacity	 = #{capacity}
-        ,detail		 = #{detail}
-        ,speaker_img = #{speaker_img}
-        ,attend_code = #{attend_code}
+	        class_id	 = #{class_id}
+	        ,title		 = #{title}
+	        ,room		 = #{room}
+	        ,speaker	 = #{speaker}
+	        ,session	 = #{session}
+	        ,capacity	 = #{capacity}
+	        ,detail		 = #{detail}
+	        ,speaker_img = #{speaker_img}
+	        ,attend_code = #{attend_code}
         WHERE
         idx = #{idx}
     </update>
@@ -93,18 +70,18 @@
         WHERE idx=#{idx}
     </delete>
     
-    <!-- 클래스 상세 -->
+    <!-- 클래스 상세 (혜정) -->
     <select id="getClassDetailById" parameterType="String" resultType="com.ibm.gbs.gbs_cai_web.vo.ClassVO">
         SELECT *	   
         FROM CLASS
         WHERE class_id=#{class_id}
     </select>
     
-    <select id="getClassDetailByTitleRoom" parameterType="String" resultType="com.ibm.gbs.gbs_cai_web.vo.ClassVO">
+    <select id="getClassDetailByTitleSession" parameterType="String" resultType="com.ibm.gbs.gbs_cai_web.vo.ClassVO">
         SELECT *	   
         FROM CLASS
-        WHERE title=#{param1}
-        AND   room =#{param2}
+        WHERE title = #{param1}
+        AND session = #{param2}
     </select>
     
     
@@ -130,6 +107,7 @@
         WHERE class_id=#{class_id} and attend_code=#{code}
     </select>
     
+    
     <!-- index page - get all class -->
     <select id="getAllClass" resultMap="getAllClass" >
         SELECT class_id, title, room, speaker, session, capacity, detail, speaker_img
@@ -143,4 +121,27 @@
         WHERE  class_id = #{class_id}
     </select>
     
+    <resultMap id="getAllClass" type="com.ibm.gbs.gbs_cai_web.vo.ClassVO">
+        <result property="class_id"              column ="class_id" />        
+        <result property="title"         column ="title" />
+        <result property="room"         column ="room" />
+        <result property="speaker"            column = "speaker" />
+        <result property="session"          column = "session" />
+        <result property="capacity"          column = "capacity" />
+        <result property="detail"             column ="detail" />
+        <result property="speaker_img"           column ="speaker_img" />
+    </resultMap>
+    <resultMap id="getClassDetailById" type="com.ibm.gbs.gbs_cai_web.vo.ClassVO">
+        <result property="class_id"              column ="class_id" />        
+        <result property="title"         column ="title" />
+        <result property="room"         column ="room" />
+        <result property="speaker"            column = "speaker" />
+        <result property="session"          column = "session" />
+        <result property="capacity"          column = "capacity" />
+        <result property="detail"             column ="detail" />
+        <result property="speaker_img"           column ="speaker_img" />
+        <result property="attend_code"          column="attend_code"/>
+        <result property="start"                column = "start"/>
+        <result property="end"                  column ="end"/>
+    </resultMap>
 </mapper>

@@ -31,7 +31,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler( NoHandlerFoundException.class)
     public String notFound(Exception exception) {
         System.out.println("----Caught 111KeywordNotFoundException----");
-        System.out.println(exception.printStackTrace());
+        exception.printStackTrace();
         return "404Error";
     }
     
@@ -49,7 +49,7 @@ public class GlobalExceptionHandler {
     
     @ExceptionHandler( Exception.class)
     public String hadleException(Exception exception) {
-        System.out.println(exception.printStackTrace());
+        exception.printStackTrace();
         System.out.println("----Caught 333KeywordNotFoundException----");
         return "404Error";
     }

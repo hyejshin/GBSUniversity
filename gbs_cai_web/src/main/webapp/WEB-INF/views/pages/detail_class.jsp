@@ -14,9 +14,50 @@
 
 <div class="container">		 
 
+    <%HttpSession session1 = request.getSession();%>
+
+    <input type="hidden" id="user_id" value=<%= session1.getAttribute("user_id")%> />
+    <input type="hidden" id="start" value=${list.start} />
+    <input type="hidden" id="class_id" value=${list.class_id} />
+
+    <div class="work">
+        <div class="details">		 
+            <div class="col-md-7 posts">
+                <h3 style="font-weight:600;">${vo.title}</h3>
+                <p>Speaker: ${vo.speaker}</p>
+                <p>Date : Saturday, 11 March 2017</p>
+                <p>Time : ${vo.session} <span>Room: ${vo.room}</span></p><br>
+            </div>	
+            <div class="col-md-3 date" style="padding:0px;">
+                <p style="padding: 8px 0px;">WHAT</p>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="details">			 
+            <div class="col-md-7 posts">
+                <h4>ABOUT THIS SESSION</h4>
+                <p>${vo.detail}</p>	
+            </div>	
+            <div class="col-md-3 date" style="padding:0px;">
+                <p style="padding: 8px 0px;">WHO</p>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="details">
+
+            <div class="col-md-7 posts">
+                <h4>ABOUT THE SPEAKER</h4>
+                <div class="img-responsive" style="float:left;"><img src="/images/speaker/${vo.speaker_img}" alt="img"/></div>
+                <p>${vo.speaker}</p></div>	
+            <div class="clearfix"></div>
+        </div>
+    </div>
+
+
+    <<<<<<< HEAD
     <%
         HttpSession sess = request.getSession();
-        UserVO user = (UserVO)sess.getAttribute("user");
+        UserVO user = (UserVO) sess.getAttribute("user");
     %>
     <div id="detail">
         <div class="work">
@@ -52,6 +93,8 @@
         </div>
     </div>
 </div>
+=======
+>>>>>>> 77b34f55d5e1ef00db930c4a29b4846134704e8f
 <div id="boardDiv">
     <h3>Question Board</h3>
     <div class="info">
@@ -79,7 +122,7 @@
                         <caption>Ask Question</caption>	
                         <tr>
                             <td>Writer</td>
-                            <td><input type="text" name="user_nm" size=30 value="<%=sess.getAttribute("user_nm")%>" readonly></td>
+                            <td><input type="text" name="user_nm" size=30 value="<%=session1.getAttribute("user_nm")%>" readonly></td>
                         </tr>
                         <tr>
                             <td>Question</td>
@@ -97,14 +140,14 @@
                             </td>
                         </tr> 
                     </table>
-                    <input type="hidden" id="user_id" name="user_id"  value="<%= sess.getAttribute("user_id")%>" />
+                    <input type="hidden" name="user_id"  value=<%=session1.getAttribute("user_id")%> />
                     <input type="hidden" id="class_id" name="class_id" value=${vo.class_id} />
                     <input type="hidden" name="board_id" value="" />
                     <%
                         String type = user.getType();
                     %>
                     <input type="hidden" id="type" name="type" value="<%=type%>"/>
-                    
+
                 </form> 
             </section>
         </table>

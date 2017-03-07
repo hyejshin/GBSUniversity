@@ -2,7 +2,8 @@
     Document   : header
     Created on : 20170212
     Author     : Joosang Kim
-    Editor     : 20170214 - Misu Choi 
+    Editor     : 20170214 - Misu Choi
+    Editor     : 20170305 - HyeJung Shin
     Description: Header
 --%>
 <!-- HEADER -->
@@ -22,8 +23,12 @@
 
                 <ul>
                     <li><a href="/index">Home</a></li>
-                    <li><a href="/myLecture?user_id=<%=user_id%>" >My Lecture</a></li>
-                    <li><a href="/board">My Q&A</a></li>
+                    <li><a href="/myLecture?user_id=<%=user_id%>">My Lecture</a></li>
+                    <li><a href="/attend">Attend</a></li>
+                    <%if(user_id.equals("ibmk0reagbs!")) {%>
+                      <li><a href="/adminClass">Admin Page</a></li>
+                    <%}%>
+
                 </ul>
                 <!--script-->
                 <script>
@@ -42,7 +47,7 @@
                                 <ul class="dropdown-menu">
                                     <li class="divider"></li>
                                     <li>
-                                        <a tabindex="-1" href="/login.jsp">Logout</a>
+                                        <a tabindex="-1" href="/logout">Logout</a>
                                     </li>
                                 </ul>
                             </li>

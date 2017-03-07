@@ -11,10 +11,13 @@ import org.apache.ibatis.annotations.Param;
 /**
  * DAO Mapper
  * Author: Joosang Kim
+ * Editor: HyeJung Shin
  * version : 0.0.1
  */
 public interface LoginMapper {
     
     public UserVO LoginByUserInfo(@Param("user_id") String user_id, @Param("password")String password);
+    
+    public UserVO LoginByUserId(String user_id);
     
 }

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.ibm.gbs.gbs_cai_web.common.StringUtils;
 import com.ibm.gbs.gbs_cai_web.service.ClassService;
 import com.ibm.gbs.gbs_cai_web.service.EnrollmentService;
 import com.ibm.gbs.gbs_cai_web.vo.ClassVO;
@@ -19,6 +20,7 @@ import com.ibm.gbs.gbs_cai_web.vo.ClassVO;
 @Controller
 public class AdminController {
 	protected final Log logger = LogFactory.getLog(getClass());
+	StringUtils util = new StringUtils();
 	
 	@Autowired
     private ClassService classService;
@@ -36,7 +38,7 @@ public class AdminController {
         
 		model.addAttribute("list", classService.getClassList());
 		
-		return "admin/adminClass";
+		return "adminClassList";
 	}
 	
 	@RequestMapping("/classList")
@@ -48,18 +50,18 @@ public class AdminController {
 			model.addAttribute("list", classService.getClassListBySession(session));
 		}
 
-		return "admin/adminClass";
+		return "adminClassList";
 	}
 	
 	@RequestMapping("/addClassView")
 	public String addClassView (Model model) throws Exception {
 		
-		return "admin/adminAddClass";
+		return "adminAddClass";
 	}
 	
 	@RequestMapping("/addClass")
-	public String addClass(ClassVO vo) throws Exception {		
-
+	public String addClass(ClassVO vo) throws Exception {
+		
 		classService.addClass(vo);
 		
 		return "redirect:adminClass";
@@ -70,7 +72,7 @@ public class AdminController {
 		
 		model.addAttribute("vo", classService.getClassDetail(idx));
 
-		return "admin/adminModifyClass";
+		return "adminModifyClass";
 	}
 	
 	@RequestMapping("/modifyClass")
@@ -87,7 +89,7 @@ public class AdminController {
 		
 		model.addAttribute("vo", classService.getClassDetail(idx));
 
-		return "admin/adminClassDetail";
+		return "adminClassDetail";
 	}
 	
 	@RequestMapping(value={"/deleteClass"}, method=RequestMethod.GET)

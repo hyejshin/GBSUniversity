@@ -1,12 +1,12 @@
 /**
  * File         : LoginController.java
  * author       : Joosang Kim
+ * editor       : HyeJung Shin
  * version      : 0.0.1
  * description  : login controller for this web app
  */
 package com.ibm.gbs.gbs_cai_web.controllers;
 
-import com.ibm.gbs.gbs_cai_web.service.ClassService;
 import com.ibm.gbs.gbs_cai_web.service.LoginService;
 import com.ibm.gbs.gbs_cai_web.vo.UserVO;
 import java.io.IOException;
@@ -55,28 +55,40 @@ public class LoginController {
 
         UserVO user = new UserVO();
         String user_id = req.getParameter("user_id").toString();
-        String password = req.getParameter("password").toString();
+        //String password = req.getParameter("password").toString();
  
         session.invalidate();
-        user = loginService.checkLoginValidation(user_id, password);
-        HttpSession newSession = req.getSession();
-        newSession.setAttribute("user", user);
-        newSession.setAttribute("user_nm", user.getUser_nm());
-        newSession.setAttribute("user_id", user.getUser_id());
+        //user = loginService.checkLoginValidation(user_id, password);
+        user = loginService.checkUserValidation(user_id);
+        
         try {
-            if (user == null) {
-                req.setAttribute("isLogin", false);
+        	if(user == null) {
+            	req.setAttribute("isLogin", false);
                 modelMap.addAttribute("error_msg", "Please check your login information.");
-                System.out.println("dd");
                 res.sendRedirect("/login");
             } else {
-                req.setAttribute("isLogin", true);
+            	HttpSession newSession = req.getSession();
+    	        newSession.setAttribute("user", user);
+    	        newSession.setAttribute("user_id", user.getUser_id());
+    	        
+    	        req.setAttribute("isLogin", true);
                 res.sendRedirect("/index");
             }
         } catch (Exception e) {
             e.printStackTrace();
             res.setHeader("status", "500");
         }
+    }
+    
+    /**
+     * User Logout Author : HyeJung
+     */
+    @RequestMapping("/logout")
+    public String logOut(ModelMap modelMap, HttpSession session){
+    	
+    	session.invalidate();
+        
+        return "login";
     }
 
 }

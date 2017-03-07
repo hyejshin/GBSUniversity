@@ -10,9 +10,7 @@
     <div class="container">
         <div class="footer-top" >
             <div class="col-md-4 twitter">						
-                <h4>Latest Work</h4>
                 <div class="twitter-in">
-                    <p>2017 03 11 CAI University  By IBM<p>
                         <a href="#" >2017 03 11 CAI University  By IBM</a>
                         <span>copyright by IBM</span>
                 </div>						

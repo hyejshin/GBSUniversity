@@ -15,4 +15,5 @@ public class StringUtils {
 		}
 		return digit1;
  	}
+	
 }
