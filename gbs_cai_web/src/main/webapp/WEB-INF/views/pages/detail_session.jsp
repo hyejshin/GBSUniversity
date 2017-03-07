@@ -19,16 +19,16 @@
             <td>17:30</td>
         </tr>
         <tr>
-            <td bgcolor="FFF888">7F,<br>On-demand<br></td>
+            <td bgcolor="FFF888">7F,<br>On-<br>demand<br></td>
             <td style="vertical-align:middle;"><a href="/class/detail?class_id=C001">Bluemix</a></td>
-            <td style="vertical-align:middle;"><a href="/class/detail?class_id=C007">BlockChain</a></td>
+            <td style="vertical-align:middle;"><a href="/class/detail?class_id=C007">Block<br>Chain</a></td>
             <td style="vertical-align:middle;"><a href="/class/detail?class_id=C013">Accelerated<br>App. Dev<br></b></a></td>
         </tr>
         <tr>
-            <td bgcolor="FFF888">6F,<br>Demo Zone</td>
+            <td bgcolor="FFF888">6F,<br>Demo<br>Zone</td>
             <td style="vertical-align:middle;"><a href="/class/detail?class_id=C002">WATSON<br>IOT<br></a></td>
             <td style="vertical-align:middle;"><a href="/class/detail?class_id=C008">Bluemix<br></a></td>
-            <td style="vertical-align:middle;"><a href="/class/detail?class_id=C014">BlockChain<br></a></td>
+            <td style="vertical-align:middle;"><a href="/class/detail?class_id=C014">Block<br>Chain<br></a></td>
         </tr>
         <tr>
             <td bgcolor="FFF888">6F,<br>Conference room</td>
@@ -43,10 +43,10 @@
             <td style="vertical-align:middle;"><a href="/class/detail?class_id=C016">Industry 4.0</a></td>
         </tr>
         <tr>
-            <td bgcolor="FFF888">6F,<br>IBM Studio<br>6M06</td>
+            <td bgcolor="FFF888">6F, IBM<br>Studio<br>6M06</td>
             <td style="vertical-align:middle;"><a href="/class/detail?class_id=C005">Mine the<br>Base, CIF</a></td>
-            <td style="vertical-align:middle;"><a href="/class/detail?class_id=C011">CAI Offering</a></td>
-            <td style="vertical-align:middle;"><a href="/class/detail?class_id=C017">Continuous<br>Improvement</a></td>
+            <td style="vertical-align:middle;"><a href="/class/detail?class_id=C011">CAI<br>Offering</a></td>
+            <td style="vertical-align:middle;"><a href="/class/detail?class_id=C017">Continuous Improvement</a></td>
         </tr>
         <tr>
             <td bgcolor="FFF888">6F,<br>6M02</td>

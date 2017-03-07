@@ -9,7 +9,7 @@
 <thead>
   <tr bgcolor="#04B486">
     <th style="width:15%; text-align:center;">Start</th>
-    <th style="width:15%; text-align:center;" >End</th>
+    <th style="width:15%; text-align:center;">End</th>
     <th colspan="2" style="text-align:center;">Session</th>
   </tr>
   </thead>
@@ -34,8 +34,8 @@
   <tr style="text-align:center;" bgcolor="#80C8BF">
     <td>9:45</td>
     <td >10:45</td>
-    <td >Cloud Application<br>Service</td>
-    <td>Watson Case</td>
+    <td >Cloud<br>Application<br>Service</td>
+    <td style="vertical-align:middle;">Watson Case</td>
   </tr>
   <tr style="text-align:center;" bgcolor="#B7DCD7">
     <td>10:45</td>
@@ -45,8 +45,8 @@
   <tr style="text-align:center;" bgcolor="#80C8BF">
     <td>11:00</td>
     <td>12:00</td>
-    <td >Watson Case</td>
-    <td >Cloud Application<br>Service</td>
+    <td style="vertical-align:middle;">Watson Case</td>
+    <td >Cloud<br>Application<br>Service</td>
   </tr>
   <tr style="text-align:center;">
     <td >12:00</td>
