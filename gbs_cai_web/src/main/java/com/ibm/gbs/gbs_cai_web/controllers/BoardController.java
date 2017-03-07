@@ -76,7 +76,7 @@ public class BoardController {
      * add question
      */
     @RequestMapping(value="/board/postQuestion", method=RequestMethod.POST)
-    public void postQuestion(@RequestParam("detail") String detail,
+    public @ResponseBody List<BoardVO>postQuestion(@RequestParam("detail") String detail,
                                                    @RequestParam("board_id") String board_id,
                                                    @RequestParam("class_id") String class_id, 
                                                    @RequestParam("type")    String type, 
@@ -94,7 +94,25 @@ public class BoardController {
         if(ret<0){
             throw new Exception();
         }
-        res.sendRedirect("/class/detail?class_id="+class_id);
+        return boardService.getBoardListByClassId(class_id);
+    }
+    
+    
+    @RequestMapping(value="/board/modifyQuestion", method=RequestMethod.POST)
+    public @ResponseBody List<BoardVO>modifyQuestion(@RequestParam("detail") String detail,
+                                                   @RequestParam("board_id") String board_id,
+                                                   @RequestParam("class_id") String class_id, 
+                                                   @RequestParam("type")    String type,
+                                                   @RequestParam("idx")     int idx,
+                                                   HttpServletResponse res,
+                                                   HttpSession session) throws Exception{       
+        int ret = 0;        
+        ret = boardService.modifyBoardContent(idx, class_id, board_id, detail);        
+    
+        if(ret<0){
+            throw new Exception();
+        }
+        return boardService.getBoardListByClassId(class_id);
     }
     
     /**

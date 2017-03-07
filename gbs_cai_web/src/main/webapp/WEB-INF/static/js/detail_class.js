@@ -22,29 +22,36 @@ jQuery(document).ready(function ($) {
             error: ajaxErr
         });
 
-        $(".container").css("display", "none");
+        $("#class-detail-div").css("display", "none");
         $("#boardDiv").css("display", "block");
 
         $(window).scrollTop(0);
     });
 
-    //Ajax to server -> post question
-//    $("#submit").click(function () {
-//        $.ajax({
-//            type: "POST",
-//            dataType: "json",
-//            url: "/board/postQuestion",
-//            data: $("#BoardWriteForm").serialize(),
-//            success: saveReqResponse,
-//            error: ajaxErr
-//        });
-//
-//        $(".container").css("display", "none");
-//        $("#boardDiv").css("display", "block");
-//
-//        $(window).scrollTop(0);
-//
-//    });
+   // Ajax to server -> post question
+    $("#submit").click(function () {
+        var url = "";
+        if($("#submit").attr("value") === "Modify"){
+            url = "/board/modifyQuestion";
+        }else{
+            url = "/board/postQuestion";
+        }
+        $.ajax({
+            type: "POST",
+            dataType: "json",
+            url: url,
+            data: $("#BoardWriteForm").serialize(),
+            success: saveReqResponse,
+            error: ajaxErr
+        });
+
+        $(".container").css("display", "none");
+        $("#boardDiv").css("display", "block");
+
+        $(window).scrollTop(0);
+        $("#addPostDetail").text("");
+
+    });
 
     //post anwser
     $('body').on("click",".answer-submit", function(){
@@ -54,31 +61,40 @@ jQuery(document).ready(function ($) {
         param +="&class_id="+$("#class_id").val();
         param +="&board_id="+$("#board_id").val();
         
-        console.log(param);
         $.ajax({
             type:"POST",
             dataType:"json",
             url : postUrl,
-            data: $(this).parent(".answerForm").serialize(),
+            data: param,
             success: detailReqResponse,
             error : ajaxErr
         });
         
-        
     });
 
 
-
+    //click table row event
     $('body').on('click', '.showContent', function () {
-        var cssVal = $(this).next().css("display");
-
+        var cssVal = $(this).next($(".content")).css("display");
+        
         if (cssVal === 'table-row') {
-            $(this).next().css("display", "none");
+            $(this).next(".content").css("display", "none");
+            $(this).next(".content").next(".answer").css("display", "none");
         } else {
             $('.content').css("display", "none");
-            $(this).next().slideToggle("fast");
-            $(this).next().next().slideToggle("fast");
+            $('.answer').css("display", "none");
+            $(this).next(".content").slideToggle("fast");
+            $(this).next(".content").next(".answer").slideToggle("fast");
         }
+    });
+    
+    //click modify button -> modify version
+    $('body').on('click','.modify', function(){
+        $("#writenew").children(".table caption").text("Modify Question"); 
+        var str = $(this).parents("tr").next(".content").text();
+        $("#addPostDetail").val(str);
+        $("#idx").attr("value", $(this).attr("idx"));
+        $("#submit").val("Modify");
     });
 
     $("#showList").click(function () {
@@ -90,14 +106,13 @@ jQuery(document).ready(function ($) {
 function createBoardList(data){
     var htmlStr = "";
     var cnt = 1;
-    console.log(data);
     for (var i in data) {
         htmlStr += "<tr class='showContent'>";
         htmlStr += "<td align=center>" + cnt + "</td>";
         htmlStr += "<td align=center>" + data[i].title + "</td>";
         htmlStr += "<td align=center>" + data[i].user_nm + "</td>";
         if (data[i].user_id == $("#user_id").val()) {// Question
-            htmlStr += "<td align=center><input type='button'  class='btn btn-info question' value='Modify'/></td>";
+            htmlStr += "<td align=center><input type='button' class='btn btn-info modify' idx='"+data[i].idx+"'value='Modify'/></td>";
         } 
         htmlStr += "</tr>";
         htmlStr += "<tr class='content' style='display:none;'>";
@@ -122,6 +137,8 @@ function createBoardList(data){
 var saveReqResponse = function(data){
     alert("Post Complete!");
     createBoardList(data);
+    $("#addPostDetail").val("");
+    
 };
 var boardReqResponse = function (data) {
     createBoardList(data);

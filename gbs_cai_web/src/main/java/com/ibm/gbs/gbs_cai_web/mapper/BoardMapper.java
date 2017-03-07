@@ -18,4 +18,8 @@ public interface BoardMapper {
     public List<BoardVO> getBoardListByClassId(@Param("class_id") String class_id);
     public int insertNewBoardConetent(BoardVO boardvo);
     public int insertComment(CommentVO commentvo);
+    public int modifyBoardContent(@Param("idx")      int idx
+                                , @Param("class_id") String class_id
+                                , @Param("board_id") String board_id
+                                , @Param("detail")   String detail);
 }

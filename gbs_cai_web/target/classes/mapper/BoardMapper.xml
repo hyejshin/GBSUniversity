@@ -48,9 +48,16 @@
         , #{type}
         )	
     </insert>
+    <update id="modifyBoardContent" parameterType="hashmap">
+        update BOARD
+        set detail = #{detail}
+        where idx = #{idx} 
+          and class_id =#{class_id}
+          and board_id =#{board_id}
+    </update>
     
     <insert id= "insertComment" parameterType="com.ibm.gbs.gbs_cai_web.vo.CommentVO">
-        INSERT INTO COMMENT (
+        INSERT INTO COMMENTS (
         class_id
         , board_id
         , ref_idx
@@ -58,8 +65,8 @@
         , user_id
         )
         VALUES (
-        #{board_id}
-        , #{class_id}
+        #{class_id}
+        , #{board_id}
         , #{ref_idx}
         , #{detail}
         , #{user_id}

@@ -26,6 +26,12 @@ public interface BoardService {
      * param : BoardVO boardvo
      */
     public int insertNewBoardConetent(BoardVO boardvo);
+    /**
+     * modify board contents
+     * author : Joosang Kim
+     * param : String class_id, String board_id, String detail
+     */
+    public int modifyBoardContent(int idx, String class_id, String board_id, String detail);
     
     /**
      * insert comment 

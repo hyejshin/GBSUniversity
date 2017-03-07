@@ -12,7 +12,7 @@
     <script src='<c:url value="${showDetailJsAttributes}"/>'></script>
 </c:forEach>
 
-<div class="container">		 
+<div id="class-detail-div" class="container">		 
 
     <%HttpSession session1 = request.getSession();%>
 
@@ -113,7 +113,7 @@
     <div id="writenew" >
         <table summary="Ask Question">
             <section class="box">
-                <form name="BoardWriteForm" id="BoardWriteForm" action="/board/postQuestion" method="POST">
+                <form name="BoardWriteForm" id="BoardWriteForm" >
                     <table class="table" summary="테이블 구성" >
                         <caption>Ask Question</caption>	
                         <tr>
@@ -122,14 +122,14 @@
                         </tr>
                         <tr>
                             <td>Question</td>
-                            <td><textarea name="detail" cols="30" rows="8" style="overflow-y:scroll; resize:none; "></textarea></td>
+                            <td><textarea id="addPostDetail" name="detail" cols="30" rows="8" style="overflow-y:scroll; resize:none; "></textarea></td>
                         </tr>
                         <tr>
                             <td colspan=2><hr size=1></td>
                         </tr>
                         <tr>
                             <td colspan="2"><div align="center">
-                                    <input type="submit" id="submit" value="Write" class="btn btn-info">&nbsp;&nbsp;
+                                    <input type="button" id="submit" value="Write" class="btn btn-info">&nbsp;&nbsp;
                                     <input type="button" value="Cancel" class="btn btn-danger" >
 
                                 </div>
@@ -143,6 +143,7 @@
                         String type = user.getType();
                     %>
                     <input type="hidden" id="type" name="type" value="<%=type%>"/>
+                    <input type="hidden" id="idx"  name="idx" value=""/>
 
                 </form> 
             </section>

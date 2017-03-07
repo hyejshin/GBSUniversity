@@ -34,5 +34,10 @@ public class BoardServiceImpl implements BoardService{
     public int insertComment(CommentVO commentvo) {
         return boardMapper.insertComment(commentvo);
     }
+
+    @Override
+    public int modifyBoardContent(int idx, String class_id, String board_id, String detail) {
+        return boardMapper.modifyBoardContent(idx, class_id,  board_id,  detail);
+    }
     
 }

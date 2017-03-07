@@ -5,6 +5,7 @@
  */
 package com.ibm.gbs.gbs_cai_web.vo;
 
+import java.io.Serializable;
 import org.springframework.stereotype.Repository;
 
 /**

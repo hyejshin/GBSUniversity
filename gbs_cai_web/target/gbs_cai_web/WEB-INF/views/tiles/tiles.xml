@@ -171,7 +171,15 @@
     <definition name="attendCheck" extends="base-definition">  
         <put-attribute name="title" value="attendCheck" />
         <put-attribute name="body" value="/WEB-INF/views/pages/attend.jsp" />  
-	</definition> 
+    </definition> 
+    <definition name="maintile" extends="base-definition">  
+        <put-attribute name="title" value="Maintile" />
+        <put-attribute name="body" value="/WEB-INF/views/pages/maintile.jsp" />  
+    </definition>     
+     <definition name="roominfo" extends="base-definition">    	        
+        <put-attribute name="title" value="RoomInfo" />  
+        <put-attribute name="body" value="/WEB-INF/views/pages/roominfo.jsp" />                             
+    </definition>
     
     <definition name="404Error" extends="base-definition">  
         <put-attribute name="title" value="Not Found" />  
