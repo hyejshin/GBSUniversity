@@ -9,16 +9,7 @@
 </c:forEach>
 
 <div class="container">		
-		<div class="banner">
-			<div class="banner-matter">
-				<h2>Creative Ideas Live Here</h2>
-				<p>Aliquam suscipit vel nulla quis eleifend. Maecenas vitae tristique ante. Sed sit amet vehicula libero.</p>		
-			 </div>
-			<div class="tv">
-				<img class="img-responsive" src="/images/tv.png" alt="">
-			</div>
-				 <div class="clearfix"> </div>
-		</div>
+		
 	</div>
 				<div class="container">
 		              <div class="single-page-artical">
@@ -31,10 +22,10 @@
 					</ul>
 					<div class="clearfix"> </div>
  
-        <h3>Lecture Data</h3>
+        <h3>My Enrollment</h3>
         <br />
         <br />
-        Morning Session
+	<h5>Morning Session</h5>
         <table id="table" class="table table-striped table-condensed" cellspacing="0" width="100%">
 					<thead>
 						<tr>
@@ -51,13 +42,13 @@
 						<tr>
 							<td>Session1 (9:45 - 10:45)</td>
 							<td>Cloud Application Services</td>
-							<td>7F, On-demand room(7M17,7M18,7M19)</td>
+							<td>7F, On-demand room</td>
 							<td></td>
 						</tr>
 						<tr>
 							<td>Session2 (11:00 - 12:00)</td>
 							<td>Watson Case</td>
-							<td>7F, On-demand room(7M17,7M18,7M19)</td>
+							<td>7F, On-demand room</td>
 							<td></td>
 						</tr>
 					</c:if>
@@ -66,13 +57,13 @@
 						<tr>
 							<td>Session1 (9:45 - 10:45)</td>
 							<td>Cloud Application Services</td>
-							<td>7F, On-demand room(7M17,7M18,7M19)</td>
+							<td>7F, On-demand room</td>
 							<td></td>
 						</tr>
 						<tr>
 							<td>Session2 (11:00 - 12:00)</td>
 							<td>Watson Case</td>
-							<td>7F, On-demand room(7M17,7M18,7M19)</td>
+							<td>7F, On-demand room</td>
 							<td></td>
 						</tr>
 					</c:if>
@@ -82,37 +73,40 @@
 
 				</table>
 				
-        Break-Out Session
+	<h5>Break-Out Session</h5>
+      <b>"각 세션 title 클릭 시 세션 내용 및 Q&A를 확인 할 수 있습니다.
+      Clink on the each session, session description and Q&A are available"<b>
+
         <table id="table" class="table table-striped table-condensed" cellspacing="0" width="100%">
 					<thead>
 						<tr>
 							<td>Session</td>
 							<td>Title</td>
 							<td>Room</td>
-							<td>Enter</td>
+							
 						</tr>
 					</thead>
 					<tbody>	
 
 						<tr>
-							<td>Session1 (1:15 - 2:30)</td>
-							<td>${vo.session1}</td>
+							<td>Session1<br><b>(1:15 - 2:30)</b></td>
+							<td><a href='/class/detailLec?title=${vo.session1}&session=Session1 (1:15 - 2:30)'>${vo.session1}</a></td>
 							<td>${vo.room1}</td>
-							<td><a href='/class/detailLec?title=${vo.session1}&session=Session1 (1:15 - 2:30)'>해당클래스가기</a></td>
+							
 						</tr>
 						
 						<tr>
-							<td>Session2 (2:45 - 4:00)</td>
-							<td>${vo.session2}</td>
+							<td>Session2<br><b>(2:45 - 4:00)</b></td>
+							<td><a href='/class/detailLec?title=${vo.session2}&session=Session2 (2:45 - 4:00)'>${vo.session2}</a></td>
 							<td>${vo.room2}</td>
-							<td><a href='/class/detailLec?title=${vo.session2}&session=Session2 (2:45 - 4:00)'>해당클래스가기</a></td>
+							
 						</tr>
 						
 						<tr>
-							<td>Session3 (4:15 - 5:30)</td>
-							<td>${vo.session3}</td>
+							<td>Session3<br><b>(4:15 - 5:30)</b></td>
+							<td><a href='/class/detailLec?title=${vo.session3}&session=Session3 (4:15 - 5:30)'>${vo.session3}</a></td>
 							<td>${vo.room3}</td>
-							<td><a href='/class/detailLec?title=${vo.session3}&session=Session3 (4:15 - 5:30)'>해당클래스가기</a></td>
+							
 						</tr>
 						
 					</tbody>
