@@ -35,9 +35,9 @@ public class LoginController {
     public String loginPage(ModelMap modelMap, HttpServletRequest req, HttpServletResponse res, HttpSession session){
         String returnUrl = "login";
         if(session.getAttribute("user") != null){
-            returnUrl = "index";
+            returnUrl = "maintile";
             try {
-                res.sendRedirect("/index");
+                res.sendRedirect("/maintile");
                 return returnUrl;
             } catch (IOException ex) {
                 Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
@@ -73,7 +73,7 @@ public class LoginController {
                 newSession.setAttribute("user_nm", user.getUser_nm());
     	        
     	        req.setAttribute("isLogin", true);
-                res.sendRedirect("/index");
+                res.sendRedirect("/maintile");
             }
         } catch (Exception e) {
             e.printStackTrace();
