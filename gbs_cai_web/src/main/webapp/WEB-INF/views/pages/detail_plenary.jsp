@@ -13,28 +13,28 @@
     <td colspan="4" >Topic</td>
   </tr>
   <tr>
-    <td bgcolor="#BCE99D">18:00</td>
-    <td bgcolor="#BCE99D">18:10</td>
+    <td bgcolor="#BCE99D" style="text-align:center;">18:00</td>
+    <td bgcolor="#BCE99D" style="text-align:center;">18:10</td>
     <td colspan="4">Opening</td>
   </tr>
   <tr>
-    <td bgcolor="#BCE99D">18:10</td>
-    <td bgcolor="#BCE99D">18:30</td>
+    <td bgcolor="#BCE99D" style="text-align:center;">18:10</td>
+    <td bgcolor="#BCE99D" style="text-align:center;">18:30</td>
     <td colspan="4">Keynote Speach -CAI University</td>
   </tr>
   <tr>
-    <td bgcolor="#BCE99D">18:30</td>
-    <td bgcolor="#BCE99D">20:00</td>
+    <td bgcolor="#BCE99D" style="text-align:center;">18:30</td>
+    <td bgcolor="#BCE99D" style="text-align:center;">20:00</td>
     <td colspan="4">Dinner &amp; Networking</td>
   </tr>
   <tr>
-    <td bgcolor="#BCE99D">20:00</td>
-    <td bgcolor="#BCE99D">21:15</td>
+    <td bgcolor="#BCE99D" style="text-align:center;">20:00</td>
+    <td bgcolor="#BCE99D" style="text-align:center;">21:15</td>
     <td colspan="4">Have Fun &amp; Lucky Draw</td>
   </tr>
   <tr>
-    <td bgcolor="#BCE99D">21:15</td>
-    <td bgcolor="#BCE99D">21:30</td>
+    <td bgcolor="#BCE99D" style="text-align:center;">21:15</td>
+    <td bgcolor="#BCE99D" style="text-align:center;">21:30</td>
     <td colspan="4">Closing</td>
   </tr>
 </table></div>
