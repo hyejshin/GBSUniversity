@@ -32,7 +32,7 @@ public class FrontController {
     }
     
     @RequestMapping("/index")
-    public String indecPage(ModelMap model) {
+    public String indexPage(ModelMap model) {
     	
     	return "index";
     }
