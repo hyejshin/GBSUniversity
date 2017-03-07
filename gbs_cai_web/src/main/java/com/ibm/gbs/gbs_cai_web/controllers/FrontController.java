@@ -37,4 +37,10 @@ public class FrontController {
     	return "detail_session";
     }
     
+    @RequestMapping("/detail_plenary")
+    public String detailPlenaryPage(ModelMap model) {
+    	
+    	return "detail_plenary";
+    }
+    
 }
