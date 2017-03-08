@@ -5,7 +5,7 @@
 <div class="tg-wrap">
 <table class="table table-bordered table-condensed" style="table-layout: fixed; word-break:break-all">
   <tr>
-    <th colspan="6" style="text-align:center;" >Plenary Seesion @ Conrad Hotel</th>
+    <th colspan="6" style="text-align:center;" >Plenary Seesion<br><b> Grand Ballroom(3F), Conrad Hotel</th>
   </tr>
   <tr bgcolor="#BCE99D">
     <td style="width:15%; text-align:center;">Start</td>
@@ -20,7 +20,7 @@
   <tr>
     <td bgcolor="#BCE99D" style="text-align:center;">18:10</td>
     <td bgcolor="#BCE99D" style="text-align:center;">18:30</td>
-    <td colspan="4" style="text-align:center;">Keynote Speach -CAI University</td>
+    <td colspan="4" style="text-align:center;">Keynote Speech -CAI Transformation</td>
   </tr>
   <tr>
     <td bgcolor="#BCE99D" style="text-align:center;">18:30</td>
