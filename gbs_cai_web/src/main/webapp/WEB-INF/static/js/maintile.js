@@ -25,7 +25,7 @@ function searchCallback(status, result){
     var lat = result.places[0].latitude;
     var long = result.places[0].longitude;
     path.push(new daum.maps.LatLng(lat,long));
-    
+    git
     polyline = new daum.maps.Polyline({
         path: path, // 선을 구성하는 좌표배열 
         strokeWeight: 5, // 선의 두께 

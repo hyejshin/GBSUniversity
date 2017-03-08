@@ -51,74 +51,74 @@
             <div class="clearfix"></div>
         </div>
     </div>
-
-<%
-       HttpSession sess = request.getSession();
-       UserVO user = (UserVO) sess.getAttribute("user");
-%>
- <div class="container">
-<div id="boardDiv">
-    <h3>Question Board</h3>
-    <div class="info">
-        <table class="table table-striped" id="class-board" style="background-color: D8D8D8;">
-            <thead>
-                <tr>
-                    <th style="text-align: center;">NO</th>
-                    <th style="text-align: center;">TITLE</th>
-                    <th colspan="1" style="text-align: center;">WRITER</th>
-                </tr>
-            </thead>
-            <tbody id="board-body"></tbody>
-            <tfoot>
-                <tr>
-                    <td id="pagenation" align="center" colspan="5">1</td>
-                </tr>
-            </tfoot>
-        </table>
-    </div>
-     </div>
-     <div class="container">
-    <div id="writenew" >
-        <table summary="Ask Question">
-            <section class="box">
-                <form name="BoardWriteForm" class="fomrm-horizontal" id="BoardWriteForm" >
-                    <table class="table" summary="테이블 구성" >
-                        <caption>Ask Question</caption>	
-                        <tr>
-                            <td>Writer</td>
-                            <td><input type="text" name="user_nm" class="form-control" value="<%=session1.getAttribute("user_nm")%>" readonly></td>
-                        </tr>
-                        <tr>
-                            <td>Question</td>
-                            <td><textarea id="addPostDetail" name="detail"class="form-control" rows="8" style="overflow-y:scroll; resize:none; "></textarea></td>
-                        </tr>
-                        <tr>
-                            <td colspan=2><hr size=1></td>
-                        </tr>
-                        <tr>
-                            <td colspan="2"><div align="center">
-                                    <input type="button" id="submit" value="Write" class="btn btn-info">&nbsp;&nbsp;
-                                    <input type="button" value="Cancel" class="btn btn-danger" >
-
-                                </div>
-                            </td>
-                        </tr> 
-                    </table>
-                    <input type="hidden" name="user_id"  value=<%=session1.getAttribute("user_id")%> />
-                    <input type="hidden" name="class_id" id="class_id" value=${vo.class_id} />
-                    <input type="hidden" name="board_id" id="board_id" value=${board_id} />
-                    <%
-                        String type = user.getType();
-                    %>
-                    <input type="hidden" id="type" name="type" value="<%=type%>"/>
-                    <input type="hidden" id="idx"  name="idx" value=""/>
-
-                </form> 
-            </section>
-        </table>
-
-    </div>
-    <input type="button" id="showQnA" class="btn btn-info" value="Show Q&A" />
-    <input type="button" id="showList" class="btn btn-default" value="Show Class Detail" />
 </div>
+<%
+    HttpSession sess = request.getSession();
+    UserVO user = (UserVO) sess.getAttribute("user");
+%>
+<div class="container">
+    <div id="boardDiv">
+        <h3>Question Board</h3>
+        <div class="info">
+            <table class="table table-striped" id="class-board" style="background-color: D8D8D8;">
+                <thead>
+                    <tr>
+                        <th style="text-align: center;">NO</th>
+                        <th style="text-align: center;">TITLE</th>
+                        <th colspan="1" style="text-align: center;">WRITER</th>
+                    </tr>
+                </thead>
+                <tbody id="board-body"></tbody>
+                <tfoot>
+                    <tr>
+                        <td id="pagenation" align="center" colspan="5">1</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        <div class="container">
+            <div id="writenew" >
+                <table summary="Ask Question">
+                    <section class="box">
+                        <form name="BoardWriteForm" class="fomrm-horizontal" id="BoardWriteForm" >
+                            <table class="table" summary="테이블 구성" >
+                                <caption>Ask Question</caption>	
+                                <tr>
+                                    <td>Writer</td>
+                                    <td><input type="text" name="user_nm" class="form-control" value="<%=session1.getAttribute("user_nm")%>" readonly></td>
+                                </tr>
+                                <tr>
+                                    <td>Question</td>
+                                    <td><textarea id="addPostDetail" name="detail"class="form-control" rows="8" style="overflow-y:scroll; resize:none; "></textarea></td>
+                                </tr>
+                                <tr>
+                                    <td colspan=2><hr size=1></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"><div align="center">
+                                            <input type="button" id="submit" value="Write" class="btn btn-info">&nbsp;&nbsp;
+                                            <input type="button" value="Cancel" class="btn btn-danger" >
+
+                                        </div>
+                                    </td>
+                                </tr> 
+                            </table>
+                            <input type="hidden" name="user_id"  value=<%=session1.getAttribute("user_id")%> />
+                            <input type="hidden" name="class_id" id="class_id" value=${vo.class_id} />
+                            <input type="hidden" name="board_id" id="board_id" value=${board_id} />
+                            <%
+                                String type = user.getType();
+                            %>
+                            <input type="hidden" id="type" name="type" value="<%=type%>"/>
+                            <input type="hidden" id="idx"  name="idx" value=""/>
+
+                        </form> 
+                    </section>
+                </table>
+
+            </div>
+            <input type="button" id="showQnA" class="btn btn-info" value="Show Q&A" />
+            <input type="button" id="showList" class="btn btn-default" value="Show Class Detail" />
+        </div>
     </div>
+</div>

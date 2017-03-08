@@ -77,7 +77,7 @@ jQuery(document).ready(function ($) {
     $('body').on('click', '.showContent', function () {
         var cssVal = $(this).next($(".content")).css("display");
         var className = "."+$(this).attr('value');
-        console.log(className);
+
         if (cssVal === 'table-row') {
             $(this).next(".content").css("display", "none");
             $(this).next(".content").next(".answer").css("display", "none");
@@ -112,57 +112,62 @@ function createBoardList( data){
     var htmlStr = "";
     var cnt = 1;
     var skipFlag = false;
-    console.log( data);
-    for (var i in  data) {
-
-        i = Number(i);
+    
+    console.log(data.length);
+    
+    if(data.length===0){
+        htmlStr = "<tr><td colspan='4' align=center>No contents posted yet.</td></tr>";
         
-        if(!skipFlag){
-            htmlStr += "<tr class='showContent' value= "+data[i].idx+">";
-            htmlStr += "<td align=center>" + cnt + "</td>";
-            htmlStr += "<td align=center>" +  data[i].title + "</td>";
-            htmlStr += "<td align=center>" +  data[i].user_nm + "</td>";
-            if ( data[i].user_id == $("#user_id").val()) {// Question
-                htmlStr += "<td align=center><input type='button' class='btn btn-info modify' idx='"+ data[i].idx+"'value='Modify'/></td>";
-            } 
-            htmlStr += "</tr>";
-            htmlStr += "<tr class='content "+data[i].idx +"' style='display:none;'>";
-            htmlStr += "<td colspan = '3' >" +  data[i].detail + "</td>";
-            htmlStr += "</tr>";
-        }
-        console.log(skipFlag);
-        /**comments*/
-        if(i <  data.length-1){
-            if( data[i].idx ===  data[i+1].idx){
-                skipFlag = true;
-                htmlStr += "<tr class='comment "+ data[i].idx+"' style='display:none;'>";
-                    htmlStr += "<td colspan='2'>" + data[i].comments +"</td>";
-                    htmlStr += "<td>"+ data[i].cm_author +"</td>";
+    }else{
+        for (var i in  data) {
+
+            i = Number(i);
+
+            if(!skipFlag){
+                htmlStr += "<tr class='showContent' value= "+data[i].idx+">";
+                htmlStr += "<td align=center>" + cnt + "</td>";
+                htmlStr += "<td align=center>" +  data[i].title + "</td>";
+                htmlStr += "<td align=center>" +  data[i].user_nm + "</td>";
+                if ( data[i].user_id == $("#user_id").val()) {// Question
+                    htmlStr += "<td align=center><input type='button' class='btn btn-info modify' idx='"+ data[i].idx+"'value='Modify'/></td>";
+                } 
                 htmlStr += "</tr>";
-                continue;
-            }else if(( data[i].idx !==  data[i+1].idx) && ( data[i].cm_idx !== 0)){
-                skipFlag = false;
-                console.log(data[i].cm_author);
-                htmlStr += "<tr class='comment "+ data[i].idx +"' style='display:none;'>";
-                    htmlStr += "<td colspan='2'>" + data[i].comments +"</td>";
-                    htmlStr += "<td>"+ data[i].cm_author +"</td>";
+                htmlStr += "<tr class='content "+data[i].idx +"' style='display:none;'>";
+                htmlStr += "<td colspan = '3' >" +  data[i].detail + "</td>";
                 htmlStr += "</tr>";
             }
-        }
-        if($("#type").val() === SPEAKER){ // Leaner , Speaker
-            htmlStr += "<tr class='answer' style='display:none;'><td align=center colspan =4>" 
-                        + "<form class='answerForm' name='answerForm' >"
-                                +"<textarea class='answerDetail' name='answerDetail'></textarea>"
-                                +"<input type='hidden' name='idx' value='"+ data[i].idx+"'/>"
-                                +"<input type='button' class='btn btn-info answer-submit' value='Answer'/>"
-                        + "</form>"
-                    + "</td></tr>";
-        }
-        cnt++;
-    }; 
-    if (cnt == 1) {
-        htmlStr = "<tr><td colspan='4' align=center>No contents posted yet.</td></tr>";
+
+            /**comments*/
+            if(i <  data.length-1){
+                if( data[i].idx ===  data[i+1].idx){
+                    skipFlag = true;
+                    htmlStr += "<tr class='comment "+ data[i].idx+"' style='display:none;'>";
+                        htmlStr += "<td colspan='2'>" + data[i].comments +"</td>";
+                        htmlStr += "<td>"+ data[i].cm_author +"</td>";
+                    htmlStr += "</tr>";
+                    continue;
+                }else if(( data[i].idx !==  data[i+1].idx) && ( data[i].cm_idx !== 0)){
+                    skipFlag = false;
+                    console.log(data[i].cm_author);
+                    htmlStr += "<tr class='comment "+ data[i].idx +"' style='display:none;'>";
+                        htmlStr += "<td colspan='2'>" + data[i].comments +"</td>";
+                        htmlStr += "<td>"+ data[i].cm_author +"</td>";
+                    htmlStr += "</tr>";
+                }
+            }
+            if($("#type").val() === SPEAKER){ // Leaner , Speaker
+                htmlStr += "<tr class='answer' style='display:none;'><td align=center colspan =4>" 
+                            + "<form class='answerForm' name='answerForm' >"
+                                    +"<textarea class='answerDetail' name='answerDetail'></textarea>"
+                                    +"<input type='hidden' name='idx' value='"+ data[i].idx+"'/>"
+                                    +"<input type='button' class='btn btn-info answer-submit' value='Answer'/>"
+                            + "</form>"
+                        + "</td></tr>";
+            }
+            cnt++;
+        }; 
     }
+    console.log(htmlStr);
     $("#board-body").html(htmlStr);
 }
 var saveReqResponse = function(data){

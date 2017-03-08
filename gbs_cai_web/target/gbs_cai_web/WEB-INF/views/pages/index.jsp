@@ -2,10 +2,38 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="false" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<style>
+<!--
+ table {
+  border-collapse: separate;
+  border-spacing: 0 2.5px;
+}
+tr td:first-child,
+tr th:first-child {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+tr td:last-child,
+tr th:last-child {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+thead {
+  border:1px solid;
+}
+
+tbody{
+ border:1px solid;
+  background-color: #EEEEEE;
+}
+
+-->
+</style>
 <div class="container">
 
 <h4>CAI University Agenda</h4><br>
-   <table class="table table-condensed table-striped" style="table-layout: fixed; word-break:break-all">
+   <table class="table table-condensed" style="table-layout: fixed; word-break:break-all">
 <thead>
   <tr bgcolor="#04B486">
     <th style="width:15%; text-align:center;">Start</th>
@@ -14,19 +42,19 @@
   </tr>
   </thead>
   <tbody>
-  <tr style="text-align:center;" bgcolor="#80C8BF">
+  <tr style="text-align:center; background:#99ccff;">
     <td style="vertical-align:middle;">8:30</td>
     <td style="vertical-align:middle; border-right: 1px solid #E7EFEF;">9:00</td>
-    <td colspan="2"><b>Registration & Tea Time</b><br>7F, On-demand
+    <td colspan="2"><b>Registeration & Tea Time</b><br>7F, On-demand
     </td>
   </tr>
-  <tr style="text-align:center;" bgcolor="#80C8BF">
+  <tr style="text-align:center;" bgcolor="#CCFFCC">
     <td style="vertical-align:middle;">9:00</td>
     <td style="vertical-align:middle; border-right: 1px solid #E7EFEF;">9:30</td>
     <td colspan="2"><b>Opening</b><br>7F, On-demand
     </td>
   </tr>
-  <tr style="text-align:center;" bgcolor="#B7DCD7">
+  <tr style="text-align:center;">
     <td rowspan="2" style="vertical-align:middle;">9:30</td>
     <td rowspan="2" style="vertical-align:middle; border-right: 1px solid #E7EFEF;">9:45</td>
     <td colspan="2">Move to Breakout rooms</td>
@@ -38,8 +66,8 @@
   <tr style="text-align:center;">
     <td style="vertical-align:middle;">9:45</td>
     <td style="vertical-align:middle; border-right: 1px solid #E7EFEF;">10:45</td>
-    <td style="border-right: 1px solid #B9BEBD; border-right: 1px solid #B9BEBD;"><b>Cloud<br>Application<br>Service</b></td>
-    <td style="vertical-align:middle;"><b>Watson Case</b></td>
+    <td style="border-right: 1px solid #B9BEBD; border-right: 1px solid #B9BEBD; background:#33cccc;"><b>Cloud<br>Application<br>Service</b></td>
+    <td style="vertical-align:middle; background:#ffcc99;"><b>Watson Case</b></td>
   </tr>
   <tr style="text-align:center;">
     <td style="vertical-align:middle;">10:45</td>
@@ -49,8 +77,8 @@
   <tr style="text-align:center;">
     <td style="vertical-align:middle;">11:00</td>
     <td style="vertical-align:middle; border-right: 1px solid #E7EFEF;">12:00</td>
-    <td style="vertical-align:middle; border-right: 1px solid #B9BEBD;"><b>Watson Case</b></td>
-    <td bgcolor="#80C8BF"><b>Cloud<br>Application<br>Service</b></td>
+    <td style="vertical-align:middle; border-right: 1px solid #B9BEBD; background:#ffcc99;"><b>Watson Case</b></td>
+    <td style="background:#33cccc;"><b>Cloud<br>Application<br>Service</b></td>
   </tr>
   <tr style="text-align:center;">
     <td style="vertical-align:middle;">12:00</td>
@@ -61,9 +89,10 @@
 </table>
 
 <div class="tg-wrap">
-<table class="table table-bordered table-condensed" style="table-layout: fixed; word-break:break-all">
+<table class="table table-condensed" style="table-layout: fixed; word-break:break-all; ">
   <tr bgcolor="#FFF888">
-	  <td style="width:15%; text-align:center; vertical-align:middle;">13:15</td>
+	  <td style="width:15%; text-align:center; vertical-align:middle; border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;">13:15</td>
 	  <td style="width:15%; text-align:center; vertical-align:middle; border-right: 1px solid #E7EFEF;">17:30</td>
     <td colspan="2" height="100" style="text-align:center; vertical-align:middle;" >
     	<a href="/detail_session"><b>Break-Out Session</b><br>(Click here for detail)</a></td>
@@ -77,7 +106,7 @@
 </div>
 
 <div class="tg-wrap">
-<table class="table table-bordered table-condensed" style="table-layout: fixed; word-break:break-all">
+<table class="table table-condensed" style="table-layout: fixed; word-break:break-all">
   <tr bgcolor="#BCE99D">
   	<td style="width:15%; text-align:center; vertical-align:middle;">18:00</td>
     <td style="width:15%; text-align:center; vertical-align:middle; border-right: 1px solid #E7EFEF;">21:30</td>
