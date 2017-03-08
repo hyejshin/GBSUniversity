@@ -31,6 +31,12 @@ jQuery(document).ready(function ($) {
    // Ajax to server -> post question
     $("#submit").click(function () {
         var url = "";
+        var str = $("#addPostDetail").val();
+        if($.trim(str) == ""){
+            alert("Please Enter Post");
+            return;
+        }
+        
         if($("#submit").attr("value") === "Modify"){
             url = "/board/modifyQuestion";
         }else{
@@ -56,6 +62,14 @@ jQuery(document).ready(function ($) {
     //post anwser
     $('body').on("click",".answer-submit", function(){
         var postUrl = "/board/postAnswer";
+        var classname = "."+$(this).attr("idx");
+        var idx = $(this).attr("idx");
+        var str = $(this).siblings(classname).val();
+        
+        if($.trim(str) === ""){
+            alert("Please Enter Comments");
+            return;
+        }
         
         var param = $(this).parent(".answerForm").serialize();
         param +="&class_id="+$("#class_id").val();
@@ -113,8 +127,6 @@ function createBoardList( data){
     var cnt = 1;
     var skipFlag = false;
     
-    console.log(data.length);
-    
     if(data.length===0){
         htmlStr = "<tr><td colspan='4' align=center>No contents posted yet.</td></tr>";
         
@@ -148,7 +160,6 @@ function createBoardList( data){
                     continue;
                 }else if(( data[i].idx !==  data[i+1].idx) && ( data[i].cm_idx !== 0)){
                     skipFlag = false;
-                    console.log(data[i].cm_author);
                     htmlStr += "<tr class='comment "+ data[i].idx +"' style='display:none;'>";
                         htmlStr += "<td colspan='2'>" + data[i].comments +"</td>";
                         htmlStr += "<td>"+ data[i].cm_author +"</td>";
@@ -158,9 +169,9 @@ function createBoardList( data){
             if($("#type").val() === SPEAKER){ // Leaner , Speaker
                 htmlStr += "<tr class='answer' style='display:none;'><td align=center colspan =4>" 
                             + "<form class='answerForm' name='answerForm' >"
-                                    +"<textarea class='answerDetail' name='answerDetail'></textarea>"
+                                    +"<textarea class='answerDetail "+data[i].idx+"' name='answerDetail'></textarea>"
                                     +"<input type='hidden' name='idx' value='"+ data[i].idx+"'/>"
-                                    +"<input type='button' class='btn btn-info answer-submit' value='Answer'/>"
+                                    +"<input type='button' class='btn btn-info answer-submit' idx='"+data[i].idx+"' value='Answer'/>"
                             + "</form>"
                         + "</td></tr>";
             }
@@ -171,7 +182,6 @@ function createBoardList( data){
 }
 var saveReqResponse = function(data){
     alert("Post Complete!");
-    console.log(data);
     createBoardList(data);
     $("#addPostDetail").val("");
     
@@ -184,8 +194,6 @@ var detailReqResponse = function(data){
 }
 
 var ajaxErr = function (data) {
-    //console.log(data);
-    //alert(data);
     alert("Error occured.Please try again.");
 }
 

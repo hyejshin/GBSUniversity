@@ -65,7 +65,7 @@
                 <tr>
                     <th style="text-align: center;">NO</th>
                     <th style="text-align: center;">TITLE</th>
-                    <th colspan="1" style="text-align: center;">WRITER</th>
+                    <th style="text-align: center;">WRITER</th>
                 </tr>
             </thead>
             <tbody id="board-body"></tbody>
@@ -80,7 +80,7 @@
         <div id="writenew" >
             <table summary="Ask Question">
                 <section class="box">
-                    <form name="BoardWriteForm" class="fomrm-horizontal" id="BoardWriteForm" >
+                    <form name="BoardWriteForm" class="form-horizontal" id="BoardWriteForm" >
                         <table class="table" summary="테이블 구성" >
                             <caption>Ask Question</caption>	
                             <tr>
@@ -95,7 +95,7 @@
                                 <td colspan=2><hr size=1></td>
                             </tr>
                             <tr>
-                                <td colspan="2"><div align="center">
+                                <td><div align="center">
                                         <input type="button" id="submit" value="Write" class="btn btn-info">&nbsp;&nbsp;
                                         <input type="button" value="Cancel" class="btn btn-danger" >
 
