@@ -35,7 +35,7 @@ tbody{
 <h4>CAI University Agenda</h4><br>
    <table class="table table-condensed" style="table-layout: fixed; word-break:break-all">
 <thead>
-  <tr bgcolor="#04B486" style="height:25px;">
+  <tr bgcolor="#04B486">
     <th style="width:15%; text-align:center;">Start</th>
     <th style="width:15%; text-align:center;">End</th>
     <th colspan="2" style="text-align:center;">Session</th>
