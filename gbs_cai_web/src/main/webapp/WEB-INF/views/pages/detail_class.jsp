@@ -66,6 +66,7 @@
                     <th style="text-align: center;">NO</th>
                     <th style="text-align: center;">TITLE</th>
                     <th style="text-align: center;">WRITER</th>
+                    <th style="text-align: center;"> </th>
                 </tr>
             </thead>
             <tbody id="board-body"></tbody>
