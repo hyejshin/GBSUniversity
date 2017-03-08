@@ -32,7 +32,7 @@
             , CM.idx   cm_idx
             , CM.detail comments
             , CM.user_id cm_author
-        FROM BOARD BO JOIN cCLASS CL 
+        FROM BOARD BO JOIN CLASS CL 
         ON   BO.class_id = CL.class_id JOIN USER US 
         ON   BO.user_id  = US.user_id LEFT OUTER JOIN COMMENTS CM
         ON   BO.idx      = CM.ref_idx        

@@ -1,5 +1,6 @@
 @import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap-glyphicons.css");
 
+
 body{
 	background:#f4f4f4;
 	font-family: 'Open Sans', sans-serif;	
@@ -84,6 +85,7 @@ h1,h2,h3,h4,h5,h6,label,p{
 .top-nav span.menu{
 	display: none;
 }
+
 /*--responsive media-quries--*/
 @media(max-width:768px){
 .top-nav ul{

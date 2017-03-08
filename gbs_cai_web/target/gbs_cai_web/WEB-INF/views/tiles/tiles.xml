@@ -99,12 +99,14 @@
     </definition> 
     
 
-  
-    <!-- Home Page -->
+ 
+    
+    <!-- Agenda -->
     <definition name="index" extends="base-definition">  
-        <put-attribute name="title" value="Session" />
+        <put-attribute name="title" value="Agenda" />
         <put-attribute name="body" value="/WEB-INF/views/pages/index.jsp" />  
-    </definition>     
+    </definition> 
+        
     <!-- login page -->
     <definition name="login" extends="login-definition">    	        
         <put-attribute name="title" value="Welcome" />  
@@ -142,27 +144,6 @@
     </definition> 
     
         
-    
-<!--    <definition name="board" extends="base-definition">  
-        <put-attribute name="title" value="LectueQna" />  
-        <put-attribute name="body" value="/WEB-INF/views/pages/board.jsp" />  
-         js 
-        <put-list-attribute name="boardJSList" cascade="true">
-            <add-attribute value="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"/>
-            <add-attribute value="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" />
-            <add-attribute value="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/js/bootstrap-select.min.js" />
-            <add-attribute value="/script/sockjs.min.js"/>
-            <add-attribute value="/script/stomp.min.js"/>
-            <add-attribute value="/script/board.js" />
-             <add-attribute value="/script/jquery-1.10.2.min.js"/>
-        </put-list-attribute>
-        
-        <put-list-attribute name="boardcss" cascade="true">
-            <add-attribute value="/css/board.css" />
-        </put-list-attribute>
-        
-    </definition> -->
-    
     <definition name="history" extends="base-definition">  
         <put-attribute name="title" value="MyLecture" />  
         <put-attribute name="body" value="/WEB-INF/views/pages/history.jsp" />  
@@ -172,10 +153,20 @@
         <put-attribute name="title" value="attendCheck" />
         <put-attribute name="body" value="/WEB-INF/views/pages/attend.jsp" />  
     </definition> 
+    
     <definition name="maintile" extends="base-definition">  
         <put-attribute name="title" value="Maintile" />
         <put-attribute name="body" value="/WEB-INF/views/pages/maintile.jsp" />  
+        <put-attribute name="test" value="test"/>
+        <put-list-attribute name="maintileJs" cascade="true">
+            <add-attribute value="//apis.daum.net/maps/maps3.js?apikey=7f3731dca672112d36654cd2bc58faab&amp;libraries=services"/>
+            <add-attribute value="/script/maintile.js"/>
+        </put-list-attribute>
+        <put-list-attribute name="maintileCss" cascade="true">
+            <add-attribute value="/css/maintile.css"/>
+        </put-list-attribute>
     </definition>     
+    
      <definition name="roominfo" extends="base-definition">    	        
         <put-attribute name="title" value="RoomInfo" />  
         <put-attribute name="body" value="/WEB-INF/views/pages/roominfo.jsp" />                             

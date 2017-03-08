@@ -157,6 +157,14 @@
     <definition name="maintile" extends="base-definition">  
         <put-attribute name="title" value="Maintile" />
         <put-attribute name="body" value="/WEB-INF/views/pages/maintile.jsp" />  
+        <put-attribute name="test" value="test"/>
+        <put-list-attribute name="maintileJs" cascade="true">
+            <add-attribute value="//apis.daum.net/maps/maps3.js?apikey=7f3731dca672112d36654cd2bc58faab&amp;libraries=services"/>
+            <add-attribute value="/script/maintile.js"/>
+        </put-list-attribute>
+        <put-list-attribute name="maintileCss" cascade="true">
+            <add-attribute value="/css/maintile.css"/>
+        </put-list-attribute>
     </definition>     
     
      <definition name="roominfo" extends="base-definition">    	        

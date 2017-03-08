@@ -22,8 +22,9 @@
                 <span class="menu"><img src="<c:url value="/images/menu.png" />" alt=""> </span>
 
                 <ul>
-                    <li><a href="/index">Home</a></li>
-                    <li><a href="/myLecture?user_id=<%=user_id%>">My Lecture</a></li>
+                    <li><a href="/maintile">Home</a></li>
+                    <li><a href="/index">Agenda</a></li>
+                    <li><a href="/myLecture?user_id=<%=user_id%>">My Enrollment</a></li>
                     <li><a href="/attend">Attend</a></li>
                     <!--
                     <%//if(user_id.equals("ibmk0reagbs!")) {%>

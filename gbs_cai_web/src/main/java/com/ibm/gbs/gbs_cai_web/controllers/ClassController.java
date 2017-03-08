@@ -96,6 +96,8 @@ public class ClassController {
     @RequestMapping(value={"/class/viewDetail"}, method=RequestMethod.GET)
     public ModelAndView viewDetail(@RequestParam("idx") String class_id) throws Exception{
         ClassVO classInfo = classService.getDetailByCondition(class_id);
+        int totalPage = 1;
+        
 
     	ModelAndView mv = new ModelAndView();
     	mv.setViewName("detail_class");
