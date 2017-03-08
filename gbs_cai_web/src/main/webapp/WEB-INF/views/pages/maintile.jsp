@@ -2,6 +2,11 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
+<%
+	HttpSession session2 = request.getSession();
+	String user_id2 = (String)session2.getAttribute("user_id");
+%>
+
 <table class="table" style="border-collapse: separate; border-spacing: 3px 5px; padding:5px;">
     <thead>
         <tr>
@@ -13,7 +18,7 @@
         <tr style="height: 100px; text-align: center; vertical-align:middle;">
             
             <td style="width: 50%; text-align: center; vertical-align:middle; background-color: #CC0099; color:#fff;">
-            <a href="/history" style="text-decoration:none;">My Enrollment</a></td>
+            <a href="/myLecture?user_id=<%=user_id2%>" style="text-decoration:none;">My Enrollment</a></td>
             <td style="width: 50%;text-align: center; vertical-align:middle; background-color: #330099; color:#fff;">
             <a href="/attend" style="text-decoration:none;">Attendance Check</a></td>
          
