@@ -166,12 +166,12 @@ function createBoardList( data){
             }
             cnt++;
         }; 
-    }
-    console.log(htmlStr);
+    };
     $("#board-body").html(htmlStr);
 }
 var saveReqResponse = function(data){
     alert("Post Complete!");
+    console.log(data);
     createBoardList(data);
     $("#addPostDetail").val("");
     
