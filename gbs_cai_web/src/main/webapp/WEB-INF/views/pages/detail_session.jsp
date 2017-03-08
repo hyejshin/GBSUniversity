@@ -30,7 +30,7 @@
             <td style="vertical-align:middle;"><a href="/class/detail?class_id=C014">Block<br>Chain<br></a></td>
         </tr>
         <tr>
-            <td bgcolor="#FFF888"">6F,<br>Conference room</td>
+            <td bgcolor="#FFF888"">6F,<br>6M01</td>
             <td style="vertical-align:middle;"><a href="/class/detail?class_id=C003">Cloud<br>Application<br></a></td>
             <td style="vertical-align:middle;"><a href="/class/detail?class_id=C009">CIO<br>Advisory<br></a></td>
             <td style="vertical-align:middle;"><a href="/class/detail?class_id=C015">Cognitive<br>Solution<br></a></td>
@@ -42,7 +42,7 @@
             <td style="vertical-align:middle;"><a href="/class/detail?class_id=C016">Industry 4.0</a></td>
         </tr>
         <tr>
-            <td bgcolor="#FFF888"">6F, IBM<br>Studio<br>6M06</td>
+            <td bgcolor="#FFF888"">6F,<br>IBM<br>Studio</td>
             <td style="vertical-align:middle;"><a href="/class/detail?class_id=C005">Mine the<br>Base, CIF</a></td>
             <td style="vertical-align:middle;"><a href="/class/detail?class_id=C011">CAI<br>Offering</a></td>
             <td style="vertical-align:middle;"><a href="/class/detail?class_id=C017">Continuous Improvement</a></td>
