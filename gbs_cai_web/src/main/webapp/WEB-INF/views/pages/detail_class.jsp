@@ -99,7 +99,7 @@
                 <tr>
                     <th style="text-align: center;">NO</th>
                     <th style="text-align: center;">TITLE</th>
-                    <th colspan="2" style="text-align: center;">WRITER</th>
+                    <th colspan="1" style="text-align: center;">WRITER</th>
                 </tr>
             </thead>
             <tbody id="board-body"></tbody>

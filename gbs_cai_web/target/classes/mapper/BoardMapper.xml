@@ -13,6 +13,9 @@
         <result property="detail"           column ="detail" />
         <result property="step"             column="step"/>
         <result property="indent"           column="indent"/>
+        <result property="cm_idx"           column="cm_idx"/>
+        <result property="comments"           column="comments"/>
+        <result property="cm_author"           column="cm_author"/>
     </resultMap>
     
     <select id="getBoardListByClassId" resultMap = "getBoardListVOByClassId"   parameterType="String">
@@ -26,10 +29,14 @@
             , BO.type type
             , BO.step step
             , BO.indent indent  
-        FROM compose.BOARD BO JOIN compose.CLASS CL 
-        ON   BO.class_id = CL.class_id JOIN compose.USER US 
-        ON   BO.user_id  = US.user_id
-        WHERE CL.class_id=#{class_id} 
+            , CM.idx   cm_idx
+            , CM.detail comments
+            , CM.user_id cm_author
+        FROM BOARD BO JOIN cCLASS CL 
+        ON   BO.class_id = CL.class_id JOIN USER US 
+        ON   BO.user_id  = US.user_id LEFT OUTER JOIN COMMENTS CM
+        ON   BO.idx      = CM.ref_idx        
+        WHERE CL.class_id=#{class_id}
     </select>
     
     <insert id="insertNewBoardConetent" parameterType="com.ibm.gbs.gbs_cai_web.vo.BoardVO">

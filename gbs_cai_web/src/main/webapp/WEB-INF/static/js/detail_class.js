@@ -76,15 +76,20 @@ jQuery(document).ready(function ($) {
     //click table row event
     $('body').on('click', '.showContent', function () {
         var cssVal = $(this).next($(".content")).css("display");
-        
+        var className = "."+$(this).attr('value');
+        console.log(className);
         if (cssVal === 'table-row') {
             $(this).next(".content").css("display", "none");
             $(this).next(".content").next(".answer").css("display", "none");
+            $(this).next(".content").next(".comment").css("display", "none");
         } else {
             $('.content').css("display", "none");
             $('.answer').css("display", "none");
+            $('.comment').css("display", "none");
             $(this).next(".content").slideToggle("fast");
             $(this).next(".content").next(".answer").slideToggle("fast");
+            $(this).next(".content").siblings(className).slideToggle("fast");
+            
         }
     });
     
@@ -103,26 +108,52 @@ jQuery(document).ready(function ($) {
     });
 });
 
-function createBoardList(data){
+function createBoardList( data){
     var htmlStr = "";
     var cnt = 1;
-    for (var i in data) {
-        htmlStr += "<tr class='showContent'>";
-        htmlStr += "<td align=center>" + cnt + "</td>";
-        htmlStr += "<td align=center>" + data[i].title + "</td>";
-        htmlStr += "<td align=center>" + data[i].user_nm + "</td>";
-        if (data[i].user_id == $("#user_id").val()) {// Question
-            htmlStr += "<td align=center><input type='button' class='btn btn-info modify' idx='"+data[i].idx+"'value='Modify'/></td>";
-        } 
-        htmlStr += "</tr>";
-        htmlStr += "<tr class='content' style='display:none;'>";
-        htmlStr += "<td colspan = '4' >" + data[i].detail + "</td>";
-        htmlStr += "</tr>";
+    var skipFlag = false;
+    console.log( data);
+    for (var i in  data) {
+
+        i = Number(i);
+        
+        if(!skipFlag){
+            htmlStr += "<tr class='showContent' value= "+data[i].idx+">";
+            htmlStr += "<td align=center>" + cnt + "</td>";
+            htmlStr += "<td align=center>" +  data[i].title + "</td>";
+            htmlStr += "<td align=center>" +  data[i].user_nm + "</td>";
+            if ( data[i].user_id == $("#user_id").val()) {// Question
+                htmlStr += "<td align=center><input type='button' class='btn btn-info modify' idx='"+ data[i].idx+"'value='Modify'/></td>";
+            } 
+            htmlStr += "</tr>";
+            htmlStr += "<tr class='content "+data[i].idx +"' style='display:none;'>";
+            htmlStr += "<td colspan = '3' >" +  data[i].detail + "</td>";
+            htmlStr += "</tr>";
+        }
+        console.log(skipFlag);
+        /**comments*/
+        if(i <  data.length-1){
+            if( data[i].idx ===  data[i+1].idx){
+                skipFlag = true;
+                htmlStr += "<tr class='comment "+ data[i].idx+"' style='display:none;'>";
+                    htmlStr += "<td colspan='2'>" + data[i].comments +"</td>";
+                    htmlStr += "<td>"+ data[i].cm_author +"</td>";
+                htmlStr += "</tr>";
+                continue;
+            }else if(( data[i].idx !==  data[i+1].idx) && ( data[i].cm_idx !== 0)){
+                skipFlag = false;
+                console.log(data[i].cm_author);
+                htmlStr += "<tr class='comment "+ data[i].idx +"' style='display:none;'>";
+                    htmlStr += "<td colspan='2'>" + data[i].comments +"</td>";
+                    htmlStr += "<td>"+ data[i].cm_author +"</td>";
+                htmlStr += "</tr>";
+            }
+        }
         if($("#type").val() === SPEAKER){ // Leaner , Speaker
             htmlStr += "<tr class='answer' style='display:none;'><td align=center colspan =4>" 
                         + "<form class='answerForm' name='answerForm' >"
                                 +"<textarea class='answerDetail' name='answerDetail'></textarea>"
-                                +"<input type='hidden' name='idx' value='"+data[i].idx+"'/>"
+                                +"<input type='hidden' name='idx' value='"+ data[i].idx+"'/>"
                                 +"<input type='button' class='btn btn-info answer-submit' value='Answer'/>"
                         + "</form>"
                     + "</td></tr>";

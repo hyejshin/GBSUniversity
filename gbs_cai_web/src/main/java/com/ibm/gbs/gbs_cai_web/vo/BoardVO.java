@@ -25,6 +25,9 @@ public class BoardVO implements Serializable {
     private int step;
     private int indent;
     private String date;
+    int cm_idx;
+    String comments;
+    String cm_author;
 
     //default contructor
     public BoardVO() {
@@ -82,6 +85,29 @@ public class BoardVO implements Serializable {
         this.indent = indent;
         this.date = date;
     };
+    
+        /**
+     *  Author   : Joosang Kim
+     *  Detail   : Contructor for getBoardListByClassId-EnrollmentService.class with comments
+     *             VO for detail
+     */
+    public BoardVO(int idx, String board_id, String class_id, String tilte,
+             String user_id, String user_nm, String type, String detail,
+             int step,  int indent, int cm_idx, String comments, String cm_author) {
+        this.idx = idx;
+        this.board_id = board_id;
+        this.class_id = class_id;
+        this.title = title;
+        this.user_id = user_id;
+        this.user_nm = user_nm;
+        this.type = type;
+        this.detail = detail;
+        this.step = step;
+        this.indent = indent;
+        this.cm_idx = cm_idx;
+        this.comments = comments;
+        this.cm_author = cm_author;
+    };        
     
     
     
@@ -174,4 +200,30 @@ public class BoardVO implements Serializable {
     public void setUser_nm(String user_nm) {
         this.user_nm = user_nm;
     }
+
+    public int getCm_idx() {
+        return cm_idx;
+    }
+
+    public void setCm_idx(int cm_idx) {
+        this.cm_idx = cm_idx;
+    }
+
+    public String getComments() {
+        return comments;
+    }
+
+    public void setComments(String comments) {
+        this.comments = comments;
+    }
+
+    public String getCm_author() {
+        return cm_author;
+    }
+
+    public void setCm_author(String cm_author) {
+        this.cm_author = cm_author;
+    }
+    
+    
 }
