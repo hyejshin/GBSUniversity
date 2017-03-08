@@ -19,14 +19,14 @@
         </thead>
         <tr>
             <td bgcolor="#FFF888"">7F,<br>On-<br>demand<br></td>
-            <td style="vertical-align:middle;"><a href="/class/detail?class_id=C001">Bluemix</a></td>
-            <td style="vertical-align:middle;"><a href="/class/detail?class_id=C007">Block<br>Chain</a></td>
+            <td style="vertical-align:middle;"><a href="/class/detail?class_id=C002">WATSON<br>IOT<br></a></td>
+            <td style="vertical-align:middle;"><a href="/class/detail?class_id=C008">Bluemix<br></a></td>
             <td style="vertical-align:middle;"><a href="/class/detail?class_id=C013">Accelerated<br>App. Dev<br></b></a></td>
         </tr>
         <tr>
             <td bgcolor="#FFF888"">6F,<br>Demo<br>Zone</td>
-            <td style="vertical-align:middle;"><a href="/class/detail?class_id=C002">WATSON<br>IOT<br></a></td>
-            <td style="vertical-align:middle;"><a href="/class/detail?class_id=C008">Bluemix<br></a></td>
+            <td style="vertical-align:middle;"><a href="/class/detail?class_id=C001">Bluemix</a></td>
+            <td style="vertical-align:middle;"><a href="/class/detail?class_id=C007">Block<br>Chain</a></td>
             <td style="vertical-align:middle;"><a href="/class/detail?class_id=C014">Block<br>Chain<br></a></td>
         </tr>
         <tr>
