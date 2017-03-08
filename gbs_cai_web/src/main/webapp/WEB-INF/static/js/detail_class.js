@@ -127,8 +127,6 @@ function createBoardList( data){
     var cnt = 1;
     var skipFlag = false;
     
-    console.log(data.length);
-    
     if(data.length===0){
         htmlStr = "<tr><td colspan='4' align=center>No contents posted yet.</td></tr>";
         
@@ -162,7 +160,6 @@ function createBoardList( data){
                     continue;
                 }else if(( data[i].idx !==  data[i+1].idx) && ( data[i].cm_idx !== 0)){
                     skipFlag = false;
-                    console.log(data[i].cm_author);
                     htmlStr += "<tr class='comment "+ data[i].idx +"' style='display:none;'>";
                         htmlStr += "<td colspan='2'>" + data[i].comments +"</td>";
                         htmlStr += "<td>"+ data[i].cm_author +"</td>";
@@ -185,7 +182,6 @@ function createBoardList( data){
 }
 var saveReqResponse = function(data){
     alert("Post Complete!");
-    console.log(data);
     createBoardList(data);
     $("#addPostDetail").val("");
     
@@ -198,8 +194,6 @@ var detailReqResponse = function(data){
 }
 
 var ajaxErr = function (data) {
-    //console.log(data);
-    //alert(data);
     alert("Error occured.Please try again.");
 }
 
