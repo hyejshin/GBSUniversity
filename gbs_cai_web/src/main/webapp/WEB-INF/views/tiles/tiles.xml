@@ -49,7 +49,7 @@
         </put-list-attribute>   
         <put-list-attribute name="loginJS" cascade="true">
             <add-attribute value="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"/>
-            <add-attribute value="/bootstrap/js/bootstrap.min.js"/>
+            <add-attribute value="/script/bootstrap.min.js"/>
         </put-list-attribute>    
     </definition>
     
