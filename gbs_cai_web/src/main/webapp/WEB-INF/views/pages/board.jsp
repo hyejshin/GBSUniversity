@@ -1,4 +1,5 @@
-<div class="boardDiv">
+<div class="container">
+	<div class="boardDiv">
 <h3>Question Board</h3>
     <div class="info">
         <table class="table table-striped" bgcolor="D8D8D8">
@@ -42,27 +43,27 @@
             </tfoot>
         </table>
         <input type="button" class="btn btn-primary" value="list" /> <input
-            type="button" class="btn btn-warining" value="write" />
-
+            type="button" class="btn btn-info" value="write" />
+</div>
+<br><br>
         <div class="clearfix"></div>
 
         <!-- ?? ?? ? ?? ??? ?? ?? ??? ????: Ajax ???? ? ???? ????  -->
         <!-- ?? ?? ?? -->
-        <div id="detail" type="hidden">
-            <form name="BoardViewForm" method="post">
-                <table class="table-striped table" summary="?? ??? ??">
-                    <tr>
-                        <td><div align="center">
-                                <h3>
+       
+        
+        <div class="container" id="detail" type="hidden" style="width:100%;">
+            <form name="BoardViewForm"  method="post">
+            <h4 style="text-align:center;">
                                     <b>Questions</b>
-                                </h3>
-                            </div></td>
-                    </tr>
+                                </h4>
+                <table class="table table-striped ">
+                   
                     <tr>
                         <td>
-                            <table class="table" summary="?? ??? ??">
+                            <table class="table" >
                                 <tr>
-                                    <td align=center bgcolor=#dddddd>WRITER</td>
+                                    <td align=center >WRITER</td>
                                     <td bgcolor=#ffffe8>???</td>
                                     <td align=center bgcolor=#dddddd>DATE</td>
                                     <td bgcolor=#ffffe8>2017/03/11</td>
@@ -74,8 +75,7 @@
                                 <tr>
                                     <td><br>???????<br></td>
                                 </tr>
-                            </table>
-                            <div class="container">		 
+                            </table>	 
 
 
                                 <input type="hidden" id="user_id" value=<%= request.getSession().getAttribute("user_id")%> />
@@ -84,7 +84,7 @@
 
 
 
-                                <h3>Question Board</h3>
+                                <h5>Question Board</h5>
                                 <div class="info">
 
 
@@ -105,16 +105,16 @@
                                                         <table class="table" align=center>
                                                             <tr>
                                                                 <td align="center">WRITER</td>
-                                                                <td><input type=text name=name size=30></td>
+                                                                <td><input type=text name=name class="form-control" ></td>
                                                             </tr>
                                                             <tr>
                                                                 <td align="center">TITLE</td>
-                                                                <td><input type=text size=30 name=title value="RE : ??? ????."></td>
+                                                                <td><input type=text class="form-control" name=title value="RE : ??? ????."></td>
                                                             </tr>
                                                             <tr>
                                                                 <td align="center">CONTENT</td>
                                                                 <td>
-                                                                    <textarea name=content cols="30" rows="8"> ???????
+                                                                    <textarea name=content class="form-control" rows="8"> ???????
                                                                     </textarea>
                                                                 </td>
                                                             </tr>
@@ -147,5 +147,5 @@
                 </table>
 
         </div>
-    </div>
+        </div>
     </div>
