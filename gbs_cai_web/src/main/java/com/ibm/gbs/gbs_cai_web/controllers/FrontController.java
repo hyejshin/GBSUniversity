@@ -24,8 +24,7 @@ public class FrontController {
          * if login -> index page
          * else     -> login page
          */
-        //model.addAttribute("session", "session");
-        
+        //model.addAttribute("session", "session");    
         
         return "maintile";
         
@@ -49,4 +48,9 @@ public class FrontController {
     	return "detail_plenary";
     }
     
+    @RequestMapping("/roominfo")
+    public String roomInfo(ModelMap model) {
+    	
+    	return "roominfo";
+    }
 }

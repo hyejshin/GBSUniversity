@@ -52,6 +52,11 @@
         </div>
     </div>
 
+<%
+       HttpSession sess = request.getSession();
+       UserVO user = (UserVO) sess.getAttribute("user");
+%>
+ 
 <div id="boardDiv">
     <h3>Question Board</h3>
     <div class="info">
