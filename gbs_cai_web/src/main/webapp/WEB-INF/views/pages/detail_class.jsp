@@ -56,7 +56,7 @@
        HttpSession sess = request.getSession();
        UserVO user = (UserVO) sess.getAttribute("user");
 %>
- 
+ <div class="container">
 <div id="boardDiv">
     <h3>Question Board</h3>
     <div class="info">
@@ -76,19 +76,21 @@
             </tfoot>
         </table>
     </div>
+     </div>
+     <div class="container">
     <div id="writenew" >
         <table summary="Ask Question">
             <section class="box">
-                <form name="BoardWriteForm" id="BoardWriteForm" >
+                <form name="BoardWriteForm" class="fomrm-horizontal" id="BoardWriteForm" >
                     <table class="table" summary="테이블 구성" >
                         <caption>Ask Question</caption>	
                         <tr>
                             <td>Writer</td>
-                            <td><input type="text" name="user_nm" size=30 value="<%=session1.getAttribute("user_nm")%>" readonly></td>
+                            <td><input type="text" name="user_nm" class="form-control" value="<%=session1.getAttribute("user_nm")%>" readonly></td>
                         </tr>
                         <tr>
                             <td>Question</td>
-                            <td><textarea id="addPostDetail" name="detail" cols="30" rows="8" style="overflow-y:scroll; resize:none; "></textarea></td>
+                            <td><textarea id="addPostDetail" name="detail"class="form-control" rows="8" style="overflow-y:scroll; resize:none; "></textarea></td>
                         </tr>
                         <tr>
                             <td colspan=2><hr size=1></td>
@@ -117,5 +119,6 @@
 
     </div>
     <input type="button" id="showQnA" class="btn btn-info" value="Show Q&A" />
-    <input type="button" id="showList" class="btn btn-info" value="Show Class Detail" />
+    <input type="button" id="showList" class="btn btn-default" value="Show Class Detail" />
 </div>
+    </div>

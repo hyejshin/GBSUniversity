@@ -17,7 +17,7 @@
   <tr style="text-align:center;" bgcolor="#80C8BF">
     <td style="vertical-align:middle;">8:30</td>
     <td style="vertical-align:middle; border-right: 1px solid #E7EFEF;">9:00</td>
-    <td colspan="2"><b>Registeration & Teatime</b><br>7F, On-demand
+    <td colspan="2"><b>Registration & Tea Time</b><br>7F, On-demand
     </td>
   </tr>
   <tr style="text-align:center;" bgcolor="#80C8BF">

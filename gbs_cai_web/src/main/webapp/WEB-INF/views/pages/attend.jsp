@@ -4,7 +4,9 @@
 <%@ page session="false" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 	<div class="container">
-	<h4>Check For Attendance On This Lecture</h4>
+	<h4>Attendance</h4><br>
+	<p>Enter the Class Code and Attend Code provided by Room Manager at the end of each Break-Out Sseeion to check your attendance.
+각 Break-Out Session 종료 시 Room Manager가 제공하는 Class Code와 Attend Code를 입력하여 출석체크를 해주세요.</p>
 	<br><br>
 
 		<center>${message}</center><br>

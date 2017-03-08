@@ -17,29 +17,38 @@
 	HttpSession session2 = request.getSession();
 	String user_id2 = (String)session2.getAttribute("user_id");
 %>
-<table class="table" style="border-collapse: separate; border-spacing: 3px 5px; padding:5px;">
-    <thead>
-        <tr>
-            <th colspan="2" style="height: 130px; text-align: center; vertical-align:middle; background-color: #3b9c9c; ">
-            <a href="/index" style="text-decoration:none;">CAI Univ Agenda</a></th>
-           </tr>
-    </thead>
-    <tbody>
-        <tr style="height: 100px; text-align: center; vertical-align:middle;">
-            
-            <td style="width: 50%; text-align: center; vertical-align:middle; background-color: #CC0099; color:#fff;">
+
+<style>
+	td {
+		font-size: 130%;
+	}
+</style>
+
+<img src="/images/cognitive.jpg" width="100%">
+<table class="table" style="border-collapse: separate; border-spacing: 6px 6px; padding:2px;">
+        <tr style="height:150px; text-align:center; vertical-align:middle;">
+        	<td style="text-align:center; vertical-align:middle;" bgcolor="#F0CD5B" colspan="2">
+            <a href="/index" style="text-decoration:none;">CAI Univ. Agenda</a></td>
+            <td style="text-align:center; vertical-align:middle;" bgcolor="#95DEE3" colspan="2">
+
             <a href="/myLecture?user_id=<%=user_id2%>" style="text-decoration:none;">My Enrollment</a></td>
-            <td style="width: 50%;text-align: center; vertical-align:middle; background-color: #330099; color:#fff;">
+        </tr>
+
+        <tr style="height:100px; text-align:center; vertical-align:middle;">
+        	<td style="text-align:center; vertical-align:middle;" bgcolor="#EFD1C6" colspan="3">
             <a href="/attend" style="text-decoration:none;">Attendance Check</a></td>
-         
-        </tr>
-        <tr style="height: 100px; text-align: center; vertical-align:middle;">
-            <td style="width: 50%;text-align: center; vertical-align:middle; background-color: #330099; color:#fff;">
+            <td style="text-align:center; vertical-align:middle;" bgcolor="#578CA9" colspan="1">
             <a href="/roominfo" style="text-decoration:none;">Room Info</a></td>
-            <td style="width: 50%;text-align: center; vertical-align:middle; background-color: #CCCC99; color:#fff;">
-            <a href="https://www.ifcmallseoul.com/eng/jsp/store/floorInfo.do?lang=e&floor=L3" style="text-decoration:none;">Lunch Places</a></td>
-            
+        </tr>   
+
+        <tr style="height:80px; text-align:center; vertical-align:middle;">
+            <td style="text-align: center; vertical-align:middle;" bgcolor="#88B04B" colspan="3">
+            <a href="#" style="text-decoration:none;">
+            The Grand Ballroom</a></td>
+            <td style="text-align: center; vertical-align:middle;" bgcolor="#AE734E" colspan="1">
+            <a href="https://www.ifcmallseoul.com/eng/jsp/store/floorInfo.do?lang=e&floor=L3">Lunch Time</a></td>
         </tr>
+
     </tbody>
     <thead>
         <tr style="height: 130px; text-align: center; vertical-align:middle;">
@@ -56,5 +65,5 @@
     </div>
     <div id="dialog-background"></div>
          
-    
+
 </table>
