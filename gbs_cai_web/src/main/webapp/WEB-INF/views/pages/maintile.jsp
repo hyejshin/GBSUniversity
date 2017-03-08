@@ -7,6 +7,11 @@
 	String user_id2 = (String)session2.getAttribute("user_id");
 %>
 
+<style>
+	td {
+		font-size: 130%;
+	}
+</style>
 
 <img src="/images/cognitive.jpg" width="100%">
 <table class="table" style="border-collapse: separate; border-spacing: 6px 6px; padding:2px;">
@@ -27,7 +32,7 @@
         <tr style="height:80px; text-align:center; vertical-align:middle;">
             <td style="text-align: center; vertical-align:middle;" bgcolor="#88B04B" colspan="3">
             <a href="#" style="text-decoration:none;">
-            Go to the Grand Ballroom</a></td>
+            The Grand Ballroom</a></td>
             <td style="text-align: center; vertical-align:middle;" bgcolor="#AE734E" colspan="1">
             <a href="https://www.ifcmallseoul.com/eng/jsp/store/floorInfo.do?lang=e&floor=L3">Lunch Time</a></td>
         </tr>
