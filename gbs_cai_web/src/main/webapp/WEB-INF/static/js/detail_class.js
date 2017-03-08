@@ -179,8 +179,8 @@ var detailReqResponse = function(data){
 }
 
 var ajaxErr = function (data) {
-    console.log(data);
-    alert(data);
+    //console.log(data);
+    //alert(data);
     alert("Error occured.Please try again.");
 }
 
