@@ -57,7 +57,7 @@
     UserVO user = (UserVO) sess.getAttribute("user");
 %>
 
-<div id="boardDiv">
+<div class="container" id="boardDiv">
     <h3>Question Board</h3>
     <div class="info">
         <table class="table table-striped" id="class-board" style="background-color: D8D8D8;">
