@@ -17,13 +17,13 @@
   <tr style="text-align:center;" bgcolor="#80C8BF">
     <td style="vertical-align:middle;">8:30</td>
     <td style="vertical-align:middle;">9:00</td>
-    <td colspan="2"><b>Registeration & Teatime</b><br>7F, on-demand
+    <td colspan="2"><b>Registeration & Teatime</b><br>7F, On-demand
     </td>
   </tr>
   <tr style="text-align:center;" bgcolor="#80C8BF">
     <td style="vertical-align:middle;">9:00</td>
     <td style="vertical-align:middle;">9:30</td>
-    <td colspan="2"><b>Opening</b><br>7F, on-demand
+    <td colspan="2"><b>Opening</b><br>7F, On-demand
     </td>
   </tr>
   <tr style="text-align:center;" bgcolor="#B7DCD7">
@@ -32,7 +32,7 @@
     <td colspan="2">Move to Breakout rooms</td>
   </tr>
   <tr style="text-align:center;">
-    <td>7F, on-demand</td>
+    <td>7F, On-demand</td>
     <td>6F, Demo Zone</td>
   </tr>
   <tr style="text-align:center;" bgcolor="#80C8BF">
