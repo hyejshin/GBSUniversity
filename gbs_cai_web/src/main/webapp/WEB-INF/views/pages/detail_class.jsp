@@ -105,7 +105,7 @@
             <tbody id="board-body"></tbody>
             <tfoot>
                 <tr>
-                    <td align="center" colspan="5">1</td>
+                    <td id="pagenation" align="center" colspan="5">1</td>
                 </tr>
             </tfoot>
         </table>
