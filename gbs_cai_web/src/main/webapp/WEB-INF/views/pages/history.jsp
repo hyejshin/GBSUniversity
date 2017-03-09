@@ -60,7 +60,7 @@
 				</table>
 				
 	<h5><b>Break-Out Session</b></h5>
-      <p>각 세션 title 클릭 시 세션 내용 및 Q&A를 확인 할 수 있습니다.
+      <p>각 세션 title 클릭 시 세션 내용 및 Q&A를 확인할 수 있습니다.
       Click on the each session, session description and Q&A are available</p>
 
         <table id="table" class="table table-striped table-condensed" cellspacing="0" width="100%">
