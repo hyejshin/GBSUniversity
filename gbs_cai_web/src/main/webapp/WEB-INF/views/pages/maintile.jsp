@@ -36,17 +36,17 @@
         </tr>
 
         <tr style="height:100px; text-align:center; vertical-align:middle;">
-        	<td style="text-align:center; vertical-align:middle;" bgcolor="#EFD1C6" colspan="3">
+        	<td style="text-align:center; vertical-align:middle;" bgcolor="#EFD1C6" colspan="2">
             <a href="/attend" style="color:white">Attendance Check</a></td>
-            <td style="text-align:center; vertical-align:middle;" bgcolor="#578CA9" colspan="1">
+            <td style="text-align:center; vertical-align:middle;" bgcolor="#578CA9" colspan="2">
             <a href="/roominfo" style="color:white">Room Info</a></td>
         </tr>   
 
         <tr style="height:80px; text-align:center; vertical-align:middle;">
-            <td style="text-align: center; vertical-align:middle;" bgcolor="#88B04B" colspan="3">
+            <td style="text-align: center; vertical-align:middle;" bgcolor="#88B04B" colspan="2">
             <a href="#" style="color:white" data-toggle="modal"data-target="#basicModal" >
             Conrad Hotel</a></td>
-            <td style="text-align: center; vertical-align:middle;" bgcolor="#AE734E" colspan="1">
+            <td style="text-align: center; vertical-align:middle;" bgcolor="#AE734E" colspan="2">
             <a href="https://www.ifcmallseoul.com/eng/jsp/store/floorInfo.do?lang=e&floor=L3" style="color:white">Lunch Time</a></td>
         </tr>
 	</table>
