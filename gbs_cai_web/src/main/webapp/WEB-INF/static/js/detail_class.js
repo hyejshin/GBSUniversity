@@ -182,7 +182,7 @@ function createBoardList( data){
             }
             if($("#type").val() === SPEAKER){ // Learner , Speaker
                 htmlStr += "<tr class='answer' style='display:none;'><td style='align:center;' colspan ='4'>" 
-                            + "<form class='answerForm' class='form-control' name='answerForm' >"
+                            + "<form class='answerForm form name='answerForm' >"
                                     +"<textarea class='answerDetail  form-control "+data[i].idx+"' name='answerDetail'></textarea>"
                                     +"<input type='hidden' name='idx' value='"+ data[i].idx+"'/>"
                                     +"<input type='button' style='float:right; ' class='btn btn-info answer-submit' idx='"+data[i].idx+"' value='Answer'/>"
