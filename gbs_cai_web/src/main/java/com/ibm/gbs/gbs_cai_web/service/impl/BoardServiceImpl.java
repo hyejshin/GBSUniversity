@@ -22,7 +22,14 @@ public class BoardServiceImpl implements BoardService{
     
     @Override
     public List<BoardVO> getBoardListByClassId(String class_id) {
-       return boardMapper.getBoardListByClassId(class_id);
+        List<BoardVO> tempList = boardMapper.getBoardListByClassId(class_id);
+        String tempNm="";
+        for(int i =0; i<tempList.size(); i++){
+            String[] strArr =tempList.get(i).getUser_nm().split("/");  // ex: Name/IBM/Korea
+            tempNm = strArr[0];
+            tempList.get(i).setUser_nm(tempNm);
+        }
+       return tempList;
     }
 
     @Override

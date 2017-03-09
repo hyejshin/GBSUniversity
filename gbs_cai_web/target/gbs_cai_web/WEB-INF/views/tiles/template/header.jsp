@@ -12,6 +12,27 @@
 	HttpSession session1 = request.getSession();
 	String user_id = (String)session1.getAttribute("user_id");
 %>
+<style>
+<!--
+.nav > li > a {
+    position: relative;
+    display: block;
+    padding: 5px 5px;
+    border: 1px solid;
+    border-radius: 10px;
+        border-color: #415a67;
+}
+
+.nav {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    padding-top: 10px;
+}
+
+
+-->
+</style>
 <div class="header" id="home">
     <div class="container">	
         <div class="logo">

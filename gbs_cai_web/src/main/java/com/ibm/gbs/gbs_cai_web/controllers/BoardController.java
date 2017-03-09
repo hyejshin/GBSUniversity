@@ -67,7 +67,6 @@ public class BoardController {
     @RequestMapping(value="/board/getBoardListByClassId", method=RequestMethod.GET)
     public @ResponseBody List<BoardVO>getBoardListByClassId(@RequestParam("class_id") String class_id){      
         List<BoardVO> boardList = new ArrayList<BoardVO>();
-        List<CommentVO> commentList = new ArrayList<CommentVO>();
         
         boardList = boardService.getBoardListByClassId(class_id);
         

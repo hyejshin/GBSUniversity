@@ -43,7 +43,12 @@
 
 <div id="class-detail-div" class="container">		 
 
-    <%HttpSession session1 = request.getSession();%>
+    <%
+        HttpSession session1 = request.getSession();
+        String tempStr = (String)session1.getAttribute("user_nm");
+        String[] nameArr = tempStr.split("/");
+        String user_nm = nameArr[0];
+    %>
 
     <input type="hidden" id="user_id" value=<%= session1.getAttribute("user_id")%> />
     <input type="hidden" id="start" value=${list.start} />
@@ -119,7 +124,7 @@
                             <caption>Ask Question</caption>	
                             <tr>
                                 <td>Writer</td>
-                                <td><input type="text" name="user_nm" class="form-control" value="<%=session1.getAttribute("user_nm")%>" readonly></td>
+                                <td><input type="text" name="user_nm" class="form-control" value="<%=user_nm%>" readonly></td>
                             </tr>
                             <tr>
                                 <td>Question</td>
@@ -130,7 +135,7 @@
                             </tr>
                             <tr>
                                 <td colspan="2"><div align="center">
-                                        <input type="button" id="submit" value="Write" class="btn btn-info"><input type="button" style="marign-left:3px;" value="Cancel" class="btn btn-danger">
+                                        <input type="button" id="submit" value="Write" class="btn btn-info"><input type="button" id="cancel" style="marign-left:3px;" value="Cancel" class="btn btn-danger">
 
                                     </div>
                                 </td>

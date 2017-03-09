@@ -122,7 +122,11 @@ jQuery(document).ready(function ($) {
         $("#idx").attr("value", $(this).attr("idx"));
         $("#submit").val("Modify");
     });
-
+    
+    //cancel event
+    $("#cancel").click(function(){
+       $("#addPostDetail").val(""); 
+    });
     $("#showList").click(function () {
         $("#boardDiv").css("display", "none");
         $(".container").css("display", "block");

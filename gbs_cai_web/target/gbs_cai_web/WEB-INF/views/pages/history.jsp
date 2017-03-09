@@ -16,9 +16,9 @@
         <table id="table" class="table table-striped table-condensed" cellspacing="0" width="100%">
 					<thead thead style=" background-color: #578CA9; color:white; ">
 						<tr>
-							<th style="width:30%">Session</th>
-							<th style="width:45%;">Title</th>
-							<th>Room</th>
+							<th style="width:30%; text-align:center;">Session</th>
+							<th style="width:45%; text-align:center;">Title</th>
+							<th style="text-align:center;">Room</th>
 							<td></td>
 						</tr>
 					</thead>
@@ -26,13 +26,13 @@
 
 					<c:if test="${vo.morning_room eq '7F, On-demand room'}">
 						<tr>
-							<td>Session1<br>(9:45 - 10:45)</td>
+							<td style="vertical-align:middle;">Session1<br>(9:45 - 10:45)</td>
 							<td style="vertical-align:middle;">Cloud Application Services</td>
 							<td>7F, On-demand</td>
 							<td></td>
 						</tr>
 						<tr>
-							<td>Session2<br>(11:00 -12:00)</td>
+							<td style="vertical-align:middle;">Session2<br>(11:00 -12:00)</td>
 							<td style="vertical-align:middle;">Watson Case</td>
 							<td>7F, On-demand</td>
 							<td></td>
@@ -41,13 +41,13 @@
 
 					<c:if test="${vo.morning_room eq '6F, Demo Room'}">
 						<tr>
-							<td>Session1<br>(9:45 - 10:45)</td>
+							<td style="vertical-align:middle;">Session1<br>(9:45 - 10:45)</td>
 							<td style="vertical-align:middle;">Cloud Application Services</td>
 							<td>6F, Demo Room</td>
 							<td></td>
 						</tr>
 						<tr>
-							<td>Session2<br>(11:00 -12:00)</td>
+							<td style="vertical-align:middle;">Session2<br>(11:00 -12:00)</td>
 							<td style="vertical-align:middle;">Watson Case</td>
 							<td>6F, Demo Room</td>
 							<td></td>
@@ -60,35 +60,35 @@
 				</table>
 				
 	<h5><b>Break-Out Session</b></h5>
-      <p>각 세션 title 클릭 시 세션 내용 및 Q&A를 확인 할 수 있습니다.
-      Clink on the each session, session description and Q&A are available</p>
+      <p>각 세션 title 클릭시 세션 내용 및 Q&A를 확인할 수 있습니다.
+      Click on the each session, session description and Q&A are available</p>
 
         <table id="table" class="table table-striped table-condensed" cellspacing="0" width="100%">
 					<thead style="background-color: #95DEE3; color: white;">
 						<tr>
-							<th style="width:30%">Session</th>
-							<th style="width:45%;">Title</th>
-							<th>Room</th>
+							<th style="width:30%; text-align:center;">Session</th>
+							<th style="width:45%; text-align:center;">Title</th>
+							<th style="text-align:center;">Room</th>
 						</tr>
 					</thead>
 					<tbody>	
 
 						<tr>
-							<td>Session1<br>(1:15 - 2:30)</td>
+							<td style="vertical-align:middle;">Session1<br>(1:15 - 2:30)</td>
 							<td style="vertical-align:middle;">
 								<a href='/class/detailLec?title=${vo.session1}&session=Session1 (1:15 - 2:30)'>${vo.session1}</a></td>
 							<td>${vo.room1}</td>
 						</tr>
 						
 						<tr>
-							<td>Session2<br>(2:45 - 4:00)</td>
+							<td style="vertical-align:middle;">Session2<br>(2:45 - 4:00)</td>
 							<td style="vertical-align:middle;">
 								<a href='/class/detailLec?title=${vo.session2}&session=Session2 (2:45 - 4:00)'>${vo.session2}</a></td>
 							<td>${vo.room2}</td>
 						</tr>
 						
 						<tr>
-							<td>Session3<br>(4:15 - 5:30)</td>
+							<td style="vertical-align:middle;">Session3<br>(4:15 - 5:30)</td>
 							<td style="vertical-align:middle;">
 								<a href='/class/detailLec?title=${vo.session3}&session=Session3 (4:15 - 5:30)'>${vo.session3}</a></td>
 							<td>${vo.room3}</td>	
