@@ -67,7 +67,6 @@ public class BoardController {
     @RequestMapping(value="/board/getBoardListByClassId", method=RequestMethod.GET)
     public @ResponseBody List<BoardVO>getBoardListByClassId(@RequestParam("class_id") String class_id){      
         List<BoardVO> boardList = new ArrayList<BoardVO>();
-        List<CommentVO> commentList = new ArrayList<CommentVO>();
         
         boardList = boardService.getBoardListByClassId(class_id);
         
@@ -127,13 +126,14 @@ public class BoardController {
                                                    @RequestParam("board_id") String board_id,
                                                    @RequestParam("class_id") String class_id, 
                                                    @RequestParam("idx")    String idx, 
+                                                   @RequestParam("author_nm") String author_nm,
                                                    HttpSession session) throws Exception{       
         int ret = 0;
 
         user = (UserVO)session.getAttribute("user");
         String user_id = user.getUser_id();
         
-        commentvo = new CommentVO(class_id, board_id, Integer.valueOf(idx), answerDetail, user_id);
+        commentvo = new CommentVO(class_id, board_id, Integer.valueOf(idx), answerDetail, author_nm);
         
         
         ret = boardService.insertComment(commentvo);

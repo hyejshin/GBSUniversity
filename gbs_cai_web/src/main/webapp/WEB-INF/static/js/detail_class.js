@@ -58,7 +58,6 @@ jQuery(document).ready(function ($) {
         });
 
         $("#class-detail-div").css("display", "none");
-        console.log($("#class-detail-div"));
         $("#boardDiv").css("display", "block");
 
         $(window).scrollTop(0);
@@ -81,6 +80,7 @@ jQuery(document).ready(function ($) {
         var param = $(this).parent(".answerForm").serialize();
         param +="&class_id="+$("#class_id").val();
         param +="&board_id="+$("#board_id").val();
+        param +="&author_nm="+$("#writer_nm").attr("value");
         
         $.ajax({
             type:"POST",
@@ -122,7 +122,11 @@ jQuery(document).ready(function ($) {
         $("#idx").attr("value", $(this).attr("idx"));
         $("#submit").val("Modify");
     });
-
+    
+    //cancel event
+    $("#cancel").click(function(){
+       $("#addPostDetail").val(""); 
+    });
     $("#showList").click(function () {
         $("#boardDiv").css("display", "none");
         $(".container").css("display", "block");
@@ -192,7 +196,6 @@ function createBoardList( data){
     $("#board-body").html(htmlStr);
 }
 var saveReqResponse = function(data){
-    alert("Post Complete!");
     createBoardList(data);
     $("#addPostDetail").val("");
     
