@@ -40,7 +40,7 @@ body :-ms-input-placeholder {
 .wrapper {
   background: #50a3a2;
   background: -webkit-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
-  background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);
+  background: linear-gradient(to bottom right, #36ef3f 0%, rgba(70, 99, 213, 0.86) 100%);;
     position: absolute;
     top: 55%;
     left: 0;
