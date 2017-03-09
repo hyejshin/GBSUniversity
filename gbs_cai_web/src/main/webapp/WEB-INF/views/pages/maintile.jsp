@@ -44,21 +44,26 @@
 
         <tr style="height:80px; text-align:center; vertical-align:middle;">
             <td style="text-align: center; vertical-align:middle;" bgcolor="#88B04B" colspan="3">
-            <a href="/conradHotel" style="color:white"> <!-- id="openModal"  -->
+            <a href="#" style="color:white" data-toggle="modal"data-target="#basicModal" >
             Conrad Hotel</a></td>
             <td style="text-align: center; vertical-align:middle;" bgcolor="#AE734E" colspan="1">
             <a href="https://www.ifcmallseoul.com/eng/jsp/store/floorInfo.do?lang=e&floor=L3" style="color:white">Lunch Time</a></td>
         </tr>
 	</table>
 
-<!-- 
-    <div id ="my-dialog">
-        <button id="btn-close-modal">X</button>
-        <div id="map" style="width:100%;height:100%;">
-            <img src="<c:url value="/images/mapstoconrad.PNG" />" alt=""> 
-        </div>
+<div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+            <h4 class="modal-title" id="myModalLabel">Conrad Hotel</h4>
+            </div>
+            <div class="modal-body">
+                <img src="/images/map.png" style="width:100%;"/>
+            </div>
+  
     </div>
-    <div id="dialog-background"></div>
-    -->      
+  </div>
+</div>
 
 
