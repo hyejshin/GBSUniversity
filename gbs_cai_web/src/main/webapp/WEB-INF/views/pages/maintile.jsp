@@ -26,7 +26,7 @@
 </style>
 
 
-<img src="/images/ibmbanner.png" width="100%">
+<img src="/images/cognitive.jpg" width="100%">
 <table class="table" style="border-collapse: separate; border-spacing: 6px 6px; padding:2px;">
         <tr style="height:150px; text-align:center; vertical-align:middle;">
         	<td style="text-align:center; vertical-align:middle;" bgcolor="#F0CD5B" colspan="2">

@@ -4,7 +4,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
  		<section id="logo" class="logo">
-		    <a href="#"><img src="assets/images/Picture1.png" alt=""/></a>
+ 			<!-- <img src="assets/images/Picture1.png" alt=""/> -->
+	    	<img src="/images/ibmbanner.png" alt="" width="100%" height="120px"/>
 	    </section>	
 	    <section class="container" style="padding-top: 20px;">
 
@@ -29,5 +30,5 @@
 				</div>
 				 -->
 			</form>
-
 	</section>
+	
