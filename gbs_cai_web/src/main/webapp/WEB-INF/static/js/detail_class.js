@@ -81,6 +81,7 @@ jQuery(document).ready(function ($) {
         var param = $(this).parent(".answerForm").serialize();
         param +="&class_id="+$("#class_id").val();
         param +="&board_id="+$("#board_id").val();
+        param +="&author_nm="+$("#writer_nm").attr("value");
         
         $.ajax({
             type:"POST",

@@ -124,7 +124,7 @@
                             <caption>Ask Question</caption>	
                             <tr>
                                 <td>Writer</td>
-                                <td><input type="text" name="user_nm" class="form-control" value="<%=user_nm%>" readonly></td>
+                                <td><input id="writer_nm" type="text" name="user_nm" class="form-control" value="<%=user_nm%>" readonly></td>
                             </tr>
                             <tr>
                                 <td>Question</td>
