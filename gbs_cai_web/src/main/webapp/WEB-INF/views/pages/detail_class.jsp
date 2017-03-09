@@ -57,6 +57,7 @@
     UserVO user = (UserVO) sess.getAttribute("user");
 %>
 
+
 <div class="container" >
     <div id="boardDiv">
 
@@ -78,6 +79,7 @@
                 </tfoot>
             </table>
         </div>
+
         <div id="writenew" >
             <table summary="Ask Question">
                 <section class="box">
@@ -97,8 +99,8 @@
                             </tr>
                             <tr>
                                 <td><div align="center">
-                                        <input type="button" id="submit" value="Write" class="btn btn-info">&nbsp;&nbsp;
-                                        <input type="button" value="Cancel" class="btn btn-danger" >
+                                        <input type="button" id="submit" value="Write" class="btn btn-info">
+                                        <input type="button" style="marign-left:3px;" value="Cancel" class="btn btn-danger">
 
                                     </div>
                                 </td>
@@ -122,5 +124,6 @@
         <input type="button" id="showList" class="btn btn-default" value="Show Class Detail" />
     </div>
 </div>
+<br><br><br>
 
 
