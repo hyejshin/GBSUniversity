@@ -53,7 +53,9 @@
 
     <div id ="my-dialog">
         <button id="btn-close-modal">X</button>
-        <div id="map" style="width:100%;height:100%;"></div>
+        <div id="map" style="width:100%;height:100%;">
+            <img src="<c:url value="/images/mapstoconrad.PNG" />" alt=""> 
+        </div>
     </div>
     <div id="dialog-background"></div>
          
