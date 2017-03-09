@@ -14,8 +14,7 @@
         <br/>
 	<h5><b>Morning Session</b></h5>
         <table id="table" class="table table-striped table-condensed" cellspacing="0" width="100%">
-					<thead thead style=" background-color: #ff9999;
-         color:#EEEEEE; ">
+					<thead thead style=" background-color: #578CA9; color:white; ">
 						<tr>
 							<th style="width:30%">Session</th>
 							<th style="width:45%;">Title</th>
@@ -65,7 +64,7 @@
       Clink on the each session, session description and Q&A are available</p>
 
         <table id="table" class="table table-striped table-condensed" cellspacing="0" width="100%">
-					<thead style="background-color: #006DCC; color: white;">
+					<thead style="background-color: #95DEE3; color: white;">
 						<tr>
 							<th style="width:30%">Session</th>
 							<th style="width:45%;">Title</th>
