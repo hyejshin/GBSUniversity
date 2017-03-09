@@ -12,7 +12,7 @@
 
 			<form name="loginForm" method="post" action="/login" >
 				<div>
-					<input type="text" name="user_id" placeholder="XXXX@kr.ibm.com" required class="form-control" />
+					<input type="text" name="user_id" placeholder="Your IBM email address" required class="form-control" />
 					<!-- <span class="glyphicon glyphicon-user"></span>-->
 				</div> <br>
 				
