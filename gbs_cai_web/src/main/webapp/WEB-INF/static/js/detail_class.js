@@ -171,12 +171,12 @@ function createBoardList( data){
                     htmlStr += "</tr>";
                 }
             }
-            if($("#type").val() === SPEAKER){ // Leaner , Speaker
-                htmlStr += "<tr class='answer' style='display:none;'><td align=center colspan =4>" 
-                            + "<form class='answerForm' name='answerForm' >"
+            if($("#type").val() === SPEAKER){ // Learner , Speaker
+                htmlStr += "<tr class='answer' style='display:none;'><td style='align:center;' colspan ='4'>" 
+                            + "<form class='answerForm' class='form-control' name='answerForm' >"
                                     +"<textarea class='answerDetail  form-control "+data[i].idx+"' name='answerDetail'></textarea>"
                                     +"<input type='hidden' name='idx' value='"+ data[i].idx+"'/>"
-                                    +"<input type='button' style='float:right; margin-top:5px;' class='btn btn-info answer-submit' idx='"+data[i].idx+"' value='Answer'/>"
+                                    +"<input type='button' style='float:right; ' class='btn btn-info answer-submit' idx='"+data[i].idx+"' value='Answer'/>"
                             + "</form>"
                         + "</td></tr>";
             }

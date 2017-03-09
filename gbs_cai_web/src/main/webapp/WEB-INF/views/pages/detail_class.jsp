@@ -3,6 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <tiles:importAttribute name="showDetailAttributes" />
 <tiles:importAttribute name="showDetailJsAttributes" />
 <c:forEach var="showDetailAttributes" items="${showDetailAttributes}">
@@ -72,7 +73,8 @@
                         <th style="text-align: center;" colspan="2">WRITER</th>
                     </tr>
                 </thead>
-                <tbody id="board-body"></tbody>
+                <tbody id="board-body" style="text-align:justify">
+                <p></p></tbody>
                 <tfoot>
                     <tr>
                         <td id="pagenation" align="center" colspan="5">1</td>
@@ -99,9 +101,8 @@
                                 <td colspan=2><hr size=1></td>
                             </tr>
                             <tr>
-                                <td><div align="center">
-                                        <input type="button" id="submit" value="Write" class="btn btn-info">
-                                        <input type="button" style="marign-left:3px;" value="Cancel" class="btn btn-danger">
+                                <td colspan="2"><div align="center">
+                                        <input type="button" id="submit" value="Write" class="btn btn-info"><input type="button" style="marign-left:3px;" value="Cancel" class="btn btn-danger">
 
                                     </div>
                                 </td>
