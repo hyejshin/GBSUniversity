@@ -61,7 +61,7 @@ jQuery(document).ready(function ($) {
     });
 
     //post anwser
-    $('body').on("click",".answer-submit", function(){
+    $('body').on("click touchstart",".answer-submit", function(){
         var postUrl = "/board/postAnswer";
         var classname = "."+$(this).attr("idx");
         var idx = $(this).attr("idx");
@@ -89,7 +89,7 @@ jQuery(document).ready(function ($) {
 
 
     //click table row event
-    $('body').on('click', '.showContent', function () {
+    $('body').on('click touchstart', '.showContent', function () {
         var cssVal = $(this).next($(".content")).css("display");
         var className = "."+$(this).attr('value');
 
@@ -109,7 +109,7 @@ jQuery(document).ready(function ($) {
     });
     
     //click modify button -> modify version
-    $('body').on('click','.modify', function(){
+    $('body').on('click touchstart','.modify', function(){
         $("#writenew").children(".table caption").text("Modify Question"); 
         var str = $(this).parents("tr").next(".content").text();
         $("#addPostDetail").val(str);
