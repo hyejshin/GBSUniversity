@@ -53,4 +53,10 @@ public class FrontController {
     	
     	return "roominfo";
     }
+    
+    @RequestMapping("/conradHotel")
+    public String conradHotel(ModelMap model) {
+    	
+    	return "conradHotel";
+    }
 }
