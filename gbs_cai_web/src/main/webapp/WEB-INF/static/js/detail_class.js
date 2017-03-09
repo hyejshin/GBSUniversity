@@ -48,7 +48,13 @@ jQuery(document).ready(function ($) {
             url: url,
             data: $("#BoardWriteForm").serialize(),
             success: saveReqResponse,
-            error: ajaxErr
+            error: ajaxErr,
+            beforeSend:function() {
+                $('.wrap-loading').removeClass('display-none');
+             },
+             complete:function() {
+                $('.wrap-loading').addClass('display-none');
+             }
         });
 
         $("#class-detail-div").css("display", "none");
