@@ -25,7 +25,8 @@
                 <h3 style="font-weight:600;">${vo.title}</h3>
                 <p>Speaker: ${vo.speaker}</p>
                 <p>Date : Saturday, 11 March 2017</p>
-                <p>Time : ${vo.session} <span>Room: ${vo.room}</span></p><br>
+                <p>Time : ${vo.session}</p>
+                <p>Room: ${vo.room}</p><br>
             </div>	
             <div class="col-md-3 date" style="padding:0px;">
                 <p style="padding: 8px 0px;">WHAT</p>
