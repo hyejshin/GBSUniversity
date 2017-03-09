@@ -3,33 +3,26 @@
 <%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
- 		<section id="logo" class="logo">
- 			<!-- <img src="assets/images/Picture1.png" alt=""/> -->
-	    	<!-- <img src="/images/ibmbanner.png" alt="" width="100%" height="105px"/> -->
-	    	<img src="/images/login_banner.png" alt="" width="100%" />
-	    </section>	
-	    <section class="container" style="padding-top: 20px;">
-
-			<form name="loginForm" method="post" action="/login" >
-				<div>
-					<input type="text" name="user_id" placeholder="Your IBM email address" required class="form-control" />
-					<!-- <span class="glyphicon glyphicon-user"></span>-->
-				</div> <br>
-				
-				<!-- 
-				<div style="padding-top: 20px; padding-bottom:20px;">
-					<input type="password" name="password" placeholder="Enter password" required class="form-control" />
-					<span class="glyphicon glyphicon-lock"></span>
-				</div>
-				 -->
-				 
-				<button type="submit" name="go" class="btn btn-block btn-primary" >Login Now</button>
-				
-				<!-- 
-				<div class="form-group less-space">
-					<input type="checkbox" name="remember" value="1" /> Remember me on this device
-				</div>
-				 -->
+ 		
+	<div class="wrapper">
+		<div class="container">
+			<h2>GBS CAI Korea University</h2>
+                   <br><b>Cloud Application Innovation</b>
+			<form class="form" name="loginForm" method="post" action="/login" >
+				<input type="text" name="user_id" placeholder="XXXX@kr.ibm.com"> 
+				<button type="submit" name="go" id="login-button">Login</button>
 			</form>
-	</section>
+		</div>
+
+		<ul class="bg-bubbles">
+			<li></li>
+			<li></li>
+
+		</ul>
+	</div>
+	<script
+		src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+	<script src="js/index.js"></script>
+	
 	
