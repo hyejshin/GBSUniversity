@@ -8,13 +8,11 @@
 <br><br>
 <h4><b>Room Information</b></h4>
 <div id="room1">
-<h4>6F</h4>
 <img src="images/room1.png" style="width:95%; padding-left: 4px;height: 100%;">
  </div>
  
  <br><br>
  <div id="room2">
-<h4>7F</h4>
 <img src="images/room2.png" style="width:95%; padding-left: 4px;height: 100%;">
  </div>
  </div>

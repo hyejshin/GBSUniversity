@@ -16,9 +16,9 @@
         <table id="table" class="table table-striped table-condensed" cellspacing="0" width="100%">
 					<thead thead style=" background-color: #578CA9; color:white; ">
 						<tr>
-							<th style="width:30%">Session</th>
-							<th style="width:45%;">Title</th>
-							<th>Room</th>
+							<th style="width:30%; text-align:center;">Session</th>
+							<th style="width:45%; text-align:center;">Title</th>
+							<th style="text-align:center;">Room</th>
 							<td></td>
 						</tr>
 					</thead>
@@ -61,14 +61,14 @@
 				
 	<h5><b>Break-Out Session</b></h5>
       <p>각 세션 title 클릭 시 세션 내용 및 Q&A를 확인 할 수 있습니다.
-      Clink on the each session, session description and Q&A are available</p>
+      Click on the each session, session description and Q&A are available</p>
 
         <table id="table" class="table table-striped table-condensed" cellspacing="0" width="100%">
 					<thead style="background-color: #95DEE3; color: white;">
 						<tr>
-							<th style="width:30%">Session</th>
-							<th style="width:45%;">Title</th>
-							<th>Room</th>
+							<th style="width:30%; text-align:center;">Session</th>
+							<th style="width:45%; text-align:center;">Title</th>
+							<th style="text-align:center;">Room</th>
 						</tr>
 					</thead>
 					<tbody>	
