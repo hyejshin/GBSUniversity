@@ -1002,11 +1002,17 @@ ul.box-in {
 .b-animate span {
 	padding-top: 1.2em;
 }
-.header {
+/*.header {
 	padding-top: 2em;
+}*/
+.header {
+    padding-bottom: 20px;
 }
-.top-nav {
+/*.top-nav {
 	padding: 0.8em 0 0;
+}*/
+.top-nav {
+    padding: 5px;
 }
 .sb-search {
 	top: 14px;
