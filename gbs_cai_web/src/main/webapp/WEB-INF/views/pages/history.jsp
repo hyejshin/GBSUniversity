@@ -26,13 +26,13 @@
 
 					<c:if test="${vo.morning_room eq '7F, On-demand room'}">
 						<tr>
-							<td>Session1<br>(9:45 - 10:45)</td>
+							<td style="vertical-align:middle;">Session1<br>(9:45 - 10:45)</td>
 							<td style="vertical-align:middle;">Cloud Application Services</td>
 							<td>7F, On-demand</td>
 							<td></td>
 						</tr>
 						<tr>
-							<td>Session2<br>(11:00 -12:00)</td>
+							<td style="vertical-align:middle;">Session2<br>(11:00 -12:00)</td>
 							<td style="vertical-align:middle;">Watson Case</td>
 							<td>7F, On-demand</td>
 							<td></td>
@@ -41,13 +41,13 @@
 
 					<c:if test="${vo.morning_room eq '6F, Demo Room'}">
 						<tr>
-							<td>Session1<br>(9:45 - 10:45)</td>
+							<td style="vertical-align:middle;">Session1<br>(9:45 - 10:45)</td>
 							<td style="vertical-align:middle;">Cloud Application Services</td>
 							<td>6F, Demo Room</td>
 							<td></td>
 						</tr>
 						<tr>
-							<td>Session2<br>(11:00 -12:00)</td>
+							<td style="vertical-align:middle;">Session2<br>(11:00 -12:00)</td>
 							<td style="vertical-align:middle;">Watson Case</td>
 							<td>6F, Demo Room</td>
 							<td></td>
@@ -74,21 +74,21 @@
 					<tbody>	
 
 						<tr>
-							<td>Session1<br>(1:15 - 2:30)</td>
+							<td style="vertical-align:middle;">Session1<br>(1:15 - 2:30)</td>
 							<td style="vertical-align:middle;">
 								<a href='/class/detailLec?title=${vo.session1}&session=Session1 (1:15 - 2:30)'>${vo.session1}</a></td>
 							<td>${vo.room1}</td>
 						</tr>
 						
 						<tr>
-							<td>Session2<br>(2:45 - 4:00)</td>
+							<td style="vertical-align:middle;">Session2<br>(2:45 - 4:00)</td>
 							<td style="vertical-align:middle;">
 								<a href='/class/detailLec?title=${vo.session2}&session=Session2 (2:45 - 4:00)'>${vo.session2}</a></td>
 							<td>${vo.room2}</td>
 						</tr>
 						
 						<tr>
-							<td>Session3<br>(4:15 - 5:30)</td>
+							<td style="vertical-align:middle;">Session3<br>(4:15 - 5:30)</td>
 							<td style="vertical-align:middle;">
 								<a href='/class/detailLec?title=${vo.session3}&session=Session3 (4:15 - 5:30)'>${vo.session3}</a></td>
 							<td>${vo.room3}</td>	
