@@ -154,8 +154,7 @@ function createBoardList( data){
                     htmlStr += "<td align=center>" +  data[i].user_nm + "</td>";
                     htmlStr += "<td align=center><input type='button' class='btn btn-info modify' idx='"+ data[i].idx+"'value='Modify'/></td>";
                 } else {
-                    htmlStr += "<td align=center colspan='2'>" +  data[i].user_nm + "</td>";
-                    
+                    htmlStr += "<td>" +  data[i].user_nm + "</td><td></td>";
                 }
                 htmlStr += "</tr>";
                 htmlStr += "<tr class='content "+data[i].idx +"' style='display:none;'>";
