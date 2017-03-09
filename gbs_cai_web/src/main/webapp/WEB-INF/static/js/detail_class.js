@@ -58,7 +58,6 @@ jQuery(document).ready(function ($) {
         });
 
         $("#class-detail-div").css("display", "none");
-        console.log($("#class-detail-div"));
         $("#boardDiv").css("display", "block");
 
         $(window).scrollTop(0);
@@ -197,7 +196,6 @@ function createBoardList( data){
     $("#board-body").html(htmlStr);
 }
 var saveReqResponse = function(data){
-    alert("Post Complete!");
     createBoardList(data);
     $("#addPostDetail").val("");
     
