@@ -51,7 +51,8 @@ jQuery(document).ready(function ($) {
             error: ajaxErr
         });
 
-        $(".container").css("display", "none");
+        $("#class-detail-div").css("display", "none");
+        console.log($("#class-detail-div"));
         $("#boardDiv").css("display", "block");
 
         $(window).scrollTop(0);

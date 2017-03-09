@@ -58,27 +58,29 @@
     UserVO user = (UserVO) sess.getAttribute("user");
 %>
 
-<div class="container" id="boardDiv">
-    <h3>Question Board</h3>
-    <div class="info">
-        <table class="table table-striped" id="class-board" style="background-color: D8D8D8;">
-            <thead>
-                <tr>
-                    <th style="text-align: center;">NO</th>
-                    <th style="text-align: center;">TITLE</th>
-                    <th style="text-align: center;">WRITER</th>
-                    <th style="text-align: center;"> </th>
-                </tr>
-            </thead>
-            <tbody id="board-body"></tbody>
-            <tfoot>
-                <tr>
-                    <td id="pagenation" align="center" colspan="5">1</td>
-                </tr>
-            </tfoot>
-        </table>
-    </div>
-    <div class="container">
+
+<div class="container" >
+    <div id="boardDiv">
+
+        <h3>Question Board</h3>
+        <div class="info">
+            <table class="table table-striped" id="class-board" style="background-color: D8D8D8;">
+                <thead>
+                    <tr>
+                        <th style="text-align: center;">NO</th>
+                        <th style="text-align: center;">TITLE</th>
+                        <th style="text-align: center;">WRITER</th>
+                    </tr>
+                </thead>
+                <tbody id="board-body"></tbody>
+                <tfoot>
+                    <tr>
+                        <td id="pagenation" align="center" colspan="5">1</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
         <div id="writenew" >
             <table summary="Ask Question">
                 <section class="box">
@@ -124,4 +126,5 @@
     </div>
 </div>
 <br><br><br>
+
 
