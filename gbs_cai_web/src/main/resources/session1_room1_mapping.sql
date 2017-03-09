@@ -15,11 +15,11 @@ BEGIN
     REPEAT
 		FETCH CURSOR_ROOM INTO _idx,_session1;
         IF NOT _done THEN
-				IF _session1 = 'Bluemix' THEN SET _room1 = _TRACK1;
+				IF _session1 = 'Watson Cases, IOT' THEN SET _room1 = _TRACK1;
 					UPDATE ENROLLMENT e SET e.room1 = _room1 WHERE idx = _idx;
                     SET _idx = _idx +1;
 					
-				ELSEIF _session1 ='Watson Cases, IOT' THEN SET _room1 = _TRACK2;
+				ELSEIF _session1 ='Bluemix' THEN SET _room1 = _TRACK2;
 					UPDATE ENROLLMENT SET room1 = _room1 WHERE idx = _idx;
 					SET _idx = _idx +1;
                 ELSEIF _session1 ='Cloud App Service' THEN SET _room1 = _TRACK3;

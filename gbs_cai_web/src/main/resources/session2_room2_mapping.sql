@@ -15,10 +15,10 @@ BEGIN
     REPEAT
 		FETCH CURSOR_ROOM INTO _idx,_session2;
         IF NOT _done THEN
-				IF _session2 = 'BlockChain' THEN SET _room2 = _TRACK1;
+				IF _session2 = 'Bluemix' THEN SET _room2 = _TRACK1;
 					UPDATE enrollment SET room2 = _room2 WHERE idx = _idx;
 					SET _idx = _idx +1;
-                ELSEIF _session2 ='Bluemix' THEN SET _room2 = _TRACK2;
+                ELSEIF _session2 = 'BlockChain' THEN SET _room2 = _TRACK2;
 					UPDATE enrollment SET room2 = _room2 WHERE idx = _idx;
 					SET _idx = _idx +1;
                 ELSEIF _session2 ='CIO Advisory' THEN SET _room2 = _TRACK3;

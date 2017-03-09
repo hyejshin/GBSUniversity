@@ -21,6 +21,7 @@
 <style>
 	td {
 		font-size: 130%;
+		font-weight: bold;
 	}
 </style>
 
@@ -29,25 +30,24 @@
 <table class="table" style="border-collapse: separate; border-spacing: 6px 6px; padding:2px;">
         <tr style="height:150px; text-align:center; vertical-align:middle;">
         	<td style="text-align:center; vertical-align:middle;" bgcolor="#F0CD5B" colspan="2">
-            <a href="/index" style="text-decoration:none;">CAI Univ. Agenda</a></td>
+            <a href="/index" style="color:white">CAI Univ. Agenda</a></td>
             <td style="text-align:center; vertical-align:middle;" bgcolor="#95DEE3" colspan="2">
-
-            <a href="/myLecture?user_id=<%=user_id2%>" style="text-decoration:none;">My Enrollment</a></td>
+            <a href="/myLecture?user_id=<%=user_id2%>" style="color:white">My Enrollment</a></td>
         </tr>
 
         <tr style="height:100px; text-align:center; vertical-align:middle;">
         	<td style="text-align:center; vertical-align:middle;" bgcolor="#EFD1C6" colspan="3">
-            <a href="/attend" style="text-decoration:none;">Attendance Check</a></td>
+            <a href="/attend" style="color:white">Attendance Check</a></td>
             <td style="text-align:center; vertical-align:middle;" bgcolor="#578CA9" colspan="1">
-            <a href="/roominfo" style="text-decoration:none;">Room Info</a></td>
+            <a href="/roominfo" style="color:white">Room Info</a></td>
         </tr>   
 
         <tr style="height:80px; text-align:center; vertical-align:middle;">
             <td style="text-align: center; vertical-align:middle;" bgcolor="#88B04B" colspan="3">
-            <a href="#" id="openModal" style="text-decoration:none;">
+            <a href="#" id="openModal" style="color:white">
             Conrad Hotel</a></td>
             <td style="text-align: center; vertical-align:middle;" bgcolor="#AE734E" colspan="1">
-            <a href="https://www.ifcmallseoul.com/eng/jsp/store/floorInfo.do?lang=e&floor=L3">Lunch Time</a></td>
+            <a href="https://www.ifcmallseoul.com/eng/jsp/store/floorInfo.do?lang=e&floor=L3" style="color:white">Lunch Time</a></td>
         </tr>
 	</table>
 

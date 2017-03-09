@@ -26,7 +26,7 @@
                 <p>Speaker: ${vo.speaker}</p>
                 <p>Date : Saturday, 11 March 2017</p>
                 <p>Time : ${vo.session}</p>
-                <p>Room: ${vo.room}</p><br>
+                <p>Room: ${vo.room}</p>
             </div>	
             <div class="col-md-3 date" style="padding:0px;">
                 <p style="padding: 8px 0px;">WHAT</p>
@@ -47,8 +47,8 @@
 
             <div class="col-md-7 posts">
                 <h4>ABOUT THE SPEAKER</h4>
-                <div class="img-responsive" style="float:left;"><img src="/images/speaker/${vo.speaker_img}" alt="img"/></div>
-                <p>${vo.speaker}</p></div>	
+                <div class="img-responsive" style="float:left;"><img src="/images/speaker/${vo.speaker_img}" alt="img" width="140"/></div>
+                 <p>${vo.speaker}</p></div>	
             <div class="clearfix"></div>
         </div>
     </div>
