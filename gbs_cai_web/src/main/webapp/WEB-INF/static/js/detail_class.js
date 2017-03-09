@@ -168,7 +168,7 @@ function createBoardList( data){
                 if( data[i].idx ===  data[i+1].idx){
                     skipFlag = true;
                     htmlStr += "<tr class='comment "+ data[i].idx+"' style='display:none;'>";
-                        htmlStr += "<td colspan='2'>" + data[i].comments +"</td>";
+                        htmlStr += "<td colspan='3'>" + data[i].comments +"</td>";
                         htmlStr += "<td>"+ data[i].cm_author +"</td>";
                     htmlStr += "</tr>";
                     continue;

@@ -11,6 +11,9 @@
 <%
 	HttpSession session1 = request.getSession();
 	String user_id = (String)session1.getAttribute("user_id");
+        String tempStr = (String)session1.getAttribute("user_nm");
+        String[] nameArr = tempStr.split("/");
+        String user_nm = nameArr[0];
 %>
 <style>
 <!--
@@ -64,7 +67,7 @@
         <div class="clearfix"> </div>
 	    <ul class="nav pull-right">
                             <li class="dropdown">
-                                <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-user"></i>Hello <%=user_id%>:)<i class="caret"></i>
+                                <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-user"></i>Hello <%=user_nm%>:)<i class="caret"></i>
 
                                 </a>
                                 <ul class="dropdown-menu">
