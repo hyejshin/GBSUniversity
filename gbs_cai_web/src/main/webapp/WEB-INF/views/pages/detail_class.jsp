@@ -101,7 +101,7 @@
                         <th style="text-align: center;" colspan="2">WRITER</th>
                     </tr>
                 </thead>
-                <tbody id="board-body" style="text-align:justify">
+                <tbody id="board-body" style="text-align:justify;">
                 <p></p></tbody>
                 <tfoot>
                     <tr>
