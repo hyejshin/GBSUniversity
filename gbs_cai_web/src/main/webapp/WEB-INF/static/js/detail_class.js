@@ -140,13 +140,17 @@ function createBoardList( data){
                 htmlStr += "<tr class='showContent' value= "+data[i].idx+">";
                 htmlStr += "<td align=center>" + cnt + "</td>";
                 htmlStr += "<td align=center>" +  data[i].title + "</td>";
-                htmlStr += "<td align=center>" +  data[i].user_nm + "</td>";
                 if ( data[i].user_id == $("#user_id").val()) {// Question
+                    htmlStr += "<td align=center>" +  data[i].user_nm + "</td>";
                     htmlStr += "<td align=center><input type='button' class='btn btn-info modify' idx='"+ data[i].idx+"'value='Modify'/></td>";
-                } 
+                } else {
+                    htmlStr += "<td align=center colspan='2'>" +  data[i].user_nm + "</td>";
+                    
+                }
                 htmlStr += "</tr>";
                 htmlStr += "<tr class='content "+data[i].idx +"' style='display:none;'>";
-                htmlStr += "<td colspan = '3' >" +  data[i].detail + "</td>";
+                htmlStr += "<td colspan = '4' >" +  data[i].detail + "</td>";
+                
                 htmlStr += "</tr>";
             }
 
