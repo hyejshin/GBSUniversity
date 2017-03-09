@@ -5,7 +5,7 @@
 
  		<section id="logo" class="logo">
  			<!-- <img src="assets/images/Picture1.png" alt=""/> -->
-	    	<img src="/images/ibmbanner.png" alt="" width="100%" height="120px"/>
+	    	<img src="/images/ibmbanner.png" alt="" width="100%" height="105px"/>
 	    </section>	
 	    <section class="container" style="padding-top: 20px;">
 
