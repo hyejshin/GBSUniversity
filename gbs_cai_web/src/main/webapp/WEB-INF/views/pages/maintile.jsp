@@ -24,6 +24,7 @@
 	}
 </style>
 
+
 <img src="/images/cognitive.jpg" width="100%">
 <table class="table" style="border-collapse: separate; border-spacing: 6px 6px; padding:2px;">
         <tr style="height:150px; text-align:center; vertical-align:middle;">
