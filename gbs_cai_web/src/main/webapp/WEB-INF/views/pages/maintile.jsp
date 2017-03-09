@@ -29,24 +29,24 @@
 <img src="/images/cognitive.jpg" width="100%">
 <table class="table" style="border-collapse: separate; border-spacing: 6px 6px; padding:2px;">
         <tr style="height:150px; text-align:center; vertical-align:middle;">
-        	<td style="text-align:center; vertical-align:middle;" bgcolor="#F0CD5B" colspan="2">
+        	<td style="text-align:center; vertical-align:middle;" width="50%" bgcolor="#F0CD5B">
             <a href="/index" style="color:white">CAI Univ. Agenda</a></td>
-            <td style="text-align:center; vertical-align:middle;" bgcolor="#95DEE3" colspan="2">
+            <td style="text-align:center; vertical-align:middle;" bgcolor="#95DEE3">
             <a href="/myLecture?user_id=<%=user_id2%>" style="color:white">My Enrollment</a></td>
         </tr>
 
         <tr style="height:100px; text-align:center; vertical-align:middle;">
-        	<td style="text-align:center; vertical-align:middle;" bgcolor="#EFD1C6" colspan="3">
+        	<td style="text-align:center; vertical-align:middle;" bgcolor="#EFD1C6">
             <a href="/attend" style="color:white">Attendance Check</a></td>
-            <td style="text-align:center; vertical-align:middle;" bgcolor="#578CA9" colspan="1">
+            <td style="text-align:center; vertical-align:middle;" bgcolor="#578CA9">
             <a href="/roominfo" style="color:white">Room Info</a></td>
         </tr>   
 
         <tr style="height:80px; text-align:center; vertical-align:middle;">
-            <td style="text-align: center; vertical-align:middle;" bgcolor="#88B04B" colspan="3">
+            <td style="text-align: center; vertical-align:middle;" bgcolor="#88B04B">
             <a href="#" style="color:white" data-toggle="modal"data-target="#basicModal" >
             Conrad Hotel</a></td>
-            <td style="text-align: center; vertical-align:middle;" bgcolor="#AE734E" colspan="1">
+            <td style="text-align: center; vertical-align:middle;" bgcolor="#AE734E">
             <a href="https://www.ifcmallseoul.com/eng/jsp/store/floorInfo.do?lang=e&floor=L3" style="color:white">Lunch Time</a></td>
         </tr>
 	</table>
