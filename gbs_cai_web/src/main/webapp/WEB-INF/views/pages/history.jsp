@@ -12,7 +12,7 @@
 		
         <h4>My Enrollment</h4>
         <br/>
-	<h5><b>Morning Session</b></h5>
+	<h5><span class="glyphicon glyphicon-time" aria-hidden="true"></span><b>Morning Session</b></h5>
         <table id="table" class="table table-striped table-condensed" cellspacing="0" width="100%">
 					<thead thead style=" background-color: #578CA9; color:white; ">
 						<tr>
@@ -59,8 +59,8 @@
 
 				</table>
 				
-	<h5><b>Break-Out Session</b></h5>
-      <p>각 세션 title 클릭시 세션 내용 및 Q&A를 확인할 수 있습니다.
+	<h5><span class="glyphicon glyphicon-time" aria-hidden="true"></span><b>Break-Out Session</b></h5>
+      <p style="text-align:justify;">각 세션 title 클릭시 세션 내용 및 Q&A를 확인할 수 있습니다.
       Click on the each session, session description and Q&A are available</p>
 
         <table id="table" class="table table-striped table-condensed" cellspacing="0" width="100%">
