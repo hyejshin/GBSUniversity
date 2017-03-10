@@ -66,8 +66,8 @@ tbody{
   <tr style="text-align:center;">
     <td style="vertical-align:middle;">9:45</td>
     <td style="vertical-align:middle; border-right: 1px solid #E7EFEF;">10:45</td>
-    <td style="border-right: 1px solid #B9BEBD; border-right: 1px solid #B9BEBD; background:#33cccc;"><b>Cloud<br>Application<br>Service</b></td>
-    <td style="vertical-align:middle; background:#ffcc99;"><b>Watson Case</b></td>
+    <td style="border-right: 1px solid #B9BEBD; border-right: 1px solid #B9BEBD; background:#33cccc;"><b>Cloud<br>Application<br>Service</b><br>Tom Crawford</td>
+    <td style="vertical-align:middle; background:#ffcc99;"><b>Watson Case</b><br>SooYeon Kim</td>
   </tr>
   <tr style="text-align:center;">
     <td style="vertical-align:middle;">10:45</td>
@@ -77,8 +77,8 @@ tbody{
   <tr style="text-align:center;">
     <td style="vertical-align:middle;">11:00</td>
     <td style="vertical-align:middle; border-right: 1px solid #E7EFEF;">12:00</td>
-    <td style="vertical-align:middle; border-right: 1px solid #B9BEBD; background:#ffcc99;"><b>Watson Case</b></td>
-    <td style="background:#33cccc;"><b>Cloud<br>Application<br>Service</b></td>
+    <td style="vertical-align:middle; border-right: 1px solid #B9BEBD; background:#ffcc99;"><b>Watson Case</b><br>SooYeon Kim</td>
+    <td style="background:#33cccc;"><b>Cloud<br>Application<br>Service</b><br>Tom Crawford</td>
   </tr>
   <tr style="text-align:center;">
     <td style="vertical-align:middle;">12:00</td>
