@@ -150,6 +150,19 @@
     </definition> 
     
         
+    <!-- Notice -->
+    <definition name="listNotice" extends="base-definition">  
+        <put-attribute name="title" value="listNotice" />  
+        <put-attribute name="body" value="/WEB-INF/views/pages/notice/listNotice.jsp" />  
+    </definition>
+    
+    <definition name="addNotice" extends="base-definition">  
+        <put-attribute name="title" value="addNotice" />  
+        <put-attribute name="body" value="/WEB-INF/views/pages/notice/addNotice.jsp" />  
+    </definition>
+
+
+    
     <definition name="history" extends="base-definition">  
         <put-attribute name="title" value="MyLecture" />  
         <put-attribute name="body" value="/WEB-INF/views/pages/history.jsp" />  
