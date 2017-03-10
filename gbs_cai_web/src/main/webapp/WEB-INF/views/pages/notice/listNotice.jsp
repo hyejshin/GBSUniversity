@@ -15,8 +15,7 @@ String user_id = (String)session1.getAttribute("user_id");
 %>
 
 <div class="container">		
-		
-        <h4 style="text-align:center;"><span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span>Announcement</h4>
+
         <br/>
 		
         <table id="table" class="table table-striped table-condensed" cellspacing="0" width="100%">
