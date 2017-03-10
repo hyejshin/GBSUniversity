@@ -66,3 +66,11 @@ CREATE TABLE BOARD (
 	indent			INT(3)		 DEFAULT 0,
 	PRIMARY KEY(idx)
 );
+
+
+#NOTICE TABLE
+CREATE TABLE NOTICE (
+	idx 			INT(10) NOT NULL auto_increment,
+	content			MEDIUMTEXT NOT NULL,
+	PRIMARY KEY(idx)
+);
