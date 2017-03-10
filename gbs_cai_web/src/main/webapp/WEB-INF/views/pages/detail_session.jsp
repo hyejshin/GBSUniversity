@@ -4,9 +4,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <div class="container">
-	<h4>Break-Out Session</h4><br>
-	각 세션명을 클릭시 세션 내용 및 Q&A를 확인할 수 있습니다. 
-	Click on the each session, session description and Q&A are available.
+	<h4 style="text-align:center;"><span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>Break-Out Session</h4><br>
+	<p style="text-align:justify">각 세션명을 클릭시 세션 내용 및 Q&A를 확인할 수 있습니다. 
+		Click on the each session, session description and Q&A are available.</p>
 
     <table class="table table-bordered" style="table-layout: fixed; word-break:break-all">
         <thead>
