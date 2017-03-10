@@ -26,7 +26,7 @@ tr th:last-child {
 <div class="tg-wrap">
 <table class="table table-condensed" style="table-layout: fixed; word-break:break-all; padding: 5px;">
   <tr>
-    <th colspan="6" style="text-align:center; background:#BCE99D;" >Plenary Seesion<br><b> Grand Ballroom(3F), Conrad Hotel</th>
+    <th colspan="6" style="text-align:center; background:#BCE99D;" >Plenary Session<br><b> Grand Ballroom(3F), Conrad Hotel</th>
   </tr>
   <tr bgcolor="#CCFF99">
     <td style="width:15%; text-align:center;">Start</td>
@@ -41,7 +41,7 @@ tr th:last-child {
   <tr>
     <td bgcolor="#CCFF99" style="text-align:center;">18:10</td>
     <td bgcolor="#CCFF99" style="text-align:center;">18:30</td>
-    <td colspan="4" style="text-align:center;">Keynote Speech<br><b>CAI Transformation</b></td>
+    <td colspan="4" style="text-align:center;">Keynote Speech</td>
   </tr>
   <tr>
     <td bgcolor="#CCFF99" style="text-align:center;">18:30</td>
