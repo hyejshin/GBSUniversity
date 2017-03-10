@@ -50,25 +50,26 @@
         <put-list-attribute name="loginJS" cascade="true">
             <add-attribute value="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"/>
             <add-attribute value="/script/bootstrap.min.js"/>
+              <add-attribute value="/script/index.js" />
         </put-list-attribute>    
     </definition>
     
     <!-- admin Layout Definition -->
     <definition name="admin-definition" template="/WEB-INF/views/tiles/layouts/defaultLayout.jsp">
-    	  <put-attribute name="title" value="" />  
+        <put-attribute name="title" value="" />  
         <put-attribute name="head"  value="/WEB-INF/views/tiles/template/adminHead.jsp" />
         <put-attribute name="header" value="/WEB-INF/views/tiles/template/adminHeader.jsp" />
         <put-attribute name="body" value="" />
         <put-attribute name="footer" value="/WEB-INF/views/tiles/template/adminFooter.jsp" />
         <!-- 
-        <put-list-attribute name="Admincss" cascade="true">
-            <add-attribute value="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
-        </put-list-attribute>   
-        <put-list-attribute name="Adminjs" cascade="true">
-            <add-attribute value="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"/>
-            <add-attribute value="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"/>
-        </put-list-attribute>   
-         --> 
+       <put-list-attribute name="Admincss" cascade="true">
+           <add-attribute value="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+       </put-list-attribute>   
+       <put-list-attribute name="Adminjs" cascade="true">
+           <add-attribute value="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"/>
+           <add-attribute value="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"/>
+       </put-list-attribute>   
+        --> 
     </definition>
     
     <definition name="empty-definition" template="/WEB-INF/views/tiles/layouts/empty.jsp">

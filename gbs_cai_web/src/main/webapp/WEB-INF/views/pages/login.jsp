@@ -2,14 +2,12 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
- 		
 	<div class="wrapper">
 		<div class="container">
 			<h2>GBS CAI Korea University</h2>
                    <br><b>Cloud Application Innovation</b>
-			<form class="form" name="loginForm" method="post" action="/login" >
-				<input type="text" name="user_id" placeholder="XXXX@kr.ibm.com"> 
+			<form class="form" id = "loginForm" name="loginForm" >
+				<input id="user_id" type="text" name="user_id" placeholder="XXXX@kr.ibm.com"> 
 				<button type="submit" name="go" id="login-button">Login</button>
 			</form>
 		</div>
