@@ -16,7 +16,7 @@ String user_id = (String)session1.getAttribute("user_id");
 
 <div class="container">		
 		
-        <h4>Announcement</h4>
+        <h4 style="text-align:center;">Announcement</h4>
         <br/>
 		
         <table id="table" class="table table-striped table-condensed" cellspacing="0" width="100%">
@@ -34,7 +34,7 @@ String user_id = (String)session1.getAttribute("user_id");
 			</c:forEach>
 		</table>
     </div>
-
+<br><br>
 <%
 if(user_id.equals("ibmk0reagbs!")) {%>
    <button class="btn btn-info" onClick="location.href='/addNoticeView';">Write Notice</button>
