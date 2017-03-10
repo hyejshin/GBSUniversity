@@ -1,5 +1,7 @@
 package com.ibm.gbs.gbs_cai_web.controllers;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,9 +26,14 @@ public class NoticeController {
 	}
 	
 	@RequestMapping("/addNoticeView")
-	public String addNoticeView(Model model) {
+	public String addNoticeView(Model model, HttpSession session) {
 		
-		return "addNotice";
+		String user_id = (String)session.getAttribute("user_id");
+
+		if(user_id.equals("ibmk0reagbs!"))
+			return "addNotice";
+		else
+			return "redirect:listNotice";
 	}
 	
 	@RequestMapping("/addNotice")
