@@ -111,7 +111,12 @@
     <!-- login page -->
     <definition name="login" extends="login-definition">    	        
         <put-attribute name="title" value="Welcome" />  
-        <put-attribute name="body" value="/WEB-INF/views/pages/login.jsp" />                             
+        <put-attribute name="body" value="/WEB-INF/views/pages/login.jsp" />
+        <put-list-attribute name="loginJS" cascade="true">
+            <add-attribute value="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"/>
+            <add-attribute value="/script/bootstrap.min.js"/>
+            <add-attribute value="/script/index.js" />
+        </put-list-attribute>                       
     </definition>
  
     <!-- user page -->
