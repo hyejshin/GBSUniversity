@@ -47,7 +47,9 @@
             <a href="#" style="color:white" data-toggle="modal"data-target="#basicModal" >
             Conrad Hotel</a></td>
             <td style="text-align: center; vertical-align:middle;" bgcolor="#AE734E">
-            <a href="https://www.ifcmallseoul.com/eng/jsp/store/floorInfo.do?lang=e&floor=L3" style="color:white">Lunch Time</a></td>
+             <!-- 수정이력: 최미수 점심 링크 연결안되는거 변경-->
+            <a href="http://www.ifcmallseoul.com/eng/jsp/store/floorInfo.do?lang=e&floor=L3" style="color:white">Lunch Time</a></td>
+
         </tr>
 	</table>
 
