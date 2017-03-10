@@ -32,7 +32,7 @@ tbody{
 </style>
 <div class="container">
 
-<h4>CAI University Agenda</h4><br>
+<h4><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>CAI University Agenda</h4><br>
    <table class="table table-condensed" style="table-layout: fixed; word-break:break-all">
 <thead>
   <tr bgcolor="#04B486">
@@ -95,12 +95,12 @@ tbody{
   border-bottom-right-radius: 6px;">13:15</td>
 	  <td style="width:15%; text-align:center; vertical-align:middle; border-right: 1px solid #E7EFEF;">17:30</td>
     <td colspan="2" height="100" style="text-align:center; vertical-align:middle;" >
-    	<a href="/detail_session"><b>Break-Out Session</b><br>(Click here for detail)</a></td>
+    	<a href="/detail_session"><b>Break-Out Session</b><br><span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>Click here for detail</a></td>
   </tr>
   <tr>
   	<td style="vertical-align:middle; vertical-align:middle;">17:30</td>
     <td style="vertical-align:middle; vertical-align:middle;">18:00</td>
-    <td colspan="2" style="text-align:center;">Move to Plenary Session</td>
+    <td colspan="2" style="text-align:center;"><span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>Move to Plenary Session</td>
   </tr>
 </table>
 </div>
@@ -112,7 +112,7 @@ tbody{
     <td style="width:15%; text-align:center; vertical-align:middle; border-right: 1px solid #E7EFEF;">21:30</td>
     <td colspan="2" height="100" style="text-align:center; vertical-align:middle;" >
     	<a href="/detail_plenary"><b>Plenary Session & Dinner<br>
-    	(CAI Practitioners only)</b><br>Grand Ballroom(3F), Conrad Hotel<br>(Click here for detail)</a></td>
+    	(CAI Practitioners only)</b><br>Grand Ballroom(3F), Conrad Hotel<br><span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>Click here for detail</a></td>
   </tr>
 </table></div>
 
