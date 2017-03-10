@@ -67,13 +67,13 @@
         <div class="clearfix"> </div>
 	    <ul class="nav pull-right">
                             <li class="dropdown">
-                                <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-user"></i>Hello <%=user_nm%>:)<i class="caret"></i>
+                                <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-user"></i><%=user_nm%>:)<i class="caret"></i>
 
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li class="divider"></li>
                                     <li>
-                                        <a tabindex="-1" href="/logout">Logout</a>
+                                        <a tabindex="-1" href="/logout"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>Logout</a>
                                     </li>
                                 </ul>
                             </li>
