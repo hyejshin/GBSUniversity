@@ -791,7 +791,8 @@ p.message-para{
 }
 /*-- footer --*/
 .footer {
-    background:#279f7c;
+	height:160px;
+    background:-webkit-linear-gradient(#81f671, #6887d5);
 	padding:3em 0em 0;
 }
 .footer-top {
@@ -799,7 +800,7 @@ p.message-para{
 }
 .twitter h4{
 	font-size:2em;
-	color:#fff;
+	color:#1c1f23;
 	font-family: 'PT Sans Narrow', sans-serif;
 }
 .twitter-in {
@@ -807,9 +808,19 @@ p.message-para{
 }			
 .twitter-in p ,.twitter-in span {
 	font-size:1.1em;
-	color:#86e5c9;
-	line-height: 1.8em;
+	color:rgb(0, 0, 0);
+
 	display:block;
+}
+.contact form input[type="text"],.contact  form textarea  {
+	padding: 9px 20px;
+	width: 100%;
+	border: none;
+	outline: none;
+	margin-bottom: 0.8em;
+	font-size: 1em;
+	color: #a3a3a3;
+	border-radius: 5px;
 }
 .contact form input[type="text"],.contact  form textarea  {
 	padding: 9px 20px;
