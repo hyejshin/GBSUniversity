@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ibm.gbs.gbs_cai_web.mapper.NoticeMapper">
+<cache />
+           
+    <select id="getNoticeList" resultType="com.ibm.gbs.gbs_cai_web.vo.NoticeVO">
+        SELECT *	   
+        FROM NOTICE
+    </select>
+      
+    <insert id="addNotice" parameterType="com.ibm.gbs.gbs_cai_web.vo.NoticeVO">
+        INSERT INTO NOTICE (
+	        content
+        )
+        VALUES (
+	        #{content}
+        )	
+    </insert>
+    
+    <delete id="deleteNotice" parameterType="int">
+        DELETE    
+        FROM NOTICE
+        WHERE idx=#{idx}
+    </delete>
+    
+</mapper>

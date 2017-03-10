@@ -7,6 +7,7 @@
 package com.ibm.gbs.gbs_cai_web.config;
 
 import javax.servlet.Filter;
+import javax.servlet.FilterRegistration;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletRegistration;
 import org.springframework.util.Assert;
@@ -66,6 +67,12 @@ public class AppInitializer extends AbstractAnnotationConfigDispatcherServletIni
         }
 
         customizeRegistration(registration);
+        
+        
+        FilterRegistration.Dynamic fr = servletContext.addFilter("CharacterEncodingFilter", org.springframework.web.filter.CharacterEncodingFilter.class);
+        fr.setInitParameter("encoding", "utf-8");
+        fr.setInitParameter("forceEncoding", "true");
+        fr.addMappingForUrlPatterns(null, true, "/*");
     }
-    
+
 }
