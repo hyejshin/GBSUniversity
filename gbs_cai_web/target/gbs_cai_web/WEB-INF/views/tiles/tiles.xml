@@ -150,6 +150,19 @@
     </definition> 
     
         
+    <!-- Notice -->
+    <definition name="listNotice" extends="base-definition">  
+        <put-attribute name="title" value="listNotice" />  
+        <put-attribute name="body" value="/WEB-INF/views/pages/notice/listNotice.jsp" />  
+    </definition>
+    
+    <definition name="addNotice" extends="base-definition">  
+        <put-attribute name="title" value="addNotice" />  
+        <put-attribute name="body" value="/WEB-INF/views/pages/notice/addNotice.jsp" />  
+    </definition>
+
+
+    
     <definition name="history" extends="base-definition">  
         <put-attribute name="title" value="MyLecture" />  
         <put-attribute name="body" value="/WEB-INF/views/pages/history.jsp" />  
@@ -165,7 +178,7 @@
         <put-attribute name="body" value="/WEB-INF/views/pages/maintile.jsp" />  
         <put-attribute name="test" value="test"/>
         <put-list-attribute name="maintileJs" cascade="true">
-            <add-attribute value="//apis.daum.net/maps/maps3.js?apikey=7f3731dca672112d36654cd2bc58faab&amp;libraries=services"/>
+            <!-- <add-attribute value="//apis.daum.net/maps/maps3.js?apikey=7f3731dca672112d36654cd2bc58faab&amp;libraries=services"/> -->
             <add-attribute value="/script/maintile.js"/>
         </put-list-attribute>
         <put-list-attribute name="maintileCss" cascade="true">
@@ -181,6 +194,11 @@
     <definition name="conradHotel" extends="base-definition">    	        
         <put-attribute name="title" value="conradHotel" />  
         <put-attribute name="body" value="/WEB-INF/views/pages/conradHotel.jsp" />                             
+    </definition>
+    
+    <definition name="members" extends="base-definition">    	        
+        <put-attribute name="title" value="members" />  
+        <put-attribute name="body" value="/WEB-INF/views/pages/members.jsp" />                             
     </definition>
     
     <definition name="404Error" extends="base-definition">  

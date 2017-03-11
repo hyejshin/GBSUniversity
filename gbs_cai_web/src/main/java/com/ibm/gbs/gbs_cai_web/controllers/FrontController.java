@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.stereotype.Controller;
 
 @Controller
-@RequestMapping(value={"/"})
+@RequestMapping(value={"/", "/members"})
 public class FrontController {
 //    @Autowired
 //    private UserVO userVO;
@@ -58,5 +58,10 @@ public class FrontController {
     public String conradHotel(ModelMap model) {
     	
     	return "conradHotel";
+    }
+    
+    @RequestMapping(value={"/members"}, method = RequestMethod.GET)
+    public String members(ModelMap model){
+        return "members";
     }
 }

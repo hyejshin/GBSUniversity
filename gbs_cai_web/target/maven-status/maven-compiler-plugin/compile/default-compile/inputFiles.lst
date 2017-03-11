@@ -5,11 +5,14 @@ C:\Users\IBM_ADMIN\Desktop\IBM诀公\cai univ\project_dev\gbs_cai_web\src\main\jav
 C:\Users\IBM_ADMIN\Desktop\IBM诀公\cai univ\project_dev\gbs_cai_web\src\main\java\com\ibm\gbs\gbs_cai_web\service\impl\EnrollmentServiceImpl.java
 C:\Users\IBM_ADMIN\Desktop\IBM诀公\cai univ\project_dev\gbs_cai_web\src\main\java\com\ibm\gbs\gbs_cai_web\common\StringUtils.java
 C:\Users\IBM_ADMIN\Desktop\IBM诀公\cai univ\project_dev\gbs_cai_web\src\main\java\com\ibm\gbs\gbs_cai_web\mapper\BoardMapper.java
+C:\Users\IBM_ADMIN\Desktop\IBM诀公\cai univ\project_dev\gbs_cai_web\src\main\java\com\ibm\gbs\gbs_cai_web\mapper\NoticeMapper.java
 C:\Users\IBM_ADMIN\Desktop\IBM诀公\cai univ\project_dev\gbs_cai_web\src\main\java\com\ibm\gbs\gbs_cai_web\service\impl\AttendServiceImpl.java
 C:\Users\IBM_ADMIN\Desktop\IBM诀公\cai univ\project_dev\gbs_cai_web\src\main\java\com\ibm\gbs\gbs_cai_web\controllers\ChatController.java
 C:\Users\IBM_ADMIN\Desktop\IBM诀公\cai univ\project_dev\gbs_cai_web\src\main\java\com\ibm\gbs\gbs_cai_web\service\AttendService.java
 C:\Users\IBM_ADMIN\Desktop\IBM诀公\cai univ\project_dev\gbs_cai_web\src\main\java\com\ibm\gbs\gbs_cai_web\controllers\BoardController.java
+C:\Users\IBM_ADMIN\Desktop\IBM诀公\cai univ\project_dev\gbs_cai_web\src\main\java\com\ibm\gbs\gbs_cai_web\service\NoticeService.java
 C:\Users\IBM_ADMIN\Desktop\IBM诀公\cai univ\project_dev\gbs_cai_web\src\main\java\com\ibm\gbs\gbs_cai_web\vo\BoardVO.java
+C:\Users\IBM_ADMIN\Desktop\IBM诀公\cai univ\project_dev\gbs_cai_web\src\main\java\com\ibm\gbs\gbs_cai_web\controllers\NoticeController.java
 C:\Users\IBM_ADMIN\Desktop\IBM诀公\cai univ\project_dev\gbs_cai_web\src\main\java\com\ibm\gbs\gbs_cai_web\mapper\UserMapper.java
 C:\Users\IBM_ADMIN\Desktop\IBM诀公\cai univ\project_dev\gbs_cai_web\src\main\java\com\ibm\gbs\gbs_cai_web\config\AuthInterceptor.java
 C:\Users\IBM_ADMIN\Desktop\IBM诀公\cai univ\project_dev\gbs_cai_web\src\main\java\com\ibm\gbs\gbs_cai_web\vo\ClassVO.java
@@ -26,6 +29,7 @@ C:\Users\IBM_ADMIN\Desktop\IBM诀公\cai univ\project_dev\gbs_cai_web\src\main\jav
 C:\Users\IBM_ADMIN\Desktop\IBM诀公\cai univ\project_dev\gbs_cai_web\src\main\java\com\ibm\gbs\gbs_cai_web\vo\Message.java
 C:\Users\IBM_ADMIN\Desktop\IBM诀公\cai univ\project_dev\gbs_cai_web\src\main\java\com\ibm\gbs\gbs_cai_web\controllers\AttendController.java
 C:\Users\IBM_ADMIN\Desktop\IBM诀公\cai univ\project_dev\gbs_cai_web\src\main\java\com\ibm\gbs\gbs_cai_web\service\LoginService.java
+C:\Users\IBM_ADMIN\Desktop\IBM诀公\cai univ\project_dev\gbs_cai_web\src\main\java\com\ibm\gbs\gbs_cai_web\service\impl\NoticeServiceImpl.java
 C:\Users\IBM_ADMIN\Desktop\IBM诀公\cai univ\project_dev\gbs_cai_web\src\main\java\com\ibm\gbs\gbs_cai_web\controllers\GlobalExceptionHandler.java
 C:\Users\IBM_ADMIN\Desktop\IBM诀公\cai univ\project_dev\gbs_cai_web\src\main\java\com\ibm\gbs\gbs_cai_web\service\impl\ClassServiceImpl.java
 C:\Users\IBM_ADMIN\Desktop\IBM诀公\cai univ\project_dev\gbs_cai_web\src\main\java\com\ibm\gbs\gbs_cai_web\config\DataConfig.java
@@ -34,6 +38,7 @@ C:\Users\IBM_ADMIN\Desktop\IBM诀公\cai univ\project_dev\gbs_cai_web\src\main\jav
 C:\Users\IBM_ADMIN\Desktop\IBM诀公\cai univ\project_dev\gbs_cai_web\src\main\java\com\ibm\gbs\gbs_cai_web\service\ClassService.java
 C:\Users\IBM_ADMIN\Desktop\IBM诀公\cai univ\project_dev\gbs_cai_web\src\main\java\com\ibm\gbs\gbs_cai_web\controllers\ClassController.java
 C:\Users\IBM_ADMIN\Desktop\IBM诀公\cai univ\project_dev\gbs_cai_web\src\main\java\com\ibm\gbs\gbs_cai_web\mapper\TestMapper.java
+C:\Users\IBM_ADMIN\Desktop\IBM诀公\cai univ\project_dev\gbs_cai_web\src\main\java\com\ibm\gbs\gbs_cai_web\vo\NoticeVO.java
 C:\Users\IBM_ADMIN\Desktop\IBM诀公\cai univ\project_dev\gbs_cai_web\src\main\java\com\ibm\gbs\gbs_cai_web\service\impl\BoardServiceImpl.java
 C:\Users\IBM_ADMIN\Desktop\IBM诀公\cai univ\project_dev\gbs_cai_web\src\main\java\com\ibm\gbs\gbs_cai_web\mapper\EnrollmentMapper.java
 C:\Users\IBM_ADMIN\Desktop\IBM诀公\cai univ\project_dev\gbs_cai_web\src\main\java\com\ibm\gbs\gbs_cai_web\service\impl\LoginServiceImpl.java

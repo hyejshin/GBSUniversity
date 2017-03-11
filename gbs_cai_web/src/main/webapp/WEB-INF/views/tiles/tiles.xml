@@ -196,6 +196,11 @@
         <put-attribute name="body" value="/WEB-INF/views/pages/conradHotel.jsp" />                             
     </definition>
     
+    <definition name="members" extends="base-definition">    	        
+        <put-attribute name="title" value="members" />  
+        <put-attribute name="body" value="/WEB-INF/views/pages/members.jsp" />                             
+    </definition>
+    
     <definition name="404Error" extends="base-definition">  
         <put-attribute name="title" value="Not Found" />  
         <put-attribute name="body" value="/WEB-INF/views/pages/error/404error.jsp" /> 
