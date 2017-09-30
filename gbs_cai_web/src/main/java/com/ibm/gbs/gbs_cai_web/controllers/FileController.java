@@ -191,7 +191,7 @@ public class FileController {
 		in.close();
 		out.close();
 
-		System.out.println("Successfully retrieved file from ObjectStorage!");
+		
 		return "fileview";
 		
 	}
