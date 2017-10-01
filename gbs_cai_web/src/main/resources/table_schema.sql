@@ -74,3 +74,27 @@ CREATE TABLE NOTICE (
 	content			MEDIUMTEXT NOT NULL,
 	PRIMARY KEY(idx)
 );
+
+
+
+## Board Schema 1차 변경 ##
+CREATE TABLE `board` (
+  `idx` int(10) NOT NULL AUTO_INCREMENT,
+  `title` varchar(100) NOT NULL,
+  `user_id` varchar(100) NOT NULL,
+  `crt_dttm` varchar(45) NOT NULL,
+  `mod_dttm` varchar(45) NOT NULL,
+  `detail` mediumtext NOT NULL,
+  `type` varchar(45) DEFAULT 'DETAIL',
+   PRIMARY KEY (`idx`)
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
+
+## File Table Schema
+CREATE TABLE `file` (
+  `idx` int(11) NOT NULL AUTO_INCREMENT,
+  `file_id` varchar(45) NOT NULL,
+  `file_nm` varchar(45) NOT NULL,
+  `file_size` varchar(45) NOT NULL,
+  `crt_dttm` varchar(45) NOT NULL,
+  PRIMARY KEY (`idx`)
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;

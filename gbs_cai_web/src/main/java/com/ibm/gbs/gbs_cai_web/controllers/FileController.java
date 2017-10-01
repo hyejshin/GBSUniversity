@@ -191,7 +191,7 @@ public class FileController {
 		in.close();
 		out.close();
 
-		System.out.println("Successfully retrieved file from ObjectStorage!");
+		
 		return "fileview";
 		
 	}
@@ -202,12 +202,7 @@ public class FileController {
 		return "fileview";
 	}
 
-	@RequestMapping("/file/upload")
-	public String fileUpload(ModelMap model) throws Exception {
-
-		return "fileview";
-	}
-	
+		
 	/*
 	 * 사용목적  : Header, Metadata 정보를 제외한 데이터를 전송할 때 사용된다.
 	 *  작성자   : 정연우 
