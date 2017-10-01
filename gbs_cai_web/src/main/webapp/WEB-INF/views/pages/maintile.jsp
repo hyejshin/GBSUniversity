@@ -30,7 +30,7 @@
 <table class="table" style="border-collapse: separate; border-spacing: 6px 6px; padding:2px;">
         <tr style="height:130px; text-align:center; vertical-align:middle;">
         	<td style="text-align:center; vertical-align:middle;" width="50%" bgcolor="#F0CD5B">
-            <a href="/index" style="color:white">CAI Univ. Agenda</a></td>
+            <a href="/index" style="color:white">GBS Univ. Agenda</a></td>
             <td style="text-align:center; vertical-align:middle;" bgcolor="#95DEE3">
             <a href="/myLecture?user_id=<%=user_id2%>" style="color:white">My Enrollment</a></td>
         </tr>
@@ -52,7 +52,8 @@
         
         <tr style="height:40px; text-align:center; vertical-align:middle;">
             <td colspan="2" style="text-align: center; vertical-align:middle;" bgcolor="#004B8D">
-            <a href="/listNotice" style="color:white">Notice</a></td>
+            <!-- <a href="/listNotice" style="color:white">Notice</a></td>  -->
+            <a href="/listqnaboard" style="color:white">Q & A</a></td>
         </tr>
 	</table>
 
