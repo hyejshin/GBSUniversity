@@ -8,6 +8,8 @@ package com.ibm.gbs.gbs_cai_web.service;
 
 import com.ibm.gbs.gbs_cai_web.vo.BoardVO;
 import com.ibm.gbs.gbs_cai_web.vo.CommentVO;
+import com.ibm.gbs.gbs_cai_web.vo.FileVO;
+
 import java.util.List;
 
 /**
@@ -39,5 +41,40 @@ public interface BoardService {
      * param : CommentVO commentvo
      */
     public int insertComment(CommentVO commentvo);
+    
+    /**
+     * select board idx 
+     * author : Yeonwoo Jung
+     * param : 
+     */
+    public int selectBoardIdx(); 
+    
+    /**
+     * insert board content's file 
+     * author : Yeonwoo Jung
+     * param : 
+     */
+    public void insertNewBoardFileContent(FileVO fileVO);
+    
+    /**
+     * get board list 
+     * author : Yeonwoo Jung
+     * param : 
+     */
+    public List<BoardVO> getBoardList();
+    
+    /**
+     * get board detail 
+     * author : Yeonwoo Jung
+     * param : 
+     */    
+    public List<BoardVO> getBoardDetail(BoardVO boardVO);
+    
+    /**
+     * get file by file_id(unique) 
+     * author : Yeonwoo Jung
+     * param : 
+     */
+    public String getFileById(String fileId);
     
 }

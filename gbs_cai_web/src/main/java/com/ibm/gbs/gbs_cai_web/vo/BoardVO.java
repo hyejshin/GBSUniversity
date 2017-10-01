@@ -7,223 +7,157 @@
 package com.ibm.gbs.gbs_cai_web.vo;
 
 import java.io.Serializable;
+
 import org.springframework.stereotype.Repository;
 
 @Repository("boardvo")
 public class BoardVO implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    private int idx;
-    private String board_id;
-    private String class_id;
-    private String title;
-    private String user_id;
-    private String user_nm;
-    private String detail;
-    private String type;
-    private int step;
-    private int indent;
-    private String date;
-    int cm_idx;
-    String comments;
-    String cm_author;
+	private int idx;
 
-    //default contructor
-    public BoardVO() {
-    } ;
-    
-    /**
-     *  Author   : Joosang Kim
-     *  Detail   : Contructor for getBoardListByClassId-EnrollmentService.class
-     *             VO for lists
-     */
-    public BoardVO(int idx, String board_id, String class_id, String title,
-             String user_id, String user_nm, String type,
-             int step) {
-        this.idx = idx;
-        this.user_id = user_id;
-        this.class_id = class_id;
-        this.title = title;
-        this.user_id = user_id;
-        this.user_nm = user_nm;
-        this.detail = detail;
-        this.type = type;
-        this.step = step;
-    };
-    
-    /**
-     * Author   : Joosang Kim
-     *  Detail   : Contructor for insertNewBoardContent-BoardService.class
-     *             VO for detail
-     */
-    public BoardVO(String board_id, String class_id, String user_id, String detail, String type){
-        this.board_id = board_id;
-        this.class_id = class_id;
-        this.user_id = user_id;
-        this.detail = detail;
-        this.type = type;
-    };
-    
-    /**
-     *  Author   : Joosang Kim
-     *  Detail   : Contructor for getBoardListByClassId-EnrollmentService.class
-     *             VO for detail
-     */
-    public BoardVO(int idx, String board_id, String class_id, String tilte,
-             String user_id, String user_nm, String detail, String type,
-             int step,  String date) {
-        this.idx = idx;
-        this.user_id = user_id;
-        this.class_id = class_id;
-        this.title = title;
-        this.user_id = user_id;
-        this.user_nm = user_nm;
-        this.detail = detail;
-        this.type = type;
-        this.step = step;
-        this.indent = indent;
-        this.date = date;
-    };
-    
-        /**
-     *  Author   : Joosang Kim
-     *  Detail   : Contructor for getBoardListByClassId-EnrollmentService.class with comments
-     *             VO for detail
-     */
-    public BoardVO(int idx, String board_id, String class_id, String tilte,
-             String user_id, String user_nm, String type, String detail,
-             int step,  int indent, int cm_idx, String comments, String cm_author) {
-        this.idx = idx;
-        this.board_id = board_id;
-        this.class_id = class_id;
-        this.title = title;
-        this.user_id = user_id;
-        this.user_nm = user_nm;
-        this.type = type;
-        this.detail = detail;
-        this.step = step;
-        this.indent = indent;
-        this.cm_idx = cm_idx;
-        this.comments = comments;
-        this.cm_author = cm_author;
-    };        
-    
-    
-    
-    
-    public String getTitle() {
-        return title;
-    }
+	private String title;
+	private String user_id;
+	private String detail;
+	private String crt_dttm;
+	private String mod_dttm;
+	private String file_nm;
+	private String file_id;
 
-    //getter and setter - auto generated.
-    public String getDate() {
-        return date;
-    }
+	private int step;
+	private int indent;
+	private String date;
+	int cm_idx;
+	String comments;
 
-    public void setDate(String date) {
-        this.date = date;
-    }
+	public String getFile_nm() {
+		return file_nm;
+	}
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
+	public void setFile_nm(String file_nm) {
+		this.file_nm = file_nm;
+	}
 
-    public int getIdx() {
-        return idx;
-    }
+	String cm_author;
 
-    public void setIdx(int idx) {
-        this.idx = idx;
-    }
+	public BoardVO(String title, String user_id, String detail) {
 
-    public String getBoard_id() {
-        return board_id;
-    }
+		this.title = title;
+		this.user_id = user_id;
+		this.detail = detail;
+	}
 
-    public void setBoard_id(String board_id) {
-        this.board_id = board_id;
-    }
+	public BoardVO(int idx) {
+		this.idx = idx;
+	}
 
-    public String getClass_id() {
-        return class_id;
-    }
+	public BoardVO() {
 
-    public void setClass_id(String class_id) {
-        this.class_id = class_id;
-    }
+	}
 
-    public String getUser_id() {
-        return user_id;
-    }
+	public int getIdx() {
+		return idx;
+	}
 
-    public void setUser_id(String user_id) {
-        this.user_id = user_id;
-    }
+	public void setIdx(int idx) {
+		this.idx = idx;
+	}
 
-    public String getDetail() {
-        return detail;
-    }
+	public String getTitle() {
+		return title;
+	}
 
-    public void setDetail(String detail) {
-        this.detail = detail;
-    }
+	public void setTitle(String title) {
+		this.title = title;
+	}
 
-    public String getType() {
-        return type;
-    }
+	public String getUser_id() {
+		return user_id;
+	}
 
-    public void setType(String type) {
-        this.type = type;
-    }
+	public void setUser_id(String user_id) {
+		this.user_id = user_id;
+	}
 
-    public int getStep() {
-        return step;
-    }
+	public String getDetail() {
+		return detail;
+	}
 
-    public void setStep(int step) {
-        this.step = step;
-    }
+	public void setDetail(String detail) {
+		this.detail = detail;
+	}
 
-    public int getIndent() {
-        return indent;
-    }
+	public String getCrt_dttm() {
+		return crt_dttm;
+	}
 
-    public void setIndent(int indent) {
-        this.indent = indent;
-    }
+	public void setCrt_dttm(String crt_dttm) {
+		this.crt_dttm = crt_dttm;
+	}
 
-    public String getUser_nm() {
-        return user_nm;
-    }
+	public String getMod_dttm() {
+		return mod_dttm;
+	}
 
-    public void setUser_nm(String user_nm) {
-        this.user_nm = user_nm;
-    }
+	public void setMod_dttm(String mod_dttm) {
+		this.mod_dttm = mod_dttm;
+	}
 
-    public int getCm_idx() {
-        return cm_idx;
-    }
+	public int getStep() {
+		return step;
+	}
 
-    public void setCm_idx(int cm_idx) {
-        this.cm_idx = cm_idx;
-    }
+	public void setStep(int step) {
+		this.step = step;
+	}
 
-    public String getComments() {
-        return comments;
-    }
+	public int getIndent() {
+		return indent;
+	}
 
-    public void setComments(String comments) {
-        this.comments = comments;
-    }
+	public void setIndent(int indent) {
+		this.indent = indent;
+	}
 
-    public String getCm_author() {
-        return cm_author;
-    }
+	public String getDate() {
+		return date;
+	}
 
-    public void setCm_author(String cm_author) {
-        this.cm_author = cm_author;
-    }
-    
-    
+	public void setDate(String date) {
+		this.date = date;
+	}
+
+	public int getCm_idx() {
+		return cm_idx;
+	}
+
+	public void setCm_idx(int cm_idx) {
+		this.cm_idx = cm_idx;
+	}
+
+	public String getComments() {
+		return comments;
+	}
+
+	public void setComments(String comments) {
+		this.comments = comments;
+	}
+
+	public String getCm_author() {
+		return cm_author;
+	}
+
+	public void setCm_author(String cm_author) {
+		this.cm_author = cm_author;
+	}
+
+	public String getFile_id() {
+		return file_id;
+	}
+
+	public void setFile_id(String file_id) {
+		this.file_id = file_id;
+	}
+
 }
