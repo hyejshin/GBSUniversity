@@ -15,12 +15,12 @@ String user_id = (String)session1.getAttribute("user_id");
 %>
 
 <div class="container">		
-
+		<h4><a href="/listqnaboard">Q & A</a></h4>
         <br/>
 		
         <table id="table" class="table table-striped table-condensed" cellspacing="0" width="100%">
         <tr>
-        	<td>idx</td><td>title</td><td style="width:10%;">comment</td>
+        	<td style="width:10%;">idx</td><td>title</td><td style="width:10%;">comment</td>
 		</tr>
 			<% int num = 1; %>
 			<c:forEach items="${list}" var="vo">
@@ -28,11 +28,6 @@ String user_id = (String)session1.getAttribute("user_id");
 					<td><%=num++%></td>
 					<td><a href="/viewqnaboard?idx=${vo.idx}">${vo.title}</a></td>
 					<td>${vo.count}</td>
-					<td>
-						<%//if(user_id.equals("ibmk0reagbs!")) {%>
-							<a href="/deleteNotice?idx=${vo.idx}">X</a>
-						<%//}%>
-					</td>
 				</tr>
 			</c:forEach>
 		</table>

@@ -64,7 +64,6 @@
         	SET title 	= #{title}
         	   ,content = #{content}
         	   ,writer	= #{writer}
-		       ,time	= #{time}
 		WHERE idx = #{idx}
     </update>
     

@@ -15,25 +15,32 @@ String user_id = (String)session1.getAttribute("user_id");
 %>
 
 <div class="container">		
-		
-     <h4>Q&A</h4>
+<c:set var="user" value="<%=user_id%>"/>
+
+     <h4><a href="/listqnaboard">Q & A</a></h4>
      <br/>
-		
-        <table id="table"  cellspacing="0" width="100%">
+		<!-- 게시글 -->
+        <table id="table" cellspacing="1" width="100%" border='1'>
 			<tr><td>${vo.writer}</td><td>${vo.time}</td></tr>
 			<tr><td colspan='2'>${vo.title}</td></tr>
-			<tr><td colspan='2'>${vo.content}</td></tr>
+			<tr height="100"><td colspan='2'>${vo.content}</td></tr>
 		</table>
 		
+		<c:if test="${user == vo.writer}">
+			<a href="/updateqnaboardView?idx=${vo.idx}">수정 </a> |
+			<a href="/deleteqna?idx=${vo.idx}"> 삭제</a>
+		</c:if>
+		
+		<!-- 댓글 -->
 		<table id="table" class="table table-striped table-condensed" cellspacing="0" width="100%">
 			<c:forEach items="${list}" var="c">
 				<tr>
 					<td>${c.writer}</td>
 					<td>${c.time}</td>
 					<td>
-						<%//if(user_id.equals("ibmk0reagbs!")) {%>
+						<c:if test="${user == c.writer}">
 							<a href="/deleteqnacomment?idx=${c.idx}&org=${vo.idx}">X</a>
-						<%//}%>
+						</c:if>
 					</td>
 				</tr>
 				<tr>

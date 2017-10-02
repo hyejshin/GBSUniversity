@@ -177,6 +177,11 @@
         <put-attribute name="body" value="/WEB-INF/views/pages/qnaboard/viewqnaboard.jsp" />  
     </definition>
     
+    <definition name="updateqnaboard" extends="base-definition">  
+        <put-attribute name="title" value="updateqnaboard" />  
+        <put-attribute name="body" value="/WEB-INF/views/pages/qnaboard/updateqnaboard.jsp" />  
+    </definition>
+    
 
     
     <definition name="history" extends="base-definition">  

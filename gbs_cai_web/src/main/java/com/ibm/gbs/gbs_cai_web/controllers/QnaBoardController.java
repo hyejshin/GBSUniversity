@@ -42,7 +42,6 @@ public class QnaBoardController {
 		return "addqnaboard";
 	}
 	
-	
 	@RequestMapping("/addqna")
 	public String addQnA(Model model, QnaBoardVO vo) throws Exception {
 		
@@ -58,6 +57,22 @@ public class QnaBoardController {
 		qnaboardService.addQnA(vo);
 		
 		return "redirect:viewqnaboard?idx="+idx;
+	}
+	
+	@RequestMapping("/updateqnaboardView")
+	public String updateqnaboardView(Model model, @RequestParam("idx")int idx) throws Exception {
+		
+		model.addAttribute("vo", qnaboardService.getQnA(idx));
+		
+		return "updateqnaboard";
+	}
+	
+	@RequestMapping("/updateqna")
+	public String updateQnA(Model model, QnaBoardVO vo) throws Exception {
+		
+		qnaboardService.updateQnA(vo);
+		
+		return "redirect:viewqnaboard?idx="+vo.getIdx();
 	}
 	
 	@RequestMapping("/deleteqna")
