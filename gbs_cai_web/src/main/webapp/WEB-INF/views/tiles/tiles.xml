@@ -214,8 +214,7 @@
         <put-attribute name="body" value="/WEB-INF/views/pages/error/505error.jsp" />  
         <put-list-attribute name="serverErrorAttributes" cascade="true">
             <add-attribute value="/css/505page.css"/>
-        </put-list-attribute> 
-    
-    </definition> 
-   
+        </put-list-attribute>    
+    </definition>
+           
 </tiles-definitions>

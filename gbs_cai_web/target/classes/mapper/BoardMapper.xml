@@ -17,8 +17,8 @@
         <result property="comments"           column="comments"/>
         <result property="cm_author"           column="cm_author"/>
     </resultMap>
-    
-    <select id="getBoardListByClassId" resultMap = "getBoardListVOByClassId"   parameterType="String">
+        
+    <select id="getBoardListByClassId" resultMap = "getBoardListVOByClassId" parameterType="String">
         SELECT BO.idx idx
             , BO.board_id board_id
             , BO.class_id class_id
@@ -41,18 +41,18 @@
     
     <insert id="insertNewBoardConetent" parameterType="com.ibm.gbs.gbs_cai_web.vo.BoardVO">
         INSERT INTO BOARD (
-        board_id
-        , class_id
+          title
         , user_id
         , detail
-        , type
+        , crt_dttm
+        , mod_dttm
         )
         VALUES (
-        #{board_id}
-        , #{class_id}
+          #{title}
         , #{user_id}
         , #{detail}
-        , #{type}
+        , NOW()
+        , NOW()
         )	
     </insert>
     <update id="modifyBoardContent" parameterType="hashmap">
@@ -79,4 +79,54 @@
         , #{user_id}
         )	
     </insert>
+    
+    <select id="selectBoardIdx" resultType="java.lang.Integer">
+    	SELECT MAX(BO.idx)
+    	  FROM board BO
+    </select>
+    
+    <insert id="insertNewBoardFileContent" parameterType="com.ibm.gbs.gbs_cai_web.vo.FileVO">
+    	INSERT INTO file (
+          file_id
+        , file_nm
+        , file_size
+        , crt_dttm
+        
+        )
+        VALUES (
+          #{file_id}
+        , #{file_nm}
+        , #{file_size}
+        , NOW()        
+        )	
+    </insert>
+    
+    <select id="getBoardList" resultType="com.ibm.gbs.gbs_cai_web.vo.BoardVO">
+    	SELECT BO.idx
+    	     , BO.title
+    	     , BO.user_id
+    	     , BO.detail
+    	     , BO.crt_dttm
+    	FROM   board BO
+    </select>  
+    
+    <select id="getBoardDetail" parameterType="com.ibm.gbs.gbs_cai_web.vo.BoardVO" resultType="com.ibm.gbs.gbs_cai_web.vo.BoardVO">
+    	SELECT BO.idx 
+    	     , BO.title
+    	     , BO.user_id
+    	     , BO.detail
+    	     , BO.crt_dttm
+    	     , FL.file_nm
+    	     , FL.file_id
+    	FROM   board BO
+    	LEFT   OUTER JOIN file FL
+    	ON     BO.idx = FL.file_id
+    	WHERE  BO.idx = #{idx}
+    </select>
+    
+    <select id="getFileById" parameterType="java.lang.String" resultType="java.lang.String">
+    	SELECT FL.file_nm
+    	FROM   file FL
+    	WHERE  FL.file_id = #{file_id}  
+    </select>
 </mapper>
