@@ -160,7 +160,28 @@
         <put-attribute name="title" value="addNotice" />  
         <put-attribute name="body" value="/WEB-INF/views/pages/notice/addNotice.jsp" />  
     </definition>
+    
+    <!-- Q&A Board -->
+    <definition name="listqnaboard" extends="base-definition">  
+        <put-attribute name="title" value="listqnaboard" />  
+        <put-attribute name="body" value="/WEB-INF/views/pages/qnaboard/listqnaboard.jsp" />  
+    </definition>
+    
+    <definition name="addqnaboard" extends="base-definition">  
+        <put-attribute name="title" value="addqnaboard" />  
+        <put-attribute name="body" value="/WEB-INF/views/pages/qnaboard/addqnaboard.jsp" />  
+    </definition>
 
+	<definition name="viewqnaboard" extends="base-definition">  
+        <put-attribute name="title" value="viewqnaboard" />  
+        <put-attribute name="body" value="/WEB-INF/views/pages/qnaboard/viewqnaboard.jsp" />  
+    </definition>
+    
+    <definition name="updateqnaboard" extends="base-definition">  
+        <put-attribute name="title" value="updateqnaboard" />  
+        <put-attribute name="body" value="/WEB-INF/views/pages/qnaboard/updateqnaboard.jsp" />  
+    </definition>
+    
 
     
     <definition name="history" extends="base-definition">  
