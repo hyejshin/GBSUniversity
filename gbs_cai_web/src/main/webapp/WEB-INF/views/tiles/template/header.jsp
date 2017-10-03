@@ -66,9 +66,7 @@
                     <ul class="nav pull-left" style="float:right;">
                             <li class="dropdown">
                                 <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">
-                                 <i class="icon-user"></i><i class="caret"></i>WELCOME Misu Choi
-
-                                </a>
+                                 <i class="icon-user"></i><i class="caret"></i>WELCOME <%=user_nm%></a>
                                 <ul class="dropdown-menu">
                                     <li class="divider"></li>
                                     <li>
