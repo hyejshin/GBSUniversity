@@ -86,7 +86,7 @@
 </style>
 <div class="container">
 <h4 style="margin:2px;"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>&nbsp;
-CAI University Agenda</h4>
+GBS University Agenda</h4>
 </div>
     <div class="container1">
       <ul>
