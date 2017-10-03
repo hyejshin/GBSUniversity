@@ -19,57 +19,48 @@
 %>
 
 <style>
-	td {
-		font-size: 130%;
-		font-weight: bold;
+	.container{
+  		width:100%;
+  		padding-right: 7px;
+    		padding-left: 7px;
 	}
 </style>
 
 
-<img src="/images/cognitive.jpg" width="100%">
-<table class="table" style="border-collapse: separate; border-spacing: 6px 6px; padding:2px;">
-        <tr style="height:130px; text-align:center; vertical-align:middle;">
-        	<td style="text-align:center; vertical-align:middle;" width="50%" bgcolor="#F0CD5B">
-            <a href="/index" style="color:white">GBS Univ. Agenda</a></td>
-            <td style="text-align:center; vertical-align:middle;" bgcolor="#95DEE3">
-            <a href="/myLecture?user_id=<%=user_id2%>" style="color:white">My Enrollment</a></td>
+<img src="/images/IBM_1.jpg" width="100%">
+	<br>
+	<div class="container">
+<table class="table" style="border-collapse: separate; width: 100%; border-spacing: 5px 5px; margin-top:3px;">
+          <tr style="height:50px; text-align:center; vertical-align:middle;">
+              <td colspan="2" style="text-align: center; vertical-align:middle;border-radius:2px;" bgcolor="#ADB6B5">
+              <a href="/listNotice" style="color:white"><span class="	glyphicon glyphicon-ok-circle"></span>&nbsp;Notice</a></td>
+            </tr>
+        <tr style="height:100px; text-align:center; vertical-align:middle;">
+        	<td style="text-align:center; vertical-align:middle;border-radius:2px;" width="50%" bgcolor="#31C3E7">
+            <a href="/index" style="color:#ffffff;"><span class="glyphicon glyphicon-certificate"></span>&nbsp;WELCOME SPEECH</a></td>
+            <td style="text-align:center; vertical-align:middle;border-radius:2px;" bgcolor="#a3daff">
+            <a href="#" style="color:white"><span class="glyphicon glyphicon-book"></span>&nbsp;THE IBM WAY(HandBook)</a></td>
         </tr>
 
         <tr style="height:100px; text-align:center; vertical-align:middle;">
-        	<td style="text-align:center; vertical-align:middle;" bgcolor="#EFD1C6">
-            <a href="/attend" style="color:white">Attendance Check</a></td>
-            <td style="text-align:center; vertical-align:middle;" bgcolor="#578CA9">
-            <a href="/roominfo" style="color:white">Room Info</a></td>
+        	<td style="text-align:center; vertical-align:middle;border-radius:2px;" bgcolor="#085DAD">
+            <a href="/index" style="color:white"><span class="glyphicon glyphicon-calendar"></span>&nbsp;GBS univ. Agenda</a></td>
+            <td style="text-align:center; vertical-align:middle;border-radius:2px;" bgcolor="#31C3E7">
+            <a href="/roominfo" style="color:white"> <span class="glyphicon glyphicon-info-sign"></span>&nbsp;Bus/Room Info</a></td>
         </tr>   
 
-        <tr style="height:70px; text-align:center; vertical-align:middle;">
-            <td style="text-align: center; vertical-align:middle;" bgcolor="#88B04B">
-            <a href="#" style="color:white" data-toggle="modal"data-target="#basicModal" >
-            Conrad Hotel</a></td>
-            <td style="text-align: center; vertical-align:middle;" bgcolor="#AE734E">
-            <a href="http://www.ifcmallseoul.com/eng/jsp/store/floorInfo.do?lang=e&floor=L3" style="color:white">Lunch Time</a></td>
+        <tr style="height:100px; text-align:center; vertical-align:middle;">
+            <td style="text-align: center; vertical-align:middle;border-radius:2px;" bgcolor="#ee2560">
+            <a href="/listqnaboard" style="color:white"><span class="glyphicon glyphicon-blackboard"
+            ></span>&nbsp;Q&A</a></td>
+            <td style="text-align: center; vertical-align:middle;border-radius:2px;" bgcolor="#AE734E">
+            <a href="/conradHotel" style="color:white"><span class="glyphicon glyphicon-tent"></span>&nbsp;Hotel Map</a></td>
         </tr>
-        
-        <tr style="height:40px; text-align:center; vertical-align:middle;">
-            <td colspan="2" style="text-align: center; vertical-align:middle;" bgcolor="#004B8D">
-            <!-- <a href="/listNotice" style="color:white">Notice</a></td>  -->
-            <a href="/listqnaboard" style="color:white">Q & A</a></td>
-        </tr>
-	</table>
 
-<div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-            <h4 class="modal-title" id="myModalLabel">Conrad Hotel</h4>
-            </div>
-            <div class="modal-body">
-                <img src="/images/map.png" style="width:100%;"/>
-            </div>
-  
-    </div>
-  </div>
-</div>
-
+        <tr style="height:50px; text-align:center; vertical-align:middle;">
+              <td colspan="2" style="text-align: center; vertical-align:middle;border-radius:2px;" bgcolor="#8CC739">
+              <a href="#" style="color:white"><span class="glyphicon glyphicon-comment"></span>&nbsp;Talk Talk</a></td>
+            </tr>
+        </table>
+ </div>
 
