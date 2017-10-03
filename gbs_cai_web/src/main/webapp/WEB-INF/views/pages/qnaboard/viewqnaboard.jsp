@@ -24,6 +24,7 @@ String user_id = (String)session1.getAttribute("user_id");
 			<tr><td>${vo.writer}</td><td>${vo.time}</td></tr>
 			<tr><td colspan='2'>${vo.title}</td></tr>
 			<tr height="100"><td colspan='2'>${vo.content}</td></tr>
+			<tr><td colspan='2'><a href="/filedown?file_id=${vo.file_id}">${vo.file_nm}</a></td></tr>
 		</table>
 		
 		<c:if test="${user == vo.writer}">

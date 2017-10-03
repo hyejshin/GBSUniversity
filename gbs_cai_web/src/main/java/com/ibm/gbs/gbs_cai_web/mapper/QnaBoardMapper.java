@@ -2,6 +2,7 @@ package com.ibm.gbs.gbs_cai_web.mapper;
 
 import java.util.List;
 
+import com.ibm.gbs.gbs_cai_web.vo.FileVO;
 import com.ibm.gbs.gbs_cai_web.vo.QnaBoardVO;
 
 public interface QnaBoardMapper {
@@ -19,5 +20,14 @@ public interface QnaBoardMapper {
 	public void increaseVisit(int idx, int visit);
 	
 	public void deleteQnA(int idx);
+	
+	/* 파일 로직 추가 */
+	public void addFile(FileVO vo);
+	
+	public void updateFile(FileVO vo);
+	
+	public void deleteFile(String file_id);
+	
+	public String getFileById(String file_id);
 	
 }

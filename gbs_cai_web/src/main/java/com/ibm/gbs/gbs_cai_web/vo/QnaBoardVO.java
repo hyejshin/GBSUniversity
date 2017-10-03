@@ -22,21 +22,41 @@ public class QnaBoardVO implements Serializable {
     private String time;
     private int visit;
     private int count;
-
-
-    //default contructor
+    
+    private String file_nm;
+	private String file_id;
+	
+	//default contructor
     public QnaBoardVO() {
     } ;
 
-    
-    public QnaBoardVO(int ref, String title, String content, String writer, String time, int visit) {
-    	this.ref= ref;
-    	this.title = title;
-    	this.content = content;
-    	this.writer = writer;
-    	this.time = time;
-    	this.visit = visit;
-    }
+	public QnaBoardVO(int ref, String title, String content, String writer, String time, int visit) {
+		this.ref = ref;
+		this.title = title;
+		this.content = content;
+		this.writer = writer;
+		this.time = time;
+		this.visit = visit;
+	}
+
+    public String getFile_nm() {
+		return file_nm;
+	}
+
+
+	public void setFile_nm(String file_nm) {
+		this.file_nm = file_nm;
+	}
+
+
+	public String getFile_id() {
+		return file_id;
+	}
+
+
+	public void setFile_id(String file_id) {
+		this.file_id = file_id;
+	}   
 
 	public int getIdx() {
 		return idx;

@@ -76,25 +76,25 @@ CREATE TABLE NOTICE (
 );
 
 
+## 20171014 GBS University Table Schema (추가 또는 변경) ##
 
-## Board Schema 1차 변경 ##
-CREATE TABLE `board` (
-  `idx` int(10) NOT NULL AUTO_INCREMENT,
-  `title` varchar(100) NOT NULL,
-  `user_id` varchar(100) NOT NULL,
-  `crt_dttm` varchar(45) NOT NULL,
-  `mod_dttm` varchar(45) NOT NULL,
-  `detail` mediumtext NOT NULL,
-  `type` varchar(45) DEFAULT 'DETAIL',
-   PRIMARY KEY (`idx`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
+#NOTICE TABLE
+CREATE TABLE QnABOARD (
+   idx         INT(10) NOT NULL auto_increment,
+    ref         INT(10) DEFAULT 0,
+    title      VARCHAR(100),
+   content      MEDIUMTEXT NOT NULL,
+    writer      VARCHAR(100),
+    time      DATE,
+    visit      INT(10) DEFAULT 0,
+   PRIMARY KEY(idx)
+);
 
 ## File Table Schema
 CREATE TABLE `file` (
   `idx` int(11) NOT NULL AUTO_INCREMENT,
   `file_id` varchar(45) NOT NULL,
   `file_nm` varchar(45) NOT NULL,
-  `file_size` varchar(45) NOT NULL,
   `crt_dttm` varchar(45) NOT NULL,
   PRIMARY KEY (`idx`)
 ) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;

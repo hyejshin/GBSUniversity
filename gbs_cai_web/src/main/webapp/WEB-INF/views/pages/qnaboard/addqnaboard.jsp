@@ -19,11 +19,12 @@ String user_id = (String)session1.getAttribute("user_id");
      <h4>Q&A Board</h4>
      <br/>
 
-		<form class="form-horizontal" name="myForm" method="POST" action="/addqna">
+		<form class="form-horizontal" name="myForm" method="POST" action="/addqna" enctype="multipart/form-data" accept-charset="UTF-8">
 			<input type="text" id="writer" name="writer" value=<%=user_id%>>
 			<input type="text" id="title" name="title" placeholder="Title" style="width:90%;">
 			<textarea class="input-xlarge textarea" placeholder="Write Contents Here" name="content" rows="10" 
 			style="width:90%; height:90%;"></textarea>
+			<input type="file" name="file" id="file" style="width:500px"></input</td> 
 		
 			<br/><br/>
 			<input class="btn btn-info" type="submit" value="Submit">
