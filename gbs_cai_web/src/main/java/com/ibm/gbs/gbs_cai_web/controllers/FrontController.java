@@ -29,11 +29,17 @@ public class FrontController {
         return "maintile";
         
     }
-    
-    @RequestMapping("/index")
-    public String homePage(ModelMap model) {
+    //index1: Welcomespeech index2: Agenda page
+    //add by Misu Choi
+    @RequestMapping("/index2")
+    public String homePage2(ModelMap model) {
     	
-    	return "index";
+    	return "index2";
+    }
+    @RequestMapping("/index1")
+    public String homePage1(ModelMap model) {
+    	
+    	return "index1";
     }
     
     @RequestMapping("/detail_session")
