@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.ibm.gbs.gbs_cai_web.mapper.QnaBoardMapper;
 import com.ibm.gbs.gbs_cai_web.service.QnaBoardService;
+import com.ibm.gbs.gbs_cai_web.vo.FileVO;
 import com.ibm.gbs.gbs_cai_web.vo.QnaBoardVO;
 
 @Service("qnaboardService")
@@ -48,6 +49,23 @@ public class QnaBoardServiceImpl implements QnaBoardService {
 	public void deleteQnA(int idx) throws Exception {
 		
 		qnaboardMapper.deleteQnA(idx);
+	}
+	
+	/* 파일 로직 추가 */
+	public void addFile(FileVO vo) throws Exception {
+		qnaboardMapper.addFile(vo);
+	}
+	
+	public void updateFile(FileVO vo) throws Exception {
+		qnaboardMapper.updateFile(vo);
+	}
+	
+	public void deleteFile(String file_id) throws Exception {
+		qnaboardMapper.deleteFile(file_id);
+	}
+	
+	public String getFileById(String file_id) throws Exception {
+		return qnaboardMapper.getFileById(file_id);
 	}
 	
 }

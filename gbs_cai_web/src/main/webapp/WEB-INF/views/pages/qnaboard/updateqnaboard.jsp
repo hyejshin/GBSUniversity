@@ -19,12 +19,14 @@ String user_id = (String)session1.getAttribute("user_id");
      <h4><a href="/listqnaboard">Q & A</a></h4>
      <br/>
 
-		<form class="form-horizontal" name="myForm" method="POST" action="/updateqna">
+		<form class="form-horizontal" name="myForm" method="POST" action="/updateqna" enctype="multipart/form-data" accept-charset="UTF-8">
 			<input type="hidden" id="idx" name="idx" value=${vo.idx}>
 			<input type="text" id="writer" name="writer" value=${vo.writer}>
 			<input type="text" id="title" name="title" value=${vo.title} style="width:90%;">
 			<textarea class="input-xlarge textarea" name="content" rows="10" 
-			style="width:90%; height:90%;">${vo.content}</textarea>
+			style="width:90%; height:90%;">${vo.content}</textarea><br>
+			<tr><td colspan='2'>${vo.file_nm}</td></tr>
+			<input type="file" name="file" id="file" style="width:500px"></input</td>
 		
 			<br/><br/>
 			<input class="btn btn-info" type="submit" value="Submit">

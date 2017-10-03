@@ -20,16 +20,21 @@
     
     <select id="getQnA" parameterType="int" resultType="com.ibm.gbs.gbs_cai_web.vo.QnaBoardVO">
         SELECT
-        	 idx
-        	,ref
-        	,title
-        	,content
-        	,writer
-        	,time
-        	,visit
-        	,(SELECT COUNT(*) FROM QnABOARD WHERE ref = A.idx) AS count
+        	  A.idx
+        	, A.ref
+        	, A.title
+        	, A.content
+        	, A.writer
+        	, A.time
+        	, A.visit
+        	, (SELECT COUNT(*) FROM QnABOARD WHERE ref = A.idx) AS count
+        	, F.file_id
+        	, F.file_nm
         FROM QnABOARD A
-        WHERE idx = #{idx}
+        LEFT OUTER JOIN file F
+        ON   A.idx = F.file_id
+        WHERE A.idx = #{idx}
+        
     </select>
     
     <select id="getQnAComment" parameterType="int" resultType="com.ibm.gbs.gbs_cai_web.vo.QnaBoardVO">
@@ -40,6 +45,12 @@
         	,time
         FROM QnABOARD
         WHERE ref = #{ref}
+    </select>
+    
+    <select id="getFileById" parameterType="java.lang.String" resultType="java.lang.String">
+    	SELECT F.file_nm
+    	  FROM file F
+    	 WHERE F.file_id = #{file_id}
     </select>
       
     <insert id="addQnA" parameterType="com.ibm.gbs.gbs_cai_web.vo.QnaBoardVO">
@@ -58,6 +69,20 @@
         	,now()	        
         )	
     </insert>
+    
+    <insert id="addFile" parameterType="com.ibm.gbs.gbs_cai_web.vo.FileVO">
+    	INSERT INTO file (
+        	 file_id
+	        ,file_nm
+	        ,crt_dttm
+	        
+        )
+        VALUES (
+        	 ( SELECT MAX(QB.idx) FROM QnABOARD QB )
+        	,#{file_nm}
+        	,DATE_FORMAT(NOW(), '%Y-%m-%d %h:%i %p')        
+        )
+    </insert>
  
     <update id="updateQnA" parameterType="com.ibm.gbs.gbs_cai_web.vo.QnaBoardVO">
         UPDATE QnABOARD
@@ -73,10 +98,22 @@
 		WHERE idx = #{arg0}
     </update>
     
+    <update id="updateFile" parameterType="com.ibm.gbs.gbs_cai_web.vo.FileVO">
+    	UPDATE file
+    	   SET file_nm = #{file_nm}
+    	 WHERE file_id = #{file_id}
+    </update>
+    
     <delete id="deleteQnA" parameterType="int">
         DELETE    
         FROM QnABOARD
         WHERE idx = #{idx}
+    </delete>
+    
+    <delete id="deleteFile" parameterType="java.lang.String">
+    	DELETE
+    	  FROM file
+    	 WHERE file_id = #{file_id}
     </delete>
     
 </mapper>
