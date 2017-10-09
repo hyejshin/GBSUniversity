@@ -46,7 +46,7 @@
         FROM QnABOARD
         WHERE ref = #{ref}
     </select>
-    
+        
     <select id="getFileById" parameterType="java.lang.String" resultType="java.lang.String">
     	SELECT F.file_nm
     	  FROM file F
@@ -78,7 +78,7 @@
 	        
         )
         VALUES (
-        	 ( SELECT MAX(QB.idx) FROM QnABOARD QB )
+        	 #{file_id}
         	,#{file_nm}
         	,DATE_FORMAT(NOW(), '%Y-%m-%d %h:%i %p')        
         )

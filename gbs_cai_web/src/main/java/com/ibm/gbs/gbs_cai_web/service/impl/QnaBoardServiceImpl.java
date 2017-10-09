@@ -52,6 +52,7 @@ public class QnaBoardServiceImpl implements QnaBoardService {
 	}
 	
 	/* 파일 로직 추가 */
+		
 	public void addFile(FileVO vo) throws Exception {
 		qnaboardMapper.addFile(vo);
 	}

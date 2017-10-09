@@ -22,6 +22,7 @@ public interface QnaBoardService {
 	public void deleteQnA(int idx) throws Exception;
 	
 	/* 파일 로직 추가 */
+		
 	public void addFile(FileVO vo) throws Exception;
 	
 	public void updateFile(FileVO vo) throws Exception;

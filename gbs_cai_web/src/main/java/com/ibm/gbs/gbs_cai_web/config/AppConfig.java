@@ -123,6 +123,7 @@ public class AppConfig extends WebMvcConfigurerAdapter {
     public CommonsMultipartResolver multipartResolver() {
         CommonsMultipartResolver resolver = new CommonsMultipartResolver();
         resolver.setMaxUploadSizePerFile(100000000); //bytes 대략 100MB 
+        resolver.setMaxInMemorySize(2048000); // Memory에 쓰여지는 크기 2MB
         resolver.setDefaultEncoding("utf-8");
         return resolver;
     }

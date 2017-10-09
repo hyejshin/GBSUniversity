@@ -87,6 +87,9 @@ public class QnaBoardController {
 			filevo = new FileVO(fileNm);
 			
 			qnaboardService.addQnA(vo);
+			int tempBoardId = vo.getIdx(); 
+			String board_id = Integer.toString(tempBoardId);
+			filevo.setFile_id(board_id);
 			qnaboardService.addFile(filevo);
 						
 			try {							
