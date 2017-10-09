@@ -53,7 +53,6 @@ CREATE TABLE ATTEND (
     UNIQUE KEY(user_id, class_id)
 );
 
-
 #BOARD TABLE
 CREATE TABLE BOARD (
 	idx 			INT(10) NOT NULL auto_increment,

@@ -122,6 +122,5 @@
     	DELETE
     	  FROM file
     	 WHERE file_id = #{file_id}
-    </delete>
-    
+    </delete>    
 </mapper>
