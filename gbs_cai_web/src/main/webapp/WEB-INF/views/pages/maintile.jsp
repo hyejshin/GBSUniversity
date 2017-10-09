@@ -33,17 +33,20 @@
 <table class="table" style="border-collapse: separate; width: 100%; border-spacing: 5px 5px; margin-top:3px;">
           <tr style="height:50px; text-align:center; vertical-align:middle;">
               <td colspan="2" style="text-align: center; vertical-align:middle;border-radius:2px;" bgcolor="#ADB6B5">
+
               <a href="/listNotice" style="color:white"><span class="	glyphicon glyphicon-ok-circle"></span>&nbsp;Notice</a></td>
             </tr>
         <tr style="height:100px; text-align:center; vertical-align:middle;">
         	<td style="text-align:center; vertical-align:middle;border-radius:2px;" width="50%" bgcolor="#31C3E7">
             <a href="/index" style="color:#ffffff;"><span class="glyphicon glyphicon-certificate"></span>&nbsp;WELCOME SPEECH</a></td>
+
             <td style="text-align:center; vertical-align:middle;border-radius:2px;" bgcolor="#a3daff">
             <a href="#" style="color:white"><span class="glyphicon glyphicon-book"></span>&nbsp;THE IBM WAY(HandBook)</a></td>
         </tr>
 
         <tr style="height:100px; text-align:center; vertical-align:middle;">
         	<td style="text-align:center; vertical-align:middle;border-radius:2px;" bgcolor="#085DAD">
+
             <a href="/index" style="color:white"><span class="glyphicon glyphicon-calendar"></span>&nbsp;GBS univ. Agenda</a></td>
             <td style="text-align:center; vertical-align:middle;border-radius:2px;" bgcolor="#31C3E7">
             <a href="/roominfo" style="color:white"> <span class="glyphicon glyphicon-info-sign"></span>&nbsp;Bus/Room Info</a></td>
@@ -56,6 +59,7 @@
             <td style="text-align: center; vertical-align:middle;border-radius:2px;" bgcolor="#AE734E">
             <a href="/conradHotel" style="color:white"><span class="glyphicon glyphicon-tent"></span>&nbsp;Hotel Map</a></td>
         </tr>
+
 
         <tr style="height:50px; text-align:center; vertical-align:middle;">
               <td colspan="2" style="text-align: center; vertical-align:middle;border-radius:2px;" bgcolor="#8CC739">
