@@ -53,7 +53,6 @@ CREATE TABLE ATTEND (
     UNIQUE KEY(user_id, class_id)
 );
 
-
 #BOARD TABLE
 CREATE TABLE BOARD (
 	idx 			INT(10) NOT NULL auto_increment,
@@ -79,16 +78,18 @@ CREATE TABLE NOTICE (
 ## 20171014 GBS University Table Schema (추가 또는 변경) ##
 
 #NOTICE TABLE
-CREATE TABLE QnABOARD (
-   idx         INT(10) NOT NULL auto_increment,
-    ref         INT(10) DEFAULT 0,
-    title      VARCHAR(100),
-   content      MEDIUMTEXT NOT NULL,
-    writer      VARCHAR(100),
-    time      DATE,
-    visit      INT(10) DEFAULT 0,
-   PRIMARY KEY(idx)
-);
+CREATE TABLE `qnaboard` (
+  `idx` int(10) NOT NULL AUTO_INCREMENT,
+  `board_id` varchar(45) NOT NULL,
+  `ref` int(10) DEFAULT '0',
+  `title` varchar(100) DEFAULT NULL,
+  `content` mediumtext NOT NULL,
+  `writer` varchar(100) DEFAULT NULL,
+  `time` date DEFAULT NULL,
+  `visit` int(10) DEFAULT '0',
+  PRIMARY KEY (`idx`)
+) ENGINE=InnoDB AUTO_INCREMENT=141 DEFAULT CHARSET=utf8;
+
 
 ## File Table Schema
 CREATE TABLE `file` (

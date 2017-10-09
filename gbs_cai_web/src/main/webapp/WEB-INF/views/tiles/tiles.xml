@@ -102,16 +102,11 @@
 
  
     
-     <!-- Agenda -->
-    <definition name="index2" extends="base-definition">  
+    <!-- Agenda -->
+    <definition name="index" extends="base-definition">  
         <put-attribute name="title" value="Agenda" />
-        <put-attribute name="body" value="/WEB-INF/views/pages/index2.jsp" />  
+        <put-attribute name="body" value="/WEB-INF/views/pages/index.jsp" />  
     </definition> 
-    <!-- Welcome Speech (10/02)-->
-    <definition name="index1" extends="base-definition">  
-        <put-attribute name="title" value="WelcomeSpeech" />
-        <put-attribute name="body" value="/WEB-INF/views/pages/index1.jsp" />  
-    </definition>  
         
     <!-- login page -->
     <definition name="login" extends="login-definition">    	        
@@ -240,15 +235,7 @@
         <put-attribute name="body" value="/WEB-INF/views/pages/error/505error.jsp" />  
         <put-list-attribute name="serverErrorAttributes" cascade="true">
             <add-attribute value="/css/505page.css"/>
-<<<<<<< HEAD
         </put-list-attribute>    
     </definition>
            
 </tiles-definitions>
-=======
-        </put-list-attribute> 
-    
-    </definition> 
-   
-</tiles-definitions>
->>>>>>> refs/remotes/origin/master

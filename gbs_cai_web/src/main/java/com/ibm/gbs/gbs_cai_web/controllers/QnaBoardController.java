@@ -32,168 +32,188 @@ import com.ibm.gbs.gbs_cai_web.vo.QnaBoardVO;
 @Controller
 public class QnaBoardController {
 	private static final Logger logger = Logger.getLogger(QnaBoardController.class);
-	
+
 	@Autowired
 	private QnaBoardService qnaboardService;
-	
-	 @Autowired
-	 FileVO filevo;
-	
+
+	@Autowired
+	FileVO filevo;
+
 	FileUtils fileUtils = new FileUtils();
-	
+
 	@RequestMapping("/listqnaboard")
 	public String listqnaboard(Model model) throws Exception {
-		
+
 		model.addAttribute("list", qnaboardService.getQnAList());
-		
+
 		return "listqnaboard";
 	}
-	
+
 	@RequestMapping("/viewqnaboard")
-	public String viewqnaboard(Model model, @RequestParam("idx")int idx) throws Exception {
+	public String viewqnaboard(Model model, @RequestParam("idx") int idx) throws Exception {
 		BasicConfigurator.configure();
 		QnaBoardVO vo = qnaboardService.getQnA(idx);
-		
-		logger.info("Title : "+vo.getTitle()+" Content : "+vo.getContent()+" file_Id : "+vo.getFile_id());
-		
+
+		logger.info("Title : " + vo.getTitle() + " Content : " + vo.getContent() + " file_Id : " + vo.getFile_id());
+
 		model.addAttribute("vo", vo);
 		qnaboardService.increaseVisit(idx, vo.getCount() + 1);
 		model.addAttribute("list", qnaboardService.getQnAComment(idx));
-		
+
 		return "viewqnaboard";
 	}
-	
+
 	@RequestMapping("/addqnaboardView")
 	public String addqnaboardView(Model model) {
-		
+
 		return "addqnaboard";
 	}
-	
+
 	@RequestMapping("/addqna")
 	public String addQnA(Model model, QnaBoardVO vo, @RequestParam MultipartFile file) throws Exception {
 		BasicConfigurator.configure();
-				
+
 		String fileNm = file.getOriginalFilename();
-		logger.info("FileNm : "+fileNm);
-		
-		if( fileNm != null) { // FIXME 모듈화할 수 있지 않을 까 고민해보자..
-			
+		logger.info("FileNm : " + fileNm);
+
+		if (fileNm != null) { // FIXME 모듈화할 수 있지 않을 까 고민해보자..
+
 			ObjectStorageService objectStorage = fileUtils.authenObjectStorageService();
-			String containerName = "gbs_cai_file"; 
-			
-			String mimeType = file.getContentType();				
-			ObjectPutOptions mimetypeOption = ObjectPutOptions.create().contentType(mimeType);				
-						
-			filevo = new FileVO(fileNm);
-			
+			String containerName = "gbs_cai_file";
+
+			String mimeType = file.getContentType();
+			ObjectPutOptions mimetypeOption = ObjectPutOptions.create().contentType(mimeType);
+
+			// board_id 난수로 생성 - 동시에 사용자가 파일을 등록할 경우 파일 ID 식별을 위해
+			long nanoTime = System.nanoTime();
+
+			String tempTime = String.valueOf(nanoTime);
+			String board_id = "BOARD" + tempTime.substring(8, 14);
+			vo.setBoard_id(board_id);
+
 			qnaboardService.addQnA(vo);
+			int tempBoardId = qnaboardService.selectFileId(board_id);
+			String file_id = Integer.toString(tempBoardId);
+
+			filevo = new FileVO(file_id, fileNm);
+
+			logger.info("File idx : " + filevo.getFile_id() + " File Name : " + filevo.getFile_nm());
+
 			qnaboardService.addFile(filevo);
-						
-			try {							
+
+			try {
 				InputStream fileStream = file.getInputStream();
 				Payload<InputStream> payload = new PayloadClass(fileStream);
-				objectStorage.objects().put(containerName, fileNm, payload, mimetypeOption); // Object Storage 컨테이너에 파일 적재
-							
+				objectStorage.objects().put(containerName, fileNm, payload, mimetypeOption); // Object
+																								// Storage
+																								// 컨테이너에
+																								// 파일
+																								// 적재
+
 			} catch (Exception e) {
 				logger.error("Fail stored file in ObjectStorage.", e);
-			}			
+			}
 		}
-		
-		
+
 		return "redirect:listqnaboard";
 	}
-	
+
 	@RequestMapping("/addqnacomment")
-	public String addQnAComment(Model model, QnaBoardVO vo, @RequestParam("idx")int idx) throws Exception {
-		
+	public String addQnAComment(Model model, QnaBoardVO vo, @RequestParam("idx") int idx) throws Exception {
+
 		vo.setRef(idx);
 		qnaboardService.addQnA(vo);
-		
-		return "redirect:viewqnaboard?idx="+idx;
+
+		return "redirect:viewqnaboard?idx=" + idx;
 	}
-	
+
 	@RequestMapping("/updateqnaboardView")
-	public String updateqnaboardView(Model model, @RequestParam("idx")int idx) throws Exception {
+	public String updateqnaboardView(Model model, @RequestParam("idx") int idx) throws Exception {
 		BasicConfigurator.configure();
-		
+
 		QnaBoardVO vo = qnaboardService.getQnA(idx);
-		logger.info("Title : "+vo.getTitle()+" Content : "+vo.getContent()+" file_Id : "+vo.getFile_id());
-		
+		logger.info("Title : " + vo.getTitle() + " Content : " + vo.getContent() + " file_Id : " + vo.getFile_id());
+
 		model.addAttribute("vo", vo);
-		
+
 		return "updateqnaboard";
 	}
-	
+
 	@RequestMapping("/updateqna")
 	public String updateQnA(Model model, QnaBoardVO vo, @RequestParam MultipartFile file) throws Exception {
 		BasicConfigurator.configure();
 		qnaboardService.updateQnA(vo);
-		
+
 		String fileNm = file.getOriginalFilename();
-				
-		if( fileNm != null) { // FIXME 모듈화할 수 있지 않을 까 고민해보자..
-			
+
+		if (fileNm != null) { // FIXME 모듈화할 수 있지 않을 까 고민해보자..
+
 			ObjectStorageService objectStorage = fileUtils.authenObjectStorageService();
-			String containerName = "gbs_cai_file"; 
-			
+			String containerName = "gbs_cai_file";
+
 			String mimeType = file.getContentType();
 			String file_id = Integer.toString(vo.getIdx());
-			ObjectPutOptions mimetypeOption = ObjectPutOptions.create().contentType(mimeType);				
-						
-			filevo = new FileVO(file_id,fileNm);
-			logger.info("File ID : "+file_id+" File Name : "+fileNm);
-						
+			ObjectPutOptions mimetypeOption = ObjectPutOptions.create().contentType(mimeType);
+
+			filevo = new FileVO(file_id, fileNm);
+			logger.info("File ID : " + file_id + " File Name : " + fileNm);
+
 			qnaboardService.updateFile(filevo);
-						
-			try {							
+
+			try {
 				InputStream fileStream = file.getInputStream();
 				Payload<InputStream> payload = new PayloadClass(fileStream);
-				objectStorage.objects().put(containerName, fileNm, payload, mimetypeOption); // Object Storage 컨테이너에 파일 적재
-					
+				objectStorage.objects().put(containerName, fileNm, payload, mimetypeOption); // Object
+																								// Storage
+																								// 컨테이너에
+																								// 파일
+																								// 적재
+
 			} catch (Exception e) {
 				logger.error("Fail stored file in ObjectStorage.", e);
-			}			
+			}
 		}
-		
-		return "redirect:viewqnaboard?idx="+vo.getIdx();
+
+		return "redirect:viewqnaboard?idx=" + vo.getIdx();
 	}
-	
+
 	@RequestMapping("/deleteqna")
-	public String deleteqna(Model model, @RequestParam("idx")int idx, HttpSession session) throws Exception {
-		
+	public String deleteqna(Model model, @RequestParam("idx") int idx, HttpSession session) throws Exception {
+
 		String file_id = Integer.toString(idx);
 		qnaboardService.deleteQnA(idx);
-		qnaboardService.deleteFile(file_id);		
-				
+		qnaboardService.deleteFile(file_id);
+
 		return "redirect:listqnaboard";
 	}
-	
-	@RequestMapping("/deleteqnacomment")
-	public String deleteqnacomment(Model model, @RequestParam("idx")int idx, @RequestParam("org")int org, HttpSession session) throws Exception {
-		
-		qnaboardService.deleteQnA(idx);
-		
-		return "redirect:viewqnaboard?idx="+org;
-	}
-	
-	@RequestMapping(value="/filedown", method=RequestMethod.GET)
-    public void downloadFile(@RequestParam("file_id") String file_id, HttpSession session, HttpServletRequest request, 
-    		HttpServletResponse response) throws Exception {      
-                
-        String file_nm = qnaboardService.getFileById(file_id); 
-                
-        ObjectStorageService objectStorage = fileUtils.authenObjectStorageService();
-	
-		String containerName = "gbs_cai_file";	
-				
-		SwiftObject pictureObj = objectStorage.objects().get(containerName, file_nm );
 
-		if ( pictureObj == null ) { // The specified file was not found
+	@RequestMapping("/deleteqnacomment")
+	public String deleteqnacomment(Model model, @RequestParam("idx") int idx, @RequestParam("org") int org,
+			HttpSession session) throws Exception {
+
+		qnaboardService.deleteQnA(idx);
+
+		return "redirect:viewqnaboard?idx=" + org;
+	}
+
+	@RequestMapping(value = "/filedown", method = RequestMethod.GET)
+	public void downloadFile(@RequestParam("file_id") String file_id, HttpSession session, HttpServletRequest request,
+			HttpServletResponse response) throws Exception {
+
+		String file_nm = qnaboardService.getFileById(file_id);
+
+		ObjectStorageService objectStorage = fileUtils.authenObjectStorageService();
+
+		String containerName = "gbs_cai_file";
+
+		SwiftObject pictureObj = objectStorage.objects().get(containerName, file_nm);
+
+		if (pictureObj == null) { // The specified file was not found
 			response.sendError(HttpServletResponse.SC_NOT_FOUND);
 			logger.error("File not found.");
-			
-		}	
-		
+
+		}
+
 		DLPayload payload = pictureObj.download();
 		InputStream in = payload.getInputStream();
 		OutputStream out = response.getOutputStream();
@@ -201,38 +221,38 @@ public class QnaBoardController {
 		IOUtils.copy(in, out);
 		in.close();
 		out.close();
-       
-    }
-	
+
+	}
+
 	private class PayloadClass implements Payload<InputStream> {
-    	private InputStream stream = null;
-    	
-    	public PayloadClass(InputStream stream) {
-    		this.stream = stream;
-    	}
-    	
-    	@Override
-    	public void close() throws IOException {
-    		stream.close();
-    	}
-    	
-    	@Override
-    	public InputStream open() {
-    		return stream;
-    	}
-    	
-    	@Override
-    	public void closeQuietly() {
-    		try {
-    			stream.close();
-    		} catch (IOException e) {
-    		}
-    	}
-    	
-    	@Override
-    	public InputStream getRaw() {
-    		return stream;
-    	}
-    	
-    }
+		private InputStream stream = null;
+
+		public PayloadClass(InputStream stream) {
+			this.stream = stream;
+		}
+
+		@Override
+		public void close() throws IOException {
+			stream.close();
+		}
+
+		@Override
+		public InputStream open() {
+			return stream;
+		}
+
+		@Override
+		public void closeQuietly() {
+			try {
+				stream.close();
+			} catch (IOException e) {
+			}
+		}
+
+		@Override
+		public InputStream getRaw() {
+			return stream;
+		}
+
+	}
 }

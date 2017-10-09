@@ -2,12 +2,23 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ibm.gbs.gbs_cai_web.mapper.EnrollmentMapper">
     <cache />
-    
-    <select id="getEnrollmentByUserId" resultType="com.ibm.gbs.gbs_cai_web.vo.EnrollmentVO"  parameterType="String">
-        SELECT user_id, morning_room, session1, session2, session3, room1, room2, room3 
-        FROM ENROLLMENT
-        WHERE user_id=#{user_id} 
+            
+    <select id="getRoominfoById" resultType="com.ibm.gbs.gbs_cai_web.vo.RoomVO" parameterType="String">
+    	SELECT user_id
+    	     , type
+    	     , room_info
+    	  FROM room
+    	 WHERE user_id = #{user_id}
     </select>
+    
+    <select id="getBusInfoById" resultType="com.ibm.gbs.gbs_cai_web.vo.BusVO" parameterType="String">
+    	SELECT user_id
+    	     , bus_type
+    	     , bus_info
+    	     , depart_time
+    	  FROM bus
+    	 WHERE user_id = #{user_id}
+    </select>    
     
     <!--
     <resultMap id="enrollmentVoByUserid" type="com.ibm.gbs.gbs_cai_web.vo.EnrollmentVO">

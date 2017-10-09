@@ -46,23 +46,31 @@
         FROM QnABOARD
         WHERE ref = #{ref}
     </select>
-    
+        
     <select id="getFileById" parameterType="java.lang.String" resultType="java.lang.String">
     	SELECT F.file_nm
     	  FROM file F
     	 WHERE F.file_id = #{file_id}
     </select>
+    
+    <select id="selectFileId" parameterType="java.lang.String" resultType="java.lang.Integer">
+    	SELECT idx
+    	  FROM QnABOARD
+    	 WHERE board_id = #{board_id}
+    </select>
       
     <insert id="addQnA" parameterType="com.ibm.gbs.gbs_cai_web.vo.QnaBoardVO">
         INSERT INTO QnABOARD (
-        	 ref
+             board_id      
+        	,ref
 	        ,title
 	        ,content
 	        ,writer
 	        ,time        
         )
         VALUES (
-        	 #{ref}
+             #{board_id}
+        	,#{ref}
         	,#{title}
         	,#{content}
         	,#{writer}
@@ -78,7 +86,7 @@
 	        
         )
         VALUES (
-        	 ( SELECT MAX(QB.idx) FROM QnABOARD QB )
+        	 #{file_id}
         	,#{file_nm}
         	,DATE_FORMAT(NOW(), '%Y-%m-%d %h:%i %p')        
         )
@@ -114,6 +122,5 @@
     	DELETE
     	  FROM file
     	 WHERE file_id = #{file_id}
-    </delete>
-    
+    </delete>    
 </mapper>

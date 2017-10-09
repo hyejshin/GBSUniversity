@@ -8,9 +8,9 @@ import com.ibm.gbs.gbs_cai_web.vo.QnaBoardVO;
 public interface QnaBoardService {
 
 	public List<QnaBoardVO> getQnAList() throws Exception;
-	
+
 	public QnaBoardVO getQnA(int idx) throws Exception;
-	
+
 	public List<QnaBoardVO> getQnAComment(int ref) throws Exception;
 
 	public void addQnA(QnaBoardVO vo) throws Exception;
@@ -20,14 +20,16 @@ public interface QnaBoardService {
 	public void increaseVisit(int idx, int visit) throws Exception;
 
 	public void deleteQnA(int idx) throws Exception;
-	
+
 	/* 파일 로직 추가 */
+	public Integer selectFileId(String board_id);
+
 	public void addFile(FileVO vo) throws Exception;
-	
+
 	public void updateFile(FileVO vo) throws Exception;
-	
+
 	public void deleteFile(String file_id) throws Exception;
-	
-	public String getFileById(String file_id) throws Exception; 
-	
+
+	public String getFileById(String file_id) throws Exception;
+
 }
