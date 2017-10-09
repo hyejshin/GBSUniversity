@@ -30,10 +30,17 @@ public class FrontController {
         
     }
     
-    @RequestMapping("/index")
-    public String homePage(ModelMap model) {
+    //index1 : welcome speech index2: agenda
+    //modified by Misu choi (20171002)
+    @RequestMapping("/index1")
+    public String homePage1(ModelMap model) {
     	
-    	return "index";
+    	return "index1";
+    }
+    @RequestMapping("/index2")
+    public String homePage2(ModelMap model) {
+    	
+    	return "index2";
     }
     
     @RequestMapping("/detail_session")

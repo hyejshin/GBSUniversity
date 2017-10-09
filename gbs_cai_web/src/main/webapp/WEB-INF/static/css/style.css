@@ -1,5 +1,5 @@
 @import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap-glyphicons.css");
-
+@import url("//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css");
 
 body{
 	background:#fff;
@@ -87,16 +87,16 @@ h1,h2,h3,h4,h5,h6,label,p{
 }
 
 /*--responsive media-quries--*/
-@media(max-width:768px){
-.top-nav ul{
-	display: none;
-	position:absolute;
-	width:100%;
-	z-index: 9999;
-	left: 0%;
-	margin:2em 0em;
-	background:#181f21;
-}
+@media (max-width: 768px){
+.top-nav ul {
+    display: none;
+    position: absolute;
+    width: 100%;
+    z-index: 9999;
+    left: 0%;
+    margin: 2px 2px;
+    background: #053b67;
+ }
 .top-nav span.menu{
 	display: block;
 	width:100%;
@@ -107,7 +107,7 @@ h1,h2,h3,h4,h5,h6,label,p{
 	display: block;
 	float:none;
 	padding: 1em 0.8em;
-	text-align: center;
+	text-align: left;
 }
 .top-nav ul li a,.top-nav ul li.active a{
 	color:#fff;
@@ -977,6 +977,10 @@ ul.box-in {
 }
 }
 @media(max-width:768px){
+.header {
+    padding-top: 12px;
+    background-color: white;
+}
 .header-bottom {
 	width: 53%;
 }
@@ -1003,17 +1007,11 @@ ul.box-in {
 .b-animate span {
 	padding-top: 1.2em;
 }
-/*.header {
-	padding-top: 2em;
-}*/
 .header {
-    padding-bottom: 20px;
+	padding-top: 12px;
 }
-/*.top-nav {
-	padding: 0.8em 0 0;
-}*/
 .top-nav {
-    padding: 5px;
+	padding: 0 0 0;
 }
 .sb-search {
 	top: 14px;
@@ -1139,9 +1137,9 @@ ul.box-in {
 .search-box {
 	display: none;
 }
-.top-nav{
+/*.top-nav{
 	float:none;
-}
+}*/
 .header-bottom {
 	width: 10%;
 }
