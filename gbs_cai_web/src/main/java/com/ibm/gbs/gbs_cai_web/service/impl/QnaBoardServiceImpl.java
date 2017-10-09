@@ -52,7 +52,10 @@ public class QnaBoardServiceImpl implements QnaBoardService {
 	}
 	
 	/* 파일 로직 추가 */
-		
+	public Integer selectFileId(String board_id) {
+		return qnaboardMapper.selectFileId(board_id);
+	}
+	
 	public void addFile(FileVO vo) throws Exception {
 		qnaboardMapper.addFile(vo);
 	}

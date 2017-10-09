@@ -84,12 +84,22 @@ public class QnaBoardController {
 			String mimeType = file.getContentType();				
 			ObjectPutOptions mimetypeOption = ObjectPutOptions.create().contentType(mimeType);				
 						
-			filevo = new FileVO(fileNm);
+			
+			// board_id 난수로 생성 - 동시에 사용자가 파일을 등록할 경우 파일 ID 식별을 위해
+			long nanoTime = System.nanoTime();
+						
+			String tempTime = String.valueOf(nanoTime);
+			String board_id = "BOARD" + tempTime.substring(8, 14);
+			vo.setBoard_id(board_id);			
 			
 			qnaboardService.addQnA(vo);
-			int tempBoardId = vo.getIdx(); 
-			String board_id = Integer.toString(tempBoardId);
-			filevo.setFile_id(board_id);
+			int tempBoardId = qnaboardService.selectFileId(board_id); 
+			String file_id = Integer.toString(tempBoardId);
+						
+			filevo = new FileVO(file_id,fileNm);
+			
+			logger.info("File idx : "+filevo.getFile_id()+" File Name : "+filevo.getFile_nm());
+			
 			qnaboardService.addFile(filevo);
 						
 			try {							
