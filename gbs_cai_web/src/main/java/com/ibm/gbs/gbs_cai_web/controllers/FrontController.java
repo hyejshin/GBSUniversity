@@ -68,6 +68,12 @@ public class FrontController {
     	return "conradHotel";
     }
     
+    @RequestMapping("/lotteResort")
+    public String lotteResort(ModelMap model) {
+    	
+    	return "lotteResort";
+    }
+    
     @RequestMapping("/ibmway")
     public String ibmway(ModelMap model) {
     	
