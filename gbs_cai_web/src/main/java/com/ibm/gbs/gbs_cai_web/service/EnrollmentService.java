@@ -6,13 +6,13 @@
  */
 package com.ibm.gbs.gbs_cai_web.service;
 
-import com.ibm.gbs.gbs_cai_web.vo.EnrollmentVO;
-import java.util.List;
-
+import com.ibm.gbs.gbs_cai_web.vo.BusVO;
+import com.ibm.gbs.gbs_cai_web.vo.RoomVO;
 
 public interface EnrollmentService {
-    public EnrollmentVO getEnrollmentByUserId(String user_id);
-   // public List<EnrollmentVO> getEnrollmentByUserid(String user_id);
-    
-    
+	
+	public RoomVO getRoomInfoById(String user_id);
+	
+	public BusVO getBusInfoById(String user_id);
+
 }

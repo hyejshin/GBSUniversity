@@ -15,6 +15,7 @@ public class QnaBoardVO implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private int idx;
+    private String board_id;
     private int ref;
     private String title;
     private String content;
@@ -38,8 +39,16 @@ public class QnaBoardVO implements Serializable {
 		this.time = time;
 		this.visit = visit;
 	}
+	
+    public String getBoard_id() {
+		return board_id;
+	}
 
-    public String getFile_nm() {
+	public void setBoard_id(String board_id) {
+		this.board_id = board_id;
+	}
+
+	public String getFile_nm() {
 		return file_nm;
 	}
 

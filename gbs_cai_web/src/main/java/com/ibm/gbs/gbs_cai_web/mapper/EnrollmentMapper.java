@@ -5,9 +5,8 @@
  */
 package com.ibm.gbs.gbs_cai_web.mapper;
 
-import org.apache.ibatis.annotations.Param;
-
-import com.ibm.gbs.gbs_cai_web.vo.EnrollmentVO;
+import com.ibm.gbs.gbs_cai_web.vo.BusVO;
+import com.ibm.gbs.gbs_cai_web.vo.RoomVO;
 
 
 /**
@@ -16,6 +15,8 @@ import com.ibm.gbs.gbs_cai_web.vo.EnrollmentVO;
  */
 public interface EnrollmentMapper {
     
-    public EnrollmentVO getEnrollmentByUserId(@Param("user_id") String user_id);
+    public RoomVO getRoominfoById(String user_id);
+    
+    public BusVO getBusInfoById(String user_id);
     
 }
