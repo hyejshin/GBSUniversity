@@ -8,8 +8,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 	<div class="wrapper">
 		<div class="container">
-			<h2>GBS Korea CAI University</h2>
-                   <br><b>Cloud Application Innovation</b>
+			<h2>IBM GBS University</h2>
+                   
 			<form class="form" id="loginForm" name="loginForm" >
 				<input id="user_id" type="text" name="user_id" placeholder="XXXX@kr.ibm.com"> 
 				<button type="submit" name="go" id="login-button">Login</button>
