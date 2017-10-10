@@ -88,16 +88,18 @@ public class QnaBoardController {
 			long nanoTime = System.nanoTime();
 
 			String tempTime = String.valueOf(nanoTime);
-			String board_id = "BOARD" + tempTime.substring(8, 14);
+			String board_id = "BOARD" + tempTime.substring(8, 12);
 			vo.setBoard_id(board_id);
 
 			qnaboardService.addQnA(vo);
 			int tempBoardId = qnaboardService.selectFileId(board_id);
 			String file_id = Integer.toString(tempBoardId);
 
+			logger.info("Title : " + vo.getTitle() + " Content : " + vo.getContent());
+			
 			filevo = new FileVO(file_id, fileNm);
 
-			logger.info("File idx : " + filevo.getFile_id() + " File Name : " + filevo.getFile_nm());
+			
 
 			qnaboardService.addFile(filevo);
 
