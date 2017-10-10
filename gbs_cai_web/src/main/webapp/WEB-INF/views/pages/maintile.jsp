@@ -38,7 +38,7 @@
             </tr>
         <tr style="height:100px; text-align:center; vertical-align:middle;">
         	<td style="text-align:center; vertical-align:middle;border-radius:2px;" width="50%" bgcolor="#31C3E7">
-            <a href="/index" style="color:#ffffff;"><span class="glyphicon glyphicon-certificate"></span>&nbsp;WELCOME SPEECH</a></td>
+            <a href="/index1" style="color:#ffffff;"><span class="glyphicon glyphicon-certificate"></span>&nbsp;WELCOME SPEECH</a></td>
 
             <td style="text-align:center; vertical-align:middle;border-radius:2px;" bgcolor="#a3daff">
             <a href="#" style="color:white"><span class="glyphicon glyphicon-book"></span>&nbsp;THE IBM WAY(HandBook)</a></td>
@@ -47,7 +47,7 @@
         <tr style="height:100px; text-align:center; vertical-align:middle;">
         	<td style="text-align:center; vertical-align:middle;border-radius:2px;" bgcolor="#085DAD">
 
-            <a href="/index" style="color:white"><span class="glyphicon glyphicon-calendar"></span>&nbsp;GBS univ. Agenda</a></td>
+            <a href="/index2" style="color:white"><span class="glyphicon glyphicon-calendar"></span>&nbsp;GBS univ. Agenda</a></td>
             <td style="text-align:center; vertical-align:middle;border-radius:2px;" bgcolor="#31C3E7">
             <a href="/roominfo" style="color:white"> <span class="glyphicon glyphicon-info-sign"></span>&nbsp;Bus/Room Info</a></td>
         </tr>   

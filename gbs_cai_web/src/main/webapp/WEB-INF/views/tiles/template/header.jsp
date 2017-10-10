@@ -11,9 +11,8 @@
 <%
 	HttpSession session1 = request.getSession();
 	String user_id = (String)session1.getAttribute("user_id");
-        String tempStr = (String)session1.getAttribute("user_nm");
-        String[] nameArr = tempStr.split("/");
-        String user_nm = nameArr[0];
+    String user_nm = (String)session1.getAttribute("user_nm");
+        
 %>
 <style>
 <!--
@@ -60,7 +59,7 @@
                     <ul class="nav pull-left" style="float:right;">
                             <li class="dropdown">
                                 <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">
-                                 <i class="icon-user"></i><i class="caret"></i>WELCOME Misu Choi
+                                 <i class="icon-user"></i><i class="caret"></i><%=user_nm%>
 
                                 </a>
                                 <ul class="dropdown-menu">
