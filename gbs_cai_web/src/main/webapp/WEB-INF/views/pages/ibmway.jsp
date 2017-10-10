@@ -15,45 +15,45 @@
 		<div class="slideshow-container">
 		  
 		  <div class="mySlides">
-		    <div class="numbertext">0 / 6</div>
+		    <div class="numbertext"></div>
 		    <img src="/images/ibmway0.png" style="width:100%">
-		    <div class="text">The IBM WAY</div>
+		    <div class="text"></div>
 		  </div>
 		
 		  <div class="mySlides fade">
-		    <div class="numbertext">1 / 6</div>
+		    <div class="numbertext"></div>
 		    <img src="/images/ibmway1.png" style="width:100%">
-		    <div class="text">Clients first</div>
+		    <div class="text"></div>
 		  </div>
 		
 		  <div class="mySlides fade">
-		    <div class="numbertext">2 / 6</div>
+		    <div class="numbertext"></div>
 		    <img src="/images/ibmway2.png" style="width:100%">
-		    <div class="text">Reinvention by design</div>
+		    <div class="text"></div>
 		  </div>
 		  
 		  <div class="mySlides fade">
-		    <div class="numbertext">3 / 6</div>
+		    <div class="numbertext"></div>
 		    <img src="/images/ibmway3.png" style="width:100%">
-		    <div class="text">Cognitive to the core</div>
+		    <div class="text"></div>
 		  </div>
 		  
 		  <div class="mySlides fade">
-		    <div class="numbertext">4 / 6</div>
+		    <div class="numbertext"></div>
 		    <img src="/images/ibmway4.png" style="width:100%">
-		    <div class="text">Agile on the cloud</div>
+		    <div class="text"></div>
 		  </div>
 		  
 		  <div class="mySlides fade">
-		    <div class="numbertext">5 / 6</div>
+		    <div class="numbertext"></div>
 		    <img src="/images/ibmway5.png" style="width:100%">
-		    <div class="text">You to the IBM</div>
+		    <div class="text"></div>
 		  </div>
 		  
 		  <div class="mySlides">
-		    <div class="numbertext">6 / 6</div>
+		    <div class="numbertext"></div>
 		    <img src="/images/ibmway6.png" style="width:100%">
-		    <div class="text">Delivered with confidence and quality</div>
+		    <div class="text"></div>
 		  </div>
 
 		  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
