@@ -102,17 +102,21 @@
 
  
     
-     <!-- Agenda -->
+    <!-- Agenda -->
     <definition name="index2" extends="base-definition">  
         <put-attribute name="title" value="Agenda" />
         <put-attribute name="body" value="/WEB-INF/views/pages/index2.jsp" />  
     </definition> 
     
+<<<<<<< HEAD
     <!-- Welcome Speech (10/02)-->
+=======
+     <!-- Welcome Speech (10/02) -->
+>>>>>>> branch 'master' of https://github.com/jprogram/cai-web
     <definition name="index1" extends="base-definition">  
         <put-attribute name="title" value="WelcomeSpeech" />
         <put-attribute name="body" value="/WEB-INF/views/pages/index1.jsp" />  
-    </definition>  
+    </definition> 
         
     <!-- login page -->
     <definition name="login" extends="login-definition">    	        
@@ -244,9 +248,19 @@
         <put-attribute name="title" value="Server Error" />  
         <put-attribute name="body" value="/WEB-INF/views/pages/error/505error.jsp" />  
         <put-list-attribute name="serverErrorAttributes" cascade="true">
+<<<<<<< HEAD
             <add-attribute value="/css/505page.css"/>
+=======
+            <add-attribute value="/css/505page.css"/>
+>>>>>>> branch 'master' of https://github.com/jprogram/cai-web
         </put-list-attribute>    
+<<<<<<< HEAD
     </definition>
 
 </tiles-definitions>
 
+=======
+    </definition>
+           
+</tiles-definitions>
+>>>>>>> branch 'master' of https://github.com/jprogram/cai-web

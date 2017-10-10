@@ -144,10 +144,10 @@
                         <input type="hidden" name="user_id"  value=<%=session1.getAttribute("user_id")%> />
                         <input type="hidden" name="class_id" id="class_id" value=${vo.class_id} />
                         <input type="hidden" name="board_id" id="board_id" value=${board_id} />
-                        <%
+                       <%--  <%
                             String type = user.getType();
                         %>
-                        <input type="hidden" id="type" name="type" value="<%=type%>"/>
+                        <input type="hidden" id="type" name="type" value="<%=type%>"/> --%>
                         <input type="hidden" id="idx"  name="idx" value=""/>
 
                     </form> 
