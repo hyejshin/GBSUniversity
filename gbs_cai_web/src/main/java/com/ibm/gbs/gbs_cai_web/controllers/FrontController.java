@@ -6,6 +6,7 @@
  */
 package com.ibm.gbs.gbs_cai_web.controllers;
 
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -65,6 +66,12 @@ public class FrontController {
     public String conradHotel(ModelMap model) {
     	
     	return "conradHotel";
+    }
+    
+    @RequestMapping("/ibmway")
+    public String ibmway(ModelMap model) {
+    	
+    	return "ibmway";
     }
     
     @RequestMapping(value={"/members"}, method = RequestMethod.GET)

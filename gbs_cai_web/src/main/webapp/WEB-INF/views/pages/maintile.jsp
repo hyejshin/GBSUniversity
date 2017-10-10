@@ -41,7 +41,7 @@
             <a href="/index1" style="color:#ffffff;"><span class="glyphicon glyphicon-certificate"></span>&nbsp;WELCOME SPEECH</a></td>
 
             <td style="text-align:center; vertical-align:middle;border-radius:2px;" bgcolor="#a3daff">
-            <a href="#" style="color:white"><span class="glyphicon glyphicon-book"></span>&nbsp;THE IBM WAY(HandBook)</a></td>
+            <a href="/ibmway" style="color:white"><span class="glyphicon glyphicon-book"></span>&nbsp;THE IBM WAY(HandBook)</a></td>
         </tr>
 
         <tr style="height:100px; text-align:center; vertical-align:middle;">
