@@ -11,7 +11,7 @@
         <div class="footer-top" >
             <div class="col-md-4 twitter">						
                 <div class="twitter-in">
-                        <a href="/members" >2017 03 11 CAI University  By CAI Memebers.</a>
+                        <a href="/members" >2017 10 14 GBS University  By GBS Memebers.</a>
                         <span>copyright by IBM</span>
                 </div>						
             </div>					
