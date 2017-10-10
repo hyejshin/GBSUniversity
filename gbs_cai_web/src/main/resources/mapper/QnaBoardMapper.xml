@@ -80,7 +80,7 @@
         	,#{title}
         	,#{content}
         	,#{writer}
-        	,now()	        
+        	,NOW() + INTERVAL 14 HOUR	        
         )	
     </insert>
     
