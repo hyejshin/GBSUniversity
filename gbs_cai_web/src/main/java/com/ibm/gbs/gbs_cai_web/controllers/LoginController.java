@@ -28,68 +28,67 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class LoginController {
 
-    @Autowired
-    private LoginService loginService;
+	@Autowired
+	private LoginService loginService;
 
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public String loginPage(ModelMap modelMap, HttpServletRequest req, HttpServletResponse res, HttpSession session){
-        String returnUrl = "login";
-        if(session.getAttribute("user") != null){
-            returnUrl = "maintile";
-            try {
-                res.sendRedirect("/maintile");
-                return returnUrl;
-            } catch (IOException ex) {
-                Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-        
-        return returnUrl;
-    }
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public String loginPage(ModelMap modelMap, HttpServletRequest req, HttpServletResponse res, HttpSession session) {
+		String returnUrl = "login";
+		if (session.getAttribute("user") != null) {
+			returnUrl = "maintile";
+			try {
+				res.sendRedirect("/maintile");
+				return returnUrl;
+			} catch (IOException ex) {
+				Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
+			}
+		}
 
-    /**
-     * User Login Author : Joosang Kim
-     */
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public void doLogin(ModelMap modelMap, HttpServletRequest req, HttpServletResponse res, HttpSession session) {   
+		return returnUrl;
+	}
 
-        UserVO user = new UserVO();
-        String user_id = req.getParameter("user_id").toString();
-        //String password = req.getParameter("password").toString();
- 
-        session.invalidate();
-        //user = loginService.checkLoginValidation(user_id, password);
-        user = loginService.checkUserValidation(user_id);
-        
-        try {
-        	if(user == null) {
-            	req.setAttribute("isLogin", false);
-                modelMap.addAttribute("error_msg", "Please check your login information.");
-                res.sendRedirect("/login");
-            } else {
-            	HttpSession newSession = req.getSession();
-    	        newSession.setAttribute("user", user);
-    	        newSession.setAttribute("user_id", user.getUser_id());
-                newSession.setAttribute("user_nm", user.getUser_nm());
-    	        
-    	        req.setAttribute("isLogin", true);
-                res.sendRedirect("/maintile");
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-            res.setHeader("status", "500");
-        }
-    }
-    
-    /**
-     * User Logout Author : HyeJung
-     */
-    @RequestMapping("/logout")
-    public String logOut(ModelMap modelMap, HttpSession session){
-    	
-    	session.invalidate();
-        
-        return "login";
-    }
+	/**
+	 * User Login Author : Joosang Kim
+	 */
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	public void doLogin(ModelMap modelMap, HttpServletRequest req, HttpServletResponse res, HttpSession session) {
+
+		UserVO user = new UserVO();
+		String user_id = req.getParameter("user_id").toString();
+
+		session.invalidate();
+
+		user = loginService.checkUserValidation(user_id);
+
+		try {
+			if (user == null) {
+				req.setAttribute("isLogin", false);
+				modelMap.addAttribute("error_msg", "Please check your login information.");
+				res.sendRedirect("/login");
+			} else {
+				HttpSession newSession = req.getSession();
+				newSession.setAttribute("user", user);
+				newSession.setAttribute("user_id", user.getUser_id());
+				newSession.setAttribute("user_nm", user.getUser_nm());
+
+				req.setAttribute("isLogin", true);
+				res.sendRedirect("/maintile");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			res.setHeader("status", "500");
+		}
+	}
+
+	/**
+	 * User Logout Author : HyeJung
+	 */
+	@RequestMapping("/logout")
+	public String logOut(ModelMap modelMap, HttpSession session) {
+
+		session.invalidate();
+
+		return "login";
+	}
 
 }

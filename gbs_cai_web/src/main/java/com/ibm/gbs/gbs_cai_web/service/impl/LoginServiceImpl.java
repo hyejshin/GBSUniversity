@@ -5,13 +5,12 @@
  */
 package com.ibm.gbs.gbs_cai_web.service.impl;
 
+import javax.annotation.Resource;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import com.ibm.gbs.gbs_cai_web.mapper.LoginMapper;
 import com.ibm.gbs.gbs_cai_web.service.LoginService;
 import com.ibm.gbs.gbs_cai_web.vo.UserVO;
-import javax.annotation.Resource;
-import org.apache.ibatis.annotations.Param;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 /**
  *
@@ -27,14 +26,8 @@ public class LoginServiceImpl implements LoginService {
     
     @Autowired
     private LoginMapper loginMapper;
-
-    @Override
-    public UserVO checkLoginValidation(String user_id, String password) {
-        uservo =  loginMapper.LoginByUserInfo( user_id, password);
        
-       return uservo;
-    }
-    
+    @Override
     public UserVO checkUserValidation(String user_id) {
         uservo =  loginMapper.LoginByUserId(user_id);
        

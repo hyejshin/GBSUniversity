@@ -22,7 +22,9 @@ public interface QnaBoardService {
 	public void deleteQnA(int idx) throws Exception;
 
 	/* 파일 로직 추가 */
-	public Integer selectFileId(String board_id);
+	public Integer selectFileId(String board_id) throws Exception;
+	
+	public String selectBoardId(int idx) throws Exception;
 
 	public void addFile(FileVO vo) throws Exception;
 

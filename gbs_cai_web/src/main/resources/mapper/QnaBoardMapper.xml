@@ -58,6 +58,12 @@
     	  FROM QnABOARD
     	 WHERE board_id = #{board_id}
     </select>
+    
+    <select id="selectBoardId" parameterType="java.lang.Integer" resultType="java.lang.String">
+    	SELECT board_id
+    	  FROM QnABOARD
+    	 WHERE idx = #{idx}
+    </select>
       
     <insert id="addQnA" parameterType="com.ibm.gbs.gbs_cai_web.vo.QnaBoardVO">
         INSERT INTO QnABOARD (

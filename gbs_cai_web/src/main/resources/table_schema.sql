@@ -1,3 +1,4 @@
+####### 2017년 상반기 University #######
 CREATE TABLE CLASS (
    idx			INT(10) NOT NULL auto_increment,
    class_id		VARCHAR(100) NOT NULL,
@@ -75,9 +76,16 @@ CREATE TABLE NOTICE (
 );
 
 
-## 20171014 GBS University Table Schema (추가 또는 변경) ##
+####### 2017년 하반기 University #######
 
-#NOTICE TABLE
+CREATE TABLE `user` (
+  `idx` int(11) NOT NULL AUTO_INCREMENT,
+  `user_serial` varchar(45) NOT NULL,
+  `user_nm` varchar(45) NOT NULL,
+  `user_id` varchar(45) NOT NULL,
+  PRIMARY KEY (`idx`)
+) ENGINE=InnoDB AUTO_INCREMENT=431 DEFAULT CHARSET=utf8;
+
 CREATE TABLE `qnaboard` (
   `idx` int(10) NOT NULL AUTO_INCREMENT,
   `board_id` varchar(45) NOT NULL,
@@ -98,4 +106,4 @@ CREATE TABLE `file` (
   `file_nm` varchar(45) NOT NULL,
   `crt_dttm` varchar(45) NOT NULL,
   PRIMARY KEY (`idx`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=111 DEFAULT CHARSET=utf8;

@@ -23,6 +23,8 @@ public interface QnaBoardMapper {
 
 	/* 파일 로직 추가 */
 	public Integer selectFileId(String board_id);
+	
+	public String selectBoardId(int idx);
 
 	public void addFile(FileVO vo);
 

@@ -120,8 +120,12 @@ public class QnaBoardController {
 
 	@RequestMapping("/addqnacomment")
 	public String addQnAComment(Model model, QnaBoardVO vo, @RequestParam("idx") int idx) throws Exception {
-
+		BasicConfigurator.configure();
+		
+		String board_id = qnaboardService.selectBoardId(idx);
 		vo.setRef(idx);
+		vo.setBoard_id(board_id);
+		
 		qnaboardService.addQnA(vo);
 
 		return "redirect:viewqnaboard?idx=" + idx;
