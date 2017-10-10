@@ -57,7 +57,7 @@
             <a href="/listqnaboard" style="color:white"><span class="glyphicon glyphicon-blackboard"
             ></span>&nbsp;Q&A</a></td>
             <td style="text-align: center; vertical-align:middle;border-radius:2px;" bgcolor="#AE734E">
-            <a href="/lotteResort" style="color:white"><span class="glyphicon glyphicon-tent"></span>&nbsp;Resort Map</a></td>
+            <a href="/conradHotel" style="color:white"><span class="glyphicon glyphicon-tent"></span>&nbsp;Hotel Map</a></td>
         </tr>
 
 

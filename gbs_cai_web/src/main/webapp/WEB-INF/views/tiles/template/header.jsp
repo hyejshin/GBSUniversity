@@ -43,6 +43,7 @@
         <div class="header-bottom">
             <div class="top-nav">
                 <span class="menu"><img src="<c:url value="/images/menu.png" />" alt=""> </span>
+   
 
                 <ul>
                     <li><a href="/maintile"><span class="glyphicon glyphicon-home"></span>&nbsp;Home</a></li>
@@ -51,6 +52,7 @@
                     <li><a href ="#"><span class="glyphicon glyphicon-comment"></span>&nbsp;Talk Talk</a></li>
                 </ul>
             </div>
+
 
             <div class="clearfix"> </div>
         </div>

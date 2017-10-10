@@ -194,12 +194,6 @@
         <put-attribute name="body" value="/WEB-INF/views/pages/ibmway.jsp" />  
     </definition>
     
-    <!-- LOTTE RESORT -->
-    <definition name="lotteResort" extends="base-definition">  
-        <put-attribute name="title" value="lotteResort" />  
-        <put-attribute name="body" value="/WEB-INF/views/pages/lotteResort.jsp" />  
-    </definition>
-    
     <definition name="history" extends="base-definition">  
         <put-attribute name="title" value="MyLecture" />  
         <put-attribute name="body" value="/WEB-INF/views/pages/history.jsp" />  
