@@ -2,8 +2,8 @@
     Document   : header
     Created on : 20170212
     Author     : Joosang Kim
-    Editor     : 20170214 - Misu Choi
-    Editor     : 20170305 - HyeJung Shin
+    Editor     : 20170214 - Misu Choi//20170305 - HyeJung Shin
+    EDITOR     : 20171003 - Misu Choi
     Description: Header
 --%>
 <!-- HEADER -->
@@ -36,38 +36,31 @@
 
 -->
 </style>
-<div class="header" id="home">
-    <div class="container">	
+<div class="header" style="width:100%;" id="home">
+		<div class="container">	
         <div class="logo">
             <h1><a href="/maintile"><img src="<c:url value="/images/Picture1.png" />" alt=""></a></h1>     
         </div>
         <div class="header-bottom">
             <div class="top-nav">
                 <span class="menu"><img src="<c:url value="/images/menu.png" />" alt=""> </span>
+   
 
                 <ul>
-                    <li><a href="/maintile">Home</a></li>
-                    <li><a href="/index">Agenda</a></li>
-                    <li><a href="/myLecture?user_id=<%=user_id%>">My Enrollment</a></li>
-                    <li><a href="/attend">Attend</a></li>
-                    <!--
-                    <%//if(user_id.equals("ibmk0reagbs!")) {%>
-                      <li><a href="/adminClass">Admin Page</a></li>
-                    <%//}%>-->
-
+                    <li><a href="/maintile"><span class="glyphicon glyphicon-home"></span>&nbsp;Home</a></li>
+                    <li><a href="/index"><span class="glyphicon glyphicon-calendar"></span>&nbsp;Agenda</a></li>
+                    <li><a href="/myLecture"><span class="glyphicon glyphicon-info-sign"></span>&nbsp;My Bus/Room Info</a></li>
+                    <li><a href ="#"><span class="glyphicon glyphicon-comment"></span>&nbsp;Talk Talk</a></li>
                 </ul>
-                <!--script-->
-                <script>
-
-                </script>
             </div>
+
 
             <div class="clearfix"> </div>
         </div>
-        <div class="clearfix"> </div>
-	    <ul class="nav pull-right">
+                    <ul class="nav pull-left" style="float:right;">
                             <li class="dropdown">
-                                <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-user"></i><%=user_nm%>:)<i class="caret"></i>
+                                <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">
+                                 <i class="icon-user"></i><i class="caret"></i>WELCOME Misu Choi
 
                                 </a>
                                 <ul class="dropdown-menu">
@@ -78,6 +71,7 @@
                                 </ul>
                             </li>
                         </ul>
-                                <br><br>
+        <div class="clearfix"> </div>
+        <br><br>
     </div>
 </div>
