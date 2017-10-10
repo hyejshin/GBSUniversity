@@ -3,21 +3,14 @@
 <mapper namespace="com.ibm.gbs.gbs_cai_web.mapper.LoginMapper">
     <cache />
     <resultMap id="loginUserVo" type="com.ibm.gbs.gbs_cai_web.vo.UserVO">
-        <result property="idx"      column="idx" />        
-        <result property="user_id"  column="user_id" />
-        <result property="user_nm"  column="user_nm" />
-        <result property="type"     column="type" />
+        <result property="idx"             column="idx" />        
+        <result property="user_id"         column="user_id" />
+        <result property="user_nm"         column="user_nm" />
+        <result property="user_serial"     column="user_serial" />
     </resultMap>
-    
-    <select id="LoginByUserInfo" resultMap = "loginUserVo" parameterType="map">
-        SELECT user_id, user_nm,type	   
-        FROM USER
-        WHERE user_id = #{user_id} 
-        AND  password = #{password}
-    </select>
-    
+        
     <select id="LoginByUserId" resultMap = "loginUserVo" parameterType="String">
-        SELECT user_id, user_nm, type	   
+        SELECT user_id, user_nm, user_serial	   
         FROM USER
         WHERE user_id = #{user_id}
     </select>
