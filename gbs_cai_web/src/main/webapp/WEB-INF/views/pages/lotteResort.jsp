@@ -20,10 +20,10 @@
     <div class="map">
     	<div id="mapArea" style="border: 1px solid #ddd;"></div>
     		<script type="text/javascript">
-		      var position = new naver.maps.LatLng(38.18067, 128.61219);
+		      var position = new naver.maps.LatLng(38.18067, 128.6105);
 		      var map = new naver.maps.Map('mapArea', {
 		    	  center: position,
-		    	  zoom: 12
+		    	  zoom: 11
 		      });
 		      
 		      var markerOptions = {
@@ -39,6 +39,8 @@
 		      var marker = new naver.maps.Marker(markerOptions);
 		</script>
     </div>
+	
+	<img src="/images/resortmap.png" width="100%"/>
 	<br><br>
 </div>
 
