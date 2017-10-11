@@ -25,6 +25,7 @@
 		    	  center: position,
 		    	  zoom: 12
 		      });
+		      
 		      var markerOptions = {
 		    		  position: position,
 		    		  map: map,
