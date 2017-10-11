@@ -27,7 +27,7 @@
 </style>
 
 
-<img src="/images/IBM_1.jpg" width="100%">
+<img src="/images/IBM_0.jpg" width="100%">
 	<br>
 	<div class="container">
 <table class="table" style="border-collapse: separate; width: 100%; border-spacing: 5px 5px; margin-top:3px;">
