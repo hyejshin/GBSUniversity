@@ -9,9 +9,9 @@
 	<div class="wrapper">
 		<div class="container">
 			<h2>IBM Korea GBS University</h2>
-                   <br><b>Global Business Service</b>
+                   <br><b>Global Business Services</b>
 			<form class="form" id="loginForm" name="loginForm" >
-				<input id="user_id" type="text" name="user_id" placeholder="XXXX@kr.ibm.com"> 
+				<input id="user_id" type="text" name="user_id" placeholder="XXXX@xx.ibm.com"> 
 				<button type="submit" name="go" id="login-button">Login</button>
 			</form>
 		</div>
