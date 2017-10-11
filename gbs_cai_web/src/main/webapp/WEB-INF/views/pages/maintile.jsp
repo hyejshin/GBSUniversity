@@ -22,13 +22,13 @@
 	.container{
   		width:100%;
   		padding-right: 7px;
-    		padding-left: 7px;
+    	padding-left: 7px;
 	}
 </style>
 
 
 <img src="/images/IBM_0.jpg" width="100%">
-	<br>
+
 	<div class="container">
 <table class="table" style="border-collapse: separate; width: 100%; border-spacing: 5px 5px; margin-top:3px;">
           <tr style="height:50px; text-align:center; vertical-align:middle;">
@@ -38,16 +38,16 @@
             </tr>
         <tr style="height:100px; text-align:center; vertical-align:middle;">
         	<td style="text-align:center; vertical-align:middle;border-radius:2px;" width="50%" bgcolor="#31C3E7">
-            <a href="/index1" style="color:#ffffff;"><span class="glyphicon glyphicon-certificate"></span>&nbsp;WELCOME SPEECH</a></td>
+            <a href="/index1" style="color:#ffffff;"><span class="glyphicon glyphicon-certificate"></span>&nbsp;Welcome</a></td>
 
             <td style="text-align:center; vertical-align:middle;border-radius:2px;" bgcolor="#a3daff">
-            <a href="/ibmway" style="color:white"><span class="glyphicon glyphicon-book"></span>&nbsp;THE IBM WAY(HandBook)</a></td>
+            <a href="/ibmway" style="color:white"><span class="glyphicon glyphicon-book"></span>&nbsp;The IBM Way Handbook</a></td>
         </tr>
 
         <tr style="height:100px; text-align:center; vertical-align:middle;">
         	<td style="text-align:center; vertical-align:middle;border-radius:2px;" bgcolor="#085DAD">
 
-            <a href="/index2" style="color:white"><span class="glyphicon glyphicon-calendar"></span>&nbsp;GBS univ. Agenda</a></td>
+            <a href="/index2" style="color:white"><span class="glyphicon glyphicon-calendar"></span>&nbsp;Agenda</a></td>
             <td style="text-align:center; vertical-align:middle;border-radius:2px;" bgcolor="#31C3E7">
             <a href="/roominfo" style="color:white"> <span class="glyphicon glyphicon-info-sign"></span>&nbsp;Bus/Room Info</a></td>
         </tr>   

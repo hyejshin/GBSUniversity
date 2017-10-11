@@ -14,11 +14,10 @@ HttpSession session1 = request.getSession();
 String user_id = (String)session1.getAttribute("user_id");
 %>
 
-<div class="container">		
 <c:set var="user" value="<%=user_id%>"/>
-
-     <h4><a href="/listqnaboard">Q & A</a></h4>
-     <br/>
+<div class="container">		
+	<br>
+     <h4><a href='/listqnaboard'>Q & A</a></h4> <br>
 		<!-- 게시글 -->
         <table id="table" cellspacing="1" width="100%" border='1'>
 			<tr><td>${vo.writer}</td><td>${vo.time}</td></tr>

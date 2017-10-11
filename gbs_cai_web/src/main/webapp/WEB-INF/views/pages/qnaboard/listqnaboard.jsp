@@ -14,7 +14,8 @@ HttpSession session1 = request.getSession();
 String user_id = (String)session1.getAttribute("user_id");
 %>
 
-<div class="container">		
+<div class="container">
+<br>
 		<h4><a href="/listqnaboard">Q & A</a></h4>
         <br/>
 		
@@ -31,11 +32,9 @@ String user_id = (String)session1.getAttribute("user_id");
 				</tr>
 			</c:forEach>
 		</table>
-    </div>
-<br><br>
-<%
-//if(user_id.equals("ibmk0reagbs!")) {%>
-   <button class="btn btn-info" onClick="location.href='/addqnaboardView';">Write</button>
-<%//}%>
+	<br><br>
 
+   <button class="btn btn-info" onClick="location.href='/addqnaboardView';">Write</button>
+
+</div>
 <br><br><br><br>

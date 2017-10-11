@@ -10,7 +10,8 @@
 </c:forEach>
 
 <div class="container">
-	<h4>IBM WAY</h4><br>
+	<br><br>
+	<h4>The IBM Way</h4><br>
 
 		<div class="slideshow-container">
 		  
@@ -70,7 +71,7 @@
 		  <span class="dot" onclick="currentSlide(5)"></span>
 		  <span class="dot" onclick="currentSlide(6)"></span> 
 		</div>
-<br><br><br>
+<br><br><br><br>
 </div>
 
 <style>
