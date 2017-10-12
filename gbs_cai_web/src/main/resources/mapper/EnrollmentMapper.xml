@@ -7,13 +7,11 @@
      	SELECT vobj1.user_name      AS user_name
      	     , vobj1.user_id        AS user_id 
      	     , vobj1.depart_place   AS depart_place
-     	     , vobj1.depart_time    AS depart_time
      	     , vobj2.room_type      AS room_type
      	     , vobj2.room_num       AS room_num
      	  FROM ( SELECT bus.user_name
      	              , bus.user_id
-     	              , bus.depart_place
-     	              , bus.depart_time
+     	              , bus.depart_place     	              
      	           FROM businfo bus
      	          WHERE bus.user_id = #{user_id}
      	       ) vobj1
