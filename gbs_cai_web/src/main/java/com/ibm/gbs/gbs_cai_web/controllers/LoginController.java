@@ -70,6 +70,7 @@ public class LoginController {
 				newSession.setAttribute("user", user);
 				newSession.setAttribute("user_id", user.getUser_id());
 				newSession.setAttribute("user_nm", user.getUser_nm());
+				newSession.setMaxInactiveInterval(3600);
 
 				req.setAttribute("isLogin", true);
 				res.sendRedirect("/maintile");

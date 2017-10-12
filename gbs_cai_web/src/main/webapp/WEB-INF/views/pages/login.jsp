@@ -8,15 +8,18 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 	<div class="wrapper">
 		<div class="container">
-			<h2>IBM Korea GBS University</h2>
-                   <br><b>Global Business Services</b>
+			<!-- <h2 style="font-weight: 950;">GBS CAI Korea University</h2>
+                   <br><b>Cloud Application Innovation</b> -->
+            <b><img src="/images/loginp.png"/></b>
 			<form class="form" id="loginForm" name="loginForm" >
-				<input id="user_id" type="text" name="user_id" placeholder="XXXX@xx.ibm.com"> 
+				<input id="user_id" type="text" name="user_id" placeholder="XXXX@kr.ibm.com"> 
 				<button type="submit" name="go" id="login-button">Login</button>
 			</form>
 		</div>
 
 		<ul class="bg-bubbles">
+			<li></li>
+			<li></li>
 			<li></li>
 			<li></li>
 

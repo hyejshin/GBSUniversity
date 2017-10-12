@@ -50,7 +50,7 @@
 
             <a href="/index2" style="color:white"><span class="glyphicon glyphicon-calendar"></span>&nbsp;Agenda</a></td>
             <td style="text-align:center; vertical-align:middle;border-radius:2px;" bgcolor="#31C3E7">
-            <a href="/roominfo" style="color:white"> <span class="glyphicon glyphicon-info-sign"></span>&nbsp;Bus/Room Info</a></td>
+            <a href="/myEnroll?user_id=<%=user_id2 %>" style="color:white"> <span class="glyphicon glyphicon-info-sign"></span>&nbsp;Bus/Room Info</a></td>
         </tr>   
 
         <tr style="height:100px; text-align:center; vertical-align:middle;">

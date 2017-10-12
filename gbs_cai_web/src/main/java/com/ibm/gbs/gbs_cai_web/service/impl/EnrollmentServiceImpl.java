@@ -10,8 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.ibm.gbs.gbs_cai_web.mapper.EnrollmentMapper;
 import com.ibm.gbs.gbs_cai_web.service.EnrollmentService;
-import com.ibm.gbs.gbs_cai_web.vo.BusVO;
-import com.ibm.gbs.gbs_cai_web.vo.RoomVO;
+import com.ibm.gbs.gbs_cai_web.vo.EnrollmentVO;
 
 @Service("enrollmentService")
 public class EnrollmentServiceImpl implements EnrollmentService {
@@ -19,14 +18,8 @@ public class EnrollmentServiceImpl implements EnrollmentService {
 	@Autowired
 	private EnrollmentMapper enrollmentMapper;
 
-	@Override
-	public RoomVO getRoomInfoById(String user_id) {
-		return enrollmentMapper.getRoominfoById(user_id);
-	}
-
-	@Override
-	public BusVO getBusInfoById(String user_id) {
-		return enrollmentMapper.getBusInfoById(user_id);
+	public EnrollmentVO getEnrollmentById(String user_id) throws Exception {
+		return enrollmentMapper.getEnrollmentById(user_id);
 	}
 
 }

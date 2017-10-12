@@ -125,8 +125,8 @@
 																<hr size=1>
 																<div align="center">
 																	<input type="submit" value="register"
-																		class="btn btn-info" style="float: right:">
-																	&nbsp; <input type="button" style="float: left:"
+																		class="btn btn-info" style="float: right;">
+																	&nbsp; <input type="button" style="float: left;"
 																		class="btn btn-danger" value="cancel">
 															</td>
 															</div>
