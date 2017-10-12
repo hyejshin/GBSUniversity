@@ -15,7 +15,6 @@ CREATE TABLE CLASS (
    UNIQUE KEY(title, session)
 );
 
-
 #ENROLLMENT TABLE
 CREATE TABLE ENROLLMENT (
 	idx 		 INT(10) NOT NULL auto_increment,
