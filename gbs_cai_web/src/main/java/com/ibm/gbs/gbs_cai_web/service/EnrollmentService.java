@@ -6,13 +6,10 @@
  */
 package com.ibm.gbs.gbs_cai_web.service;
 
-import com.ibm.gbs.gbs_cai_web.vo.BusVO;
-import com.ibm.gbs.gbs_cai_web.vo.RoomVO;
+import com.ibm.gbs.gbs_cai_web.vo.EnrollmentVO;
 
 public interface EnrollmentService {
-	
-	public RoomVO getRoomInfoById(String user_id);
-	
-	public BusVO getBusInfoById(String user_id);
+
+	public EnrollmentVO getEnrollmentById(String user_id) throws Exception;
 
 }

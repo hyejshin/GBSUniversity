@@ -12,21 +12,20 @@ import org.springframework.stereotype.Repository;
 @Repository("enrollmentvo")
 public class EnrollmentVO implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    private int idx;
-    private String user_id;
-    private String morning_room;
-    private String session1;
-    private String session2;
-    private String session3;
-    private String room1;
-    private String room2;
-    private String room3;
+	private int idx;
+	private String user_id;
+	private String user_name;
+	private String user_serial;
+	private String depart_time;
+	private String depart_place;
+	private String room_type;
+	private String room_num;
 
-    public EnrollmentVO() {
-    	
-    }
+	public EnrollmentVO() {
+
+	}
 
 	public int getIdx() {
 		return idx;
@@ -44,61 +43,52 @@ public class EnrollmentVO implements Serializable {
 		this.user_id = user_id;
 	}
 
-	public String getMorning_room() {
-		return morning_room;
+	public String getUser_name() {
+		return user_name;
 	}
 
-	public void setMorning_room(String morning_room) {
-		this.morning_room = morning_room;
+	public void setUser_name(String user_name) {
+		this.user_name = user_name;
 	}
 
-	public String getSession1() {
-		return session1;
+	public String getUser_serial() {
+		return user_serial;
 	}
 
-	public void setSession1(String session1) {
-		this.session1 = session1;
+	public void setUser_serial(String user_serial) {
+		this.user_serial = user_serial;
 	}
 
-	public String getSession2() {
-		return session2;
+	public String getDepart_time() {
+		return depart_time;
 	}
 
-	public void setSession2(String session2) {
-		this.session2 = session2;
+	public void setDepart_time(String depart_time) {
+		this.depart_time = depart_time;
 	}
 
-	public String getSession3() {
-		return session3;
+	public String getDepart_place() {
+		return depart_place;
 	}
 
-	public void setSession3(String session3) {
-		this.session3 = session3;
+	public void setDepart_place(String depart_place) {
+		this.depart_place = depart_place;
 	}
 
-	public String getRoom1() {
-		return room1;
+	public String getRoom_type() {
+		return room_type;
 	}
 
-	public void setRoom1(String room1) {
-		this.room1 = room1;
+	public void setRoom_type(String room_type) {
+		this.room_type = room_type;
 	}
 
-	public String getRoom2() {
-		return room2;
+	public String getRoom_num() {
+		return room_num;
 	}
 
-	public void setRoom2(String room2) {
-		this.room2 = room2;
+	public void setRoom_num(String room_num) {
+		this.room_num = room_num;
 	}
 
-	public String getRoom3() {
-		return room3;
-	}
-
-	public void setRoom3(String room3) {
-		this.room3 = room3;
-	}
-   
-    
 }
