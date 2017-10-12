@@ -38,7 +38,7 @@
 <div class="header" style="width:100%;" id="home">
 		<div class="container">	
         <div class="logo">
-            <h1><a href="/maintile"><img src="<c:url value="/images/Picture1.png" />" alt=""></a></h1>     
+            <h1><a href="/maintile"><img src="<c:url value="/images/Picture1.png" />" alt="" width="95%"></a></h1>     
         </div>
         <div class="header-bottom">
             <div class="top-nav">

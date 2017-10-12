@@ -7,8 +7,8 @@
 				<div class="details" style="margin-top:30px;">		 
 
 				 <div class="col-md-7 posts">
-					 <h4 style="font-weight:600;"><span class="glyphicon glyphicon-certificate" aria-hidden="true"></span>GBS WELCOME SPEECH</h4>
-					 <p><h5>Speaker: KheeHong Song</h5></p>
+					 <h4 style="font-weight:600;"><span class="glyphicon glyphicon-certificate" aria-hidden="true"></span>Welcome Message</h4>
+					 <p><h5>KheeHong Song, Korea GBS Managing Partner</h5></p>
 					 <p><h7>Date : Saturday, 14 October 2017</h7></p>
 				 </div>	
                  <div class="clearfix"></div>
@@ -25,16 +25,17 @@
 	       <div class="work" style="margin-top:10px;">
 			 <div class="details">			 
 				 <div class="col-md-7 posts">
-					 <h4>ABOUT THIS SPEECH</h4>
-					 <p>${list.detail}</p>
+					 <h4></h4>
+					 
 					 <p>It is a pleasure to welcome you to the 2017 GBS University. 
-Key theme for this year's GBS University is "Winning GBS Korea in New IBM Way".</p>
-<p>2017 GBS University aims to achieve the following objectives:
-Deepen understanding of GBS strategy and key offerings (5+1) aligned to The IBM Way
-Congratulate on our business turnaround and share GBS Korea strategy for 2018
-Enhance morale and strengthen our teamwork to build a strong Wining team.</p>
+						Key theme for this year's GBS University is "Winning GBS Korea in New IBM Way".</p>
+						
+						<p>2017 GBS University aims to achieve the following objectives: <br>
+						● Deepen understanding of GBS strategy and key offerings (5+1) aligned to The IBM Way <br>
+						● Congratulate on our business turn around and share GBS Korea strategy for 2018 <br>
+						● Enhance morale and strengthen our team-work to build a strong wining team.</p>
 	
-				 </div>	
+				 </div>	 <br><br>
 
 				 <div class="clearfix"></div>
 			 </div>
