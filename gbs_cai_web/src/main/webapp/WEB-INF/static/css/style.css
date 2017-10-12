@@ -796,7 +796,8 @@ p.message-para{
 /*-- footer --*/
 .footer {
 	height:160px;
-    background:-webkit-linear-gradient(#81f671, #6887d5);
+	background: #3e76d1;
+    /*background:-webkit-linear-gradient(#81f671, #6887d5);*/
 	padding:3em 0em 0;
 }
 .footer-top {
