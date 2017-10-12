@@ -69,6 +69,5 @@
                             </li>
                         </ul>
         <div class="clearfix"> </div>
-        <br><br>
     </div>
 </div>

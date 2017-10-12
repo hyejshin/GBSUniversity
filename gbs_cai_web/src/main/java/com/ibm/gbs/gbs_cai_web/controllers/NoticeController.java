@@ -30,7 +30,7 @@ public class NoticeController {
 		
 		String user_id = (String)session.getAttribute("user_id");
 
-		if(user_id.equals("ibmk0reagbs!"))
+		if(user_id.equals("ibmk0reagbsadmin"))
 			return "addNotice";
 		else
 			return "redirect:listNotice";

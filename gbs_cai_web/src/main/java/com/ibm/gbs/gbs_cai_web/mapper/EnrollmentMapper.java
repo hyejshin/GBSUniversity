@@ -5,18 +5,12 @@
  */
 package com.ibm.gbs.gbs_cai_web.mapper;
 
-import com.ibm.gbs.gbs_cai_web.vo.BusVO;
-import com.ibm.gbs.gbs_cai_web.vo.RoomVO;
-
+import com.ibm.gbs.gbs_cai_web.vo.EnrollmentVO;
 
 /**
  *
  * @author kr055045
  */
-public interface EnrollmentMapper {
-    
-    public RoomVO getRoominfoById(String user_id);
-    
-    public BusVO getBusInfoById(String user_id);
-    
+public interface EnrollmentMapper {    
+	public EnrollmentVO getEnrollmentById(String user_id);    
 }

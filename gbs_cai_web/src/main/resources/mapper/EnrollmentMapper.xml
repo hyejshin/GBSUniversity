@@ -3,21 +3,25 @@
 <mapper namespace="com.ibm.gbs.gbs_cai_web.mapper.EnrollmentMapper">
     <cache />
             
-    <select id="getRoominfoById" resultType="com.ibm.gbs.gbs_cai_web.vo.RoomVO" parameterType="String">
-    	SELECT user_id
-    	     , type
-    	     , room_info
-    	  FROM room
-    	 WHERE user_id = #{user_id}
-    </select>
-    
-    <select id="getBusInfoById" resultType="com.ibm.gbs.gbs_cai_web.vo.BusVO" parameterType="String">
-    	SELECT user_id
-    	     , bus_type
-    	     , bus_info
-    	     , depart_time
-    	  FROM bus
-    	 WHERE user_id = #{user_id}
+    <select id="getEnrollmentById" resultType="com.ibm.gbs.gbs_cai_web.vo.EnrollmentVO" parameterType="String">
+     	SELECT vobj1.user_name      AS user_name
+     	     , vobj1.user_id        AS user_id 
+     	     , vobj1.depart_place   AS depart_place
+     	     , vobj1.depart_time    AS depart_time
+     	     , vobj2.room_type      AS room_type
+     	     , vobj2.room_num       AS room_num
+     	  FROM ( SELECT bus.user_name
+     	              , bus.user_id
+     	              , bus.depart_place
+     	              , bus.depart_time
+     	           FROM businfo bus
+     	          WHERE bus.user_id = #{user_id}
+     	       ) vobj1
+     	     , ( SELECT room.room_type AS room_type
+     	              , room.room_num  AS room_num
+     	           FROM roominfo room
+    			  WHERE room.user_id = #{user_id} 	     
+     	       ) vobj2       	  
     </select>    
     
     <!--

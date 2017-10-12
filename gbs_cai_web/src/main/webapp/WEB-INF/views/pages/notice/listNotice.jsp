@@ -15,7 +15,7 @@ String user_id = (String)session1.getAttribute("user_id");
 %>
 
 <div class="container">		
-
+<h4>Notice</h4>
         <br/>
 		
         <table id="table" class="table table-striped table-condensed" cellspacing="0" width="100%">
@@ -25,7 +25,7 @@ String user_id = (String)session1.getAttribute("user_id");
 					<td><%=count++%></td>
 					<td>${vo.content}</td>
 					<td>
-						<%if(user_id.equals("ibmk0reagbs!")) {%>
+						<%if(user_id.equals("ibmk0reagbsadmin")) {%>
 							<a href="/deleteNotice?idx=${vo.idx}">X</a>
 						<%}%>
 					</td>
@@ -35,7 +35,7 @@ String user_id = (String)session1.getAttribute("user_id");
     </div>
 <br><br>
 <%
-if(user_id.equals("ibmk0reagbs!")) {%>
+if(user_id.equals("ibmk0reagbsadmin")) {%>
    <button class="btn btn-info" onClick="location.href='/addNoticeView';">Write Notice</button>
 <%}%>
 

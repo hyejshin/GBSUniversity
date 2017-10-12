@@ -10,49 +10,86 @@
 </c:forEach>
 
 <div class="container">
-	<h4>IBM WAY</h4><br>
+	<br><br>
+	<h4>The IBM Way</h4><br>
 
 		<div class="slideshow-container">
 		  
 		  <div class="mySlides">
-		    <div class="numbertext"></div>
+		    <div class="numbertext">0/12</div>
 		    <img src="/images/ibmway0.png" style="width:100%">
 		    <div class="text"></div>
 		  </div>
 		
 		  <div class="mySlides fade">
-		    <div class="numbertext"></div>
+		    <div class="numbertext">1/12</div>
 		    <img src="/images/ibmway1.png" style="width:100%">
 		    <div class="text"></div>
 		  </div>
 		
 		  <div class="mySlides fade">
-		    <div class="numbertext"></div>
+		    <div class="numbertext">2/12</div>
 		    <img src="/images/ibmway2.png" style="width:100%">
 		    <div class="text"></div>
 		  </div>
 		  
 		  <div class="mySlides fade">
-		    <div class="numbertext"></div>
+		    <div class="numbertext">3/12</div>
 		    <img src="/images/ibmway3.png" style="width:100%">
 		    <div class="text"></div>
 		  </div>
 		  
 		  <div class="mySlides fade">
-		    <div class="numbertext"></div>
+		    <div class="numbertext">4/12</div>
 		    <img src="/images/ibmway4.png" style="width:100%">
 		    <div class="text"></div>
 		  </div>
 		  
 		  <div class="mySlides fade">
-		    <div class="numbertext"></div>
+		    <div class="numbertext">5/12</div>
 		    <img src="/images/ibmway5.png" style="width:100%">
 		    <div class="text"></div>
 		  </div>
 		  
 		  <div class="mySlides">
-		    <div class="numbertext"></div>
+		    <div class="numbertext">6/12</div>
 		    <img src="/images/ibmway6.png" style="width:100%">
+		    <div class="text"></div>
+		  </div>
+		  
+		  <div class="mySlides fade">
+		    <div class="numbertext">7/12</div>
+		    <img src="/images/ibmway7.png" style="width:100%">
+		    <div class="text"></div>
+		  </div>
+		
+		  <div class="mySlides fade">
+		    <div class="numbertext">8/12</div>
+		    <img src="/images/ibmway8.png" style="width:100%">
+		    <div class="text"></div>
+		  </div>
+		  
+		  <div class="mySlides fade">
+		    <div class="numbertext">9/12</div>
+		    <img src="/images/ibmway9.png" style="width:100%">
+		    <div class="text"></div>
+		  </div>
+		  
+		  <div class="mySlides fade">
+		    <div class="numbertext">10/12</div>
+		    <img src="/images/ibmway10.png" style="width:100%">
+		    <div class="text"></div>
+		  </div>
+		  
+		  <div class="mySlides fade">
+		    <div class="numbertext">11/12</div>
+		    <img src="/images/ibmway11.png" style="width:100%">
+		    <div class="text"></div>
+		  </div>
+		  
+		  <div class="mySlides">
+		    <div class="numbertext">12/12</div>
+		    <img src="/images/ibmway12.png" style="width:100%">
 		    <div class="text"></div>
 		  </div>
 
@@ -70,7 +107,7 @@
 		  <span class="dot" onclick="currentSlide(5)"></span>
 		  <span class="dot" onclick="currentSlide(6)"></span> 
 		</div>
-<br><br><br>
+<br><br><br><br>
 </div>
 
 <style>
@@ -139,10 +176,10 @@
 	
 	/* Number text (1/3 etc) */
 	.numbertext {
-	  color: #f2f2f2;
+	  color: #084B8A;
 	  font-size: 12px;
-	  padding: 8px 12px;
-	  position: absolute;
+	  padding: 2px 2px;
+	  position: relative;
 	  top: 0;
 	}
 	

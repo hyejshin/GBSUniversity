@@ -15,7 +15,6 @@ CREATE TABLE CLASS (
    UNIQUE KEY(title, session)
 );
 
-
 #ENROLLMENT TABLE
 CREATE TABLE ENROLLMENT (
 	idx 		 INT(10) NOT NULL auto_increment,
@@ -107,3 +106,23 @@ CREATE TABLE `file` (
   `crt_dttm` varchar(45) NOT NULL,
   PRIMARY KEY (`idx`)
 ) ENGINE=InnoDB AUTO_INCREMENT=111 DEFAULT CHARSET=utf8;
+
+# BUSINFO TABLE
+CREATE TABLE `businfo` (
+  `idx` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` varchar(45) NOT NULL,
+  `user_name` varchar(45) NOT NULL,
+  `depart_place` varchar(45) NOT NULL,
+  `depart_time` varchar(45) NOT NULL,
+  PRIMARY KEY (`idx`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+# ROOMINFO TABLE
+CREATE TABLE `roominfo` (
+  `idx` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` varchar(45) NOT NULL,
+  `user_name` varchar(45) NOT NULL,
+  `room_type` varchar(45) NOT NULL,
+  `room_num` varchar(45) NOT NULL,
+  PRIMARY KEY (`idx`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
