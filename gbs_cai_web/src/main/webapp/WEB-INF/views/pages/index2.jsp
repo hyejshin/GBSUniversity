@@ -6,19 +6,17 @@
 <br><br>
 <h4 style="margin:2px;"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>&nbsp;
 GBS University Agenda</h4>
-
-</div>
     <div class="slideshow-container">
 		  
 		  <div class="mySlides">
 		    <div class="numbertext">DAY 01</div>
-		    <img src="images/day01.png" style="width:100%">
+		    <img src="/images/day01.png" style="width:100%">
 		    <div class="text">DAY 1</div>
 		  </div>
 		
 		  <div class="mySlides fade">
 		    <div class="numbertext">DAY 02</div>
-		    <img src="images/day02.png" style="width:100%">
+		    <img src="/images/day02.png" style="width:100%">
 		    <div class="text">DAY 2</div>
 		  </div>
 		
@@ -33,6 +31,7 @@ GBS University Agenda</h4>
 		</div>
 <br><br><br><br>
 </div>
+	</div>
 <style>
 	* {box-sizing:border-box}
 	
