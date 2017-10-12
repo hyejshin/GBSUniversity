@@ -14,7 +14,7 @@
 	HttpSession session1 = request.getSession();
 	String user_id = (String)session1.getAttribute("user_id");
     String user_nm = (String)session1.getAttribute("user_nm");
-        
+    String user_serial = (String)session1.getAttribute("user_serial");    
 %>
 <style>
 <!--
@@ -49,7 +49,7 @@
                 <ul>
                     <li><a href="/maintile"><span class="glyphicon glyphicon-home"></span>&nbsp;Home</a></li>
                     <li><a href="/index2"><span class="glyphicon glyphicon-calendar"></span>&nbsp;Agenda</a></li>
-                    <li><a href="/myEnroll?user_id=<%=user_id%>"><span class="glyphicon glyphicon-info-sign"></span>&nbsp;My Bus/Room Info</a></li>
+                    <li><a href="/myEnroll?user_serial=<%=user_serial %>"><span class="glyphicon glyphicon-info-sign"></span>&nbsp;My Bus/Room Info</a></li>
                     <li><a href ="#"><span class="glyphicon glyphicon-comment"></span>&nbsp;Talk Talk</a></li>
                 </ul>
             </div>

@@ -18,8 +18,8 @@ public class EnrollmentServiceImpl implements EnrollmentService {
 	@Autowired
 	private EnrollmentMapper enrollmentMapper;
 
-	public EnrollmentVO getEnrollmentById(String user_id) throws Exception {
-		return enrollmentMapper.getEnrollmentById(user_id);
+	public EnrollmentVO getEnrollmentById(String user_serial) throws Exception {
+		return enrollmentMapper.getEnrollmentById(user_serial);
 	}
 
 }

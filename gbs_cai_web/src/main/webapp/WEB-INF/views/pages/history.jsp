@@ -21,16 +21,14 @@
 
 						<tr>
 							<td style="vertical-align:middle;">이름</td>
-							<td style="vertical-align:middle;">
-								
+							<td style="vertical-align:middle;">								
 							<td style="vertical-align:middle;">${list.user_name}</td>
 						</tr>
 						
 						<tr>
-							<td style="vertical-align:middle;">Notes ID</td>
-							<td style="vertical-align:middle;">
-								
-							<td style="vertical-align:middle;">${list.user_id}</td>
+							<td style="vertical-align:middle;">사번</td>
+							<td style="vertical-align:middle;">								
+							<td style="vertical-align:middle;">${list.user_serial}</td>
 						</tr>
 						
 						<tr>
@@ -38,6 +36,13 @@
 							<td style="vertical-align:middle;">
 								
 							<td style="vertical-align:middle;">${list.depart_place}</td>	
+						</tr>
+						
+						<tr>
+							<td style="vertical-align:middle;">탑승 시간</td>
+							<td style="vertical-align:middle;">
+								
+							<td style="vertical-align:middle;">${list.depart_time}</td>	
 						</tr>
 						
 						<tr>
@@ -56,14 +61,6 @@
 						
 					</tbody>
 				</table>
-		
-		버스는 각 출발시간 10분전부터 대기 후 정시에 출발며 간단한 아침간식 제공됩니다. <br>
-		버스별 조장의 연락처는 아래 확인해주세요. <br>
-				
-		<img src="images/busstaff.png" width="100%">
-		<img src="images/busstop.png" width="100%">
-		
-		<br><br><br>
+    </div>
+
 </div>
-
-

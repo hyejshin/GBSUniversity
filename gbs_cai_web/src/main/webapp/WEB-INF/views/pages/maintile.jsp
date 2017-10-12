@@ -16,6 +16,7 @@
 <%
 	HttpSession session2 = request.getSession();
 	String user_id2 = (String)session2.getAttribute("user_id");
+	String user_serial2 = (String)session2.getAttribute("user_serial");
 %>
 
 <style>
@@ -50,7 +51,7 @@
 
             <a href="/index2" style="color:white"><span class="glyphicon glyphicon-calendar"></span>&nbsp;Agenda</a></td>
             <td style="text-align:center; vertical-align:middle;border-radius:2px;" bgcolor="#31C3E7">
-            <a href="/myEnroll?user_id=<%=user_id2 %>" style="color:white"> <span class="glyphicon glyphicon-info-sign"></span>&nbsp;Bus/Room Info</a></td>
+            <a href="/myEnroll?user_serial=<%=user_serial2 %>" style="color:white"> <span class="glyphicon glyphicon-info-sign"></span>&nbsp;Bus/Room Info</a></td>
         </tr>   
 
         <tr style="height:100px; text-align:center; vertical-align:middle;">
