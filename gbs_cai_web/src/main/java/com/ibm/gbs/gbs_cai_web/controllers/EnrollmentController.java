@@ -7,7 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
+
 import com.ibm.gbs.gbs_cai_web.service.EnrollmentService;
 import com.ibm.gbs.gbs_cai_web.vo.EnrollmentVO;
 
@@ -32,7 +32,7 @@ public class EnrollmentController {
 			logger.error("USER_ID is null in private enrollment info.", e);
 		}
 
-		return "index";
+		return "history";
 	}
 
 }
