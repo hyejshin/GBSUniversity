@@ -11,9 +11,9 @@
 			<!-- <h2 style="font-weight: 950;">GBS CAI Korea University</h2>
                    <br><b>Cloud Application Innovation</b> -->
             <b><img src="/images/loginp.png"/></b>
-			<form class="form">
-				<input type="text" placeholder="xxxx@kr.ibm.com"> 
-				<button type="submit" id="login-button">Login</button>
+			<form class="form" id="loginForm" name="loginForm" >
+				<input id="user_id" type="text" name="user_id" placeholder="XXXX@kr.ibm.com"> 
+				<button type="submit" name="go" id="login-button">Login</button>
 			</form>
 		</div>
 
