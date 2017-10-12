@@ -31,11 +31,12 @@
 
 	<div class="container">
 <table class="table" style="border-collapse: separate; width: 100%; border-spacing: 5px 5px; margin-top:3px;">
-          <tr style="height:50px; text-align:center; vertical-align:middle;">
-              <td colspan="2" style="text-align: center; vertical-align:middle;border-radius:2px;" bgcolor="#ADB6B5">
 
-              <a href="/listNotice" style="color:white"><span class="	glyphicon glyphicon-ok-circle"></span>&nbsp;Notice</a></td>
-            </tr>
+		<tr style="height:65px; text-align:center; vertical-align:middle;">
+              <td colspan="2" style="text-align: center; vertical-align:middle;border-radius:2px;" bgcolor="#8CC739">
+              <a href="#" style="color:white"><span class="glyphicon glyphicon-comment"></span>&nbsp;Talk Talk</a></td>
+        </tr>
+        
         <tr style="height:100px; text-align:center; vertical-align:middle;">
         	<td style="text-align:center; vertical-align:middle;border-radius:2px;" width="50%" bgcolor="#31C3E7">
             <a href="/index1" style="color:#ffffff;"><span class="glyphicon glyphicon-certificate"></span>&nbsp;Welcome</a></td>
@@ -57,14 +58,14 @@
             <a href="/listqnaboard" style="color:white"><span class="glyphicon glyphicon-blackboard"
             ></span>&nbsp;Q&A</a></td>
             <td style="text-align: center; vertical-align:middle;border-radius:2px;" bgcolor="#AE734E">
-            <a href="/lotteResort" style="color:white"><span class="glyphicon glyphicon-tent"></span>&nbsp;Lotte Resort Map</a></td>
+            <a href="/listNotice" style="color:white"><span class="glyphicon glyphicon-tent"></span>&nbsp;Notice</a></td>
         </tr>
 
-
-        <tr style="height:50px; text-align:center; vertical-align:middle;">
-              <td colspan="2" style="text-align: center; vertical-align:middle;border-radius:2px;" bgcolor="#8CC739">
-              <a href="#" style="color:white"><span class="glyphicon glyphicon-comment"></span>&nbsp;Talk Talk</a></td>
-            </tr>
+		<tr style="height:50px; text-align:center; vertical-align:middle;">
+              <td colspan="2" style="text-align: center; vertical-align:middle;border-radius:2px;" bgcolor="#ADB6B5">
+              <a href="/lotteResort" style="color:white"><span class="glyphicon glyphicon-ok-circle"></span>&nbsp;Lotte Resort Map</a></td>
+        </tr>
+             
         </table>
  </div>
 
