@@ -9,7 +9,6 @@
 				 <div class="col-md-7 posts">
 					 <h4 style="font-weight:600;"><span class="glyphicon glyphicon-certificate" aria-hidden="true"></span>Welcome Message</h4>
 					 <p><h5>KheeHong Song, Korea GBS Managing Partner</h5></p>
-					 <p><h7>Date : Saturday, 14 October 2017</h7></p>
 				 </div>	
                  <div class="clearfix"></div>
 			 </div> 

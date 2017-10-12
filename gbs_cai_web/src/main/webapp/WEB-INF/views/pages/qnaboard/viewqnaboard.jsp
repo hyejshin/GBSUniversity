@@ -52,8 +52,10 @@ String user_id = (String)session1.getAttribute("user_id");
 		<form class="form-horizontal" name="myForm" method="POST" action="/addqnacomment">
 			<input type="hidden" id="idx" name="idx" value=${vo.idx} >
 			<input type="hidden" id="writer" name="writer" value=<%=user_id%>>
-			<input type="text" id="content" name="content" style="width:90%;">
+			<input type="text" id="content" name="content" placeholder="Write Comment Here" style="width:90%;">
+			<div style="height:10px"></div>
 			<input type="submit" value="Submit">
+			<button type="button" onclick="window.location='/listqnaboard'">List</button>
 		</form>
 
 </div>
