@@ -7,6 +7,8 @@
     Description: Header
 --%>
 <!-- HEADER -->
+<link rel="shortcut icon" href="images/favicon.ico">
+
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%
 	HttpSession session1 = request.getSession();
@@ -47,7 +49,7 @@
                 <ul>
                     <li><a href="/maintile"><span class="glyphicon glyphicon-home"></span>&nbsp;Home</a></li>
                     <li><a href="/index2"><span class="glyphicon glyphicon-calendar"></span>&nbsp;Agenda</a></li>
-                    <li><a href="/myLecture"><span class="glyphicon glyphicon-info-sign"></span>&nbsp;My Bus/Room Info</a></li>
+                    <li><a href="/myEnroll?user_id=<%=user_id%>"><span class="glyphicon glyphicon-info-sign"></span>&nbsp;My Bus/Room Info</a></li>
                     <li><a href ="#"><span class="glyphicon glyphicon-comment"></span>&nbsp;Talk Talk</a></li>
                 </ul>
             </div>

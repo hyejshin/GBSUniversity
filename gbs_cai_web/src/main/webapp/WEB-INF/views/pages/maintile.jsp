@@ -34,7 +34,7 @@
 
 		<tr style="height:65px; text-align:center; vertical-align:middle;">
               <td colspan="2" style="text-align: center; vertical-align:middle;border-radius:2px;" bgcolor="#8CC739">
-              <a href="#" style="color:white"><span class="glyphicon glyphicon-comment"></span>&nbsp;Talk Talk</a></td>
+              <a href="#" style="color:white"><span class="glyphicon glyphicon-comment"></span>&nbsp;Talk Talk(to be opened)</a></td>
         </tr>
         
         <tr style="height:100px; text-align:center; vertical-align:middle;">
