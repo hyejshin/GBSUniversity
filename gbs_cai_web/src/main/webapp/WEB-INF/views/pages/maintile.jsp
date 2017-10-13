@@ -32,11 +32,11 @@
 <img src="/images/IBM_0.jpg" width="100%">
 
 	<div class="container">
-<table class="table" style="border-collapse: separate; width: 100%; border-spacing: 5px 5px; margin-top:3px;">
+            <table class="table" style="border-collapse: separate; width: 100%; border-spacing: 5px 5px; margin-top:3px;">
 
 		<tr style="font-size:16px; height:65px; text-align:center; vertical-align:middle;">
               <td colspan="2" style="text-align: center; vertical-align:middle;border-radius:2px;" bgcolor="#8CC739">
-              <a href="#" style="color:white"><span class="glyphicon glyphicon-comment"></span>&nbsp;Talk Talk(to be opened)</a></td>
+              <a href="/chat" style="color:white;"><span class="glyphicon glyphicon-comment"></span>&nbsp;Talk Talk</a></td>
         </tr>
         
         <tr style="font-size:16px; height:100px; text-align:center; vertical-align:middle;">
