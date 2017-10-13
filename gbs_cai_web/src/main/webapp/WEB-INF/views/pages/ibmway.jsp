@@ -10,8 +10,8 @@
 </c:forEach>
 
 <div class="container">
-	<br><br>
-	<h4>The IBM Way</h4><br>
+	<br><h4><span class="glyphicon glyphicon-book" aria-hidden="true"></span>
+		<b>The IBM Way</b></h4><br>
 
 		<div class="slideshow-container">
 		  

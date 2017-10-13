@@ -9,11 +9,8 @@
 </c:forEach>
 
 <div class="container">		
-		
-        <h4>My Bus & Room Information</h4>
-        <br/>
 					
-	<h5><span class="glyphicon glyphicon-time" aria-hidden="true"></span><b>Bus & Room Information</b></h5>
+	<h4><span class="glyphicon glyphicon-time" aria-hidden="true"></span><b>Bus & Room Information</b></h4>
       
         <table id="table" class="table table-striped table-condensed" cellspacing="0" width="100%">
 					
@@ -52,7 +49,7 @@
 					</tbody>
 				</table>
 
-		버스는 각 출발시간 10분전부터 대기 후 정시에 출발며 간단한 아침간식 제공됩니다. <br>
+		버스는 각 출발시간 10분전부터 대기 후 정시에 출발하며 간단한 아침간식 제공됩니다. <br>
  		버스별 조장의 연락처는 아래 확인해주세요. <br>
  				
  		<img src="images/busstaff.png" width="100%">

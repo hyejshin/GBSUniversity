@@ -14,7 +14,6 @@ HttpSession session1 = request.getSession();
 String user_id = (String)session1.getAttribute("user_id");
 %>
 
-<br>
 <div class="container">		
 <h4>Notice</h4>
 		
@@ -32,12 +31,12 @@ String user_id = (String)session1.getAttribute("user_id");
 				</tr>
 			</c:forEach>
 		</table>
-    
-<br><br>
+
 <%
 if(user_id.equals("ibmk0reagbsadmin")) {%>
    <button class="btn btn-info" onClick="location.href='/addNoticeView';">Write Notice</button>
 <%}%>
 </div>
+<img src="images/notice.png" width="100%">
 
-<br><br><br><br>
+<br><br><br>
