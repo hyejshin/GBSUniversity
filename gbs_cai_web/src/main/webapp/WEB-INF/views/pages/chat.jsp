@@ -345,7 +345,7 @@ form[role=login] button {
 	<script>
 		$(function(){
                         
-			var socket = io.connect('http://localhost:30000');
+			var socket = io.connect('https://cai-chat-server.au-syd.mybluemix.net:30000');
 			var $messageForm = $('#messageForm');
 			var $message = $('#message');
 			var $chat = $('#chatWindow');
