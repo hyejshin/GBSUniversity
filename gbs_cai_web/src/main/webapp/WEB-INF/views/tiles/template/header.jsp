@@ -35,6 +35,7 @@
 
 -->
 </style>
+<link rel="shortcut icon" href="images/favicon.ico">
 <div class="header" style="width:100%;" id="home">
 		<div class="container">	
         <div class="logo">

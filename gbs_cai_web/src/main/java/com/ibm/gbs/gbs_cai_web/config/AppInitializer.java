@@ -15,7 +15,6 @@ import org.springframework.util.ObjectUtils;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.servlet.DispatcherServlet;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
-import com.ibm.gbs.gbs_cai_web.config.AppConfig;
 import com.ibm.gbs.gbs_cai_web.config.*;
  
 public class AppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
