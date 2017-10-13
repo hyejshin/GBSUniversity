@@ -59,7 +59,7 @@ public class LoginController {
 		session.invalidate();
 
 		user = loginService.checkUserValidation(user_id);
-
+		
 		try {
 			if (user == null) {
 				req.setAttribute("isLogin", false);
@@ -70,6 +70,7 @@ public class LoginController {
 				newSession.setAttribute("user", user);
 				newSession.setAttribute("user_id", user.getUser_id());
 				newSession.setAttribute("user_nm", user.getUser_nm());
+				newSession.setAttribute("user_serial", user.getUser_serial());
 				newSession.setMaxInactiveInterval(3600);
 
 				req.setAttribute("isLogin", true);

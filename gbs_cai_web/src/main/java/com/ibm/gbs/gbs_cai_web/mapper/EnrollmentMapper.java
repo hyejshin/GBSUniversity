@@ -12,5 +12,5 @@ import com.ibm.gbs.gbs_cai_web.vo.EnrollmentVO;
  * @author kr055045
  */
 public interface EnrollmentMapper {    
-	public EnrollmentVO getEnrollmentById(String user_id);    
+	public EnrollmentVO getEnrollmentById(String user_serial);    
 }

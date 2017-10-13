@@ -15,8 +15,8 @@
 </style>
 
 <div class="container">
-<h4>Lotte Resort Sokcho</h4>
-주소: 강원도 속초시 대포항길 186
+<h4><span class="glyphicon glyphicon-tent"></span>&nbsp;Lotte Resort Sokcho</h4>
+주소: 강원도 속초시 대포항길 186 <br>(지도 확대 축소가능)
     <div class="map">
     	<div id="mapArea" style="border: 1px solid #ddd;"></div>
     		<script type="text/javascript">

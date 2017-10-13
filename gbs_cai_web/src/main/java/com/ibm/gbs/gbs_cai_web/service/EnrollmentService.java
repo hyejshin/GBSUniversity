@@ -10,6 +10,6 @@ import com.ibm.gbs.gbs_cai_web.vo.EnrollmentVO;
 
 public interface EnrollmentService {
 
-	public EnrollmentVO getEnrollmentById(String user_id) throws Exception;
+	public EnrollmentVO getEnrollmentById(String user_serial) throws Exception;
 
 }

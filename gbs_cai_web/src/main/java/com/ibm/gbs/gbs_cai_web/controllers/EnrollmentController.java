@@ -19,13 +19,12 @@ public class EnrollmentController {
 	private EnrollmentService enrollmentservice;
 
 	@RequestMapping("/myEnroll")
-	public String myRoomInfo(Model model,@RequestParam("user_id") String user_id) throws Exception {
-		BasicConfigurator.configure();		
+	public String myRoomInfo(Model model,@RequestParam("user_serial") String user_serial) throws Exception {
+		BasicConfigurator.configure();				
 		
 		try {
-			logger.info("USER ID : "+user_id);
-			EnrollmentVO enrollmentvo = enrollmentservice.getEnrollmentById(user_id);
-			logger.info("User ID : "+enrollmentvo.getUser_id()+" User Name : "+enrollmentvo.getUser_name()+" Depart Place : "+enrollmentvo.getDepart_place());
+			EnrollmentVO enrollmentvo = enrollmentservice.getEnrollmentById(user_serial);
+						
 			model.addAttribute("list", enrollmentvo);
 			
 		} catch (Exception e) {
