@@ -3,28 +3,25 @@
 <mapper namespace="com.ibm.gbs.gbs_cai_web.mapper.EnrollmentMapper">
     <cache />
             
-    <select id="getEnrollmentById" resultType="com.ibm.gbs.gbs_cai_web.vo.EnrollmentVO" parameterType="String">
+     <select id="getEnrollmentById" resultType="com.ibm.gbs.gbs_cai_web.vo.EnrollmentVO" parameterType="String">
      	SELECT vobj1.user_name      AS user_name
      	     , vobj1.user_id        AS user_id 
      	     , vobj1.user_serial    AS user_serial
      	     , vobj1.depart_place   AS depart_place
      	     , vobj1.depart_time    AS depart_time
-     	     , vobj2.room_type      AS room_type
-     	     , vobj2.room_num       AS room_num
+     	     , vobj1.room_num       AS room_num
      	  FROM ( SELECT bus.user_name
      	              , bus.user_id
      	              , bus.user_serial
      	              , bus.depart_place
-     	              , bus.depart_time     	              
+     	              , bus.depart_time     	      
+     	              , room.room_num        
      	           FROM businfo bus
+     	           LEFT OUTER JOIN roominfo room
+     	           ON   bus.user_serial = room.user_serial
      	          WHERE bus.user_serial = #{user_serial}
-     	       ) vobj1
-     	     , ( SELECT room.room_type AS room_type
-     	              , room.room_num  AS room_num
-     	           FROM roominfo room
-    			  WHERE room.user_serial = #{user_serial} 	     
-     	       ) vobj2       	  
-    </select>    
+     	       ) vobj1     	            	  
+     </select>   
     
     <!--
     <resultMap id="enrollmentVoByUserid" type="com.ibm.gbs.gbs_cai_web.vo.EnrollmentVO">

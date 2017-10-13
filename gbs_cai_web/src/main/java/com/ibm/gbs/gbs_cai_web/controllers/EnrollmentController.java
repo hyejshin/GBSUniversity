@@ -20,13 +20,11 @@ public class EnrollmentController {
 
 	@RequestMapping("/myEnroll")
 	public String myRoomInfo(Model model,@RequestParam("user_serial") String user_serial) throws Exception {
-		BasicConfigurator.configure();		
-		
+		BasicConfigurator.configure();				
 		
 		try {
 			EnrollmentVO enrollmentvo = enrollmentservice.getEnrollmentById(user_serial);
-			logger.info("USER Serial : "+enrollmentvo.getUser_serial());
-			
+						
 			model.addAttribute("list", enrollmentvo);
 			
 		} catch (Exception e) {

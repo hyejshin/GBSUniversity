@@ -44,7 +44,7 @@
 						</tr>
 						
 						<tr>
-							<td style="vertical-align:middle;">방 호수</td>
+							<td style="vertical-align:middle;">방 호수 To be updated on Sat.</td>
 							<td style="vertical-align:middle;">
 							<td style="vertical-align:middle;">${list.room_num}</td>	
 						</tr>
