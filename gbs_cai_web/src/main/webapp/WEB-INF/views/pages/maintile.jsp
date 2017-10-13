@@ -43,7 +43,7 @@
         	<td style="text-align:center; vertical-align:middle;border-radius:2px;" width="50%" bgcolor="#31C3E7">
             <a href="/index1" style="color:#ffffff;"><span class="glyphicon glyphicon-certificate"></span>&nbsp;Welcome</a></td>
 
-            <td style="font-size:16px; text-align:center; vertical-align:middle;border-radius:2px;" bgcolor="#a3daff">
+            <td style="text-align:center; vertical-align:middle;border-radius:2px;" bgcolor="#a3daff">
             <a href="/ibmway" style="color:white"><span class="glyphicon glyphicon-book"></span>&nbsp;The IBM Way Handbook</a></td>
         </tr>
 
@@ -55,7 +55,7 @@
             <a href="/myEnroll?user_serial=<%=user_serial2 %>" style="color:white"> <span class="glyphicon glyphicon-info-sign"></span>&nbsp;Bus/Room Info</a></td>
         </tr>   
 
-        <tr style="height:100px; text-align:center; vertical-align:middle;">
+        <tr style="font-size:16px; height:100px; text-align:center; vertical-align:middle;">
             <td style="font-size:16px; text-align: center; vertical-align:middle;border-radius:2px;" bgcolor="#ee2560">
             <a href="/listqnaboard" style="color:white"><span class="glyphicon glyphicon-blackboard"
             ></span>&nbsp;Q&A</a></td>
