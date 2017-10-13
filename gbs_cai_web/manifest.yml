@@ -1,0 +1,6 @@
+applications:
+ - name: gbsuniversity
+   random-route: true
+   path: target/gbs_cai_web
+   memory: 512M
+   instances: 1
