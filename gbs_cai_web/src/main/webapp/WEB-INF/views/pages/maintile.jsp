@@ -17,6 +17,7 @@
 	HttpSession session2 = request.getSession();
 	String user_id2 = (String)session2.getAttribute("user_id");
 	String user_serial2 = (String)session2.getAttribute("user_serial");
+	
 %>
 
 <style>
