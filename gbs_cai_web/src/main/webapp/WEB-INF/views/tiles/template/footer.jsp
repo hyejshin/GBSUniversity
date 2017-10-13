@@ -11,7 +11,7 @@
         <div class="footer-top" >
             <div class="col-md-4 twitter">						
                 <div class="twitter-in">
-                        <a href="/members" >2017 10 14 GBS University  By GBS App team.</a>
+                        <a href="/members" >2017 GBS University  By GBS App team.</a>
                         <span>copyright by IBM</span>
                 </div>						
             </div>					
